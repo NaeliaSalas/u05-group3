@@ -13,7 +13,7 @@ class AddForeignKeyToEntriesTable extends Migration
      */
     public function up()
     {
-        Schema::table('reviews', function (Blueprint $table) {
+        Schema::table('entries', function (Blueprint $table) {
             $table->foreignId('watchlist_id_fk')->constrained('watchlists')->cascadeOnDelete();
             $table->foreignId('movie_id_fk')->constrained('movies')->cascadeOnDelete();
         });
