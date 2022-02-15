@@ -25,7 +25,7 @@
                     @enderror
                 </div>
 
-                <!-- <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="username">
+                <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="username">
                     Username
                 </label>
 
@@ -33,7 +33,7 @@
                 @error('username')
                 <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
-                </div> -->
+                </div>
 
                 <div class="mb-6">
                     <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="emails">
@@ -65,10 +65,6 @@
 
             </form>
     </section>
+    <x-flash />
 
-    @if (session()->has('success'))
-    <div x-data="{ show: true }" x-init="setTimeout(() => show = false, 4000)" x-show="show" class="fixed bg-blue-500 text-white py-2 px-4 rounded-xl bottom-3 right-3 text-sm">
-        <p>{{ session('success') }}</p>
-    </div>
-    @endif
 </body>
