@@ -65,6 +65,5 @@
 
             </form>
     </section>
-    <x-flash />
 
 </body>
