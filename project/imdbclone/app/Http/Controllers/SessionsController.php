@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Validation\ValidationException;
+use Illuminate\Http\Request;
 
 class SessionController extends Controller
 {
@@ -17,7 +18,6 @@ class SessionController extends Controller
 
     {
         //validate the request
-
         $attributes = request()->validate([
             'email' => 'required|email',
             'password' => 'required'
@@ -25,7 +25,7 @@ class SessionController extends Controller
         ]);
 
         // attempt to auth and log in the user
-        // based on the provided cfredentials
+        // based on the provided credentials
         if (auth()->attempt($attributes)) {
             session()->regenerate();
             return redirect('/')->with('success', 'Welcome Back!');

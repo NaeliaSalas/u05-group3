@@ -20,9 +20,9 @@ class RegisterController extends Controller
         $attributes = request()->validate([
 
             'name' => 'required|max:255',
-            //'username' => 'required|max:255'|'unique:users, username',
+            'username' => 'required|max:255|unique:users,username',
             'email' => 'required|email|max:255|unique:users,email',
-            'password' => 'required|min:7|max:255',
+            'password' => 'required|min:5|max:255',
         ]);
 
         // create the user
@@ -30,8 +30,9 @@ class RegisterController extends Controller
 
         // log the user in
         auth()->login($user);
+        //$user->save();
 
-        // session()->flash('succss', 'your account has been created.')
+        session()->flash('success', 'your account has been created.');
 
         return redirect('/')->with('success', 'Your account has been created.');
     }
