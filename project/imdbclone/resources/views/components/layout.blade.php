@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 
 <title>Login</title>
-<link rel="stylesheet" href="/app.css">
+<!-- <link rel="stylesheet" href="/app.css"> -->
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
 
 <body>
 
@@ -12,15 +14,20 @@
         <form method="POST" action="/logout" class="text-xs font-semibold text-blue-500 ml-6">
             @csrf
 
-            <button typ="submit">Log Out</button>
+            <div class="mb-6">
+                <button type="submit" class="bg-blue-400 text-whote rounded py-2 px-4 hover:bg-blue-500">
+                    Log out
+                </button>
+            </div>
 
         </form>
 
         @else
         <a href="/register" class="text-xs font-bold uppercase">Register</a>
-        <a href="/login" class="ml-3 text-xs font-bold uppercase">Log In</a>
+
+        <a href="/login" class="ml-6 text-xs font-bold uppercase">Log In</a>
 
         @endauth
     </div>
-    {{$content}}
+
 </body>

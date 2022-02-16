@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Validation\ValidationException;
-use Illuminate\Http\Request;
 
-class SessionController extends Controller
+class SessionsController extends Controller
 {
 
 
@@ -26,18 +25,18 @@ class SessionController extends Controller
 
         // attempt to auth and log in the user
         // based on the provided credentials
-        if (auth()->attempt($attributes)) {
-            session()->regenerate();
-            return redirect('/')->with('success', 'Welcome Back!');
+        if (!auth()->attempt($attributes)) {
+            throw ValidationException::withMessages([
+                'email' =>  'Your provided credentials could not be verified.'
+
+            ]);
         }
 
-        //auth failed.
+        session()->regenerate();
 
-        throw ValidationException::withMessages([
-            'email' =>  'Your provided credentials could not be verified.'
-
-        ]);
+        return redirect('/')->with('success', 'Welcome Back!');
     }
+
     public function destroy()
 
     {
