@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Review;
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller
@@ -13,7 +14,9 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        //
+        $reviews = Review::get();
+
+        return view('review', ['reviews' => $reviews]);
     }
 
     /**
@@ -23,7 +26,7 @@ class ReviewController extends Controller
      */
     public function create()
     {
-        //
+        return view('review');
     }
 
     /**
@@ -34,7 +37,14 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $review = new Review;
+        $review->title = $request->title;
+        $review->body = $request->body;
+        $review->rate = $request->rate;
+        $review->user_id_fk = $request->user_id_fk;
+        $review->movie_id_fk = $request->movie_id_fk;
+        $review->save();
+        return redirect('review')->with('status', 'Review Has Been posted');
     }
 
     /**
