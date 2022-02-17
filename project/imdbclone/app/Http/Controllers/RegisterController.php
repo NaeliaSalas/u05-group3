@@ -29,11 +29,11 @@ class RegisterController extends Controller
         $user = User::create($attributes);
 
         // log the user in
-        auth()->login($user);
-        //$user->save();
+        // auth()->login($user);
+        $user->save();
 
         session()->flash('success', 'your account has been created.');
 
-        return redirect('/')->with('success', 'Your account has been created.');
+        return redirect('login')->with('success', 'Your account has been created.');
     }
 }
