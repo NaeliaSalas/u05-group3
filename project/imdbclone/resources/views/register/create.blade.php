@@ -9,7 +9,7 @@
         <main class="max-w-lg mx-auto mt-10 bg-gray-100 border-gray-200 p-6 rounded-xl">
             <h1 class="text-center font-bold text-xl">Register here</h1>
 
-            <form method="POST" action="/register" class="mt-10">
+            <form method="POST" action="{{ route('register.user') }}" class="mt-10">
                 @csrf
 
                 <div class="mb-6">
