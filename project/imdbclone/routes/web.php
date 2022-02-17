@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ReviewController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,8 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('comment', CommentController::class)->shallow();
+Route::resource('comment', CommentController::class);
 
-//Route::resource('reviews.comment', CommentController::class);
-   
 
+
+Route::resource('review', ReviewController::class);

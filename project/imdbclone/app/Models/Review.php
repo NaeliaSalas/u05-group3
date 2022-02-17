@@ -9,8 +9,6 @@ class Review extends Model
 {
     use HasFactory;
 
-    public function comments()
-    {
-        return $this->hasMany(Comment::class);
-    }
+    protected $table = 'reviews';
+    protected $fillable = ['title', 'body', 'rate'];
 }
