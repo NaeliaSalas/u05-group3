@@ -29,6 +29,17 @@ class SessionsController extends Controller
             throw ValidationException::withMessages([
                 'email' =>  'Your provided credentials could not be verified.'
 
+
+                // {
+                //     if (auth()->guest()) {
+                //         abort(Response::HTTP_FORBIDDEN);
+                //     }
+
+                //     if (auth()->user()->username !== 'NaeliaSalas') {
+                //         abort(Response::HTTP_FORBIDDEN);
+                //     }
+                //     return view('posts.create');
+                // }
             ]);
         }
 
