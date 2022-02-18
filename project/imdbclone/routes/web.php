@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 
 Route::resource('comment', CommentController::class);
-
-
+//Route::resource('edit-comment', CommentController::class);
 
 Route::resource('review', ReviewController::class);
+
