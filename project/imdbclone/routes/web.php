@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use GuzzleHttp\Middleware;
@@ -29,4 +30,6 @@ Route::post('login', [SessionsController::class, 'store'])->name('login.user'); 
 
 Route::post('logout', [SessionsController::class, 'destroy']); //->middleware('auth');
 
+// Route till Admin sidan
 Route::get('admin/posts/create', [PostController::class, 'create'])->middleware('admin');
+// Route::post('admin/posts/create', [PostController::class, 'store'])->name('login.admin'); //->name("login.user");

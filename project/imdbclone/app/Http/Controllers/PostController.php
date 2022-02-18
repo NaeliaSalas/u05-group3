@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\User;
+
 use Illuminate\Auth\Access\Response;
 
 class PostController extends Controller
@@ -24,10 +26,9 @@ class PostController extends Controller
         ]);
     }
 
-
     public function create()
-    {
 
+    {
         return view('posts.create');
     }
 }

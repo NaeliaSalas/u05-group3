@@ -18,9 +18,10 @@ class MustBeAdmin
     public function handle(Request $request, Closure $next)
     {
 
-        // if (auth()->user()?->username !== 'NaeliaSalas') {
-        //     abort(Response::HTTP_FORBIDDEN);
-        // }
-        // return $next($request);
+        if (auth()->user()?->username !== 'NaeliaSalas') {
+            http_response_code(403);
+            exit;
+        }
+        return $next($request);
     }
 }

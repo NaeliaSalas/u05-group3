@@ -31,8 +31,8 @@ class SessionsController extends Controller
 
 
                 // {
-                //     if (auth()->guest()) {
-                //         abort(Response::HTTP_FORBIDDEN);
+                //     if (auth()->attempt($attributes))) {
+                //         throw ValidationException::withMessage rt(Response::HTTP_FORBIDDEN);
                 //     }
 
                 //     if (auth()->user()->username !== 'NaeliaSalas') {

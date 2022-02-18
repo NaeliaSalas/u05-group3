@@ -23,6 +23,7 @@ class RegisterController extends Controller
             'username' => 'required|max:255|unique:users,username',
             'email' => 'required|email|max:255|unique:users,email',
             'password' => 'required|min:5|max:255',
+
         ]);
 
         // create the user
