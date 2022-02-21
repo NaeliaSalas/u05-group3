@@ -68,7 +68,8 @@ class ReviewController extends Controller
      */
     public function edit($id)
     {
-        //
+        $review = Review::find($id);
+        return view('edit', ['review' => $review]);
     }
 
     /**
@@ -80,7 +81,11 @@ class ReviewController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $review = Review::find($id);
+        $review->title = $request->title;
+        $review->body = $request->body;
+        $review->rate = $request->rate;
+        $review->save();
     }
 
     /**
@@ -91,6 +96,9 @@ class ReviewController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $review = Review::find($id);
+        $review->delete();
+
+        return redirect('review');
     }
 }

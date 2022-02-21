@@ -26,9 +26,12 @@
 
     <div>
         @foreach ($reviews as $review)
-        {{ $review->title }} <br>
-        {{ $review->body }} <br>
-        {{ $review->rate }}
+        <div style="margin: 2rem">
+            {{ $review->id }}
+            {{ $review->title }} <br>
+            {{ $review->body }} <br>
+            {{ $review->rate }} <br>
+        </div>
 
         @endforeach
     </div>
