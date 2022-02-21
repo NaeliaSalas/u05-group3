@@ -48,7 +48,7 @@ class CommentController extends Controller
         $comment->review_id_fk = $request->review_id_fk;
         $comment->body = $request->body;
         $comment->save(); 
-        //return redirect()->back()->with('status', 'Your comment has been posted!');
+        return redirect()->back()->with('status', 'Your comment has been posted!');
 
     }
 
@@ -60,7 +60,7 @@ class CommentController extends Controller
      */
     public function show($id)
     {
-        return view('comment.edit_comment');
+        return view('comment.create_comment');
     }
 
     /**
@@ -71,8 +71,8 @@ class CommentController extends Controller
      */
     public function edit($id)
     {
-        $comment = Comment::find($id);
-        return view('comment.edit_comment', ['comments' => $comment] );
+        $comments = Comment::find($id);
+        return view('comment.edit', ['comments' => $comments]);
     }
 
     /**
@@ -85,7 +85,12 @@ class CommentController extends Controller
     public function update(Request $request, $id)
     {   
             $comment = Comment::find($id);
-            $comment->body = is_null($request->body) ? $comment->body : $request->body; 
+            $comment->user_id_fk = $request->user_id_fk;
+            $comment->review_id_fk = $request->review_id_fk;
+            $comment->body = $request->body;
+            //$comment->body = is_null($request->body) ? $comment->body : $request->body; 
+           // $comment->user_id_fk = $request->user_id_fk;
+           // $comment->review_id_fk = $request->review_id_fk;
             $comment->update();
 
             return redirect()->back()->with('status', 'Your comment has been updated');

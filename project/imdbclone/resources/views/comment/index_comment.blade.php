@@ -17,11 +17,17 @@
         @endif
 
         @foreach ($comments as $comment)
-            {{ $comment->id }} <br> 
-            {{ $comment->body }} <br>
+            {{ $comment->id }} <br><br>
+            {{ $comment->body }} <br><br>
 
-            <a href="{{ url('comment/edit_comment/'.$comment->id.'/edit') }}">Edit</a><br>
+            <form action="{{ url('comment/'.$comment->id . '/edit') }}" method="POST">
+                @csrf
+                @method('GET')
+                <button type="submit">Edit</button>
+            </form><br>
 
+         
+         
 
             <form action="{{ url('comment/'.$comment->id) }}" method="POST">
                 @csrf

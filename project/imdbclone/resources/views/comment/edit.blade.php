@@ -12,18 +12,17 @@
     @if(session('status'))
         {{ session('status') }}
     @endif
-    
+
     <section>
-        <form action="{{url('comment/'.$comment->id)}}" method="POST">
+        <form action="{{ url('comment/' . $comments->id) }}" method="POST">
             @csrf
             @method('PUT')
 
             <label for="body">Edit comment</label>
-            <input type="text" name="body" value="{{ $comment->body }}"><br>
+            <input type="text" name="body" value="{{ $comments->body }}"><br>
             <input type="hidden" value="1" name="user_id_fk"><br>
-            
             <input type="hidden" value="1" name="review_id_fk"><br>
-            <button type="submit">Post</button>
+            <button type="submit">Update</button>
         </form>
         <br>
 
