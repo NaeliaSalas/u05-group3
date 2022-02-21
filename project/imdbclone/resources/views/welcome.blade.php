@@ -16,33 +16,31 @@
     <h1 class="text-4x1 text-indigo-500 font-bold py-10 text-center"></h1>
     CINEMAH START PAGE PRETEND
 
-    <body>
 
-        <div class="mt-8 md:mt-0">
-            @auth
-            <span class="text-xs font-bold uppercase">Welcome!</span>
+    <div class="mt-8 md:mt-0">
+        @auth
+        <span class="text-xs font-bold uppercase">Welcome!</span>
 
-            <form method="POST" action="/logout" class="text-xs font-semibold text-blue-500 ml-6">
-                @csrf
+        <form method="POST" action="/logout" class="text-xs font-semibold text-blue-500 ml-6">
+            @csrf
 
-                <div class="mb-6">
-                    <button type="submit" class="bg-blue-400 text-whote rounded py-2 px-4 hover:bg-blue-500">
-                        Log out
-                    </button>
-                </div>
+            <div class="mb-6">
+                <button type="submit" class="bg-blue-400 text-whote rounded py-2 px-4 hover:bg-blue-500">
+                    Log out
+                </button>
+            </div>
 
-            </form>
+        </form>
 
-            @else
-            <a href="/register" class="text-xs font-bold uppercase">Register</a>
+        @else
+        <a href="/register" class="text-xs font-bold uppercase">Register</a>
 
-            <a href="/login" class="ml-6 text-xs font-bold uppercase">Log In</a>
+        <a href="/login" class="ml-6 text-xs font-bold uppercase">Log In</a>
 
-            @endauth
-        </div>
-
-    </body>
+        @endauth
+    </div>
 
 </body>
+
 
 </html>

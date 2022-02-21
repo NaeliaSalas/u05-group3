@@ -22,9 +22,16 @@ class User extends Authenticatable
         'email',
         'password',
         'username',
-        'role',
+        'IsAdmin',
+
 
     ];
+
+    // public function isAdmin()
+    // {
+    //     return $this->isAdmin() == true;
+    // }
+
 
     /**
      * The attributes that should be hidden for serialization.

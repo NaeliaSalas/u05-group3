@@ -5,6 +5,9 @@ namespace App\Http\Middleware;
 use Closure;
 use Facade\FlareClient\Http\Response;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class MustBeAdmin
 {
@@ -18,10 +21,11 @@ class MustBeAdmin
     public function handle(Request $request, Closure $next)
     {
 
-        if (auth()->user()?->username !== 'NaeliaSalas') {
-            http_response_code(403);
-            exit;
+        if (Auth::user()?->IsAdmin != 1) {
+
+            abort(RedirectResponse::HTTP_FORBIDDEN);
+        } {
+            return $next($request);
         }
-        return $next($request);
     }
 }

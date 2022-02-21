@@ -1,10 +1,12 @@
 <?php
 
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
-use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\MustBeAdmin;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +32,6 @@ Route::post('login', [SessionsController::class, 'store'])->name('login.user'); 
 
 Route::post('logout', [SessionsController::class, 'destroy']); //->middleware('auth');
 
-// Route till Admin sidan
-Route::get('admin/posts/create', [PostController::class, 'create'])->middleware('admin');
-// Route::post('admin/posts/create', [PostController::class, 'store'])->name('login.admin'); //->name("login.user");
+Route::middleware('admin')->group(function () {
+    Route::get('/admin/dashboard', [SessionsController::class, 'adminlogin']);
+});

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 
 class SessionsController extends Controller
@@ -29,17 +30,6 @@ class SessionsController extends Controller
             throw ValidationException::withMessages([
                 'email' =>  'Your provided credentials could not be verified.'
 
-
-                // {
-                //     if (auth()->attempt($attributes))) {
-                //         throw ValidationException::withMessage rt(Response::HTTP_FORBIDDEN);
-                //     }
-
-                //     if (auth()->user()->username !== 'NaeliaSalas') {
-                //         abort(Response::HTTP_FORBIDDEN);
-                //     }
-                //     return view('posts.create');
-                // }
             ]);
         }
 
@@ -48,11 +38,20 @@ class SessionsController extends Controller
         return redirect('/')->with('success', 'Welcome Back!');
     }
 
+    //protected function to see who is Admin or not
+
+
     public function destroy()
 
     {
         auth()->logout();
 
         return redirect('/')->with('success', 'Goodbye!');
+    }
+
+    public function adminlogin()
+    {
+
+        return view('admin.dashboard');
     }
 }
