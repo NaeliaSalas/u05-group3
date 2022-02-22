@@ -86,6 +86,7 @@ class ReviewController extends Controller
         $review->body = $request->body;
         $review->rate = $request->rate;
         $review->save();
+        return 'Review updated';
     }
 
     /**
