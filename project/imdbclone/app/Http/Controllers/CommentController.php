@@ -43,6 +43,11 @@ class CommentController extends Controller
 
     public function store(Request $request)
     {
+
+        $request->validate([
+            'body' => 'required|min:50|max:255'
+        ]);
+
         $comment = new Comment;
         $comment->user_id_fk = $request->user_id_fk;
         $comment->review_id_fk = $request->review_id_fk;
@@ -71,6 +76,8 @@ class CommentController extends Controller
      */
     public function edit($id)
     {
+  
+
         $comments = Comment::find($id);
         return view('comment.edit', ['comments' => $comments]);
     }
@@ -84,13 +91,14 @@ class CommentController extends Controller
      */
     public function update(Request $request, $id)
     {   
+
+            $request->validate([
+            'body' => 'required|min:50|max:255'
+            ]);
             $comment = Comment::find($id);
             $comment->user_id_fk = $request->user_id_fk;
             $comment->review_id_fk = $request->review_id_fk;
             $comment->body = $request->body;
-            //$comment->body = is_null($request->body) ? $comment->body : $request->body; 
-           // $comment->user_id_fk = $request->user_id_fk;
-           // $comment->review_id_fk = $request->review_id_fk;
             $comment->update();
 
             return redirect()->back()->with('status', 'Your comment has been updated');

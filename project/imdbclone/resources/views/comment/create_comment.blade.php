@@ -31,6 +31,14 @@
                 <button type="submit">Post</button>
             </div>
         </form>
+
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+            <li>
+                {{ $error }}
+            </li>
+            @endforeach
+        @endif
         <br>
     <div>
         
