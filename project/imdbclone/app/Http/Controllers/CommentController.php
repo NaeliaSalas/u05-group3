@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
+
+/*     protected $table = 'comments';
+    protected $fillable = ['body']; */
+
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +20,7 @@ class CommentController extends Controller
     public function index(/*Request $request*/)
     {
         $comments = Comment::get();
-        return view('comment', ['comments' => $comments]);
+        return view('comment.index_comment', ['comments' => $comments]);
     }
 
     /**
@@ -26,7 +31,8 @@ class CommentController extends Controller
     
     public function create(Request $request)
     {
-        return view('comment');
+   
+        return view('comment.create_comment');
     }
     /**
      * Store a newly created resource in storage.
@@ -42,7 +48,7 @@ class CommentController extends Controller
         $comment->review_id_fk = $request->review_id_fk;
         $comment->body = $request->body;
         $comment->save(); 
-        return redirect('comment')->with('success', 'Your comment has been posted!');
+        return redirect()->back()->with('status', 'Your comment has been posted!');
 
     }
 
@@ -54,7 +60,7 @@ class CommentController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('comment.create_comment');
     }
 
     /**
@@ -65,7 +71,8 @@ class CommentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $comments = Comment::find($id);
+        return view('comment.edit', ['comments' => $comments]);
     }
 
     /**
@@ -76,12 +83,18 @@ class CommentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        if(Comment::where('id', $id)->exists()){
+    {   
             $comment = Comment::find($id);
-            $comment->body = is_null($request->body) ? $comment->body : $request->body; 
-            $comment->save();
-        }
+            $comment->user_id_fk = $request->user_id_fk;
+            $comment->review_id_fk = $request->review_id_fk;
+            $comment->body = $request->body;
+            //$comment->body = is_null($request->body) ? $comment->body : $request->body; 
+           // $comment->user_id_fk = $request->user_id_fk;
+           // $comment->review_id_fk = $request->review_id_fk;
+            $comment->update();
+
+            return redirect()->back()->with('status', 'Your comment has been updated');
+        
     }
 
     /**
@@ -95,6 +108,8 @@ class CommentController extends Controller
       if(Comment::where('id', $id)->exists()){
         $comment = Comment::find($id);
         $comment->delete();
+
+        return redirect()->back()->with('status', 'Your comment has been deleted!');
       }
     }
 }

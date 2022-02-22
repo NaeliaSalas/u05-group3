@@ -12,7 +12,6 @@
     <h1>Add a review</h1>
     <form action="{{url('review')}}" method="post">
         @csrf
-
         <input type="text" placeholder="title" name="title">
         <br>
         <input type="text" placeholder="body" name="body">

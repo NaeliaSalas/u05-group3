@@ -4,26 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Comment</title>
+    <title>Add comment</title>
     <link rel="stylesheet" href="mix{{'css/app.css'}}">
 </head>
 <body>
-    <h1>test comments</h1>
+    <h1>Edit comments</h1>
+    @if(session('status'))
+        {{ session('status') }}
+    @endif
+
     <section>
-        <form action={{url('comment')}} method="POST">
+        <form action="{{ url('comment/' . $comments->id) }}" method="POST">
             @csrf
-            <label for="body">Body</label>
-            <input type="text" name="body"><br>
+            @method('PUT')
+
+            <label for="body">Edit comment</label>
+            <input type="text" name="body" value="{{ $comments->body }}"><br>
             <input type="hidden" value="1" name="user_id_fk"><br>
             <input type="hidden" value="1" name="review_id_fk"><br>
-            <button type="submit">Post</button>
+            <button type="submit">Update</button>
         </form>
         <br>
-    <div>
-        @foreach ($comments as $comment)
-        {{ $comment->body }} <br>
-        @endforeach
-    </div>
+
     </section>
 </body>
 </html>
