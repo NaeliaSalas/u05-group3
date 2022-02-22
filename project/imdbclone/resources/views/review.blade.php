@@ -31,6 +31,15 @@
             {{ $review->title }} <br>
             {{ $review->body }} <br>
             {{ $review->rate }} <br>
+            <form action="{{url('review/' . $review->id . '/edit')}}" method="GET">
+                @csrf
+                <button type="submit">Edit</button>
+            </form>
+            <form action="{{url('review/' . $review->id)}}" method="post">
+                @csrf
+                @method('DELETE')
+                <button type="submit">Delete</button>
+            </form>
         </div>
 
         @endforeach
