@@ -111,7 +111,7 @@
                         <i class="fa-solid fa-star"></i>
                         <p>8.7</p>
                     </div>
-                    <button>Watchlist</button>
+                    <button>Add Watchlist</button>
                 </div>
             </div>
             <div class="showcase_item">
@@ -122,7 +122,7 @@
                         <i class="fa-solid fa-star"></i>
                         <p>7.4</p>
                     </div>
-                    <button>Watchlist</button>
+                    <button>Add Watchlist</button>
                 </div>
             </div>
             <div class="showcase_item">
@@ -133,7 +133,7 @@
                         <i class="fa-solid fa-star"></i>
                         <p>7.3</p>
                     </div>
-                    <button>Watchlist</button>
+                    <button>Add Watchlist</button>
                 </div>
             </div>
             <div class="showcase_item">
@@ -144,7 +144,7 @@
                         <i class="fa-solid fa-star"></i>
                         <p>8.9</p>
                     </div>
-                    <button>Watchlist</button>
+                    <button>Add Watchlist</button>
                 </div>
             </div>
             <div class="showcase_item">
@@ -155,7 +155,7 @@
                         <i class="fa-solid fa-star"></i>
                         <p>8.0</p>
                     </div>
-                    <button>Watchlist</button>
+                    <button>Add Watchlist</button>
                 </div>
             </div>
             <div class="showcase_item">
@@ -166,7 +166,7 @@
                         <i class="fa-solid fa-star"></i>
                         <p>7.8</p>
                     </div>
-                    <button>Watchlist</button>
+                    <button>Add Watchlist</button>
                 </div>
             </div>
         </div>
