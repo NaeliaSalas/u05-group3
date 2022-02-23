@@ -17,7 +17,7 @@ class ReviewController extends Controller
     {
         $reviews = Review::get();
 
-        return view('review', ['reviews' => $reviews]);
+        return view('review.review', ['reviews' => $reviews]);
     }
 
     /**
@@ -27,7 +27,7 @@ class ReviewController extends Controller
      */
     public function create()
     {
-        return view('review');
+        return view('review.review');
     }
 
     /**
@@ -55,7 +55,7 @@ class ReviewController extends Controller
         $review->user_id_fk = $request->user_id_fk;
         $review->movie_id_fk = $request->movie_id_fk;
         $review->save();
-        return redirect('review')->with('status', 'Review Has Been posted');
+        return redirect('review.review')->with('status', 'Review Has Been posted');
     }
 
     /**
@@ -67,7 +67,7 @@ class ReviewController extends Controller
     public function show($id)
     {
         $review = Review::find($id);
-        return view('show', ['review' => $review]);
+        return view('review.show', ['review' => $review]);
     }
 
     /**
@@ -79,7 +79,7 @@ class ReviewController extends Controller
     public function edit($id)
     {
         $review = Review::find($id);
-        return view('edit', ['review' => $review]);
+        return view('review.edit', ['review' => $review]);
     }
 
     /**
@@ -117,6 +117,6 @@ class ReviewController extends Controller
         $review = Review::find($id);
         $review->delete();
 
-        return redirect('review');
+        return redirect('review.review');
     }
 }
