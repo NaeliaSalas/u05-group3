@@ -7,11 +7,6 @@ use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
-
-/*     protected $table = 'comments';
-    protected $fillable = ['body']; */
-
-
     /**
      * Display a listing of the resource.
      *
@@ -20,7 +15,7 @@ class CommentController extends Controller
     public function index(/*Request $request*/)
     {
         $comments = Comment::get();
-        return view('comment.index_comment', ['comments' => $comments]);
+        return view('comment.index', ['comments' => $comments]);
     }
 
     /**
@@ -32,7 +27,7 @@ class CommentController extends Controller
     public function create(Request $request)
     {
    
-        return view('comment.create_comment');
+        return view('comment.create');
     }
     /**
      * Store a newly created resource in storage.
@@ -43,6 +38,13 @@ class CommentController extends Controller
 
     public function store(Request $request)
     {
+
+        $request->validate([
+            'body' => 'string|required|max:255',
+            'user_id_fk' => 'required',
+            'review_id_fk' => 'required'
+        ]);
+
         $comment = new Comment;
         $comment->user_id_fk = $request->user_id_fk;
         $comment->review_id_fk = $request->review_id_fk;
@@ -60,7 +62,9 @@ class CommentController extends Controller
      */
     public function show($id)
     {
-        return view('comment.create_comment');
+        $comment = Comment::find($id);
+        return view('comment.create', ['comment' => $comment]);
+    
     }
 
     /**
@@ -71,6 +75,7 @@ class CommentController extends Controller
      */
     public function edit($id)
     {
+  
         $comments = Comment::find($id);
         return view('comment.edit', ['comments' => $comments]);
     }
@@ -84,13 +89,15 @@ class CommentController extends Controller
      */
     public function update(Request $request, $id)
     {   
+
+            $request->validate([
+
+            'body' => 'string|required|max:255',
+
+            ]);
+
             $comment = Comment::find($id);
-            $comment->user_id_fk = $request->user_id_fk;
-            $comment->review_id_fk = $request->review_id_fk;
             $comment->body = $request->body;
-            //$comment->body = is_null($request->body) ? $comment->body : $request->body; 
-           // $comment->user_id_fk = $request->user_id_fk;
-           // $comment->review_id_fk = $request->review_id_fk;
             $comment->update();
 
             return redirect()->back()->with('status', 'Your comment has been updated');
@@ -105,11 +112,11 @@ class CommentController extends Controller
      */
     public function destroy($id)
     {
-      if(Comment::where('id', $id)->exists()){
+      //if(Comment::where('id', $id)->exists()){
         $comment = Comment::find($id);
         $comment->delete();
 
         return redirect()->back()->with('status', 'Your comment has been deleted!');
-      }
+     // }
     }
 }
