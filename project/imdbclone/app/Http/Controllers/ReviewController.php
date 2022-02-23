@@ -38,6 +38,16 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+            'title' => 'string|required|max:50',
+            'body' => 'string|required||max:255',
+            'rate' => 'integer|required|min:1|max:5',
+            'user_id_fk' => 'required',
+            'movie_id_fk' => 'required'
+        ]);
+
+
         $review = new Review;
         $review->title = $request->title;
         $review->body = $request->body;
@@ -81,6 +91,13 @@ class ReviewController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $request->validate([
+            'title' => 'string|required|max:255',
+            'body' => 'string|required||max:',
+            'rate' => 'integer|required|min:1|max:5',
+        ]);
+
         $review = Review::find($id);
         $review->title = $request->title;
         $review->body = $request->body;

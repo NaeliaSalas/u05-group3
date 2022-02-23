@@ -10,6 +10,17 @@
 
 <body>
     <h1>Add a review</h1>
+
+    @if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
     <form action="{{url('review')}}" method="post">
         @csrf
         <input type="text" placeholder="title" name="title">
