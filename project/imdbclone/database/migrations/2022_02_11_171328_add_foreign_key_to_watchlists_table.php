@@ -26,7 +26,7 @@ class AddForeignKeyToWatchlistsTable extends Migration
     public function down()
     {
         Schema::table('watchlists', function (Blueprint $table) {
-            //
+            $table->dropColumn('watchlists');
         });
     }
 }
