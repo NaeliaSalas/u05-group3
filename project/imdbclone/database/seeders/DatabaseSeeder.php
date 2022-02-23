@@ -16,3 +16,18 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
     }
 }
+
+
+// Movie::create ([
+//     'category id' ->$action->id,
+//     'body' => ''
+//     'pics' => ''
+//     'genre' => ''
+//     'rating' => ''
+//     'trailer' => ''
+//     'yearproduced' => ''
+//     'director' => ''
+
+
+
+// ]);
