@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
@@ -22,6 +24,11 @@ use App\Http\Middleware\MustBeAdmin;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('comment', CommentController::class);
+//Route::resource('edit-comment', CommentController::class);
+
+Route::resource('review', ReviewController::class);
 
 
 Route::get('register', [RegisterController::class, 'create']); //->middleware('guest');
