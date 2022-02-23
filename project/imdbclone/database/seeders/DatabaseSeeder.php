@@ -289,3 +289,18 @@ class DatabaseSeeder extends Seeder
         ]);
     }
 }
+
+
+// Movie::create ([
+//     'category id' ->$action->id,
+//     'body' => ''
+//     'pics' => ''
+//     'genre' => ''
+//     'rating' => ''
+//     'trailer' => ''
+//     'yearproduced' => ''
+//     'director' => ''
+
+
+
+// ]);
