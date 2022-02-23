@@ -20,7 +20,7 @@ use App\Http\Middleware\MustBeAdmin;
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('welcome');
 });
 
 
