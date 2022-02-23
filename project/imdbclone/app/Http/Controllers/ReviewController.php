@@ -16,7 +16,6 @@ class ReviewController extends Controller
     public function index()
     {
         $reviews = Review::get();
-
         return view('review', ['reviews' => $reviews]);
     }
 

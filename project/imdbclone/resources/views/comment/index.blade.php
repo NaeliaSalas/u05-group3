@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Comments</h1>
-    <a href="{{ url('comment/create_comment') }}" class=""> Add Comment</a>
+    <a href="{{ url('comment/create') }}" class=""> Add Comment</a>
     <section>
       
         @if(session('status'))
