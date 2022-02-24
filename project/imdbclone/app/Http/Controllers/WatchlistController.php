@@ -9,7 +9,10 @@ use Illuminate\Http\Request;
 class WatchlistController extends Controller
 {
     // Lägg till en lista
-    // Spara en lista i databasen med titel
+    // Spara en lista i databasen med titel 
+
+    //*****************
+
 
     // Ta bort en lista
     // Ta bort lista på watchlist ID
@@ -33,5 +36,14 @@ class WatchlistController extends Controller
         $watchlist->title = $request->title;
         $watchlist->user_id_fk = $request->user_id_fk;
         $watchlist->save();
+    }
+
+    public function destroy($id)
+    {
+
+        $watchlist = Watchlist::find($id);
+        $watchlist->delete();
+
+        return redirect('watchlist');
     }
 }
