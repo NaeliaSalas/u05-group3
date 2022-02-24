@@ -25,8 +25,7 @@ class MovieController extends Controller
      */
     public function create()
     {
-      //  $movies = Movie::get();
-        //return view('movie.create', ['movies' => $movies]);
+      
     }
 
     /**
@@ -44,7 +43,7 @@ class MovieController extends Controller
             'pics' => 'required|max:255',
             'rating' => 'integer|required|max:255',
             'trailer' => 'required|max:255',
-            'yearproduced' => 'integer|required|max:255',
+            'yearproduced' => 'integer|required|min:1900|max:2023',
             'director' => 'string|required|max:255',
             
         ]);
@@ -101,7 +100,7 @@ class MovieController extends Controller
             'pics' => 'required|max:255',
             'rating' => 'integer|required|max:255',
             'trailer' => 'required|max:255',
-            'yearproduced' => 'integer|required|max:255',
+            'yearproduced' => 'integer|required|min:1900|max:2023',
             'director' => 'string|required|max:255',
             
         ]);
@@ -116,7 +115,7 @@ class MovieController extends Controller
         $movie->director = $request->director;
         $movie->update();
 
-        return redirect()->back()->with('status', 'The movie has been updated');
+        return redirect('movie')->with('status', 'The movie has been updated!');
     }
 
     /**
@@ -127,6 +126,9 @@ class MovieController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $movie = Movie::find($id);
+        $movie->delete();
+
+        return redirect()->back()->with('status', 'The movie has been deleted!');
     }
 }
