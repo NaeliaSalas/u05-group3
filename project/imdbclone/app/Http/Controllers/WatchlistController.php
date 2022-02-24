@@ -31,6 +31,7 @@ class WatchlistController extends Controller
 
         $watchlist = new Watchlist;
         $watchlist->title = $request->title;
+        $watchlist->user_id_fk = $request->user_id_fk;
         $watchlist->save();
     }
 }

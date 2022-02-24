@@ -23,6 +23,7 @@
     <form action="" method="post">
         @csrf
         <input type="text" name="title">
+        <input type="hidden" name="user_id_fk" value="1">
         <button type="submit">Create watchlist</button>
     </form>
 
