@@ -14,7 +14,7 @@ class AddTitleToMoviesTable extends Migration
     public function up()
     {
         Schema::table('movies', function (Blueprint $table) {
-            $table->string('title');
+            $table->string('title')->after('id');
         });
     }
 
