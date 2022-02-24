@@ -42,3 +42,8 @@ Route::post('logout', [SessionsController::class, 'destroy']); //->middleware('a
 Route::middleware('admin')->group(function () {
     Route::get('/admin/dashboard', [SessionsController::class, 'adminlogin']);
 });
+
+/* Route to category */
+route::get('/category', function () {
+    return view('category');
+});

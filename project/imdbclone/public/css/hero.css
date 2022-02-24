@@ -79,4 +79,7 @@
     .carousel {
         width: 75%;
     }
+    .carousel .carousel__item img {
+        object-fit: cover;
+    }
 }
