@@ -5,10 +5,10 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
+use App\Http\Controllers\WatchlistController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\MustBeAdmin;
-
-
+use Egulias\EmailValidator\Warning\Warning;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,3 +47,6 @@ Route::middleware('admin')->group(function () {
 route::get('/category', function () {
     return view('category');
 });
+
+route::get('watchlist', [WatchlistController::class, 'index']);
+route::post('watchlist', [WatchlistController::class, 'store']);
