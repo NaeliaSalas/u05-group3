@@ -24,10 +24,15 @@
 }
 
 .top_picks {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     margin-top: 1rem;
     width: 300px;
 }
+
+.top_picks:first-of-type {
+    margin-top: 6rem;
+}
+
 .top_picks h2 {
     transform: translateX(15px);
     color: #f6cf41;

@@ -25,7 +25,7 @@
         <div class="navbar">
             <nav>
                 <div class="logo">
-                    <a href="#">
+                    <a href="/">
                         <h1>CINEMAH</h1>
                     </a>
                 </div>
@@ -34,10 +34,10 @@
             <div class="search-input">
                 <nav class="nav-wrapper">
                     <ul class="nav-links">
-                        <li class="nav-item"><a class="menuItem" href="#">Home</a></li>
+                        <li class="nav-item"><a class="menuItem" href="/">Home</a></li>
                         <li class="nav-item"><a class="menuItem" href="#">Watchlist</a></li>
-                        <li class="nav-item"><a class="menuItem" href="#">Categories</a></li>
-                        <li class="nav-item"><a class="menuItem" href="#">Login/register</a></li>
+                        <li class="nav-item"><a class="menuItem" href="category">Categories</a></li>
+                        <li class=" nav-item"><a class="menuItem" href="#">Login/register</a></li>
                     </ul>
                     <div class="hamburger">
                         <span class="bar"></span>
@@ -171,6 +171,7 @@
             </div>
         </div>
 
+        <!-- Your watchlist section -->
         <section class="featured">
             <h2><a href="#">Your watchlist > </a></h2>
         </section>
