@@ -18,7 +18,7 @@ class CreateMoviesTable extends Migration
             $table->mediumText('body');
             $table->string('pics');
             $table->string('genre');
-            $table->string('rating');
+            $table->integer('rating');
             $table->string('trailer');
             $table->integer('yearproduced');
             $table->string('director');
