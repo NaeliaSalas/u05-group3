@@ -11,6 +11,4 @@ class Review extends Model
 
     protected $table = 'reviews';
     protected $fillable = ['title', 'body', 'rate'];
-
-    //return $this->hasMany(Comment::class);
 }

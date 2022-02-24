@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class MovieGenres extends Model
 {
     use HasFactory;
+
+    protected $table = 'movie_genres';
 }
