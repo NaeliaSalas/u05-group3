@@ -26,8 +26,8 @@ class AddForeignKeyToEntriesTable extends Migration
      */
     public function down()
     {
-        Schema::table('reviews', function (Blueprint $table) {
-            //
+        Schema::table('entries', function (Blueprint $table) {
+            $table->dropColumn('entries');
         });
     }
 }
