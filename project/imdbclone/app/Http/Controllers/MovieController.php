@@ -37,6 +37,18 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+            'title' => 'string|required|max:255',
+            'body' => 'string|required|max:255',
+            'pics' => 'required|max:255',
+            'rating' => 'integer|required|max:255',
+            'trailer' => 'required|max:255',
+            'yearproduced' => 'integer|required|max:255',
+            'director' => 'string|required|max:255',
+            
+        ]);
+
         $movie = new Movie;
         $movie->title = $request->title;
         $movie->body = $request->body;
@@ -69,7 +81,9 @@ class MovieController extends Controller
      */
     public function edit($id)
     {
-        //
+        
+        $movies = Movie::find($id);
+        return view('movie.edit', ['movies' => $movies]);
     }
 
     /**
@@ -81,7 +95,28 @@ class MovieController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'title' => 'string|required|max:255',
+            'body' => 'string|required|max:255',
+            'pics' => 'required|max:255',
+            'rating' => 'integer|required|max:255',
+            'trailer' => 'required|max:255',
+            'yearproduced' => 'integer|required|max:255',
+            'director' => 'string|required|max:255',
+            
+        ]);
+
+        $movie = Movie::find($id);
+        $movie->title = $request->title;
+        $movie->body = $request->body;
+        $movie->pics = $request->pics;
+        $movie->rating = $request->rating;
+        $movie->trailer = $request->trailer;
+        $movie->yearproduced = $request->yearproduced;
+        $movie->director = $request->director;
+        $movie->update();
+
+        return redirect()->back()->with('status', 'The movie has been updated');
     }
 
     /**
