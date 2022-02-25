@@ -41,16 +41,9 @@
                                     <a href="{{ route('edit.user', ['id'=>$user->id]) }}">Edit</a>
                                     <a href="{{ route('admin.delete', ['id'=>$user->id]) }}">Delete</a>
                                 </td>
-                                <!-- @csrf
-                                @metoh('DELETE')
-                                <button type="submit" name="submit">Delete</button> -->
-
 
                             </tr>
-
                             @endforeach
-                            <!-- More people... -->
-
                         </tbody>
                     </table>
                 </div>
