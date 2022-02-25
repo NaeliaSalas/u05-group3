@@ -53,13 +53,14 @@ class UserController extends Controller
 
 
     //delete
-    public function destroy(User $id)
+    public function destroy($id)
     {
         //if(User::where('id', $id)->exists()){
         $users = User::find($id);
         $users->delete();
 
-        return redirect()->back()->with('status', 'The user has been deleted!');
+        // return view('/admin/index')->with('status', 'The user had been deleted');
+        return back()->with('status', 'The user has been deleted!');
         // }
     }
 }

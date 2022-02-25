@@ -1,7 +1,6 @@
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.ner/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 <div class="pull-left">
-    <h2>testing</h2>
 
 
     <!-- This example requires Tailwind CSS v2.0+ -->
@@ -40,8 +39,12 @@
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Admin</td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                     <a href="{{ route('edit.user', ['id'=>$user->id]) }}">Edit</a>
-                                    <a href="/admin/delete{{ $user->id }}">Delete</a>
+                                    <a href="{{ route('admin.delete', ['id'=>$user->id]) }}">Delete</a>
                                 </td>
+                                <!-- @csrf
+                                @metoh('DELETE')
+                                <button type="submit" name="submit">Delete</button> -->
+
 
                             </tr>
 
