@@ -18,37 +18,39 @@ class UserController extends Controller
         return view('admin.index', ['users' => $users]);
     }
 
-    //create, behövs det?
 
     //edit update
-    public function edit(User $id)
+    public function edit($id)
     {
 
         $users = User::find($id);
-
         return view('admin.edit', ['users' => $users]);
     }
 
-    public function update(Request $request, User $id)
+    public function update(Request $request, $id)
+
     {
+
         $request->validate([
             'name' => 'string|required|max:255',
-            'email' => 'required|email',
+            'email' => 'required|email|',
             'username' => 'string|required|max:255',
-            'password' => 'string|required|max:255',
+            // 'password' => 'string|required|max:255',
 
 
         ]);
 
-        $users = User::find($id);
-        $users->name = $request->name;
-        $users->username = $request->username;
-        $users->email = $request->email;
-        $users->password = $request->password;
-        $users->update();
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->username = $request->username;
+        // $user->password = $request->password;
+        $user->update();
 
-        return redirect('admin.users')->with('status', 'The user has been updated!');
+        return redirect('/admin/index')->with('status', 'The user has been updated!');
     }
+
+
 
     //delete
     public function destroy(User $id)

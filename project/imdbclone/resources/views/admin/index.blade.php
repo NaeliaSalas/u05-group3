@@ -27,7 +27,6 @@
                                     <div class="flex items-center">
 
                                         <div class="ml-4">
-                                            var_dump($user)
                                             <div class="text-sm text-gray-500">{{$user->name}}</div>
                                             <div class="text-sm text-gray-500">{{$user->email}}</div>
                                             <div class="text-sm text-gray-500">{{$user->password}}</div>
@@ -40,8 +39,8 @@
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Admin</td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                    <a href="/admin/edit/{{ $user->id }}">Edit</a>
-                                    <a href="/admin/delete" class="text-indigo-600 hover:text-indigo-900">Delete</a>
+                                    <a href="{{ route('edit.user', ['id'=>$user->id]) }}">Edit</a>
+                                    <a href="/admin/delete{{ $user->id }}">Delete</a>
                                 </td>
 
                             </tr>
