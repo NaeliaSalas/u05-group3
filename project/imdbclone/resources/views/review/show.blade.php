@@ -12,6 +12,9 @@
     <p>
         {{ $review->title }} <br>
         {{ $review->body }} <br>
+        @foreach ($comments as $comment)
+        <li>{{ $comment->body }}</li>
+        @endforeach
     </p>
 </body>
 

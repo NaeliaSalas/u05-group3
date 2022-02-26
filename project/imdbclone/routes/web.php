@@ -32,7 +32,9 @@ Route::resource('movie', MovieController::class);
 Route::resource('comment', CommentController::class);
 //Route::resource('edit-comment', CommentController::class);
 
+
 Route::resource('review', ReviewController::class);
+
 
 
 // Rout to register new user
