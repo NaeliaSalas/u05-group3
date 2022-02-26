@@ -20,13 +20,29 @@
     </div>
     @endif
 
+    <div>
+
+        <?php
+
+        use Illuminate\Support\Facades\Auth;
+
+        echo Auth::user();
+        ?>
+    </div>
     <form action="" method="post">
         @csrf
         <input type="text" name="title">
-        <input type="hidden" name="user_id_fk" value="1">
+        <input type="hidden" name="user_id_fk" value=" {{ Auth::id() }} ">
         <button type="submit">Create watchlist</button>
     </form>
 
+    @foreach ($watchlists as $watchlist)
+    <li>{{ $watchlist->title }}</li>
+    <form action="{{url('watchlist/' . $watchlist->id . '/delete')}}" method="post">
+        @csrf
+        @method('DELETE')
+        <button type="submit">Delete</button>
+        @endforeach
 </body>
 
 </html>
