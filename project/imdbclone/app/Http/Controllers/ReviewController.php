@@ -55,7 +55,7 @@ class ReviewController extends Controller
         $review->user_id_fk = $request->user_id_fk;
         $review->movie_id_fk = $request->movie_id_fk;
         $review->save();
-        return redirect('review')->with('status', 'Review Has Been posted');
+        return redirect('review');
     }
 
     /**
