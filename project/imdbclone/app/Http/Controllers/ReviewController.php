@@ -55,7 +55,7 @@ class ReviewController extends Controller
         $review->user_id_fk = $request->user_id_fk;
         $review->movie_id_fk = $request->movie_id_fk;
         $review->save();
-        return redirect('review.review')->with('status', 'Review Has Been posted');
+        return redirect('review');
     }
 
     /**
@@ -93,8 +93,8 @@ class ReviewController extends Controller
     {
 
         $request->validate([
-            'title' => 'string|required|max:255',
-            'body' => 'string|required||max:',
+            'title' => 'string|required|max:50',
+            'body' => 'string|required||max:255',
             'rate' => 'integer|required|min:1|max:5',
         ]);
 
@@ -103,7 +103,7 @@ class ReviewController extends Controller
         $review->body = $request->body;
         $review->rate = $request->rate;
         $review->update();
-        return 'Review updated';
+        return redirect('review');
     }
 
     /**
@@ -117,6 +117,6 @@ class ReviewController extends Controller
         $review = Review::find($id);
         $review->delete();
 
-        return redirect('review.review');
+        return redirect('review');
     }
 }
