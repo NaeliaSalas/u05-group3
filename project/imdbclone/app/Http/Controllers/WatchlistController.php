@@ -19,15 +19,11 @@ class WatchlistController extends Controller
     // Visa alla listor tillhörande user
     // Visa lista med tillhörande entries 
 
-
-    public function showAll()
+    public function index()
     {
-
         $userId = Auth::id();
         $watchlists = Watchlist::where('user_id_fk', $userId)->get();
         return view('watchlist.watchlist', ['watchlists' => $watchlists]);
-        //Hämta alla entries med watchlist ID
-
     }
 
     public function show($id)
@@ -37,13 +33,6 @@ class WatchlistController extends Controller
         $watchlist = Watchlist::where('user_id_fk', $userId)
             ->where('id', $id)->get();
         return view('watchlist.show', ['watchlist' => $watchlist]);
-    }
-
-
-
-    public function index()
-    {
-        return view('watchlist.watchlist');
     }
 
     public function store(Request $request)

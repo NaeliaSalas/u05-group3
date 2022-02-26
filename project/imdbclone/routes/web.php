@@ -54,7 +54,7 @@ route::get('/category', function () {
 
 // Watchlist routes
 
-route::get('watchlist', [WatchlistController::class, 'showAll']);
+route::get('watchlist', [WatchlistController::class, 'index']);
 route::get('watchlist/{id}', [WatchlistController::class, 'show']);
 route::post('watchlist', [WatchlistController::class, 'store']);
 route::delete('watchlist/{id}/delete', [WatchlistController::class, 'destroy']);
