@@ -30,10 +30,11 @@ Route::get('/', function () {
 Route::resource('movie', MovieController::class);
 
 Route::resource('comment', CommentController::class);
-//Route::resource('edit-comment', CommentController::class);
 
 
 Route::resource('review', ReviewController::class);
+
+route::resource('watchlist', WatchlistController::class);
 
 
 
@@ -64,11 +65,3 @@ Route::middleware('admin')->group(function () {
 route::get('/category', function () {
     return view('category');
 });
-
-
-// Watchlist routes
-
-route::get('watchlist', [WatchlistController::class, 'index']);
-route::get('watchlist/{id}', [WatchlistController::class, 'show']);
-route::post('watchlist', [WatchlistController::class, 'store']);
-route::delete('watchlist/{id}/delete', [WatchlistController::class, 'destroy']);
