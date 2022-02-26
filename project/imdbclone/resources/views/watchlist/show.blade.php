@@ -9,9 +9,18 @@
 </head>
 
 <body>
+    @foreach ($watchlists as $watchlist)
+    <li>{{ $watchlist->title }}</li>
 
-    @foreach ($watchlist as $title)
-    <p>{{ $title->title }}</p>
+    <!-- @foreach ($entries as $entry)
+    <li>{{ $entry->title }}</li>
+    @endforeach -->
+
+    <form action="{{url('watchlist/' . $watchlist->id . '/delete')}}" method="post">
+        @csrf
+        @method('DELETE')
+        <button type="submit">Delete</button>
+    </form>
     @endforeach
 </body>
 

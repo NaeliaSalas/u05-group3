@@ -7,10 +7,10 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\WatchlistController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\MustBeAdmin;
-
-
+use Egulias\EmailValidator\Warning\Warning;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,7 +66,7 @@ route::get('/category', function () {
 
 // Watchlist routes
 
-route::get('watchlist', [WatchlistController::class, 'showAll']);
+route::get('watchlist', [WatchlistController::class, 'index']);
 route::get('watchlist/{id}', [WatchlistController::class, 'show']);
 route::post('watchlist', [WatchlistController::class, 'store']);
 route::delete('watchlist/{id}/delete', [WatchlistController::class, 'destroy']);
