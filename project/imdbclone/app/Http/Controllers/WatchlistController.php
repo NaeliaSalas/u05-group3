@@ -2,10 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Entry;
-use App\Models\Watchlist;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class WatchlistController extends Controller
 {
@@ -18,9 +15,7 @@ class WatchlistController extends Controller
      */
     public function index()
     {
-        $userId = Auth::id();
-        $watchlists = Watchlist::where('user_id_fk', $userId)->get();
-        return view('watchlist.watchlist', ['watchlists' => $watchlists]);
+        //
     }
 
     /**
@@ -44,14 +39,6 @@ class WatchlistController extends Controller
         $request->validate([
             'title' => 'string|required|max:50'
         ]);
-
-        $watchlist = new Watchlist;
-        $watchlist->title = $request->title;
-        $watchlist->user_id_fk = $request->user_id_fk;
-        $watchlist->save();
-
-        return redirect('watchlist');
-    }
 
     /**
      * Display the specified resource.

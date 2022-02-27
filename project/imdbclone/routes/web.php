@@ -31,12 +31,9 @@ Route::resource('movie', MovieController::class);
 
 Route::resource('comment', CommentController::class);
 
-
 Route::resource('review', ReviewController::class);
 
 route::resource('watchlist', WatchlistController::class);
-
-
 
 // Rout to register new user
 Route::get('register', [RegisterController::class, 'create']); //->middleware('guest');
