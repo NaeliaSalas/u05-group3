@@ -52,6 +52,20 @@
             </form>
         </div>
 
+        <form action="{{ url('comment') }}" method="POST">
+            @csrf
+
+            <div>
+                <label for="body">Add comment</label>
+                <input type="text" name="body"><br>
+                <input type="hidden" value="{{ Auth::id() }}" name="user_id_fk"><br>
+                <input type="hidden" value="{{ $review->id }}" name="review_id_fk"><br>
+            </div>
+            <div>
+                <button type="submit">Post</button>
+            </div>
+        </form>
+
         @endforeach
     </div>
 </body>
