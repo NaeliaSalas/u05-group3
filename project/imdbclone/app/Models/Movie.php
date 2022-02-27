@@ -18,4 +18,9 @@ class Movie extends Model
         'yearproduced',
         'director'
     ];
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class, 'movie_id_fk');
+    }
 }
