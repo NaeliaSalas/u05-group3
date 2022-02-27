@@ -39,6 +39,10 @@
 
     @foreach ($watchlists as $watchlist)
     <li>{{ $watchlist->title }}</li>
+    <form action="{{url('watchlist/' . $watchlist->id . '/edit')}}" method="GET">
+        @csrf
+        <button type="submit">Edit</button>
+    </form>
     <form action="{{url('watchlist/' . $watchlist->id)}}" method="post">
         @csrf
         @method('DELETE')
