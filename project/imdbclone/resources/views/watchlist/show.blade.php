@@ -9,19 +9,20 @@
 </head>
 
 <body>
-    @foreach ($watchlists as $watchlist)
-    <li>{{ $watchlist->title }}</li>
+    <p>{{ $watchlist->title }}</p>
+    @foreach ($entries as $entry)
+    <li> {{ $entry->title }} </li>
+    @endforeach
 
-    <!-- @foreach ($entries as $entry)
-    <li>{{ $entry->title }}</li>
-    @endforeach -->
-
-    <form action="{{url('watchlist/' . $watchlist->id . '/delete')}}" method="post">
+    <form action="{{url('watchlist/' . $watchlist->id . '/edit')}}" method="GET">
+        @csrf
+        <button type="submit">Edit</button>
+    </form>
+    <form action="{{url('watchlist/' . $watchlist->id)}}" method="post">
         @csrf
         @method('DELETE')
         <button type="submit">Delete</button>
     </form>
-    @endforeach
 </body>
 
 </html>

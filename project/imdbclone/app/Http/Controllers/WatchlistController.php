@@ -2,23 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Entry;
 use App\Models\Watchlist;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class WatchlistController extends Controller
 {
-    // Lägg till en lista
-    // Spara en lista i databasen med titel 
-
-    // Ta bort en lista
-    // Ta bort lista på watchlist ID
-    //*****************
-
-    // Visa alla listor tillhörande user
-    // Visa lista med tillhörande entries 
-
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     * 
+     * Will only show watchlists for currently signed in user
+     */
     public function index()
     {
         $userId = Auth::id();
@@ -26,18 +22,24 @@ class WatchlistController extends Controller
         return view('watchlist.watchlist', ['watchlists' => $watchlists]);
     }
 
-    public function show($id)
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
-
-        $userId = Auth::id();
-        $watchlist = Watchlist::where('user_id_fk', $userId)
-            ->where('id', $id)->get();
-        return view('watchlist.show', ['watchlist' => $watchlist]);
+        return view('watchlist.watchlist');
     }
 
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
-
         $request->validate([
             'title' => 'string|required|max:50'
         ]);
@@ -50,9 +52,58 @@ class WatchlistController extends Controller
         return redirect('watchlist');
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $userId = Auth::id();
+        $watchlist = Watchlist::where('user_id_fk', $userId)->find($id);
+        $entries = Watchlist::find($id)->entries;
+        return view('watchlist.show', ['watchlist' => $watchlist, 'entries' => $entries]);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $watchlist = Watchlist::find($id);
+        return view('watchlist.edit', ['watchlist' => $watchlist]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'title' => 'string|required|max:50'
+        ]);
+        $watchlist = Watchlist::find($id);
+        $watchlist->title = $request->title;
+        $watchlist->update();
+        return redirect('watchlist/' . $watchlist->id);
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function destroy($id)
     {
-
         $watchlist = Watchlist::find($id);
         $watchlist->delete();
 
