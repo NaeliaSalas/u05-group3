@@ -9,7 +9,10 @@
 </head>
 
 <body>
-    <li>{{ $watchlist->title }}</li>
+    <p>{{ $watchlist->title }}</p>
+    @foreach ($entries as $entry)
+    <li> {{ $entry->title }} </li>
+    @endforeach
 
     <form action="{{url('watchlist/' . $watchlist->id)}}" method="post">
         @csrf

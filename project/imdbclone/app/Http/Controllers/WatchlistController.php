@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Entry;
 use App\Models\Watchlist;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -62,7 +63,8 @@ class WatchlistController extends Controller
     {
         $userId = Auth::id();
         $watchlist = Watchlist::where('user_id_fk', $userId)->find($id);
-        return view('watchlist.show', ['watchlist' => $watchlist]);
+        $entries = Watchlist::find($id)->entries;
+        return view('watchlist.show', ['watchlist' => $watchlist, 'entries' => $entries]);
     }
 
     /**
