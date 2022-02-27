@@ -50,7 +50,7 @@ class CommentController extends Controller
         $comment->review_id_fk = $request->review_id_fk;
         $comment->body = $request->body;
         $comment->save(); 
-        return redirect()->back()->with('status', 'Your comment has been posted!');
+        return redirect('comment/create')->with('status', 'Your comment has been posted!');
 
     }
 
