@@ -26,7 +26,8 @@
 
         use Illuminate\Support\Facades\Auth;
 
-        echo Auth::user();
+        echo Auth::user()->id . ' ';
+        echo Auth::user()->username;
         ?>
     </div>
     <form action="" method="post">
@@ -38,7 +39,7 @@
 
     @foreach ($watchlists as $watchlist)
     <li>{{ $watchlist->title }}</li>
-    <form action="{{url('watchlist/' . $watchlist->id . '/delete')}}" method="post">
+    <form action="{{url('watchlist/' . $watchlist->id)}}" method="post">
         @csrf
         @method('DELETE')
         <button type="submit">Delete</button>
