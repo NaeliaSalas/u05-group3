@@ -25,7 +25,6 @@ class MovieController extends Controller
      */
     public function create()
     {
-      
     }
 
     /**
@@ -45,7 +44,7 @@ class MovieController extends Controller
             'trailer' => 'required|max:255',
             'yearproduced' => 'integer|required|min:1900|max:2023',
             'director' => 'string|required|max:255',
-            
+
         ]);
 
         $movie = new Movie;
@@ -56,8 +55,8 @@ class MovieController extends Controller
         $movie->trailer = $request->trailer;
         $movie->yearproduced = $request->yearproduced;
         $movie->director = $request->director;
-        $movie->save(); 
-        
+        $movie->save();
+
         return redirect()->back()->with('status', 'Movie has been added');
     }
 
@@ -69,7 +68,8 @@ class MovieController extends Controller
      */
     public function show($id)
     {
-        //
+        $movie = Movie::find($id);
+        return view('movie.show', ['movie' => $movie, 'reviews' => $movie->reviews]);
     }
 
     /**
@@ -80,7 +80,7 @@ class MovieController extends Controller
      */
     public function edit($id)
     {
-        
+
         $movies = Movie::find($id);
         return view('movie.edit', ['movies' => $movies]);
     }
@@ -102,7 +102,7 @@ class MovieController extends Controller
             'trailer' => 'required|max:255',
             'yearproduced' => 'integer|required|min:1900|max:2023',
             'director' => 'string|required|max:255',
-            
+
         ]);
 
         $movie = Movie::find($id);
