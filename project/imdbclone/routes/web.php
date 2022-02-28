@@ -62,3 +62,26 @@ Route::middleware('admin')->group(function () {
 route::get('/category', function () {
     return view('category');
 });
+
+/* Route to categorys */
+
+/* Route to adventure */
+route::get('/adventure', function () {
+    return view('adventure');
+});
+/* Route to Action */
+route::get('/action', function () {
+    return view('action');
+});
+/* Route to Romance */
+route::get('/romance', function () {
+    return view('romance');
+});
+/* Route to Horror */
+route::get('/horror', function () {
+    return view('horror');
+});
+/* Route to Sci-fi */
+route::get('/scifi', function () {
+    return view('scifi');
+});
