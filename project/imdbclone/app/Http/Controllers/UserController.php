@@ -12,7 +12,7 @@ class UserController extends Controller
     {
 
         $users = User::get();
-        return view('admin.index', ['users' => $users]);
+        return view('admin.user', ['users' => $users]);
     }
 
 
@@ -41,7 +41,7 @@ class UserController extends Controller
         $user->username = $request->username;
         $user->update();
 
-        return redirect('/admin/index')->with('status', 'The user has been updated!');
+        return redirect('/user')->with('status', 'The user has been updated!');
     }
 
     //delete
