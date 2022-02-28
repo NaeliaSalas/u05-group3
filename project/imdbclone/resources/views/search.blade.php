@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search with pagination</title>
+    <title>Search movies CINEMAH</title>
     <link rel="stylesheet" href="{{ asset('')}}">
     <link rel="stylesheet" href="{{ mix('css/app.css') }}" />
     <link rel="stylesheet" href="{{url('css/hero.css')}}" />
@@ -87,8 +87,8 @@
                         @if(isset($movies) > 0)
                         @foreach($movies as $movie)
                         <tr>
-                            <td>{{ $movie-> title }}</td>
-                            <img src=" {{ $movie->pics }}" width="200" height="300">
+                            <td>{{ $movie->title }}</td>
+                            <img src=" {{ $movie->pics }}" width="300" height="300">
                         </tr>
                         @endforeach
                         @else
