@@ -37,7 +37,7 @@ class EntryController extends Controller
     {
 
         $request->validate([
-            'title' => 'string|required|max:255',
+            'title' => 'required|string|max:255',
             'movie_id_fk' => 'required',
             'watchlist_id_fk' => 'required'
 
@@ -95,5 +95,6 @@ class EntryController extends Controller
     {
         $entry = Entry::find($id);
         $entry->delete();
+        return redirect('watchlist');
     }
 }

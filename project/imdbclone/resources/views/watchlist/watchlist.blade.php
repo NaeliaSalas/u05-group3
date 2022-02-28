@@ -42,7 +42,14 @@
     <p>{{ $watchlist->title }}</p>
     @foreach ($watchlist->entries as $entry)
     <li>{{ $entry->title }}</li>
+
+    <form action="{{url('entry/' . $entry->id)}}" method="post">
+        @csrf
+        @method('DELETE')
+        <button type="submit">Delete entry</button>
+    </form>
     @endforeach
+
     <form action="{{url('watchlist/' . $watchlist->id . '/edit')}}" method="GET">
         @csrf
         <button type="submit">Edit</button>
