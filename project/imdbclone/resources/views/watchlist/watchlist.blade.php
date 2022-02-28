@@ -48,6 +48,26 @@
         @method('DELETE')
         <button type="submit">Delete</button>
         @endforeach
+
+    {{--  ///////////////////////////////////// --}}
+
+    <form action="{{ url('entry') }}" method="POST">
+        @csrf
+
+        <div>
+            <label for="title">Add to watchlist</label>
+            <input list="title" name="title">
+            <input type="hidden" name="movie_id_fk" value="1">
+            <input type="hidden" name="watchlist_id_fk" value="1">
+            <datalist id="title" >
+        
+            @foreach ($watchlists as $watchlist)
+                <option name="title" value="{{ $watchlist->title }}">
+            @endforeach
+            </datalist><br>
+            <button type="submit">Add</button>
+        </form>
+
 </body>
 
 </html>

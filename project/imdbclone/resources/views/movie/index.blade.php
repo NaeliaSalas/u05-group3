@@ -64,6 +64,13 @@
         {{ $movie->yearproduced }} <br><br>
         {{ $movie->director }} <br><br>
 
+        <form action="{{ url('entry') }}" method="POST">
+            @csrf
+            <input type="hidden" value="{{ $movie->id }}" name="movie_id_fk"><br>
+            <input type="hidden" value="{{ $watchlist->id }}" name="watchlist_id_fk"><br>
+            <button type="submit">Add to watchlist</button>
+        </form><br>
+
         <form action="{{ url('movie/'.$movie->id . '/edit') }}" method="POST">
             @csrf
             @method('GET')

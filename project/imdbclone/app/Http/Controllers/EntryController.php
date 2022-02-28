@@ -14,7 +14,7 @@ class EntryController extends Controller
      */
     public function index()
     {
-        return view('entry.show');
+        return view('watchlist.watchlist');
     }
 
     /**
@@ -24,7 +24,7 @@ class EntryController extends Controller
      */
     public function create()
     {
-        return view('entry.entry');
+        return view('watchlist.watchlist'); 
     }
 
     /**
@@ -39,6 +39,7 @@ class EntryController extends Controller
         $request->validate([
             'title' => 'string|required|max:255',
             'movie_id_fk' => 'required',
+            'watchlist_id_fk' => 'required'
     
         ]);
 
