@@ -25,6 +25,10 @@
     @foreach ($review->comments as $comment)
     <div>{{ $comment->body }}</div>
     @endforeach
+    <form action="{{ url('entry') }}" method="POST">
+        @csrf
+        <button type="submit">Add to watchlist</button>
+    </form><br>
     @endforeach
 
 </body>

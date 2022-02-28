@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Entry;
 use Illuminate\Http\Request;
 
 class EntryController extends Controller
@@ -13,7 +14,7 @@ class EntryController extends Controller
      */
     public function index()
     {
-        //
+        return view('entry.show');
     }
 
     /**
@@ -23,7 +24,7 @@ class EntryController extends Controller
      */
     public function create()
     {
-        
+        return view('entry.entry');
     }
 
     /**
@@ -34,7 +35,19 @@ class EntryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $request->validate([
+            'title' => 'string|required|max:255',
+            'movie_id_fk' => 'required',
+    
+        ]);
+
+        $entry = new Entry;
+        $entry->movie_id_fk = $request->movie_id_fk;
+        $entry->watchlist_id_fk = $request->watchlist_id_fk;
+        $entry->title = $request->title;
+        $entry->save(); 
+        return redirect('entry')->with('status', 'Your comment has been posted!');
     }
 
     /**
@@ -79,6 +92,7 @@ class EntryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $entry = Entry::find($id);
+        $entry->delete();
     }
 }
