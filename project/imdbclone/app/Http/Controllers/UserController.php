@@ -41,7 +41,7 @@ class UserController extends Controller
         $user->username = $request->username;
         $user->update();
 
-        return redirect('/admin/user')->with('status', 'The user has been updated!');
+        return redirect('/user')->with('status', 'The user has been updated!');
     }
 
     //delete
