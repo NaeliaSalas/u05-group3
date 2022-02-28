@@ -62,3 +62,5 @@ Route::middleware('admin')->group(function () {
 route::get('/category', function () {
     return view('category');
 });
+
+Route::get('search', 'MovieController@search');

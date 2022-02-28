@@ -30,22 +30,22 @@
                     </a>
                 </div>
             </nav>
-            <input type="text" placeholder="Search">
-            <div class="search-input">
-                <nav class="nav-wrapper">
-                    <ul class="nav-links">
-                        <li class="nav-item"><a class="menuItem" href="/">Home</a></li>
-                        <li class="nav-item"><a class="menuItem" href="#">Watchlist</a></li>
-                        <li class="nav-item"><a class="menuItem" href="category">Categories</a></li>
-                        <li class=" nav-item"><a class="menuItem" href="#">Login/register</a></li>
-                    </ul>
-                    <div class="hamburger">
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                    </div>
-                </nav>
-            </div>
+            <form class="" type="get" action="{{ url('/search')}}" <input type="text" placeholder="Search Movie">
+                <div class="search-input">
+                    <nav class="nav-wrapper">
+                        <ul class="nav-links">
+                            <li class="nav-item"><a class="menuItem" href="/">Home</a></li>
+                            <li class="nav-item"><a class="menuItem" href="#">Watchlist</a></li>
+                            <li class="nav-item"><a class="menuItem" href="category">Categories</a></li>
+                            <li class=" nav-item"><a class="menuItem" href="#">Login/register</a></li>
+                        </ul>
+                        <div class="hamburger">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </div>
+                    </nav>
+                </div>
         </div>
 
 
