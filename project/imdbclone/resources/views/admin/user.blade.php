@@ -144,7 +144,7 @@
                     <ul>
                         <!-- Element-->
                         <li>
-                            <a class="flex items-center px-4 py-2 text-gray-700 bg-gray-100 rounded-md " href="/dashboard.html">
+                            <a class="flex items-center px-4 py-2 text-gray-700 bg-gray-100 rounded-md " href="/admin/dashboard">
                                 <i class="fa fa-home" aria-hidden="true"></i>
 
                                 <span class="mx-4 font-medium">Dashboard</span>

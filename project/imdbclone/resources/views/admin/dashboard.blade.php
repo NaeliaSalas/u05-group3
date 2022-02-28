@@ -16,7 +16,7 @@
         <div class="flex flex-col w-64 h-screen px-4 py-8 overflow-y-auto border-r">
             <h2 class="text-2xl font-extralight text-center text-white logo-bg">CINEMAH</h2>
 
-
+            <h1>Hello Admin</h1>
             <div class="flex flex-col justify-between mt-6">
                 <aside>
 
