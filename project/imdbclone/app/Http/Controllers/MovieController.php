@@ -131,12 +131,4 @@ class MovieController extends Controller
 
         return redirect()->back()->with('status', 'The movie has been deleted!');
     }
-
-    public function search()
-    {
-        $search_movie = $_GET['query'];
-        $movies = Movie::where('title', 'GENRE', '%' . $search_movie . '%')->get();
-
-        return view('movie.search', compact('products'));
-    }
 }

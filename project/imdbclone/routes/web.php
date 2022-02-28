@@ -5,12 +5,15 @@ use App\Http\Controllers\MovieController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WatchlistController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\MustBeAdmin;
+use App\Models\Movie;
 use Egulias\EmailValidator\Warning\Warning;
+use Symfony\Component\Console\Input\Input;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,4 +66,7 @@ route::get('/category', function () {
     return view('category');
 });
 
-Route::get('search', 'MovieController@search');
+//search route
+
+
+Route::get('/search', [SearchController::class, 'search'])->name('search');
