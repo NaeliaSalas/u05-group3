@@ -25,6 +25,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//Itempage/moviepage
+Route::view("item", 'item');
+
 Route::resource('comment', CommentController::class);
 //Route::resource('edit-comment', CommentController::class);
 

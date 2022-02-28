@@ -1,0 +1,21 @@
+.MovieH1 {
+    margin: 0;
+    padding: 0;
+    color: rgb(248, 215, 25);
+    font-size: 4rem;
+    
+}
+
+.MovieTxt {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.bodywidth {
+    width: 90%;
+
+    margin: auto;
+    padding: 0;
+}
+
