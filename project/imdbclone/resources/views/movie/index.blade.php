@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +8,16 @@
     <title>Add comment</title>
     <link rel="stylesheet" href="mix{{'css/app.css'}}">
 </head>
+
 <body>
     <h1>test movies</h1>
-    
+
     @if(session('status'))
-        {{ session('status') }}
+    {{ session('status') }}
     @endif
-    
+
     <section>
-    
+
         <form action="{{ url('movie') }}" method="POST">
             @csrf
 
@@ -64,12 +66,18 @@
         {{ $movie->yearproduced }} <br><br>
         {{ $movie->director }} <br><br>
 
-        <form action="{{ url('entry') }}" method="POST">
-            @csrf
-            <input type="hidden" value="{{ $movie->id }}" name="movie_id_fk"><br>
-            <input type="hidden" value="{{ $watchlist->id }}" name="watchlist_id_fk"><br>
-            <button type="submit">Add to watchlist</button>
+        {{-- <form action="{{ url('entry') }}" method="POST">
+        @csrf
+        <input type="hidden" value="{{ $movie->id }}" name="movie_id_fk"><br>
+        <input type="hidden" value="{{ $watchlist->id }}" name="watchlist_id_fk"><br>
+        <button type="submit">Add to watchlist</button>
         </form><br>
+
+
+        SKA DET HÄR VARA EN LÄNK? :) --}}
+
+        <a href="{{url('watchlist?id=' . $movie->id . '&movietitle=' . $movie->title)}}">Add to watchlist</a>
+
 
         <form action="{{ url('movie/'.$movie->id . '/edit') }}" method="POST">
             @csrf
@@ -78,7 +86,7 @@
         </form><br>
 
 
-        
+
         <form action="{{ url('movie/'.$movie->id) }}" method="POST">
             @csrf
             @method('DELETE')
@@ -86,22 +94,23 @@
         </form><br><br>
 
         <hr>
-       
+
 
         @endforeach
 
         @if ($errors->any())
-            @foreach ($errors->all() as $error)
-            <li>
-                {{ $error }}
-            </li>
-            @endforeach
+        @foreach ($errors->all() as $error)
+        <li>
+            {{ $error }}
+        </li>
+        @endforeach
         @endif
         <br>
-    <div>
-        
+        <div>
 
-    </div>
+
+        </div>
     </section>
 </body>
+
 </html>

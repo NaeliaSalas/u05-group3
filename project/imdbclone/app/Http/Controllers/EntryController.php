@@ -24,7 +24,7 @@ class EntryController extends Controller
      */
     public function create()
     {
-        return view('watchlist.watchlist'); 
+        return view('watchlist.watchlist');
     }
 
     /**
@@ -40,15 +40,15 @@ class EntryController extends Controller
             'title' => 'string|required|max:255',
             'movie_id_fk' => 'required',
             'watchlist_id_fk' => 'required'
-    
+
         ]);
 
         $entry = new Entry;
         $entry->movie_id_fk = $request->movie_id_fk;
         $entry->watchlist_id_fk = $request->watchlist_id_fk;
         $entry->title = $request->title;
-        $entry->save(); 
-        return redirect('entry')->with('status', 'Your comment has been posted!');
+        $entry->save();
+        return redirect('watchlist')->with('status', 'Your comment has been posted!');
     }
 
     /**
