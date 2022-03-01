@@ -14,6 +14,8 @@ class UserController extends Controller
      */
     public function index()
     {
+        $users = User::get();
+        return view('admin.user', ['users' => $users]);
     }
 
     /**
@@ -23,7 +25,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.user');
     }
 
     /**
@@ -56,7 +58,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        return view('edituser', ['user' => $user]);
     }
 
     /**
