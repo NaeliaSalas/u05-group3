@@ -55,9 +55,6 @@
             </div>
         </div>
 
-
-
-
         <!-- Navbar -->
 
         <div class="container">
@@ -66,10 +63,8 @@
                     <h2 class="text-white pl-10">Search result: </h2>
 
 
-                    <form action"" method="GET"></form>
+                    <form action"" method="POST"></form>
                     @csrf
-
-
 
                     <div class="grid grid-row-3 grid-flow-col gap-3">
                         <table class="highlight_item">
@@ -86,14 +81,11 @@
                                 <div>
                                 </div>
                                 @endforeach
-
                             </tbody>
-
                         </table>
                     </div>
                 </div>
             </div>
-
         </div>
 
         <!-- Footer with links -->
@@ -138,9 +130,7 @@
                 </div>
             </div>
         </footer>
-
     </div>
-
 
     <script src="{{url('js/hero.js')}}"></script>
     <script src="{{url('js/hamburger.js')}}"></script>

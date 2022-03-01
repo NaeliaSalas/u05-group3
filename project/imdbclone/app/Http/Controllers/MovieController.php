@@ -17,7 +17,6 @@ class MovieController extends Controller
         $movies = Movie::get();
         return view('movie.index', ['movies' => $movies]);
     }
-
     /**
      * Show the form for creating a new resource.
      *
