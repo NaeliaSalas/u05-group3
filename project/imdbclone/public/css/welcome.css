@@ -181,7 +181,7 @@ body {
 @media only screen and (min-width: 1200px) {
     .navbar input {
         width: 350px;
-        transform: translateX(5rem);
+        transform: translateX(5.1rem);
     }
 
     .logo {
