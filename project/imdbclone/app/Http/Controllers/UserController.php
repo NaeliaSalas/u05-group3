@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Http\Middleware\MustBeAdmin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+
 
     /**
      * Display a listing of the resource.
@@ -37,7 +40,26 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+
+            'name' => 'required|max:50',
+            'username' => 'required|max:30|unique:users,username',
+            'email' => 'required|email|max:255|unique:users,email',
+            'password' => 'required|min:5|max:16',
+
+        ]);
+
+        $user = User::create($request->all());
+        $user->save();
+
+        // OM admin skapat en user redirecta till 
+        if (Auth::user()->IsAdmin = 1) {
+            return redirect('user')->with('message', 'User created');
+
+            // OM en user skapat konto redirect till login
+        } else {
+            return redirect('login')->with('success', 'Your account has been created.');
+        }
     }
 
     /**
