@@ -97,7 +97,8 @@
 }
 
 .movie_Showcase .showcase_item .button_border {
-    background: rgba(20, 16, 26, 0.6);
+    background: #131019;
+
     height: 150px;
     margin-bottom: 2rem;
 }
