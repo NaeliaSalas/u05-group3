@@ -69,3 +69,4 @@ route::get('/category', function () {
 //search route
 
 Route::get('/search', [SearchController::class, 'search'])->name('search');
+Route::get('/itemfejk', [SearchController::class, 'itemfejk'])->name('itemfejk');

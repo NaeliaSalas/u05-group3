@@ -83,11 +83,11 @@
                                 @else
                                 @foreach($movies as $movie)
                                 <tr class="">
-                                    <a href=" {{ route('item.page', ['id' => $movie->id]) }} ">
+                                    <a href=" {{ route('itemfejk', ['id' => $movie->id]) }} ">
                                         <td>{{ $movie->title }}</td>
                                     </a>
-                                    <td>
-                                        <img src=" {{ $movie->pics }} " width="300" height="300">
+
+                                    <img src=" {{ $movie->pics }} " width="300" height="300">
                                     </td>
                                 </tr>
                                 <div>
