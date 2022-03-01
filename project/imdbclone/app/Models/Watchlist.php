@@ -13,4 +13,9 @@ class Watchlist extends Model
     protected $fillable = [
         'title'
     ];
+
+    public function entries()
+    {
+        return $this->hasMany(Entry::class, 'watchlist_id_fk');
+    }
 }
