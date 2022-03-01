@@ -4,6 +4,7 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\EntryController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\UserController;
@@ -34,6 +35,8 @@ Route::resource('comment', CommentController::class);
 Route::resource('review', ReviewController::class);
 
 route::resource('watchlist', WatchlistController::class);
+
+route::resource('entry', EntryController::class);
 
 // Rout to register new user
 Route::get('register', [RegisterController::class, 'create']); //->middleware('guest');
