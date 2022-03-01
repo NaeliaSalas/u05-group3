@@ -44,7 +44,7 @@
 
                         <!-- Element-->
                         <li>
-                            <a class="flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200" href="/admin/users">
+                            <a class="flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200" href="/user">
                                 <i class="fas fa-user-alt" aria-hidden="true"></i>
 
                                 <span class="mx-4 font-medium">Users</span>
@@ -118,8 +118,8 @@
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"></td>
                                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                <a class="px-4 py-2 rounded-md text-sm font-medium border-b-2 focus:outline-none focus:ring transition text-white bg-green-500 border-green-800 hover:bg-green-600 active:bg-green-700 focus:ring-red-300" href="{{ route('edit.user', ['id'=>$user->id]) }}">Update</a>
-                                                <a class="px-4 py-2 rounded-md text-sm font-small border-b-2 focus:outline-none focus:ring transition text-white bg-red-500 border-red-800 hover:bg-red-600 active:bg-red-700 focus:ring-red-300" href="{{ route('admin.delete', ['id'=>$user->id]) }}">Delete</a>
+                                                <a class="px-4 py-2 rounded-md text-sm font-medium border-b-2 focus:outline-none focus:ring transition text-white bg-green-500 border-green-800 hover:bg-green-600 active:bg-green-700 focus:ring-red-300" href="{{url('/user/' . $user->id . '/edit')}}">Update</a>
+                                                <a class="px-4 py-2 rounded-md text-sm font-small border-b-2 focus:outline-none focus:ring transition text-white bg-red-500 border-red-800 hover:bg-red-600 active:bg-red-700 focus:ring-red-300" href="#">Delete</a>
                                             </td>
 
                                         </tr>

@@ -5,7 +5,6 @@ use App\Http\Controllers\MovieController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EntryController;
-use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WatchlistController;
@@ -37,28 +36,20 @@ Route::resource('review', ReviewController::class);
 route::resource('watchlist', WatchlistController::class);
 
 route::resource('entry', EntryController::class);
+Route::resource('user', UserController::class);
 
-// Rout to register new user
-Route::get('register', [RegisterController::class, 'create']); //->middleware('guest');
-Route::post('register', [RegisterController::class, 'store'])->name("register.user");
+
+// Register page
+Route::view('/register', 'register.register');
 
 // Route for user to login
 Route::get('login', [SessionsController::class, 'create']); //->middleware('guest');
 Route::post('login', [SessionsController::class, 'store'])->name('login.user'); //->name("login.user");
-
 Route::post('logout', [SessionsController::class, 'destroy']); //->middleware('auth');
 
-
 // Admin
-
 Route::middleware('admin')->group(function () {
     Route::get('/admin/dashboard', [SessionsController::class, 'adminlogin']);
-
-
-    Route::get('/user', [UserController::class, 'index']);
-    Route::get('/admin/edit/{id}', [UserController::class, 'edit'])->name('edit.user');
-    Route::put('/admin/update/{id}', [UserController::class, 'update'])->name('admin.update');
-    Route::get('/admin/delete/{id}', [UserController::class, 'destroy'])->name('admin.delete');
 });
 
 /* Route to category */
