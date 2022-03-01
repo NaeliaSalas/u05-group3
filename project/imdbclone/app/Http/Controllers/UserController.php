@@ -48,7 +48,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::find($id);
+        return redirect()->back()->with(['user', [$user]]);
     }
 
     /**
