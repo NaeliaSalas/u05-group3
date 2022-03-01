@@ -27,6 +27,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+//Itempage/moviepage
+Route::view('item', 'item');
+
 Route::resource('movie', MovieController::class);
 
 Route::resource('comment', CommentController::class);
