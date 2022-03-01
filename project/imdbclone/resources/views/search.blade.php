@@ -78,18 +78,19 @@
                 @if(isset($movies))
 
                 <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th class="text-white">Title</th>
-                        </tr>
-                    </thead>
+
                     <tbody class="text-white">
                         @if(isset($movies) > 0)
                         @foreach($movies as $movie)
+
                         <tr>
                             <td>{{ $movie->title }}</td>
                             <img src=" {{ $movie->pics }}" width="300" height="300">
                         </tr>
+                        <div>
+
+                            <h2 class="text-white">Title</h2>
+                        </div>
                         @endforeach
                         @else
                         <tr>
@@ -101,7 +102,59 @@
             </div>
             @endif
 
+
         </div>
+
+        <!-- Footer with links -->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col">
+                        <h4>company</h4>
+                        <ul>
+                            <li><a href="#">about us</a></li>
+                            <li><a href="#">Condition of Use</a></li>
+                            <li><a href="#">privacy policy</a></li>
+                            <li><a href="#">Site Index</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>get help</h4>
+                        <ul>
+                            <li><a href="#">Help</a></li>
+                            <li><a href="#">Get the IMDB APP</a></li>
+                            <li><a href="#">IMDBPro</a></li>
+                            <li><a href="#">MojoIMDB Developer</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>market related</h4>
+                        <ul>
+                            <li><a href="#">Press Room</a></li>
+                            <li><a href="#">Box Office</a></li>
+                            <li><a href="#">Interest-Based Ads</a></li>
+                            <li><a href="#">Advertising</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>follow us</h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+
+
+    <script src="{{url('js/hero.js')}}"></script>
+    <script src="{{url('js/hamburger.js')}}"></script>
+
 </body>
 
 </html>
