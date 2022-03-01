@@ -21,8 +21,7 @@
 
 <body>
 
-    <!-- Navbar -->
-
+    <!-- Header (NAVBAR)-->
     <div class="main-container">
 
         <div class="navbar">
@@ -56,52 +55,48 @@
             </div>
         </div>
 
+
+
+
         <!-- Navbar -->
 
         <div class="container">
             <div class="row">
                 <div class="col-md-6" style=>
-                    <h4>Search result</h4>
-                    <hr>
-                    <form action"" method="GET">
-                        <div class="form-group">
-                        </div>
-                        <div class="form-group">
-                            <label for=""></label>
-                        </div>
-                    </form>
+                    <h2 class="text-white pl-10">Search result: </h2>
+
+
+                    <form action"" method="GET"></form>
+                    @csrf
+
+
+
+                    <div class="grid grid-row-3 grid-flow-col gap-3">
+                        <table class="highlight_item">
+
+                            <tbody class="text-white row">
+                                @if(Session::has('message'))
+                                <tr>
+                                    <td>{{ $message }}</td>
+                                </tr>
+                                @endif
+                                @foreach($movies as $movie)
+                                <tr class="column">
+                                    <td>{{ $movie->title }}</td>
+                                    <td>
+                                        <img src=" {{ $movie->pics }} " width="300" height="300">
+                                    </td>
+                                </tr>
+                                <div>
+                                </div>
+                                @endforeach
+
+                            </tbody>
+
+                        </table>
+                    </div>
                 </div>
-                <br>
-                <br>
-                <hr>
-                <br>
-                @if(isset($movies))
-
-                <table class="table table-hover">
-
-                    <tbody class="text-white">
-                        @if(isset($movies) > 0)
-                        @foreach($movies as $movie)
-
-                        <tr>
-                            <td>{{ $movie->title }}</td>
-                            <img src=" {{ $movie->pics }}" width="300" height="300">
-                        </tr>
-                        <div>
-
-                            <h2 class="text-white">Title</h2>
-                        </div>
-                        @endforeach
-                        @else
-                        <tr>
-                            <td class="table table-hover">No result found!</td>
-                        </tr>
-                        @endif
-                    </tbody>
-                </table>
             </div>
-            @endif
-
 
         </div>
 
@@ -149,7 +144,6 @@
         </footer>
 
     </div>
-
 
 
     <script src="{{url('js/hero.js')}}"></script>
