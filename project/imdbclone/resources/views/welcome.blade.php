@@ -89,7 +89,7 @@
 
             <!-- Featured section -->
             <section class="featured">
-                <h2><a href="#">Featured today > </a></h2>
+                <h2>Featured today ></h2>
             </section>
             <div class="highlight">
                 <div class="highlight_item">
@@ -108,7 +108,7 @@
 
             <!-- Top picks section -->
             <section class="top_picks">
-                <h2><a href="#">Top Picks > </a> </h2>
+                <h2>Top Picks ></h2>
             </section>
             <div class="movie_Showcase">
                 <div class="showcase_item">
