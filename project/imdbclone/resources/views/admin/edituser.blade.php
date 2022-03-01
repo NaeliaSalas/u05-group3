@@ -18,22 +18,20 @@
     @endif
 
 
-    <form action="{{ route('admin.update', ['id'=>$users->id]) }}" method="POST">
-
-
+    <form action="{{ url('user/' . $user->id) }}" method="POST">
 
         @csrf
         @method('PUT')
 
         <div>
             <label for="name">Name</label>
-            <input type="text" name="name" value="{{ $users->name}}"><br>
+            <input type="text" name="name" value="{{ $user->name}}"><br>
 
             <label for="username">Username</label>
-            <input type="text" name="username" value="{{ $users->username }}"><br>
+            <input type="text" name="username" value="{{ $user->username }}"><br>
 
             <label for="email">Email</label>
-            <input type="email" name="email" value="{{ $users->email }}"><br>
+            <input type="email" name="email" value="{{ $user->email }}"><br>
 
             <div>
                 <button type="submit" name="submit">Save changes</button>
