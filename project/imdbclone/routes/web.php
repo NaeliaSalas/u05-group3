@@ -52,10 +52,11 @@ Route::middleware('admin')->group(function () {
     Route::get('/admin/dashboard', [SessionsController::class, 'adminlogin']);
 
 
-    Route::get('/user', [UserController::class, 'index']);
-    Route::get('/admin/edit/{id}', [UserController::class, 'edit'])->name('edit.user');
-    Route::put('/admin/update/{id}', [UserController::class, 'update'])->name('admin.update');
-    Route::get('/admin/delete/{id}', [UserController::class, 'destroy'])->name('admin.delete');
+    Route::resource('user', UserController::class);
+    // Route::get('/user', [UserController::class, 'index']);
+    // Route::get('/admin/edit/{id}', [UserController::class, 'edit'])->name('edit.user');
+    // Route::put('/admin/update/{id}', [UserController::class, 'update'])->name('admin.update');
+    // Route::get('/admin/delete/{id}', [UserController::class, 'destroy'])->name('admin.delete');
 });
 
 /* Route to category */
