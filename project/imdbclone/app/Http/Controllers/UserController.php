@@ -93,7 +93,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        return view('edituser', ['user' => $user]);
+        return view('admin.edituser', ['user' => $user]);
     }
 
     /**
@@ -107,8 +107,8 @@ class UserController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:50',
-            'email' => 'required|unique|email|max:255',
-            'username' => 'required|unique|string|max:30',
+            'email' => 'required|email|max:255',
+            'username' => 'required|string|max:30',
 
         ]);
 
@@ -116,6 +116,7 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->username = $request->username;
+
         $user->update();
 
         return redirect('/user')->with('status', 'The user has been updated!');
