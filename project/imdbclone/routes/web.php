@@ -37,6 +37,8 @@ Route::resource('review', ReviewController::class);
 
 route::resource('watchlist', WatchlistController::class);
 
+Route::resource('user', UserController::class);
+
 // Rout to register new user
 Route::get('register', [RegisterController::class, 'create']); //->middleware('guest');
 Route::post('register', [RegisterController::class, 'store'])->name("register.user");
@@ -52,7 +54,7 @@ Route::post('logout', [SessionsController::class, 'destroy']); //->middleware('a
 
 Route::middleware('admin')->group(function () {
     Route::get('/admin/dashboard', [SessionsController::class, 'adminlogin']);
-    Route::resource('user', UserController::class);
+
     // Route::get('/user', [UserController::class, 'index']);
     // Route::put('/admin/update/{id}', [UserController::class, 'update'])->name('admin.update');
     // Route::get('/admin/delete/{id}', [UserController::class, 'destroy'])->name('admin.delete');
