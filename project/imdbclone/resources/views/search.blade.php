@@ -35,7 +35,7 @@
             <form action="{{ url('/search')}}" method="GET">
                 @csrf
 
-                <input type="text" placeholder="Search Movie" name="query">
+                <input type="text" placeholder="Search Movie" name="search">
             </form>
 
             <div class="search-input">
@@ -55,6 +55,9 @@
             </div>
         </div>
 
+
+
+
         <!-- Navbar -->
 
         <div class="container">
@@ -63,29 +66,42 @@
                     <h2 class="text-white pl-10">Search result: </h2>
 
 
-                    <form action"" method="POST"></form>
+                    <form action"" method="GET"></form>
                     @csrf
+
+
 
                     <div class="grid grid-row-3 grid-flow-col gap-3">
                         <table class="highlight_item">
 
-                            <tbody class="text-white row">
+                            <tbody class="text-white">
+                                @if(Session::has('message'))
+                                <tr>
+                                    <td>{{ $message }}</td>
+                                </tr>
 
+                                @else
                                 @foreach($movies as $movie)
-                                <tr class="column">
-                                    <td>{{ $movie->title }}</td>
+                                <tr class="">
+                                    <a href=" {{ route('item.page', ['id' => $movie->id]) }} ">
+                                        <td>{{ $movie->title }}</td>
+                                    </a>
                                     <td>
                                         <img src=" {{ $movie->pics }} " width="300" height="300">
                                     </td>
                                 </tr>
                                 <div>
+                                    <!-- <h2 class="text-white row">Title</h2> -->
                                 </div>
                                 @endforeach
+                                @endif
                             </tbody>
+
                         </table>
                     </div>
                 </div>
             </div>
+
         </div>
 
         <!-- Footer with links -->
@@ -130,7 +146,9 @@
                 </div>
             </div>
         </footer>
+
     </div>
+
 
     <script src="{{url('js/hero.js')}}"></script>
     <script src="{{url('js/hamburger.js')}}"></script>

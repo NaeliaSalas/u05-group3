@@ -33,7 +33,7 @@
             <form action="{{ url('/search')}}" method="GET">
                 @csrf
 
-                <input type="text" placeholder="Search Movie" name="query">
+                <input type="text" placeholder="Search Movie" name="search">
             </form>
 
             <div class="search-input">

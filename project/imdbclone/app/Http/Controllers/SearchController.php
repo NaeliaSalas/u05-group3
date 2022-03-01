@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Movie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -9,15 +10,14 @@ use Illuminate\Support\Facades\DB;
 class SearchController extends Controller
 
 {
-    public function search(Request $request)
+    public function search()
     {
-        if (isset($_GET['query'])) {
+        if (request('search')) {
+            //$search_movie = $_GET['query'];
+            //  $movies = Movie::latest();
+            $movies = Movie::where('title', 'LIKE', '%' . request('search') . '%')->get();
 
-            $search_movie = $_GET['query'];
-            $movies = DB::table('movies')->where('title', 'LIKE', '%' . $search_movie . '%')->paginate(20);
-            return view('search', ['movies' => $movies]);
-        } else {
-            return redirect('/')->with('message', 'Not available');
+            return view('search', ['movies' => $movies]);;
         }
     }
 }
