@@ -21,7 +21,6 @@ class SessionsController extends Controller
         $attributes = request()->validate([
             'email' => 'required|email',
             'password' => 'required'
-
         ]);
 
         // attempt to auth and log in the user
@@ -29,7 +28,6 @@ class SessionsController extends Controller
         if (!auth()->attempt($attributes)) {
             throw ValidationException::withMessages([
                 'email' =>  'Your provided credentials could not be verified.'
-
             ]);
         }
 

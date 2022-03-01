@@ -75,11 +75,7 @@
                         <table class="highlight_item">
 
                             <tbody class="text-white row">
-                                @if(Session::has('message'))
-                                <tr>
-                                    <td>{{ $message }}</td>
-                                </tr>
-                                @endif
+
                                 @foreach($movies as $movie)
                                 <tr class="column">
                                     <td>{{ $movie->title }}</td>

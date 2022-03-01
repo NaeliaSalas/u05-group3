@@ -15,11 +15,9 @@ class SearchController extends Controller
 
             $search_movie = $_GET['query'];
             $movies = DB::table('movies')->where('title', 'LIKE', '%' . $search_movie . '%')->paginate(20);
-            if (($movies->isEmpty())) {
-                return view('search')->with('message', 'Not available');
-            } else {
-                return view('search', ['movies' => $movies]);
-            }
+            return view('search', ['movies' => $movies]);
+        } else {
+            return redirect('/')->with('message', 'Not available');
         }
     }
 }
