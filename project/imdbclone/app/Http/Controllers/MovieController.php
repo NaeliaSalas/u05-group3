@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Movie;
+use App\Models\Review;
 use Illuminate\Http\Request;
 
 class MovieController extends Controller
@@ -38,7 +39,7 @@ class MovieController extends Controller
         $request->validate([
             'title' => 'string|required|max:255',
             'body' => 'string|required|max:255',
-            'pics' => 'required|max:255',
+            'cover' => 'required|max:255',
             'rating' => 'integer|required|max:255',
             'trailer' => 'required|max:255',
             'yearproduced' => 'integer|required|min:1900|max:2023',
@@ -49,7 +50,7 @@ class MovieController extends Controller
         $movie = new Movie;
         $movie->title = $request->title;
         $movie->body = $request->body;
-        $movie->pics = $request->pics;
+        $movie->cover = $request->cover;
         $movie->rating = $request->rating;
         $movie->trailer = $request->trailer;
         $movie->yearproduced = $request->yearproduced;
@@ -68,13 +69,15 @@ class MovieController extends Controller
     public function show($id)
     {
         $movie = Movie::find($id);
-        return view('movie.show', ['movie' => $movie, 'reviews' => $movie->reviews]);
+        $reviews = $movie->reviews;
+        $comments = Review::find($id)->comments;
+        return view('review.show', ['movie' => $movie, 'reviews' => $reviews, 'comments' => $comments]);
     }
 
     public function showMovie($id)
     {
         $movie = Movie::find($id);
-        return view('itemfejk', ['movie' => $movie, 'reviews' => $movie->reviews]);
+        return view('item', ['movie' => $movie, 'reviews' => $movie->reviews]);
     }
 
     /**
@@ -102,7 +105,7 @@ class MovieController extends Controller
         $request->validate([
             'title' => 'string|required|max:255',
             'body' => 'string|required|max:255',
-            'pics' => 'required|max:255',
+            'cover' => 'required|max:255',
             'rating' => 'integer|required|max:255',
             'trailer' => 'required|max:255',
             'yearproduced' => 'integer|required|min:1900|max:2023',
@@ -113,7 +116,7 @@ class MovieController extends Controller
         $movie = Movie::find($id);
         $movie->title = $request->title;
         $movie->body = $request->body;
-        $movie->pics = $request->pics;
+        $movie->cover = $request->cover;
         $movie->rating = $request->rating;
         $movie->trailer = $request->trailer;
         $movie->yearproduced = $request->yearproduced;

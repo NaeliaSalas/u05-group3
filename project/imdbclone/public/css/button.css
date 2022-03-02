@@ -1,0 +1,103 @@
+
+
+button {
+  margin: 0;
+}
+
+
+.custom-btn {
+  width: 10rem;
+  height: 3rem;
+  padding: 10px 25px;
+  border: 0px solid #000;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+
+
+/* 15 */
+.btn-15 {
+  font-family: "Poppins", sans-serif;
+  margin-top: 2em;
+   background: yellow;
+  color: #000;
+  z-index: 1;
+}
+
+.btn-15:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+   background: #3D2174;
+  transition: all 0.3s ease;
+}
+.btn-15:hover {
+  color: #fff;
+}
+.btn-15:hover:after {
+  left: 0;
+  width: 100%;
+}
+.btn-15:active {
+  top: 2px;
+}
+
+/* black */
+.btn-16 {
+  margin-top: 2em;
+  border: 1px solid #000;
+   background: #000;
+  color: #fff;
+  z-index: 1;
+}
+
+.btn-16:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+   background: yellow;
+  transition: all 0.3s ease;
+}
+.btn-16:hover {
+  color: #000;
+}
+.btn-16:hover:after {
+  left: 0;
+  width: 100%;
+}
+.btn-16:active {
+  top: 2px;
+}
+
+
+
+
+/* img zoom */
+.img-hover-zoom {
+  height: 300px; /* [1.1] Set it as per your need */
+  overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+}
+
+/* [2] Transition property for smooth transformation of images */
+.img-hover-zoom img {
+  transition: transform .5s ease;
+}
+
+/* [3] Finally, transforming the image when container gets hovered */
+.img-hover-zoom:hover img {
+  transform: scale(1.5);
+}

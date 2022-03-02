@@ -14,7 +14,7 @@
 
     {{ $movie->title }} <br>
     {{ $movie->body }}
-    {{ $movie->pics }}
+    {{ $movie->cover }}
     {{ $movie->trailer }}
     {{ $movie->rating }}
     <br><br>
@@ -25,6 +25,7 @@
     @foreach ($review->comments as $comment)
     <div>{{ $comment->body }}</div>
     @endforeach
+
     @endforeach
 
 </body>

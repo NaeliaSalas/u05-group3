@@ -6,6 +6,7 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\EntryController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WatchlistController;
@@ -30,6 +31,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+//Itempage/moviepage
+Route::view('item', 'item');
+
 Route::resource('movie', MovieController::class);
 
 Route::resource('comment', CommentController::class);
@@ -48,17 +53,21 @@ Route::post('login', [SessionsController::class, 'store'])->name('login.user');
 
 Route::post('logout', [SessionsController::class, 'destroy']);
 
+route::resource('entry', EntryController::class);
+Route::resource('user', UserController::class);
+
+
+// Register page
+Route::view('/register', 'register.register');
+
+// Route for user to login
+Route::get('login', [SessionsController::class, 'create']); //->middleware('guest');
+Route::post('login', [SessionsController::class, 'store'])->name('login.user'); //->name("login.user");
+Route::get('logout', [SessionsController::class, 'destroy']); //->middleware('auth');
 
 // Admin
-
 Route::middleware('admin')->group(function () {
     Route::get('/admin/dashboard', [SessionsController::class, 'adminlogin']);
-
-
-    Route::get('/user', [UserController::class, 'index']);
-    Route::get('/admin/edit/{id}', [UserController::class, 'edit'])->name('edit.user');
-    Route::put('/admin/update/{id}', [UserController::class, 'update'])->name('admin.update');
-    Route::get('/admin/delete/{id}', [UserController::class, 'destroy'])->name('admin.delete');
 });
 
 /* Route to category */
@@ -69,4 +78,4 @@ route::get('/category', function () {
 //search route
 
 Route::get('search', [SearchController::class, 'search'])->name('search');
-Route::get('itemfejk/{id}', [MovieController::class, 'showMovie'])->name('itemfejk');
+Route::get('item/{id}', [MovieController::class, 'showMovie'])->name('itemfejk');

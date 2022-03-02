@@ -7,13 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{{ mix('css/app.css') }}" />
     <link rel="stylesheet" href="{{url('css/hero.css')}}" />
+    <link rel="stylesheet" href="{{url('css/button.css')}}" />
     <link rel="stylesheet" href="{{url('css/welcome.css')}}" />
     <link rel="stylesheet" href="{{url('css/footer.css')}}" />
     <link rel="stylesheet" href="{{url('css/highlight.css')}}" />
     <link rel="stylesheet" href="{{url('css/watchlist.css')}}" />
+    <link rel="stylesheet" href="{{url('css/movie.css')}}" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://kit.fontawesome.com/405a204514.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>CINEMAH</title>
 </head>
 
@@ -26,28 +29,18 @@
             <nav>
                 <div class="logo">
                     <a href="/">
-                        <h1>CINEMAH</h1>
+                        <img src="{{ URL('images/Cinemah-Logo2.png')}}" alt="">
                     </a>
                 </div>
             </nav>
-            <form action="{{ url('/search')}}" method="GET">
-                @csrf
-
-                <input type="text" placeholder="Search Movie" name="search">
-            </form>
-
+            <input type="text" placeholder="Search">
             <div class="search-input">
                 <nav class="nav-wrapper">
                     <ul class="nav-links">
                         <li class="nav-item"><a class="menuItem" href="/">Home</a></li>
                         <li class="nav-item"><a class="menuItem" href="#">Watchlist</a></li>
                         <li class="nav-item"><a class="menuItem" href="category">Categories</a></li>
-                        @guest
-                        <li class=" nav-item"><a class="menuItem" href="/login">Login/Register</a></li>
-                        @endguest
-                        @auth
-                        <li class=" nav-item"><a class="menuItem" href="/logout">Logout</a></li>
-                        @endauth
+                        <li class=" nav-item"><a class="menuItem" href="#">Login/register</a></li>
                     </ul>
                     <div class="hamburger">
                         <span class="bar"></span>
@@ -59,128 +52,128 @@
         </div>
 
 
+        <!-- Movie hero -->
+        <div class="moviebg">
+            <div class="movieflex">
+                <div class="flex-item">
+                    <img src="{{ $movie->hero}}" alt="" class="cover">
+                </div>
 
-        <!-- hero slider section -->
+                <!-- center space-->
+                <div class="flex-item"></div>
 
-        <div class="carousel">
-            <h2 class="favorites">Fan favorites > </h2>
-            <div class="carousel__item carousel__item--visible hidden">
-                <img src="{{ URL('images/inception.jpeg')}}" />
-            </div>
-            <div class="carousel__item">
-                <img src="{{ URL('images/dark-knight.jpeg')}}" />
-            </div>
-            <div class="carousel__item">
-                <img src="{{ URL('images/infinity-war.jpeg')}}" />
-            </div>
-            <div class="carousel__item">
-                <img src="{{ URL('images/transformers3.jpeg')}}" />
-            </div>
-            <div class="carousel__item">
-                <img src="{{ URL('images/interstellar.jpeg')}}" />
-            </div>
-            <div class="carousel__item">
-                <img src="{{ URL('images/django.jpeg')}}" />
+                <!-- play-->
+                <div class="flex-item">
+                    <img src="{{ URL('images/PlayBtn.png')}}" alt="">
+                    <h3>Spela trailer</h3>
+                    <p>2021, 2h 32min - Drama, Historia, Action. Land: USA.</p>
+                </div>
             </div>
 
-            <div class="carousel__actions">
-                <button id="carousel__button--prev" aria-label="Previous slide">
-                    < </button>
-                        <button id="carousel__button--next" aria-label="Next slide">></button>
-            </div>
+        </div>
+        <!-- Movie hero -->
+
+        <!-- txt section -->
+
+        <div class="txtSection">
+            <h1 class="MovieH1">{{$movie->title}}</h1>
+            <p class="MovieTxt"> In the early years of the 20th century, the Kingsman agency is formed to stand against a cabal plotting a war to wipe out millions.
+
+                "The King's Man" — action, adventure and thriller movie produced in UK and USA and released in 2021. It has a good rating on IMDb: 6.4 stars out of 10. It is a feature-length film with a runtime of 2h 11min. "The King's Man" is not currently available to stream in undefined. Add it to your Watchlist and we'll notify you when you can watch it!
+            </p>
+            <br />
+            <p class="MovieTxt"> In the early years of the 20th century, the Kingsman agency is formed to stand against a cabal plotting a war to wipe out millions.
+
+                "The King's Man" — action, adventure and thriller movie produced in UK and USA and released in 2021. It has a good rating on IMDb: 6.4 stars out of 10. It is a feature-length film with a runtime of 2h 11min. "The King's Man" is not currently available to stream in undefined. Add it to your Watchlist and we'll notify you when you can watch it!
+            </p>
         </div>
 
-        <!-- Featured section -->
-        <section class="featured">
-            <h2><a href="#">Featured today > </a></h2>
-        </section>
+
+        <!-- images section -->
         <div class="highlight">
             <div class="highlight_item">
                 <a href="#"><img src="{{ URL('images/watchmen.jpeg')}}" alt=""></a>
-                <P>WATCHMEN</P>
+
             </div>
             <div class="highlight_item">
                 <a href="#"><img src="{{ URL('images/pirates.jpeg')}}" alt=""></a>
-                <P>Pirates of the Caribbean</P>
+
             </div>
             <div class="highlight_item">
                 <a href="#"><img src="{{ URL('images/007.jpeg')}}" alt=""></a>
-                <p>007 SPECTRE</p>
-            </div>
-        </div>
 
-        <!-- Top picks section -->
-        <section class="top_picks">
-            <h2><a href="#">Top Picks > </a> </h2>
-        </section>
-        <div class="movie_Showcase">
-            <div class="showcase_item">
-                <a href="#"><img src="{{ URL('images/matrix.jpeg')}}" alt=""></a>
-                <div class="button_border">
-                    <p>Matrix</p>
-                    <div class="rating">
-                        <i class="fa-solid fa-star"></i>
-                        <p>8.7</p>
-                    </div>
-                    <button>Add Watchlist</button>
-                </div>
-            </div>
-            <div class="showcase_item">
-                <a href="#"><img src="{{ URL('images/tenet.jpeg')}}" alt=""></a>
-                <div class="button_border">
-                    <p>Tenet</p>
-                    <div class="rating">
-                        <i class="fa-solid fa-star"></i>
-                        <p>7.4</p>
-                    </div>
-                    <button>Add Watchlist</button>
-                </div>
-            </div>
-            <div class="showcase_item">
-                <a href="#"><img src="{{ URL('images/looper.jpeg')}}" alt=""></a>
-                <div class="button_border">
-                    <p>Looper</p>
-                    <div class="rating">
-                        <i class="fa-solid fa-star"></i>
-                        <p>7.3</p>
-                    </div>
-                    <button>Add Watchlist</button>
-                </div>
-            </div>
-            <div class="showcase_item">
-                <a href="#"><img src="{{ URL('images/lotr.jpeg')}}" alt=""></a>
-                <div class="button_border">
-                    <p>Return of the King</p>
-                    <div class="rating">
-                        <i class="fa-solid fa-star"></i>
-                        <p>8.9</p>
-                    </div>
-                    <button>Add Watchlist</button>
-                </div>
-            </div>
-            <div class="showcase_item">
-                <a href="#"><img src="{{ URL('images/deadpool.jpeg')}}" alt=""></a>
-                <div class="button_border">
-                    <p>Deadpool</p>
-                    <div class="rating">
-                        <i class="fa-solid fa-star"></i>
-                        <p>8.0</p>
-                    </div>
-                    <button>Add Watchlist</button>
-                </div>
-            </div>
-            <div class="showcase_item">
-                <a href="#"><img src="{{ URL('images/et.jpeg')}}" alt=""></a>
-                <div class="button_border">
-                    <p>E.T.</p>
-                    <div class="rating">
-                        <i class="fa-solid fa-star"></i>
-                        <p>7.8</p>
-                    </div>
-                    <button>Add Watchlist</button>
-                </div>
             </div>
         </div>
+        <!-- images section -->
+
+        <h2><a href="#">User reviews</a></h2>
+        <!-- reviews section -->
+        <div class="reviewFlex">
+            <div class="review-item">
+                <p class="MovieTxt">
+                    <img src="{{ URL('images/star.png')}}" alt=""> 6,2
+                </p>
+                <p>
+                    Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
+                </p>
+            </div>
+
+            <div class="review-item">
+                <p class="MovieTxt">
+                    <img src="{{ URL('images/star.png')}}" alt=""> 6,2
+                </p>
+                <p>
+                    Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
+                </p>
+            </div>
+
+            <div class="review-item">
+                <p class="MovieTxt">
+                    <img src="{{ URL('images/star.png')}}" alt=""> 6,2
+                </p>
+                <p>
+                    Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
+                </p>
+            </div>
+        </div>
+        <!-- reviews section -->
+
+        <!-- reviews section -->
+        <div class="reviewFlex">
+            <div class="review-item">
+                <p class="MovieTxt">
+                    <img src="{{ URL('images/star.png')}}" alt=""> 6,2
+                </p>
+                <p>
+                    Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
+                </p>
+            </div>
+
+            <div class="review-item">
+                <p class="MovieTxt">
+                    <img src="{{ URL('images/star.png')}}" alt=""> 6,2
+                </p>
+                <p>
+                    Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
+                </p>
+            </div>
+
+            <div class="review-item">
+                <p class="MovieTxt">
+                    <img src="{{ URL('images/star.png')}}" alt=""> 6,2
+                </p>
+                <p>
+                    Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
+                </p>
+            </div>
+        </div>
+        <!-- reviews section -->
+
+        <!-- Add reviews -->
+        <div class="center">
+            <button class="custom-btn btn-15">Add review</button>
+        </div>
+        <!-- Add reviews -->
 
         <!-- Your watchlist section -->
         <section class="featured">

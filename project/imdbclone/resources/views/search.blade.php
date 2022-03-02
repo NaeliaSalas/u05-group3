@@ -17,7 +17,6 @@
     <script src="https://kit.fontawesome.com/405a204514.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <title>CINEMAH</title>
-
 </head>
 
 <body>
@@ -55,10 +54,6 @@
                 </nav>
             </div>
         </div>
-
-
-
-
         <!-- Navbar -->
 
         <div class="container">
@@ -66,18 +61,19 @@
                 <div class="col-md-6" style=>
                     <div class="grid grid-row-3 grid-flow-col gap-3">
                         <h2 class="text-white pl-10">Search result: </h2>
-                        <table class="highlight_item">
-                            <tbody class="text-white">
+                        <div class="highlight_item">
+                            <div class="text-white">
                                 @foreach($movies as $movie)
-                                <tr class="">
-                                    <td><a href=" {{ route('itemfejk', ['id' => $movie->id])}} ">{{ $movie->title }}
-                                        </a></td>
-                                    <img src=" {{ $movie->cover }} " width="300" height="300">
-                                    </td>
-                                </tr>
+                                <div class="">
+                                    <div><a href=" {{ route('itemfejk', ['id' => $movie->id])}} ">{{ $movie->title }}
+                                        </a></div>
+                                    <div>
+                                        <img src=" {{ $movie->cover }} " width="300" height="300">
+                                    </div>
+                                </div>
                                 @endforeach
-                            </tbody>
-                        </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -129,9 +125,9 @@
     </div>
 
 
+
     <script src="{{url('js/hero.js')}}"></script>
     <script src="{{url('js/hamburger.js')}}"></script>
-
 </body>
 
 </html>

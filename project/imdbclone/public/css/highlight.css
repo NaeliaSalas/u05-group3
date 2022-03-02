@@ -5,10 +5,13 @@
 }
 
 .highlight {
-    width: 100%;
+    width: 92%;
+    margin: auto;
+    margin-top: 3em;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
 }
 
 .featured {

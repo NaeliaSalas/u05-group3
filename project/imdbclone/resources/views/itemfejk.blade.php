@@ -21,13 +21,11 @@
 </head>
 
 <body>
-
-
     <p>{{ $movie }}</p>
 
     {{ $movie->title }} <br>
     {{ $movie->body }}
-    {{ $movie->pics }}
+    {{ $movie->cover }}
     {{ $movie->trailer }}
     {{ $movie->rating }}
     <br><br>

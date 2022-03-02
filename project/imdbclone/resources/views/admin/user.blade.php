@@ -44,7 +44,7 @@
 
                         <!-- Element-->
                         <li>
-                            <a class="flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200" href="/users.html">
+                            <a class="flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200" href="/user">
                                 <i class="fas fa-user-alt" aria-hidden="true"></i>
 
                                 <span class="mx-4 font-medium">Users</span>
@@ -73,14 +73,6 @@
                         <!-- Element-->
 
                         <!-- Element-->
-                        <li>
-                            <a class="flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200" href="#">
-                                <i class="fa fa-cog" aria-hidden="true"></i>
-
-                                <span class="mx-4 font-medium">Something</span>
-                            </a>
-                        </li>
-                        <!-- Element-->
                     </ul>
 
                 </aside>
@@ -99,10 +91,10 @@
                                 <table class="min-w-full divide-y divide-gray-200">
                                     <thead class="bg-gray-50">
                                         <tr>
-                                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
-                                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Role</th>
-                                            <th scope="col" class="relative px-6 py-3">
-                                                <span class="sr-only">Edit</span>
+                                            <!-- <th scope="col" class="px-10 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                                            <th scope="col" class="px-60 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Role</th> -->
+                                            <!-- <th scope="col" class="relative px-6 py-3"> -->
+                                            <span class="sr-only">Edit</span>
 
                                             </th>
                                         </tr>
@@ -122,12 +114,12 @@
                                                 </div>
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap">
-                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"> Active </span>
+                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"> User </span>
                                             </td>
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Admin</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"></td>
                                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                <a class="px-4 py-2 rounded-md text-sm font-medium border-b-2 focus:outline-none focus:ring transition text-white bg-green-500 border-green-800 hover:bg-green-600 active:bg-green-700 focus:ring-red-300" href="{{ route('edit.user', ['id'=>$user->id]) }}">Edit</a>
-                                                <a class="px-4 py-2 rounded-md text-sm font-small border-b-2 focus:outline-none focus:ring transition text-white bg-red-500 border-red-800 hover:bg-red-600 active:bg-red-700 focus:ring-red-300" href="{{ route('admin.delete', ['id'=>$user->id]) }}">Delete</a>
+                                                <a class="px-4 py-2 rounded-md text-sm font-medium border-b-2 focus:outline-none focus:ring transition text-white bg-green-500 border-green-800 hover:bg-green-600 active:bg-green-700 focus:ring-red-300" href="{{url('/user/' . $user->id . '/edit')}}">Update</a>
+                                                <a class="px-4 py-2 rounded-md text-sm font-small border-b-2 focus:outline-none focus:ring transition text-white bg-red-500 border-red-800 hover:bg-red-600 active:bg-red-700 focus:ring-red-300" href="#">Delete</a>
                                             </td>
 
                                         </tr>
@@ -141,24 +133,24 @@
             </div>
 
             <!-- Table-->
-            <div class="bg-white px-4 md:px-10 pb-5 w-full">
-                <div class="overflow-x-auto">
-                    <table class="w-full whitespace-nowrap">
-                        <tbody class="w-full">
-                            <!-- row-->
-                            <tr tabindex="0" class="w-full focus:outline-none text-sm leading-none text-gray-600 h-16 hover:bg-slate-50">
-                                <td class="w-1/2">
-                                    <div class="flex items-center">
+            <!-- <div class="bg-white px-4 md:px-10 pb-5 w-full"> -->
+            <div class="overflow-x-auto">
+                <table class="w-full whitespace-nowrap">
+                    <tbody class="w-full">
+                        <!-- row-->
+                        <tr tabindex="0" class="w-full focus:outline-none text-sm leading-none text-gray-600 h-16 hover:bg-slate-50">
+                            <td class="w-1/2">
+                                <div class="flex items-center">
 
-                                        <!-- row-->
-                        </tbody>
-                    </table>
-                </div>
+                                    <!-- row-->
+                    </tbody>
+                </table>
             </div>
-            <!-- Table-->
-
         </div>
-        <!-- Content-->
+        <!-- Table-->
+
+    </div>
+    <!-- Content-->
     </div>
 </body>
 
