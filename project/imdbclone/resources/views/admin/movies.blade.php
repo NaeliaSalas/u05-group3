@@ -105,7 +105,7 @@
                                     <td class="w-1/2">
                                         <div class="flex items-center">
                                             <div class="w-10 h-10 bg-gray-700 rounded-sm flex items-center justify-center">
-                                                <img src="images/thumb.jpg" />
+                                                <img src="{{$movie->cover}}" />
                                             </div>
                                             <div class="pl-2">
                                                 <p class="text-sm font-medium leading-none text-gray-800">{{$movie->title}}</p>
@@ -129,11 +129,15 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <button class="px-4 py-2 rounded-md text-sm font-medium border-b-2 focus:outline-none focus:ring transition text-white bg-green-500 border-green-800 hover:bg-green-600 active:bg-green-700 focus:ring-green-300" type="submit">Edit</button>
-                                    </td>
-                                    <td>
-                                        <button class="px-4 py-2 rounded-md text-sm font-small border-b-2 focus:outline-none focus:ring transition text-white bg-red-500 border-red-800 hover:bg-red-600 active:bg-red-700 focus:ring-red-300" type="submit">Delete</button>
-                                    </td>
+                                        <form action="{{url('movie/' . $movie->id . '/edit')}}" method="GET">
+                                            @csrf
+                                            <button type="submit">Edit</button>
+                                        </form>
+                                        <form action="{{url('movie/' . $movie->id)}}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit">Delete</button>
+                                        </form>
                                     <td>
                                         <p class="pl-16">Created at {{$movie->created_at}}</p>
                                     </td>
