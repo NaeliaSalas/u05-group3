@@ -25,8 +25,8 @@
                 <label for="body">Add movie description:</label>
                 <input type="text" name="body" value="{{ $movie->body }}"><br>
 
-                <label for="pics">Add movie picture:</label>
-                <input type="url" name="pics" value="{{ $movie->pics }}"><br>
+                <label for="cover">Add movie picture:</label>
+                <input type="url" name="cover" value="{{ $movie->cover }}"><br>
 
                 <label for="rating">Add rating:</label>
                 <input list="rating" name="rating" value="{{ $movie->rating }}">

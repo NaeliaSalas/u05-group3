@@ -23,8 +23,8 @@
                 <label for="body">Add movie description:</label>
                 <input type="text" name="body"><br>
 
-                <label for="pics">Add movie picture:</label>
-                <input type="url" name="pics"><br>
+                <label for="cover">Add movie picture:</label>
+                <input type="url" name="cover"><br>
 
                 <label for="rating">Add rating:</label>
                 <input list="rating" name="rating">
