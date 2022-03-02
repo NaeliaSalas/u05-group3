@@ -15,8 +15,8 @@ class MovieController extends Controller
      */
     public function index()
     {
-        $movies = Movie::get();
-        return view('movie.index', ['movies' => $movies]);
+        $movies = Movie::orderBy('title', 'asc')->get();
+        return view('admin.movies', ['movies' => $movies]);
     }
     /**
      * Show the form for creating a new resource.
@@ -25,6 +25,7 @@ class MovieController extends Controller
      */
     public function create()
     {
+        return view('admin.addmovie');
     }
 
     /**
@@ -80,8 +81,9 @@ class MovieController extends Controller
      */
     public function edit($id)
     {
-        $movies = Movie::find($id);
-        return view('movie.edit', ['movies' => $movies]);
+
+        $movie = Movie::find($id);
+        return view('admin.editmovie', ['movie' => $movie]);
     }
 
     /**
