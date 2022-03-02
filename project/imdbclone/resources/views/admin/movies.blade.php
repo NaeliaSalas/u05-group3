@@ -100,6 +100,7 @@
                         <table class="w-full whitespace-nowrap">
                             <tbody class="w-full">
                                 <!-- row-->
+                                @foreach ($movies as $movie)
                                 <tr tabindex="0" class="w-full focus:outline-none text-sm leading-none text-gray-600 h-20 hover:bg-slate-50">
                                     <td class="w-1/2">
                                         <div class="flex items-center">
@@ -107,62 +108,19 @@
                                                 <img src="images/thumb.jpg" />
                                             </div>
                                             <div class="pl-2">
-                                                <p class="text-sm font-medium leading-none text-gray-800">Encanto</p>
+                                                <p class="text-sm font-medium leading-none text-gray-800">{{$movie->title}}</p>
                                             </div>
 
                                             <div class="pl-2">
-                                                <p class="text-sm font-medium leading-none text-gray-800">2021</p>
+                                                <p class="text-sm font-medium leading-none text-gray-800">{{$movie->yearproduced}}</p>
                                             </div>
 
                                             <div class="pl-2">
-                                                <p class="text-sm font-medium leading-none text-gray-800">Roy Hill</p>
+                                                <p class="text-sm font-medium leading-none text-gray-800">{{$movie->director}}</p>
                                             </div>
 
                                             <div class="pl-2">
-                                                <p class="text-sm font-medium leading-none text-gray-800">Animated</p>
-                                            </div>
-
-                                            <div class="pl-2">
-                                                <p class="text-sm font-medium leading-none text-gray-800">2hr</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="pl-16">
-                                        <button class="px-4 py-2 rounded-md text-sm font-medium border-b-2 focus:outline-none focus:ring transition text-white bg-yellow-500 border-yellow-800 hover:bg-yellow-600 active:bg-yellow-700 focus:ring-yellow-300" type="submit">Button</button>
-                                    </td>
-                                    <td>
-                                        <button class="px-4 py-2 rounded-md text-sm font-medium border-b-2 focus:outline-none focus:ring transition text-white bg-green-500 border-green-800 hover:bg-green-600 active:bg-green-700 focus:ring-green-300" type="submit">Update</button>
-                                    </td>
-                                    <td>
-                                        <button class="px-4 py-2 rounded-md text-sm font-small border-b-2 focus:outline-none focus:ring transition text-white bg-red-500 border-red-800 hover:bg-red-600 active:bg-red-700 focus:ring-red-300" type="submit">Delete</button>
-                                    </td>
-                                    <td>
-                                        <p class="pl-16">Created on 21 Februray 2020</p>
-                                    </td>
-                                </tr>
-                                <!-- row-->
-
-                                <!-- row-->
-                                <tr tabindex="0" class="w-full focus:outline-none text-sm leading-none text-gray-600 h-16 hover:bg-slate-50">
-                                    <td class="w-1/2">
-                                        <div class="flex items-center">
-                                            <div class="w-10 h-10 bg-gray-700 rounded-sm flex items-center justify-center">
-                                                <img src="images/thumb.jpg" />
-                                            </div>
-                                            <div class="pl-2">
-                                                <p class="text-sm font-medium leading-none text-gray-800">Encanto</p>
-                                            </div>
-
-                                            <div class="pl-2">
-                                                <p class="text-sm font-medium leading-none text-gray-800">2021</p>
-                                            </div>
-
-                                            <div class="pl-2">
-                                                <p class="text-sm font-medium leading-none text-gray-800">Roy Hill</p>
-                                            </div>
-
-                                            <div class="pl-2">
-                                                <p class="text-sm font-medium leading-none text-gray-800">Animated</p>
+                                                <p class="text-sm font-medium leading-none text-gray-800">{{$movie->genre}}</p>
                                             </div>
 
                                             <div class="pl-2">
@@ -170,150 +128,18 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="pl-16">
-                                        <button class="px-4 py-2 rounded-md text-sm font-medium border-b-2 focus:outline-none focus:ring transition text-white bg-yellow-500 border-yellow-800 hover:bg-yellow-600 active:bg-yellow-700 focus:ring-yellow-300" type="submit">Button</button>
-                                    </td>
                                     <td>
-                                        <button class="px-4 py-2 rounded-md text-sm font-medium border-b-2 focus:outline-none focus:ring transition text-white bg-green-500 border-green-800 hover:bg-green-600 active:bg-green-700 focus:ring-green-300" type="submit">Update</button>
+                                        <button class="px-4 py-2 rounded-md text-sm font-medium border-b-2 focus:outline-none focus:ring transition text-white bg-green-500 border-green-800 hover:bg-green-600 active:bg-green-700 focus:ring-green-300" type="submit">Edit</button>
                                     </td>
                                     <td>
                                         <button class="px-4 py-2 rounded-md text-sm font-small border-b-2 focus:outline-none focus:ring transition text-white bg-red-500 border-red-800 hover:bg-red-600 active:bg-red-700 focus:ring-red-300" type="submit">Delete</button>
                                     </td>
                                     <td>
-                                        <p class="pl-16">Created on 21 Februray 2020</p>
+                                        <p class="pl-16">Created at {{$movie->created_at}}</p>
                                     </td>
                                 </tr>
+                                @endforeach
                                 <!-- row-->
-
-                                <!-- row-->
-                                <tr tabindex="0" class="w-full focus:outline-none text-sm leading-none text-gray-600 h-16 hover:bg-slate-50">
-                                    <td class="w-1/2">
-                                        <div class="flex items-center">
-                                            <div class="w-10 h-10 bg-gray-700 rounded-sm flex items-center justify-center">
-                                                <img src="images/thumb.jpg" />
-                                            </div>
-                                            <div class="pl-2">
-                                                <p class="text-sm font-medium leading-none text-gray-800">Encanto</p>
-                                            </div>
-
-                                            <div class="pl-2">
-                                                <p class="text-sm font-medium leading-none text-gray-800">2021</p>
-                                            </div>
-
-                                            <div class="pl-2">
-                                                <p class="text-sm font-medium leading-none text-gray-800">Roy Hill</p>
-                                            </div>
-
-                                            <div class="pl-2">
-                                                <p class="text-sm font-medium leading-none text-gray-800">Animated</p>
-                                            </div>
-
-                                            <div class="pl-2">
-                                                <p class="text-sm font-medium leading-none text-gray-800">2hr</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="pl-16">
-                                        <button class="px-4 py-2 rounded-md text-sm font-medium border-b-2 focus:outline-none focus:ring transition text-white bg-yellow-500 border-yellow-800 hover:bg-yellow-600 active:bg-yellow-700 focus:ring-yellow-300" type="submit">Button</button>
-                                    </td>
-                                    <td>
-                                        <button class="px-4 py-2 rounded-md text-sm font-medium border-b-2 focus:outline-none focus:ring transition text-white bg-green-500 border-green-800 hover:bg-green-600 active:bg-green-700 focus:ring-green-300" type="submit">Update</button>
-                                    </td>
-                                    <td>
-                                        <button class="px-4 py-2 rounded-md text-sm font-small border-b-2 focus:outline-none focus:ring transition text-white bg-red-500 border-red-800 hover:bg-red-600 active:bg-red-700 focus:ring-red-300" type="submit">Delete</button>
-                                    </td>
-                                    <td>
-                                        <p class="pl-16">Created on 21 Februray 2020</p>
-                                    </td>
-                                </tr>
-                                <!-- row-->
-
-                                <!-- row-->
-                                <tr tabindex="0" class="w-full focus:outline-none text-sm leading-none text-gray-600 h-16 hover:bg-slate-50">
-                                    <td class="w-1/2">
-                                        <div class="flex items-center">
-                                            <div class="w-10 h-10 bg-gray-700 rounded-sm flex items-center justify-center">
-                                                <img src="images/thumb.jpg" />
-                                            </div>
-                                            <div class="pl-2">
-                                                <p class="text-sm font-medium leading-none text-gray-800">Encanto</p>
-                                            </div>
-
-                                            <div class="pl-2">
-                                                <p class="text-sm font-medium leading-none text-gray-800">2021</p>
-                                            </div>
-
-                                            <div class="pl-2">
-                                                <p class="text-sm font-medium leading-none text-gray-800">Roy Hill</p>
-                                            </div>
-
-                                            <div class="pl-2">
-                                                <p class="text-sm font-medium leading-none text-gray-800">Animated</p>
-                                            </div>
-
-                                            <div class="pl-2">
-                                                <p class="text-sm font-medium leading-none text-gray-800">2hr</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="pl-16">
-                                        <button class="px-4 py-2 rounded-md text-sm font-medium border-b-2 focus:outline-none focus:ring transition text-white bg-yellow-500 border-yellow-800 hover:bg-yellow-600 active:bg-yellow-700 focus:ring-yellow-300" type="submit">Button</button>
-                                    </td>
-                                    <td>
-                                        <button class="px-4 py-2 rounded-md text-sm font-medium border-b-2 focus:outline-none focus:ring transition text-white bg-green-500 border-green-800 hover:bg-green-600 active:bg-green-700 focus:ring-green-300" type="submit">Update</button>
-                                    </td>
-                                    <td>
-                                        <button class="px-4 py-2 rounded-md text-sm font-small border-b-2 focus:outline-none focus:ring transition text-white bg-red-500 border-red-800 hover:bg-red-600 active:bg-red-700 focus:ring-red-300" type="submit">Delete</button>
-                                    </td>
-                                    <td>
-                                        <p class="pl-16">Created on 21 Februray 2020</p>
-                                    </td>
-                                </tr>
-                                <!-- row-->
-
-                                <!-- row-->
-                                <tr tabindex="0" class="w-full focus:outline-none text-sm leading-none text-gray-600 h-16 hover:bg-slate-50">
-                                    <td class="w-1/2">
-                                        <div class="flex items-center">
-                                            <div class="w-10 h-10 bg-gray-700 rounded-sm flex items-center justify-center">
-                                                <img src="images/thumb.jpg" />
-                                            </div>
-                                            <div class="pl-2">
-                                                <p class="text-sm font-medium leading-none text-gray-800">Encanto</p>
-                                            </div>
-
-                                            <div class="pl-2">
-                                                <p class="text-sm font-medium leading-none text-gray-800">2021</p>
-                                            </div>
-
-                                            <div class="pl-2">
-                                                <p class="text-sm font-medium leading-none text-gray-800">Roy Hill</p>
-                                            </div>
-
-                                            <div class="pl-2">
-                                                <p class="text-sm font-medium leading-none text-gray-800">Animated</p>
-                                            </div>
-
-                                            <div class="pl-2">
-                                                <p class="text-sm font-medium leading-none text-gray-800">2hr</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="pl-16">
-                                        <button class="px-4 py-2 rounded-md text-sm font-medium border-b-2 focus:outline-none focus:ring transition text-white bg-yellow-500 border-yellow-800 hover:bg-yellow-600 active:bg-yellow-700 focus:ring-yellow-300" type="submit">Button</button>
-                                    </td>
-                                    <td>
-                                        <button class="px-4 py-2 rounded-md text-sm font-medium border-b-2 focus:outline-none focus:ring transition text-white bg-green-500 border-green-800 hover:bg-green-600 active:bg-green-700 focus:ring-green-300" type="submit">Update</button>
-                                    </td>
-                                    <td>
-                                        <button class="px-4 py-2 rounded-md text-sm font-small border-b-2 focus:outline-none focus:ring transition text-white bg-red-500 border-red-800 hover:bg-red-600 active:bg-red-700 focus:ring-red-300" type="submit">Delete</button>
-                                    </td>
-                                    <td>
-                                        <p class="pl-16">Created on 21 Februray 2020</p>
-                                    </td>
-                                </tr>
-                                <!-- row-->
-
                             </tbody>
                         </table>
                     </div>
