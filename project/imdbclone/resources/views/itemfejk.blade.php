@@ -22,16 +22,23 @@
 
 <body>
 
-    <form action="{{ route('itemfejk') }}" method="GET">
 
-        <h1>HEJ</h1>
+    <p>{{ $movie }}</p>
 
-        <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Accusantium sit temporibus quis cumque tenetur suscipit, debitis dolorem eos recusandae asperiores!
-            Ullam autem ipsam ut explicabo, quisquam veritatis iste vel vitae.</p>
-
-
-    </form>
+    {{ $movie->title }} <br>
+    {{ $movie->body }}
+    {{ $movie->pics }}
+    {{ $movie->trailer }}
+    {{ $movie->rating }}
+    <br><br>
+    @foreach ($movie->reviews as $review)
+    {{ $review->title }} <br>
+    {{ $review->body }} <br>
+    {{ $review->rate }} <br>
+    @foreach ($review->comments as $comment)
+    <div>{{ $comment->body }}</div>
+    @endforeach
+    @endforeach
 </body>
 
 </html>

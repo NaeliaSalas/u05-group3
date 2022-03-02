@@ -71,6 +71,12 @@ class MovieController extends Controller
         return view('movie.show', ['movie' => $movie, 'reviews' => $movie->reviews]);
     }
 
+    public function showMovie($id)
+    {
+        $movie = Movie::find($id);
+        return view('itemfejk', ['movie' => $movie, 'reviews' => $movie->reviews]);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

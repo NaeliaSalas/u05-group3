@@ -70,7 +70,7 @@
                             <tbody class="text-white">
                                 @foreach($movies as $movie)
                                 <tr class="">
-                                    <td><a href=" {{ route('itemfejk', ['id' => $movie->id]}} ">{{ $movie->title }}
+                                    <td><a href=" {{ route('itemfejk', ['id' => $movie->id])}} ">{{ $movie->title }}
                                         </a></td>
                                     <img src=" {{ $movie->cover }} " width="300" height="300">
                                     </td>
