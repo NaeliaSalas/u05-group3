@@ -39,14 +39,14 @@ Route::resource('review', ReviewController::class);
 route::resource('watchlist', WatchlistController::class);
 
 // Rout to register new user
-Route::get('register', [RegisterController::class, 'create']); //->middleware('guest');
+Route::get('register', [RegisterController::class, 'create']);
 Route::post('register', [RegisterController::class, 'store'])->name("register.user");
 
 // Route for user to login
-Route::get('login', [SessionsController::class, 'create']); //->middleware('guest');
-Route::post('login', [SessionsController::class, 'store'])->name('login.user'); //->name("login.user");
+Route::get('login', [SessionsController::class, 'create']);
+Route::post('login', [SessionsController::class, 'store'])->name('login.user');
 
-Route::post('logout', [SessionsController::class, 'destroy']); //->middleware('auth');
+Route::post('logout', [SessionsController::class, 'destroy']);
 
 
 // Admin
@@ -68,5 +68,7 @@ route::get('/category', function () {
 
 //search route
 
-Route::get('/search', [SearchController::class, 'search'])->name('search');
-Route::get('/itemfejk', [SearchController::class, 'itemfejk'])->name('itemfejk');
+Route::get('search', [SearchController::class, 'search'])->name('search');
+Route::get('itemfejk', function () {
+    return view('itemfejk');
+})->name('itemfejk');

@@ -17,6 +17,7 @@
     <script src="https://kit.fontawesome.com/405a204514.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <title>CINEMAH</title>
+
 </head>
 
 <body>
@@ -66,8 +67,7 @@
                     <h2 class="text-white pl-10">Search result: </h2>
 
 
-                    <form action"" method="GET"></form>
-                    @csrf
+
 
 
 
@@ -83,10 +83,9 @@
                                 @else
                                 @foreach($movies as $movie)
                                 <tr class="">
-                                    <a href=" {{ route('itemfejk', ['id' => $movie->id]) }} ">
-                                        <td>{{ $movie->title }}</td>
-                                    </a>
 
+                                    <td><a href=" {{ route('itemfejk', ['id' => $movie->id],) }} ">{{ $movie->title }}
+                                        </a></td>
                                     <img src=" {{ $movie->pics }} " width="300" height="300">
                                     </td>
                                 </tr>
