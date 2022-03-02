@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Genre;
 use App\Models\Movie;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -52,6 +53,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
+
         User::create([
 
             'name' => 'Naelia',
@@ -60,13 +62,60 @@ class DatabaseSeeder extends Seeder
             'password' => ('password'),
         ]);
 
+        Genre::create([
+
+            'genre' => 'Adventure',
+
+        ]);
+        Genre::create([
+
+            'genre' => 'Action',
+
+        ]);
+        Genre::create([
+
+            'genre' => 'Comedy',
+
+        ]);
+        Genre::create([
+
+            'genre' => 'Horror',
+
+        ]);
+
+        Genre::create([
+
+            'genre' => 'Thriller',
+
+        ]);
+
+        Genre::create([
+
+            'genre' => 'Drama',
+
+        ]);
+
+        Genre::create([
+
+            'genre' => 'Romance',
+
+        ]);
+
+        Genre::create([
+
+            'genre' => 'Sci-Fi',
+
+        ]);
+
+
         Movie::create([
 
             'title' => 'Inception',
             'body' => 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea
              into the mind of a C.E.O,
              but his tragic past may doom the project and his team to disaster.',
-            'pics' => 'https://www.imdb.com/title/tt1375666/mediaviewer/rm3426651392/',
+            'cover' => 'https://www.imdb.com/title/tt1375666/mediaviewer/rm3426651392/',
+            'hero' => 'https://www.imdb.com/title/tt1375666/mediaviewer/rm3426651392/',
             'rating' => 5,
             'trailer' => 'https://www.imdb.com/video/vi2959588889?playlistId=tt1375666&ref_=tt_ov_vi',
             'yearproduced' => 2010,
@@ -79,7 +128,8 @@ class DatabaseSeeder extends Seeder
         Movie::create([
             'title' => 'Watchmen',
             'body' => 'In 1985 where former superheroes exist the murder of a colleague sends active vigilante Rorschach into his own sprawling investigation, uncovering something that could completely change the course of history as we know it.',
-            'pics' => 'https://www.imdb.com/title/tt0409459/mediaviewer/rm2931438848/',
+            'cover' => 'https://www.imdb.com/title/tt0409459/mediaviewer/rm2931438848/',
+            'hero' => 'https://www.imdb.com/title/tt1375666/mediaviewer/rm3426651392/',
             'rating' => 4,
             'trailer' => 'https://www.imdb.com/video/vi240565017?playlistId=tt0409459&ref_=tt_ov_vi',
             'yearproduced' => 2010,
@@ -91,7 +141,8 @@ class DatabaseSeeder extends Seeder
             'title' => 'Pirates of the Caribbean',
             'body' => 'Blacksmith Will Turner teams up with eccentric pirate "Captain" Jack Sparrow to save his love, the governors daughter,
              from Jacks former pirate allies, who are now undead.',
-            'pics' => 'https://www.imdb.com/title/tt0325980/mediaviewer/rm2487103488/?ref_=tt_ov_i',
+            'cover' => 'https://www.imdb.com/title/tt0325980/mediaviewer/rm2487103488/?ref_=tt_ov_i',
+            'hero' => 'https://www.imdb.com/title/tt1375666/mediaviewer/rm3426651392/',
             'rating' => 2,
             'trailer' => 'https://www.youtube.com/embed/naQr0uTrH_s',
             'yearproduced' => 2003,
@@ -103,7 +154,8 @@ class DatabaseSeeder extends Seeder
             'title' => 'Spectre',
             'body' => 'A cryptic message from James Bonds past sends him on a trail to uncover the existence of a sinister organisation named SPECTRE With a new threat dawning Bond learns the terrible truth
              about the author of all his pain in his most recent missions.',
-            'pics' => 'https://www.imdb.com/title/tt2379713/mediaviewer/rm3887487232/',
+            'cover' => 'https://www.imdb.com/title/tt2379713/mediaviewer/rm3887487232/',
+            'hero' => 'https://www.imdb.com/title/tt1375666/mediaviewer/rm3426651392/',
             'rating' => 3,
             'trailer' => 'https://www.imdb.com/video/vi3362042649?playlistId=tt2379713&ref_=tt_pr_ov_vi',
             'yearproduced' => 2015,
@@ -114,7 +166,8 @@ class DatabaseSeeder extends Seeder
 
             'title' => 'The Matrix Revolutions',
             'body' => 'The human city of Zion defends itself against the massive invasion of the machines as Neo fights to end the war at another front while also opposing the rogue Agent Smith.',
-            'pics' => 'https://www.imdb.com/title/tt0242653/mediaviewer/rm70327040/',
+            'cover' => 'https://www.imdb.com/title/tt0242653/mediaviewer/rm70327040/',
+            'hero' => 'https://www.imdb.com/title/tt1375666/mediaviewer/rm3426651392/',
             'rating' => 2,
             'trailer' => 'https://www.imdb.com/video/vi2885026073?playlistId=tt0242653&ref_=tt_ov_vi',
             'yearproduced' => 2003,
@@ -126,7 +179,8 @@ class DatabaseSeeder extends Seeder
             'title' => 'Looper',
             'body' => 'In 2074 when the mob wants to get rid of someone, the target is sent into the past, where a hired gun awaits - someone like Joe - who one day learns
             the mob wants to close the loop by sending back Joes future self for assassination.',
-            'pics' => 'https://www.imdb.com/title/tt1276104/mediaviewer/rm2984487168/',
+            'cover' => 'https://www.imdb.com/title/tt1276104/mediaviewer/rm2984487168/',
+            'hero' => 'https://www.imdb.com/title/tt1375666/mediaviewer/rm3426651392/',
             'rating' => 5,
             'trailer' => 'https://www.imdb.com/video/vi3368395801?playlistId=tt1276104&ref_=tt_ov_vi',
             'yearproduced' => 2012,
@@ -137,7 +191,8 @@ class DatabaseSeeder extends Seeder
 
             'title' => 'The Lord of the Rings: The Return of the King',
             'body' => 'Gandalf and Aragorn lead the World of Men against Saurons army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.',
-            'pics' => 'https://www.imdb.com/title/tt0167260/mediaviewer/rm584928512/',
+            'cover' => 'https://www.imdb.com/title/tt0167260/mediaviewer/rm584928512/',
+            'hero' =>  'https://www.imdb.com/title/tt1375666/mediaviewer/rm3426651392/',
             'rating' => 2,
             'trailer' => 'https://www.imdb.com/video/vi718127897?playlistId=tt0167260&ref_=tt_ov_vi',
             'yearproduced' => 2003,
@@ -149,7 +204,8 @@ class DatabaseSeeder extends Seeder
             'title' => 'DEADPOOL',
             'body' => 'A wisecracking mercenary gets experimented on and becomes immortal but ugly
                 and sets out to track down the man who ruined his looks.',
-            'pics' => 'https://www.imdb.com/title/tt1431045/mediaviewer/rm351021568/',
+            'cover' => 'https://www.imdb.com/title/tt1431045/mediaviewer/rm351021568/',
+            'hero' => 'https://www.imdb.com/title/tt1375666/mediaviewer/rm3426651392/',
             'rating' => 1,
             'trailer' => 'https://www.imdb.com/video/vi567457049?ref_=nv_sr_srsg_1',
             'yearproduced' => 2016,
@@ -161,7 +217,8 @@ class DatabaseSeeder extends Seeder
             'title' => 'Dracula Untold',
             'body' => 'As his kingdom is being threatened by the Turks, young prince Vlad Tepes must become a monster feared by his own people in order to obtain the power needed to protect his own family,
             and the families of his kingdom.',
-            'pics' => 'https://www.imdb.com/title/tt0829150/mediaviewer/rm827509760/',
+            'cover' => 'https://www.imdb.com/title/tt0829150/mediaviewer/rm827509760/',
+            'hero' => 'https://www.imdb.com/title/tt1375666/mediaviewer/rm3426651392/',
             'rating' => 3,
             'trailer' => 'https://www.imdb.com/video/vi1558818585?playlistId=tt0829150&ref_=tt_ov_vi',
             'yearproduced' => 2014,
@@ -173,7 +230,8 @@ class DatabaseSeeder extends Seeder
             'title' => '1917',
             'body' => 'April 6th, 1917. As an infantry battalion assembles to wage war deep in enemy territory, two soldiers are assigned to race against
                 time and deliver a message that will stop 1,600 men from walking straight into a deadly trap.',
-            'pics' => 'https://www.imdb.com/title/tt8579674/mediaviewer/rm144738817/',
+            'cover' => 'https://www.imdb.com/title/tt8579674/mediaviewer/rm144738817/',
+            'hero' => 'https://www.imdb.com/title/tt1375666/mediaviewer/rm3426651392/',
             'rating' => 1,
             'trailer' => 'https://www.imdb.com/video/vi4095655705?playlistId=tt8579674&ref_=tt_ov_vi',
             'yearproduced' => 2019,
@@ -184,7 +242,8 @@ class DatabaseSeeder extends Seeder
 
             'title' => 'Venom: Let There Be Carnage',
             'body' => 'Eddie Brock attempts to reignite his career by interviewing serial killer Cletus Kasady, who becomes the host of the symbiote Carnage and escapes prison after a failed execution.',
-            'pics' => 'https://www.imdb.com/title/tt7097896/mediaviewer/rm980350465/',
+            'cover' => 'https://www.imdb.com/title/tt7097896/mediaviewer/rm980350465/',
+            'hero' => 'https://www.imdb.com/title/tt1375666/mediaviewer/rm3426651392/',
             'rating' => 5,
             'trailer' => 'https://www.imdb.com/video/vi1533394969?playlistId=tt7097896&ref_=tt_pr_ov_vi',
             'yearproduced' => 2021,
@@ -196,7 +255,8 @@ class DatabaseSeeder extends Seeder
             'title' => 'The Father',
             'body' => 'A man refuses all assistance from his daughter as he ages. As he tries to make sense of his changing circumstances,
                 he begins to doubt his loved ones, his own mind and even the fabric of his reality.',
-            'pics' => 'https://www.imdb.com/title/tt10272386/mediaviewer/rm2362964993/',
+            'cover' => 'https://www.imdb.com/title/tt10272386/mediaviewer/rm2362964993/',
+            'hero' => 'https://www.imdb.com/title/tt1375666/mediaviewer/rm3426651392/',
             'rating' => 4,
             'trailer' => 'https://www.imdb.com/video/vi279101721?playlistId=tt10272386&ref_=tt_ov_vi',
             'yearproduced' => 2020,
@@ -207,7 +267,8 @@ class DatabaseSeeder extends Seeder
 
             'title' => 'Step Brothers',
             'body' => 'Two aimless middle-aged losers still living at home are forced against their will to become roommates when their parents marry.',
-            'pics' => 'https://www.imdb.com/title/tt0838283/mediaviewer/rm3433645824/',
+            'cover' => 'https://www.imdb.com/title/tt0838283/mediaviewer/rm3433645824/',
+            'hero' => 'https://www.imdb.com/title/tt1375666/mediaviewer/rm3426651392/',
             'rating' => 4,
             'trailer' => 'https://www.imdb.com/video/vi2847015193?playlistId=tt0838283&ref_=tt_ov_vi',
             'yearproduced' => 2008,
@@ -218,7 +279,8 @@ class DatabaseSeeder extends Seeder
 
             'title' => 'The Shining',
             'body' => ' A family heads to an isolated hotel for the winter where a sinister presence influences the father into violence, while his psychic son sees horrific forebodings from both past and future.',
-            'pics' => 'https://www.imdb.com/title/tt0081505/mediaviewer/rm3131156225/',
+            'cover' => 'https://www.imdb.com/title/tt0081505/mediaviewer/rm3131156225/',
+            'hero' => 'https://www.imdb.com/title/tt1375666/mediaviewer/rm3426651392/',
             'rating' => 1,
             'trailer' => 'https://www.imdb.com/video/vi2689121305?playlistId=tt0081505&ref_=tt_ov_vi',
             'yearproduced' => 2008,
@@ -229,7 +291,8 @@ class DatabaseSeeder extends Seeder
 
             'title' => 'Parasite',
             'body' => ' A family heads to an isolated hotel for the winter where a sinister presence influences the father into violence, while his psychic son sees horrific forebodings from both past and future.',
-            'pics' => 'https://www.imdb.com/title/tt6751668/mediaviewer/rm4181363713/',
+            'cover' => 'https://www.imdb.com/title/tt6751668/mediaviewer/rm4181363713/',
+            'hero' => 'https://www.imdb.com/title/tt6751668/mediaviewer/rm4181363713/',
             'rating' => 2,
             'trailer' => 'https://www.imdb.com/video/vi1015463705?playlistId=tt6751668&ref_=tt_pr_ov_vi',
             'yearproduced' => 2019,
@@ -241,7 +304,8 @@ class DatabaseSeeder extends Seeder
 
             'title' => 'BOBA FETT',
             'body' => 'Bounty hunter Boba Fett & mercenary Fennec Shand navigate the underworld when they return to Tatooine to claim Jabba the Hutts old turf.',
-            'pics' => 'https://www.imdb.com/title/tt13668894/mediaviewer/rm1505552897/',
+            'cover' => 'https://www.imdb.com/title/tt13668894/mediaviewer/rm1505552897/',
+            'hero' => 'https://www.imdb.com/title/tt6751668/mediaviewer/rm4181363713/',
             'rating' => 3,
             'trailer' => 'https://www.imdb.com/video/vi3711222553?playlistId=tt13668894&ref_=tt_pr_ov_vi',
             'yearproduced' => 2021,
@@ -254,7 +318,8 @@ class DatabaseSeeder extends Seeder
 
             'title' => 'BOBA FETT',
             'body' => 'Bounty hunter Boba Fett & mercenary Fennec Shand navigate the underworld when they return to Tatooine to claim Jabba the Hutts old turf.',
-            'pics' => 'https://www.imdb.com/title/tt13668894/mediaviewer/rm1505552897/',
+            'cover' => 'https://www.imdb.com/title/tt13668894/mediaviewer/rm1505552897/',
+            'hero' => 'https://www.imdb.com/title/tt6751668/mediaviewer/rm4181363713/',
             'rating' => 4,
             'trailer' => 'https://www.imdb.com/video/vi3711222553?playlistId=tt13668894&ref_=tt_pr_ov_vi',
             'yearproduced' => 2021,
@@ -267,7 +332,8 @@ class DatabaseSeeder extends Seeder
 
             'title' => 'Avengers: Infinity War',
             'body' => 'The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.',
-            'pics' => 'https://www.imdb.com/title/tt4154756/mediaviewer/rm4044245504/',
+            'cover' => 'https://www.imdb.com/title/tt4154756/mediaviewer/rm4044245504/',
+            'hero' => 'https://www.imdb.com/title/tt6751668/mediaviewer/rm4181363713/',
             'rating' => 5,
             'trailer' => 'https://www.imdb.com/video/vi528070681?playlistId=tt4154756&ref_=tt_pr_ov_vi',
             'yearproduced' => 2018,
@@ -280,7 +346,8 @@ class DatabaseSeeder extends Seeder
 
             'title' => 'Transformers: Dark of the Moon',
             'body' => 'The Autobots learn of a Cybertronian spacecraft hidden on the moon, and race against the Decepticons to reach it and to learn its secrets.',
-            'pics' => 'https://www.imdb.com/title/tt1399103/mediaviewer/rm4286955008/',
+            'cover' => 'https://www.imdb.com/title/tt1399103/mediaviewer/rm4286955008/',
+            'hero' => 'https://www.imdb.com/title/tt6751668/mediaviewer/rm4181363713/',
             'rating' => 1,
             'trailer' => 'https://www.imdb.com/title/tt1399103/?ref_=nv_sr_srsg_7',
             'yearproduced' => 2011,
@@ -293,7 +360,8 @@ class DatabaseSeeder extends Seeder
 
             'title' => 'Interstellar',
             'body' => 'A team of explorers travel through a wormhole in space in an attempt to ensure humanitys survival.',
-            'pics' => 'https://www.imdb.com/title/tt0816692/mediaviewer/rm4043724800/',
+            'cover' => 'https://www.imdb.com/title/tt0816692/mediaviewer/rm4043724800/',
+            'hero' => 'https://www.imdb.com/title/tt6751668/mediaviewer/rm4181363713/',
             'rating' => 2,
             'trailer' => 'https://www.imdb.com/video/vi1586278169?playlistId=tt0816692&ref_=tt_ov_vi',
             'yearproduced' => 2014,
@@ -306,7 +374,8 @@ class DatabaseSeeder extends Seeder
 
             'title' => 'Django Unchained',
             'body' => 'With the help of a German bounty-hunter, a freed slave sets out to rescue his wife from a brutal plantation-owner in Mississippi.',
-            'pics' => 'https://www.imdb.com/title/tt1853728/mediaviewer/rm958180352/',
+            'cover' => 'https://www.imdb.com/title/tt1853728/mediaviewer/rm958180352/',
+            'hero' => 'https://www.imdb.com/title/tt6751668/mediaviewer/rm4181363713/',
             'rating' => 3,
             'trailer' => 'https://www.imdb.com/video/vi2291574553?playlistId=tt1853728&ref_=tt_pr_ov_vi',
             'yearproduced' => 2014,
@@ -314,18 +383,3 @@ class DatabaseSeeder extends Seeder
         ]);
     }
 }
-
-
-// Movie::create ([
-//     'category id' ->$action->id,
-//     'body' => ''
-//     'pics' => ''
-//     'genre' => ''
-//     'rating' => ''
-//     'trailer' => ''
-//     'yearproduced' => ''
-//     'director' => ''
-
-
-
-// ]);
