@@ -86,7 +86,7 @@
                                         <td>{{ $movie->title }}</td>
                                     </a>
 
-                                    <img src=" {{ $movie->pics }} " width="300" height="300">
+                                    <img src=" {{ $movie->cover }} " width="300" height="300">
                                     </td>
                                 </tr>
                                 <div>

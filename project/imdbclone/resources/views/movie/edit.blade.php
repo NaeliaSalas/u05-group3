@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +8,16 @@
     <title>Add comment</title>
     <link rel="stylesheet" href="mix{{'css/app.css'}}">
 </head>
+
 <body>
     <h1>Update movie</h1>
-    
+
     @if(session('status'))
-        {{ session('status') }}
+    {{ session('status') }}
     @endif
-    
+
     <section>
-    
+
         <form action="{{ url('movie/' . $movies->id) }}" method="POST">
             @csrf
             @method('PUT')
@@ -27,8 +29,8 @@
                 <label for="body">Add movie description:</label>
                 <input type="text" name="body" value="{{ $movies->body }}"><br>
 
-                <label for="pics">Add movie picture:</label>
-                <input type="url" name="pics" value="{{ $movies->pics }}"><br>
+                <label for="cover">Add movie picture:</label>
+                <input type="url" name="cover" value="{{ $movies->cover }}"><br>
 
                 <label for="rating">Add rating:</label>
                 <input list="rating" name="rating" value="{{ $movies->rating }}">
@@ -55,20 +57,21 @@
             </div>
         </form>
 
- 
+
 
         @if ($errors->any())
-            @foreach ($errors->all() as $error)
-            <li>
-                {{ $error }}
-            </li>
-            @endforeach
+        @foreach ($errors->all() as $error)
+        <li>
+            {{ $error }}
+        </li>
+        @endforeach
         @endif
         <br>
-    <div>
-        
+        <div>
 
-    </div>
+
+        </div>
     </section>
 </body>
+
 </html>
