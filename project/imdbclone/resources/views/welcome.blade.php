@@ -37,7 +37,12 @@
                         <li class="nav-item"><a class="menuItem" href="/">Home</a></li>
                         <li class="nav-item"><a class="menuItem" href="#">Watchlist</a></li>
                         <li class="nav-item"><a class="menuItem" href="category">Categories</a></li>
-                        <li class=" nav-item"><a class="menuItem" href="#">Login/register</a></li>
+                        @guest
+                        <li class=" nav-item"><a class="menuItem" href="/login">Login/Register</a></li>
+                        @endguest
+                        @auth
+                        <li class=" nav-item"><a class="menuItem" href="/logout">Logout</a></li>
+                        @endauth
                     </ul>
                     <div class="hamburger">
                         <span class="bar"></span>
