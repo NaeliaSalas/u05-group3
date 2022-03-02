@@ -346,7 +346,7 @@ class DatabaseSeeder extends Seeder
 
             'title' => 'Transformers: Dark of the Moon',
             'body' => 'The Autobots learn of a Cybertronian spacecraft hidden on the moon, and race against the Decepticons to reach it and to learn its secrets.',
-            'cover' => 'https://www.imdb.com/title/tt1399103/mediaviewer/rm4286955008/',
+            'cover' => 'https://www.themoviedb.org/t/p/original/yUqm7eke9oL0ZmKJfgIJLs8WNuJ.jpg',
             'hero' => 'https://www.themoviedb.org/t/p/original/af2duhAt9evRkxzkhxjgQ1naOM6.jpg',
             'rating' => 1,
             'trailer' => 'https://www.imdb.com/title/tt1399103/?ref_=nv_sr_srsg_7',
@@ -360,7 +360,7 @@ class DatabaseSeeder extends Seeder
 
             'title' => 'Interstellar',
             'body' => 'A team of explorers travel through a wormhole in space in an attempt to ensure humanitys survival.',
-            'cover' => 'https://www.imdb.com/title/tt0816692/mediaviewer/rm4043724800/',
+            'cover' => 'https://www.themoviedb.org/t/p/original/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg',
             'hero' => 'https://www.themoviedb.org/t/p/original/pZvZjxPFfWWIwtPQodsNygQ6u5Z.jpg',
             'rating' => 2,
             'trailer' => 'https://www.imdb.com/video/vi1586278169?playlistId=tt0816692&ref_=tt_ov_vi',
@@ -374,7 +374,7 @@ class DatabaseSeeder extends Seeder
 
             'title' => 'Django Unchained',
             'body' => 'With the help of a German bounty-hunter, a freed slave sets out to rescue his wife from a brutal plantation-owner in Mississippi.',
-            'cover' => 'https://www.imdb.com/title/tt1853728/mediaviewer/rm958180352/',
+            'cover' => 'https://www.themoviedb.org/t/p/original/7oWY8VDWW7thTzWh3OKYRkWUlD5.jpg',
             'hero' => 'https://www.themoviedb.org/t/p/original/ltkWGokEIToUYyoUqc6PBI1kHPx.jpg',
             'rating' => 3,
             'trailer' => 'https://www.imdb.com/video/vi2291574553?playlistId=tt1853728&ref_=tt_pr_ov_vi',
