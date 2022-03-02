@@ -64,44 +64,23 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6" style=>
-                    <h2 class="text-white pl-10">Search result: </h2>
-
-
-
-
-
-
                     <div class="grid grid-row-3 grid-flow-col gap-3">
+                        <h2 class="text-white pl-10">Search result: </h2>
                         <table class="highlight_item">
-
                             <tbody class="text-white">
-                                @if(Session::has('message'))
-                                <tr>
-                                    <td>{{ $message }}</td>
-                                </tr>
-
-                                @else
                                 @foreach($movies as $movie)
                                 <tr class="">
-
-                                    <td><a href=" {{ route('itemfejk', ['id' => $movie->id],) }} ">{{ $movie->title }}
+                                    <td><a href=" {{ route('itemfejk', ['id' => $movie->id]}} ">{{ $movie->title }}
                                         </a></td>
-                                    <img src=" {{ $movie->pics }} " width="300" height="300">
+                                    <img src=" {{ $movie->cover }} " width="300" height="300">
                                     </td>
-
                                 </tr>
-                                <div>
-                                    <!-- <h2 class="text-white row">Title</h2> -->
-                                </div>
                                 @endforeach
-                                @endif
                             </tbody>
-
                         </table>
                     </div>
                 </div>
             </div>
-
         </div>
 
         <!-- Footer with links -->
