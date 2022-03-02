@@ -65,7 +65,7 @@
                             <div class="text-white">
                                 @foreach($movies as $movie)
                                 <div class="">
-                                    <div><a href=" {{ route('itemfejk', ['id' => $movie->id])}} ">{{ $movie->title }}
+                                    <div><a href=" {{ route('item', ['id' => $movie->id])}} ">{{ $movie->title }}
                                         </a></div>
                                     <div>
                                         <img src=" {{ $movie->cover }} " width="300" height="300">

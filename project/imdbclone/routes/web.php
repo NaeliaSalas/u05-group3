@@ -78,4 +78,4 @@ route::get('/category', function () {
 //search route
 
 Route::get('search', [SearchController::class, 'search'])->name('search');
-Route::get('item/{id}', [MovieController::class, 'showMovie'])->name('itemfejk');
+Route::get('item/{id}', [MovieController::class, 'showMovie'])->name('item');
