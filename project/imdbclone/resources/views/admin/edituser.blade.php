@@ -10,34 +10,34 @@
 </head>
 
 <body>
-
     <h1>Update user</h1>
 
     @if(session('status'))
     {{ session('status') }}
     @endif
 
+    <div class="edit-user">
+        <form action="{{ url('user/' . $user->id) }}" method="POST">
 
-    <form action="{{ url('user/' . $user->id) }}" method="POST">
+            @csrf
+            @method('PUT')
 
-        @csrf
-        @method('PUT')
+            <div class="form-content">
+                <label for="name">Name</label>
+                <input type="text" name="name" value="{{ $user->name}}"><br>
 
-        <div>
-            <label for="name">Name</label>
-            <input type="text" name="name" value="{{ $user->name}}"><br>
+                <label for="username">Username</label>
+                <input type="text" name="username" value="{{ $user->username }}"><br>
 
-            <label for="username">Username</label>
-            <input type="text" name="username" value="{{ $user->username }}"><br>
+                <label for="email">Email</label>
+                <input type="email" name="email" value="{{ $user->email }}"><br>
 
-            <label for="email">Email</label>
-            <input type="email" name="email" value="{{ $user->email }}"><br>
-
-            <div>
-                <button type="submit" name="submit">Save changes</button>
+                <div>
+                    <button type="submit" name="submit">Save changes</button>
+                </div>
             </div>
-    </form>
-
+        </form>
+    </div>
 </body>
 
 </html>
