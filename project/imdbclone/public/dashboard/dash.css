@@ -2,5 +2,150 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    background-color: crimson;
-  }
+    background-color: #39b7dd;
+    border-radius: 4px;
+}
+
+/* EDIT USER */
+
+.edit-user {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    justify-content: center;
+}
+
+.form-input-material {
+    width: 100%;
+}
+
+.edit-user .title h1 {
+    color: white;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.form-input-material label {
+    color: white;
+    font-size: 18px;
+    display: block;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.input-fields .input {
+    margin: 10px 0;
+    background: transparent;
+    border: 0px;
+    border-bottom: 2px solid #39b7dd;
+    padding: 10px;
+    color: white;
+    width: 50%;
+    outline: none;
+    font-size: 18px;
+}
+
+.update-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-fields {
+    display: flex;
+    flex-direction: column;
+}
+
+.submit {
+    background: #39b7dd;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-style: none;
+    border-style: none;
+    font-weight: 700;
+    margin: 3rem 0 1rem 0;
+}
+
+.submit:hover {
+    background: #39b7dd6b;
+}
+
+@media screen and (max-width: 600px) {
+    .update-form {
+        flex-direction: column;
+    }
+
+    .input-fields {
+        width: 100%;
+    }
+}
+
+/* DASHBOARD */
+
+.dashboard {
+    width: 100%;
+    height: 100vh;
+    background-color: #6e848a;
+}
+
+.dashboard-witdh {
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboard-witdh2 {
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboard-cards {
+    height: auto;
+    background-color: #6e848a;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-single {
+    margin: 3rem 1rem;
+    background: white;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    border-radius: 4px;
+    padding: 2rem;
+}
+
+.card-single .card-text h2 {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.card-single .card-text span {
+    font-size: 20px;
+}
+
+.card-single .icon {
+    font-size: 45px;
+    color: #39b7dd;
+    display: block;
+}
