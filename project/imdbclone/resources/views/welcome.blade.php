@@ -30,7 +30,12 @@
                     </a>
                 </div>
             </nav>
-            <input type="text" placeholder="Search">
+            <form action="{{ url('/search')}}" method="GET">
+                @csrf
+
+                <input type="text" placeholder="Search Movie" name="search">
+            </form>
+
             <div class="search-input">
                 <nav class="nav-wrapper">
                     <ul class="nav-links">
@@ -52,6 +57,7 @@
                 </nav>
             </div>
         </div>
+
 
 
         <!-- hero slider section -->

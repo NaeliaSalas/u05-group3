@@ -54,53 +54,29 @@
                 </nav>
             </div>
         </div>
-
-
-
-
         <!-- Navbar -->
 
         <div class="container">
             <div class="row">
                 <div class="col-md-6" style=>
-                    <h2 class="text-white pl-10">Search result: </h2>
-
-
-                    <form action"" method="GET"></form>
-                    @csrf
-
-
                     <div class="grid grid-row-3 grid-flow-col gap-3">
-                        <table class="highlight_item">
-
-                            <tbody class="text-white">
-                                @if(Session::has('message'))
-                                <tr>
-                                    <td>{{ $message }}</td>
-                                </tr>
-
-                                @else
+                        <h2 class="text-white pl-10">Search result: </h2>
+                        <div class="highlight_item">
+                            <div class="text-white">
                                 @foreach($movies as $movie)
-                                <tr class="">
-                                    <a href=" {{ route('itemfejk', ['id' => $movie->id]) }} ">
-                                        <td>{{ $movie->title }}</td>
-                                    </a>
-
-                                    <img src=" {{ $movie->cover }} " width="300" height="300">
-                                    </td>
-                                </tr>
-                                <div>
-                                    <!-- <h2 class="text-white row">Title</h2> -->
+                                <div class="">
+                                    <div><a href=" {{ url('/movie/'.$movie->id) }} ">{{ $movie->title }}
+                                        </a></div>
+                                    <div>
+                                        <img src=" {{ $movie->cover }} " width="300" height="300">
+                                    </div>
                                 </div>
                                 @endforeach
-                                @endif
-                            </tbody>
-
-                        </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </div>
 
         <!-- Footer with links -->
@@ -151,7 +127,6 @@
 
     <script src="{{url('js/hero.js')}}"></script>
     <script src="{{url('js/hamburger.js')}}"></script>
-
 </body>
 
 </html>

@@ -243,7 +243,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Dracula Untold',
             'body' => 'As his kingdom is being threatened by the Turks, young prince Vlad Tepes must become a monster feared by his own people in order to obtain the power needed to protect his own family,
             and the families of his kingdom.',
-            'cover' => 'https://www.themoviedb.org/t/p/original/AuGiPiGMYMkSosOJ3BQjDEAiwtO.jpg',
+            'cover' => 'https://www.themoviedb.org/t/p/original/sCWQBbHszE1MwyDbe3ehbSm1MHc.jpg',
             'hero' => 'https://www.themoviedb.org/t/p/original/Ap0jDQIn8Jovz3MyejAepCcZrTU.jpg',
             'rating' => 3,
             'trailer' => 'https://www.youtube.com/embed/_2aWqecTTuE',
