@@ -14,22 +14,22 @@
 
     <section>
 
-        <form action="{{ url('movie/' . $movies->id) }}" method="POST">
+        <form action="{{ url('movie/' . $movie->id) }}" method="POST">
             @csrf
             @method('PUT')
 
             <div>
                 <label for="title">Add movie title:</label>
-                <input type="text" name="title" value="{{ $movies->title }}"><br>
+                <input type="text" name="title" value="{{ $movie->title }}"><br>
 
                 <label for="body">Add movie description:</label>
-                <input type="text" name="body" value="{{ $movies->body }}"><br>
+                <input type="text" name="body" value="{{ $movie->body }}"><br>
 
                 <label for="pics">Add movie picture:</label>
-                <input type="url" name="pics" value="{{ $movies->pics }}"><br>
+                <input type="url" name="pics" value="{{ $movie->pics }}"><br>
 
                 <label for="rating">Add rating:</label>
-                <input list="rating" name="rating" value="{{ $movies->rating }}">
+                <input list="rating" name="rating" value="{{ $movie->rating }}">
                 <datalist id="rating">
                     <option value="1">
                     <option value="2">
@@ -39,13 +39,13 @@
                 </datalist><br>
 
                 <label for="trailer">Add trailer:</label>
-                <input type="url" name="trailer" value="{{ $movies->trailer }}"><br>
+                <input type="url" name="trailer" value="{{ $movie->trailer }}"><br>
 
                 <label for="yearproduced">Add year produced:</label>
-                <input type="number" min="1900" max="2023" name="yearproduced" value="{{ $movies->yearproduced }}"><br>
+                <input type="number" min="1900" max="2023" name="yearproduced" value="{{ $movie->yearproduced }}"><br>
 
                 <label for="director">Add director:</label>
-                <input type="text" name="director" value="{{ $movies->director }}"><br>
+                <input type="text" name="director" value="{{ $movie->director }}"><br>
 
             </div>
             <div>
