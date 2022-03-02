@@ -69,15 +69,7 @@ class MovieController extends Controller
     public function show($id)
     {
         $movie = Movie::find($id);
-        $reviews = $movie->reviews;
-        $comments = Review::find($id)->comments;
-        return view('review.show', ['movie' => $movie, 'reviews' => $reviews, 'comments' => $comments]);
-    }
-
-    public function showMovie($id)
-    {
-        $movie = Movie::find($id);
-        return view('item', ['movie' => $movie, 'reviews' => $movie->reviews]);
+        return view('item', ['movie' => $movie]);
     }
 
     /**
@@ -88,7 +80,6 @@ class MovieController extends Controller
      */
     public function edit($id)
     {
-
         $movies = Movie::find($id);
         return view('movie.edit', ['movies' => $movies]);
     }

@@ -23,6 +23,9 @@
 <body>
 
     <!-- Header (NAVBAR)-->
+
+
+
     <div class="main-container">
 
         <div class="navbar">
@@ -85,10 +88,6 @@
             <p class="MovieTxt">Director: {{$movie->director}}</p>
             <p class="MovieTxt">Year: {{$movie->yearproduced}}</p>
             <p class="MovieTxt">Rating: {{$movie->rating}}</p>
-
-
-
-
         </div>
 
 
