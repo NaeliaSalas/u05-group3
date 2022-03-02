@@ -24,17 +24,23 @@
 <body>
 
     <!-- Header (NAVBAR)-->
+
+
+
     <div class="main-container">
 
         <div class="navbar">
             <nav>
                 <div class="logo">
                     <a href="/">
-                    <img src="{{ URL('images/Cinemah-Logo2.png')}}" alt="">
+                        <img src="{{ URL('images/Cinemah-Logo2.png')}}" alt="">
                     </a>
                 </div>
             </nav>
-            <input type="text" placeholder="Search">
+            <form action="{{ url('/search')}}" method="GET">
+                @csrf
+                <input type="text" placeholder="Search Movie" name="search">
+            </form>
             <div class="search-input">
                 <nav class="nav-wrapper">
                     <ul class="nav-links">
@@ -57,7 +63,7 @@
         <div class="moviebg">
             <div class="movieflex">
                 <div class="flex-item">
-                    <img src="{{ URL('images/Kingsman-cover.jpg')}}" alt="" class="cover">
+                    <img src="{{ $movie->hero}}" alt="" class="cover">
                 </div>
 
                 <!-- center space-->
@@ -90,32 +96,28 @@
         <!-- txt section -->
 
         <div class="txtSection">
-        <h1 class="MovieH1">The King's Man</h1>
-        <p class="MovieTxt"> In the early years of the 20th century, the Kingsman agency is formed to stand against a cabal plotting a war to wipe out millions.
-
-        "The King's Man" — action, adventure and thriller movie produced in UK and USA and released in 2021. It has a good rating on IMDb: 6.4 stars out of 10. It is a feature-length film with a runtime of 2h 11min. "The King's Man" is not currently available to stream in undefined. Add it to your Watchlist and we'll notify you when you can watch it!
-        </p>
-        <br />
-        <p class="MovieTxt"> In the early years of the 20th century, the Kingsman agency is formed to stand against a cabal plotting a war to wipe out millions.
-
-        "The King's Man" — action, adventure and thriller movie produced in UK and USA and released in 2021. It has a good rating on IMDb: 6.4 stars out of 10. It is a feature-length film with a runtime of 2h 11min. "The King's Man" is not currently available to stream in undefined. Add it to your Watchlist and we'll notify you when you can watch it!
-        </p>
+            <h1 class="MovieH1">{{$movie->title}}</h1>
+            <p class="MovieTxt"> {{$movie->body}}</p>
+            <br>
+            <p class="MovieTxt">Director: {{$movie->director}}</p>
+            <p class="MovieTxt">Year: {{$movie->yearproduced}}</p>
+            <p class="MovieTxt">Rating: {{$movie->rating}}</p>
         </div>
 
-        
-       <!-- images section -->
+
+        <!-- images section -->
         <div class="highlight">
             <div class="highlight_item">
                 <a href="#"><img src="{{ URL('images/watchmen.jpeg')}}" alt=""></a>
-                
+
             </div>
             <div class="highlight_item">
                 <a href="#"><img src="{{ URL('images/pirates.jpeg')}}" alt=""></a>
-                
+
             </div>
             <div class="highlight_item">
                 <a href="#"><img src="{{ URL('images/007.jpeg')}}" alt=""></a>
-                
+
             </div>
         </div>
         <!-- images section -->

@@ -5,35 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Add comment</title>
+    <title>Add movie</title>
     <link rel="stylesheet" href="mix{{'css/app.css'}}">
 </head>
 
 <body>
-    <h1>Update movie</h1>
-
-    @if(session('status'))
-    {{ session('status') }}
-    @endif
+    <h1>Add movie</h1>
 
     <section>
 
-        <form action="{{ url('movie/' . $movies->id) }}" method="POST">
+        <form action="/movie" method="POST">
             @csrf
-            @method('PUT')
-
             <div>
                 <label for="title">Add movie title:</label>
-                <input type="text" name="title" value="{{ $movies->title }}"><br>
+                <input type="text" name="title"><br>
 
                 <label for="body">Add movie description:</label>
-                <input type="text" name="body" value="{{ $movies->body }}"><br>
+                <input type="text" name="body"><br>
 
                 <label for="cover">Add movie picture:</label>
-                <input type="url" name="cover" value="{{ $movies->cover }}"><br>
+                <input type="url" name="cover"><br>
 
                 <label for="rating">Add rating:</label>
-                <input list="rating" name="rating" value="{{ $movies->rating }}">
+                <input list="rating" name="rating">
                 <datalist id="rating">
                     <option value="1">
                     <option value="2">
@@ -43,21 +37,19 @@
                 </datalist><br>
 
                 <label for="trailer">Add trailer:</label>
-                <input type="url" name="trailer" value="{{ $movies->trailer }}"><br>
+                <input type="url" name="trailer"><br>
 
                 <label for="yearproduced">Add year produced:</label>
-                <input type="number" min="1900" max="2023" name="yearproduced" value="{{ $movies->yearproduced }}"><br>
+                <input type="number" min="1900" max="2023" name="yearproduced"><br>
 
                 <label for="director">Add director:</label>
-                <input type="text" name="director" value="{{ $movies->director }}"><br>
+                <input type="text" name="director"><br>
 
             </div>
             <div>
                 <button type="submit">Post</button>
             </div>
         </form>
-
-
 
         @if ($errors->any())
         @foreach ($errors->all() as $error)
@@ -68,7 +60,6 @@
         @endif
         <br>
         <div>
-
 
         </div>
     </section>

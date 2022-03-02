@@ -17,7 +17,7 @@ class CreateReviewsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('body');
-            $table->integer('rate');
+            $table->integer('rating');
             $table->timestamps();
         });
     }

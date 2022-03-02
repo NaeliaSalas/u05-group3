@@ -26,6 +26,7 @@
 
         use Illuminate\Support\Facades\Auth;
 
+
         echo Auth::user()->id . ' ';
         echo Auth::user()->username;
         ?>
@@ -38,7 +39,17 @@
     </form>
 
     @foreach ($watchlists as $watchlist)
-    <li>{{ $watchlist->title }}</li>
+    <p>{{ $watchlist->title }}</p>
+    @foreach ($watchlist->entries as $entry)
+    <li>{{ $entry->title }}</li>
+
+    <form action="{{url('entry/' . $entry->id)}}" method="post">
+        @csrf
+        @method('DELETE')
+        <button type="submit">Delete entry</button>
+    </form>
+    @endforeach
+
     <form action="{{url('watchlist/' . $watchlist->id . '/edit')}}" method="GET">
         @csrf
         <button type="submit">Edit</button>
@@ -48,6 +59,30 @@
         @method('DELETE')
         <button type="submit">Delete</button>
         @endforeach
+    </form>
+
+
+    {{-- ///////////////////////////////////// --}}
+    <br><br><br>
+    <form action="{{ url('entry') }}" method="POST">
+        @csrf
+
+        <div>
+            <label for="title">Add to watchlist</label>
+            <input type="text" name="movie_id_fk" value="{{ request()->id }}">
+            <input type="text" name="title" value="{{ request()->movietitle }}">
+
+            {{-- <input type="hidden" name="watchlist_id_fk" value="1"> --}}
+
+            <select name="watchlist_id_fk">
+                <option name="" label="-- Choose watchlist --" value="">
+                    @foreach ($watchlists as $watchlist)
+                <option name="watchlist_id_fk" label="{{ $watchlist->title }}" value="{{ $watchlist->id }}">
+                    @endforeach
+            </select><br>
+            <button type="submit">Add</button>
+    </form>
+
 </body>
 
 </html>
