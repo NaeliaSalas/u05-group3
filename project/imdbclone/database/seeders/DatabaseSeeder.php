@@ -114,7 +114,7 @@ class DatabaseSeeder extends Seeder
             'body' => 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea
              into the mind of a C.E.O,
              but his tragic past may doom the project and his team to disaster.',
-            'cover' => 'https://www.imdb.com/title/tt1375666/mediaviewer/rm3426651392/',
+            'cover' => 'https://www.themoviedb.org/t/p/original/edv5CZvWj09upOsy2Y6IwDhK8bt.jpg',
             'hero' => 'https://www.themoviedb.org/t/p/original/ii8QGacT3MXESqBckQlyrATY0lT.jpg',
             'rating' => 5,
             'trailer' => 'https://www.imdb.com/video/vi2959588889?playlistId=tt1375666&ref_=tt_ov_vi',
@@ -128,7 +128,7 @@ class DatabaseSeeder extends Seeder
         Movie::create([
             'title' => 'Watchmen',
             'body' => 'In 1985 where former superheroes exist the murder of a colleague sends active vigilante Rorschach into his own sprawling investigation, uncovering something that could completely change the course of history as we know it.',
-            'cover' => 'https://www.imdb.com/title/tt0409459/mediaviewer/rm2931438848/',
+            'cover' => 'https://www.themoviedb.org/t/p/original/zcCGhnlO4qi8ZqunUHAnYkwUtRX.jpg',
             'hero' => 'https://www.themoviedb.org/t/p/original/gFeaXBnOO14aOQhMQrr5tbyhMTw.jpg',
             'rating' => 4,
             'trailer' => 'https://www.imdb.com/video/vi240565017?playlistId=tt0409459&ref_=tt_ov_vi',
@@ -141,7 +141,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Pirates of the Caribbean',
             'body' => 'Blacksmith Will Turner teams up with eccentric pirate "Captain" Jack Sparrow to save his love, the governors daughter,
              from Jacks former pirate allies, who are now undead.',
-            'cover' => 'https://www.imdb.com/title/tt0325980/mediaviewer/rm2487103488/?ref_=tt_ov_i',
+            'cover' => 'https://www.themoviedb.org/t/p/original/l3peI54mf6Z9EBSvS3hnRmOBbFT.jpg',
             'hero' => 'https://www.themoviedb.org/t/p/original/8zfRLCgKrLAc5SSnACz8ZqmeKAP.jpg',
             'rating' => 2,
             'trailer' => 'https://www.youtube.com/embed/naQr0uTrH_s',
@@ -154,7 +154,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Spectre',
             'body' => 'A cryptic message from James Bonds past sends him on a trail to uncover the existence of a sinister organisation named SPECTRE With a new threat dawning Bond learns the terrible truth
              about the author of all his pain in his most recent missions.',
-            'cover' => 'https://www.imdb.com/title/tt2379713/mediaviewer/rm3887487232/',
+            'cover' => 'https://www.themoviedb.org/t/p/original/xfrnnrKuoS1v6x2u2Y50RU50qry.jpg',
             'hero' => 'https://www.themoviedb.org/t/p/original/8lBViysvNJBPkl6zG1LVAaW3qhj.jpg',
             'rating' => 3,
             'trailer' => 'https://www.imdb.com/video/vi3362042649?playlistId=tt2379713&ref_=tt_pr_ov_vi',
@@ -166,7 +166,7 @@ class DatabaseSeeder extends Seeder
 
             'title' => 'The Matrix Revolutions',
             'body' => 'The human city of Zion defends itself against the massive invasion of the machines as Neo fights to end the war at another front while also opposing the rogue Agent Smith.',
-            'cover' => 'https://www.imdb.com/title/tt0242653/mediaviewer/rm70327040/',
+            'cover' => 'https://www.themoviedb.org/t/p/original/en6wDdya9e2kDV4zn8vLoSrOc6p.jpg',
             'hero' => 'https://www.themoviedb.org/t/p/original/kJYPag1YrA4PsXIftFdq3QEaanV.jpg',
             'rating' => 2,
             'trailer' => 'https://www.imdb.com/video/vi2885026073?playlistId=tt0242653&ref_=tt_ov_vi',
@@ -191,7 +191,7 @@ class DatabaseSeeder extends Seeder
 
             'title' => 'The Lord of the Rings: The Return of the King',
             'body' => 'Gandalf and Aragorn lead the World of Men against Saurons army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.',
-            'cover' => 'https://www.imdb.com/title/tt0167260/mediaviewer/rm584928512/',
+            'cover' => 'https://www.themoviedb.org/t/p/original/uexxR7Kw1qYbZk0RYaF9Rx5ykbj.jpg',
             'hero' =>  'https://www.themoviedb.org/t/p/original/lXhgCODAbBXL5buk9yEmTpOoOgR.jpg',
             'rating' => 2,
             'trailer' => 'https://www.imdb.com/video/vi718127897?playlistId=tt0167260&ref_=tt_ov_vi',
@@ -204,7 +204,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'DEADPOOL',
             'body' => 'A wisecracking mercenary gets experimented on and becomes immortal but ugly
                 and sets out to track down the man who ruined his looks.',
-            'cover' => 'https://www.imdb.com/title/tt1431045/mediaviewer/rm351021568/',
+            'cover' => 'https://www.themoviedb.org/t/p/original/d2V5MyJxPM1GX7XcCNrTFHhYe3T.jpg',
             'hero' => 'https://www.themoviedb.org/t/p/original/wsPO5Jny82b0pksjSvjUHEYHDkz.jpg',
             'rating' => 1,
             'trailer' => 'https://www.imdb.com/video/vi567457049?ref_=nv_sr_srsg_1',
@@ -217,7 +217,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Dracula Untold',
             'body' => 'As his kingdom is being threatened by the Turks, young prince Vlad Tepes must become a monster feared by his own people in order to obtain the power needed to protect his own family,
             and the families of his kingdom.',
-            'cover' => 'https://www.imdb.com/title/tt0829150/mediaviewer/rm827509760/',
+            'cover' => 'https://www.themoviedb.org/t/p/original/AuGiPiGMYMkSosOJ3BQjDEAiwtO.jpg',
             'hero' => 'https://www.themoviedb.org/t/p/original/Ap0jDQIn8Jovz3MyejAepCcZrTU.jpg',
             'rating' => 3,
             'trailer' => 'https://www.imdb.com/video/vi1558818585?playlistId=tt0829150&ref_=tt_ov_vi',
@@ -242,7 +242,7 @@ class DatabaseSeeder extends Seeder
 
             'title' => 'Venom: Let There Be Carnage',
             'body' => 'Eddie Brock attempts to reignite his career by interviewing serial killer Cletus Kasady, who becomes the host of the symbiote Carnage and escapes prison after a failed execution.',
-            'cover' => 'https://www.imdb.com/title/tt7097896/mediaviewer/rm980350465/',
+            'cover' => 'https://www.themoviedb.org/t/p/original/rjkmN1dniUHVYAtwuV3Tji7FsDO.jpg',
             'hero' => 'https://www.themoviedb.org/t/p/original/vIgyYkXkg6NC2whRbYjBD7eb3Er.jpg',
             'rating' => 5,
             'trailer' => 'https://www.imdb.com/video/vi1533394969?playlistId=tt7097896&ref_=tt_pr_ov_vi',
@@ -255,7 +255,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'The Father',
             'body' => 'A man refuses all assistance from his daughter as he ages. As he tries to make sense of his changing circumstances,
                 he begins to doubt his loved ones, his own mind and even the fabric of his reality.',
-            'cover' => 'https://www.imdb.com/title/tt10272386/mediaviewer/rm2362964993/',
+            'cover' => 'https://www.themoviedb.org/t/p/original/uxWXW1YYQENSv7OzHB4Hds0bK3b.jpg',
             'hero' => 'https://www.themoviedb.org/t/p/original/6SP1bFfoXhW7Ni7fPw5GjY7ACBS.jpg',
             'rating' => 4,
             'trailer' => 'https://www.imdb.com/video/vi279101721?playlistId=tt10272386&ref_=tt_ov_vi',
@@ -267,7 +267,7 @@ class DatabaseSeeder extends Seeder
 
             'title' => 'Step Brothers',
             'body' => 'Two aimless middle-aged losers still living at home are forced against their will to become roommates when their parents marry.',
-            'cover' => 'https://www.imdb.com/title/tt0838283/mediaviewer/rm3433645824/',
+            'cover' => 'https://www.themoviedb.org/t/p/original/jV0eDViuTRf9cmj4H0JNvbvaNbR.jpg',
             'hero' => 'https://www.themoviedb.org/t/p/original/n53EPBWZiz69sYzNDZmamYHdo6Q.jpg',
             'rating' => 4,
             'trailer' => 'https://www.imdb.com/video/vi2847015193?playlistId=tt0838283&ref_=tt_ov_vi',
@@ -279,7 +279,7 @@ class DatabaseSeeder extends Seeder
 
             'title' => 'The Shining',
             'body' => ' A family heads to an isolated hotel for the winter where a sinister presence influences the father into violence, while his psychic son sees horrific forebodings from both past and future.',
-            'cover' => 'https://www.imdb.com/title/tt0081505/mediaviewer/rm3131156225/',
+            'cover' => 'https://www.themoviedb.org/t/p/original/5xcXvTErivIgRchsaw9qaT3NflE.jpg',
             'hero' => 'https://www.themoviedb.org/t/p/original/mmd1HnuvAzFc4iuVJcnBrhDNEKr.jpg',
             'rating' => 1,
             'trailer' => 'https://www.imdb.com/video/vi2689121305?playlistId=tt0081505&ref_=tt_ov_vi',
@@ -291,7 +291,7 @@ class DatabaseSeeder extends Seeder
 
             'title' => 'Parasite',
             'body' => ' A family heads to an isolated hotel for the winter where a sinister presence influences the father into violence, while his psychic son sees horrific forebodings from both past and future.',
-            'cover' => 'https://www.imdb.com/title/tt6751668/mediaviewer/rm4181363713/',
+            'cover' => 'https://www.themoviedb.org/t/p/original/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg',
             'hero' => 'https://www.themoviedb.org/t/p/original/TU9NIjwzjoKPwQHoHshkFcQUCG.jpg',
             'rating' => 2,
             'trailer' => 'https://www.imdb.com/video/vi1015463705?playlistId=tt6751668&ref_=tt_pr_ov_vi',
@@ -304,7 +304,7 @@ class DatabaseSeeder extends Seeder
 
             'title' => 'BOBA FETT',
             'body' => 'Bounty hunter Boba Fett & mercenary Fennec Shand navigate the underworld when they return to Tatooine to claim Jabba the Hutts old turf.',
-            'cover' => 'https://www.imdb.com/title/tt13668894/mediaviewer/rm1505552897/',
+            'cover' => 'https://www.themoviedb.org/t/p/original/jhgC70TurqELEc7vuepAjVpKakH.jpg',
             'hero' => 'https://www.themoviedb.org/t/p/original/rCwExhj5p9EJhCcHZQCpd06j0VJ.jpg',
             'rating' => 3,
             'trailer' => 'https://www.imdb.com/video/vi3711222553?playlistId=tt13668894&ref_=tt_pr_ov_vi',
@@ -332,7 +332,7 @@ class DatabaseSeeder extends Seeder
 
             'title' => 'Avengers: Infinity War',
             'body' => 'The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.',
-            'cover' => 'https://www.imdb.com/title/tt4154756/mediaviewer/rm4044245504/',
+            'cover' => 'https://www.themoviedb.org/t/p/original/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg',
             'hero' => 'https://www.themoviedb.org/t/p/original/k3xGG77CAiB0Wr2Y1H3ApihKTkk.jpg',
             'rating' => 5,
             'trailer' => 'https://www.imdb.com/video/vi528070681?playlistId=tt4154756&ref_=tt_pr_ov_vi',
