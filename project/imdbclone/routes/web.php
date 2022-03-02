@@ -49,7 +49,7 @@ Route::view('/register', 'register.register');
 // Route for user to login
 Route::get('login', [SessionsController::class, 'create']); //->middleware('guest');
 Route::post('login', [SessionsController::class, 'store'])->name('login.user'); //->name("login.user");
-Route::post('logout', [SessionsController::class, 'destroy']); //->middleware('auth');
+Route::get('logout', [SessionsController::class, 'destroy']); //->middleware('auth');
 
 // Admin
 Route::middleware('admin')->group(function () {
