@@ -27,6 +27,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+<<<<<<< Updated upstream
+=======
+
+//Itempage/moviepage
+Route::view('item', 'item');
+
+//Add Review
+Route::view('add-review', 'add-review');
+
+>>>>>>> Stashed changes
 Route::resource('movie', MovieController::class);
 
 Route::resource('comment', CommentController::class);
