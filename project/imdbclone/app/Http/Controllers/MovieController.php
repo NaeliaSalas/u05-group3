@@ -15,8 +15,8 @@ class MovieController extends Controller
      */
     public function index()
     {
-        $movies = Movie::get();
-        return view('movie.index', ['movies' => $movies]);
+        $movies = Movie::orderBy('title', 'asc')->get();
+        return view('admin.movies', ['movies' => $movies]);
     }
 
     /**
