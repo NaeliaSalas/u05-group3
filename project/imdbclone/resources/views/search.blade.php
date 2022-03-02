@@ -88,6 +88,7 @@
                                         </a></td>
                                     <img src=" {{ $movie->pics }} " width="300" height="300">
                                     </td>
+
                                 </tr>
                                 <div>
                                     <!-- <h2 class="text-white row">Title</h2> -->

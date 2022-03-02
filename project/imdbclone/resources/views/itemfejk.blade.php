@@ -27,7 +27,10 @@
         <h1>HEJ</h1>
 
         <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Accusantium sit temporibus quis cumque tenetur suscipit, debitis dolorem eos recusandae asperiores! Ullam autem ipsam ut explicabo, quisquam veritatis iste vel vitae.</p>
+            Accusantium sit temporibus quis cumque tenetur suscipit, debitis dolorem eos recusandae asperiores!
+            Ullam autem ipsam ut explicabo, quisquam veritatis iste vel vitae.</p>
+
+
     </form>
 </body>
 
