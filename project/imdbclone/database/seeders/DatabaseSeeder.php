@@ -179,7 +179,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Looper',
             'body' => 'In 2074 when the mob wants to get rid of someone, the target is sent into the past, where a hired gun awaits - someone like Joe - who one day learns
             the mob wants to close the loop by sending back Joes future self for assassination.',
-            'cover' => 'https://www.imdb.com/title/tt1276104/mediaviewer/rm2984487168/',
+            'cover' => 'https://www.themoviedb.org/t/p/original/en6wDdya9e2kDV4zn8vLoSrOc6p.jpg',
             'hero' => 'https://www.themoviedb.org/t/p/original/lVTYM5m7ZDnEyhxcYrkxJaYqExh.jpg',
             'rating' => 5,
             'trailer' => 'https://www.youtube.com/embed/2iQuhsmtfHw',
@@ -256,7 +256,7 @@ class DatabaseSeeder extends Seeder
             'title' => '1917',
             'body' => 'April 6th, 1917. As an infantry battalion assembles to wage war deep in enemy territory, two soldiers are assigned to race against
                 time and deliver a message that will stop 1,600 men from walking straight into a deadly trap.',
-            'cover' => 'https://www.imdb.com/title/tt8579674/mediaviewer/rm144738817/',
+            'cover' => 'https://www.themoviedb.org/t/p/original/AuGiPiGMYMkSosOJ3BQjDEAiwtO.jpg',
             'hero' => 'https://www.themoviedb.org/t/p/original/2lBOQK06tltt8SQaswgb8d657Mv.jpg',
             'rating' => 1,
             'trailer' => 'https://www.youtube.com/embed/YqNYrYUiMfg',
@@ -308,7 +308,7 @@ class DatabaseSeeder extends Seeder
             'cover' => 'https://www.themoviedb.org/t/p/original/5xcXvTErivIgRchsaw9qaT3NflE.jpg',
             'hero' => 'https://www.themoviedb.org/t/p/original/mmd1HnuvAzFc4iuVJcnBrhDNEKr.jpg',
             'rating' => 1,
-            'trailer' => 'https://www.imdb.com/video/vi2689121305?playlistId=tt0081505&ref_=tt_ov_vi',
+            'trailer' => 'https://www.youtube.com/embed/5Cb3ik6zP2I',
             'yearproduced' => 2008,
             'director' => 'Stanley Kubrick',
         ]);
@@ -316,7 +316,7 @@ class DatabaseSeeder extends Seeder
         Movie::create([
 
             'title' => 'Parasite',
-            'body' => ' A family heads to an isolated hotel for the winter where a sinister presence influences the father into violence, while his psychic son sees horrific forebodings from both past and future.',
+            'body' => 'All unemployed, Ki-taeks family takes peculiar interest in the wealthy and glamorous Parks for their livelihood until they get entangled in an unexpected incident.',
             'cover' => 'https://www.themoviedb.org/t/p/original/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg',
             'hero' => 'https://www.themoviedb.org/t/p/original/TU9NIjwzjoKPwQHoHshkFcQUCG.jpg',
             'rating' => 2,
