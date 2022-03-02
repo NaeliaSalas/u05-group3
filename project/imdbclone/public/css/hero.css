@@ -1,11 +1,11 @@
 .carousel {
     overflow: hidden;
-    max-width: 85%;
+    max-width: 100%;
     position: relative;
-    margin: 2rem auto 8rem auto;
+    margin: 4rem auto 8rem auto;
     border-bottom: solid 2px rgba(20, 16, 26, 0.6);
     z-index: 0;
-    top: 6rem;
+    max-height: 700px;
 }
 
 .carousel h2 {
@@ -22,7 +22,11 @@
 .carousel .carousel__item img {
     border-top: solid 2px rgba(20, 16, 26, 0.6);
     width: 100%;
-    height: auto;
+    max-height: 700px;
+    object-fit: cover;
+    display: block;
+    margin: auto;
+    background-size: cover;
 }
 
 .carousel .carousel__item--visible {
@@ -50,7 +54,6 @@
     width: 40px;
     height: 40px;
     justify-content: center;
-    margin-top: 2rem;
 }
 .carousel .carousel__actions button:hover {
     color: #f6cf41;
@@ -72,14 +75,5 @@
     100% {
         opacity: 1;
         transform: opacity linear;
-    }
-}
-
-@media only screen and (min-width: 1300px) {
-    .carousel {
-        width: 75%;
-    }
-    .carousel .carousel__item img {
-        object-fit: cover;
     }
 }

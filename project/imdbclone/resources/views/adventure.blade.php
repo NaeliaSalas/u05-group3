@@ -16,7 +16,7 @@
 </head>
 
 <body>
-
+    <!-- Navbar -->
     <div class="main-container">
 
         <div class="navbar">
@@ -50,86 +50,10 @@
             </div>
         </div>
 
-
-        <!-- Action section -->
+        <!-- adventure section -->
         <div class="main">
             <section class="top_picks">
-                <h2><a href="action">Action > </a> </h2>
-            </section>
-            <div class="movie_Showcase">
-                <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/tenet.jpeg')}}" alt=""></a>
-                    <div class="button_border">
-                        <p>Tenet</p>
-                        <div class="rating">
-                            <i class="fa-solid fa-star"></i>
-                            <p>8.7</p>
-                        </div>
-                        <button>Add Watchlist</button>
-                    </div>
-                </div>
-                <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/tenet.jpeg')}}" alt=""></a>
-                    <div class="button_border">
-                        <p>Tenet</p>
-                        <div class="rating">
-                            <i class="fa-solid fa-star"></i>
-                            <p>7.4</p>
-                        </div>
-                        <button>Add Watchlist</button>
-                    </div>
-                </div>
-                <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/tenet.jpeg')}}" alt=""></a>
-                    <div class="button_border">
-                        <p>Looper</p>
-                        <div class="rating">
-                            <i class="fa-solid fa-star"></i>
-                            <p>7.3</p>
-                        </div>
-                        <button>Add Watchlist</button>
-                    </div>
-                </div>
-                <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/tenet.jpeg')}}" alt=""></a>
-                    <div class="button_border">
-                        <p>Return of the King</p>
-                        <div class="rating">
-                            <i class="fa-solid fa-star"></i>
-                            <p>8.9</p>
-                        </div>
-                        <button>Add Watchlist</button>
-                    </div>
-                </div>
-                <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/tenet.jpeg')}}" alt=""></a>
-                    <div class="button_border">
-                        <p>Deadpool</p>
-                        <div class="rating">
-                            <i class="fa-solid fa-star"></i>
-                            <p>8.0</p>
-                        </div>
-                        <button>Add Watchlist</button>
-                    </div>
-                </div>
-                <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/tenet.jpeg')}}" alt=""></a>
-                    <div class="button_border">
-                        <p>E.T.</p>
-                        <div class="rating">
-                            <i class="fa-solid fa-star"></i>
-                            <p>7.8</p>
-                        </div>
-                        <button>Add Watchlist</button>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Adventure section -->
-
-            <section class="top_picks">
-                <h2><a href="adventure">Adventure > </a> </h2>
+                <h2><a href="category">Go Back > </a> </h2>
             </section>
             <div class="movie_Showcase">
                 <div class="showcase_item">
@@ -200,16 +124,12 @@
                 </div>
             </div>
 
-            <!-- Romance Section -->
 
-            <section class="top_picks">
-                <h2><a href="romance">Romance > </a> </h2>
-            </section>
             <div class="movie_Showcase">
                 <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/safe-haven.jpeg')}}" alt=""></a>
+                    <a href="#"><img src="{{ URL('images/lotr.jpeg')}}" alt=""></a>
                     <div class="button_border">
-                        <p>Safe Haven</p>
+                        <p>Return of the King</p>
                         <div class="rating">
                             <i class="fa-solid fa-star"></i>
                             <p>8.7</p>
@@ -218,7 +138,7 @@
                     </div>
                 </div>
                 <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/safe-haven.jpeg')}}" alt=""></a>
+                    <a href="#"><img src="{{ URL('images/lotr.jpeg')}}" alt=""></a>
                     <div class="button_border">
                         <p>Tenet</p>
                         <div class="rating">
@@ -229,7 +149,7 @@
                     </div>
                 </div>
                 <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/safe-haven.jpeg')}}" alt=""></a>
+                    <a href="#"><img src="{{ URL('images/lotr.jpeg')}}" alt=""></a>
                     <div class="button_border">
                         <p>Looper</p>
                         <div class="rating">
@@ -240,7 +160,7 @@
                     </div>
                 </div>
                 <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/safe-haven.jpeg')}}" alt=""></a>
+                    <a href="#"><img src="{{ URL('images/lotr.jpeg')}}" alt=""></a>
                     <div class="button_border">
                         <p>Return of the King</p>
                         <div class="rating">
@@ -251,7 +171,7 @@
                     </div>
                 </div>
                 <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/safe-haven.jpeg')}}" alt=""></a>
+                    <a href="#"><img src="{{ URL('images/lotr.jpeg')}}" alt=""></a>
                     <div class="button_border">
                         <p>Deadpool</p>
                         <div class="rating">
@@ -262,7 +182,7 @@
                     </div>
                 </div>
                 <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/safe-haven.jpeg')}}" alt=""></a>
+                    <a href="#"><img src="{{ URL('images/lotr.jpeg')}}" alt=""></a>
                     <div class="button_border">
                         <p>E.T.</p>
                         <div class="rating">
@@ -274,16 +194,12 @@
                 </div>
             </div>
 
-            <!-- Sci-fi section -->
 
-            <section class="top_picks">
-                <h2><a href="scifi">Sci-Fi > </a> </h2>
-            </section>
             <div class="movie_Showcase">
                 <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/matrix.jpeg')}}" alt=""></a>
+                    <a href="#"><img src="{{ URL('images/lotr.jpeg')}}" alt=""></a>
                     <div class="button_border">
-                        <p>Matrix</p>
+                        <p>Return of the King</p>
                         <div class="rating">
                             <i class="fa-solid fa-star"></i>
                             <p>8.7</p>
@@ -292,7 +208,7 @@
                     </div>
                 </div>
                 <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/matrix.jpeg')}}" alt=""></a>
+                    <a href="#"><img src="{{ URL('images/lotr.jpeg')}}" alt=""></a>
                     <div class="button_border">
                         <p>Tenet</p>
                         <div class="rating">
@@ -303,7 +219,7 @@
                     </div>
                 </div>
                 <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/matrix.jpeg')}}" alt=""></a>
+                    <a href="#"><img src="{{ URL('images/lotr.jpeg')}}" alt=""></a>
                     <div class="button_border">
                         <p>Looper</p>
                         <div class="rating">
@@ -314,7 +230,7 @@
                     </div>
                 </div>
                 <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/matrix.jpeg')}}" alt=""></a>
+                    <a href="#"><img src="{{ URL('images/lotr.jpeg')}}" alt=""></a>
                     <div class="button_border">
                         <p>Return of the King</p>
                         <div class="rating">
@@ -325,7 +241,7 @@
                     </div>
                 </div>
                 <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/matrix.jpeg')}}" alt=""></a>
+                    <a href="#"><img src="{{ URL('images/lotr.jpeg')}}" alt=""></a>
                     <div class="button_border">
                         <p>Deadpool</p>
                         <div class="rating">
@@ -336,7 +252,7 @@
                     </div>
                 </div>
                 <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/matrix.jpeg')}}" alt=""></a>
+                    <a href="#"><img src="{{ URL('images/lotr.jpeg')}}" alt=""></a>
                     <div class="button_border">
                         <p>E.T.</p>
                         <div class="rating">
@@ -348,16 +264,12 @@
                 </div>
             </div>
 
-            <!-- Horror section -->
 
-            <section class="top_picks">
-                <h2><a href="horror">Horror > </a> </h2>
-            </section>
             <div class="movie_Showcase">
                 <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/wretched.jpeg')}}" alt=""></a>
+                    <a href="#"><img src="{{ URL('images/lotr.jpeg')}}" alt=""></a>
                     <div class="button_border">
-                        <p>Wretched</p>
+                        <p>Return of the King</p>
                         <div class="rating">
                             <i class="fa-solid fa-star"></i>
                             <p>8.7</p>
@@ -366,7 +278,7 @@
                     </div>
                 </div>
                 <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/wretched.jpeg')}}" alt=""></a>
+                    <a href="#"><img src="{{ URL('images/lotr.jpeg')}}" alt=""></a>
                     <div class="button_border">
                         <p>Tenet</p>
                         <div class="rating">
@@ -377,7 +289,7 @@
                     </div>
                 </div>
                 <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/wretched.jpeg')}}" alt=""></a>
+                    <a href="#"><img src="{{ URL('images/lotr.jpeg')}}" alt=""></a>
                     <div class="button_border">
                         <p>Looper</p>
                         <div class="rating">
@@ -388,7 +300,7 @@
                     </div>
                 </div>
                 <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/wretched.jpeg')}}" alt=""></a>
+                    <a href="#"><img src="{{ URL('images/lotr.jpeg')}}" alt=""></a>
                     <div class="button_border">
                         <p>Return of the King</p>
                         <div class="rating">
@@ -399,7 +311,7 @@
                     </div>
                 </div>
                 <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/wretched.jpeg')}}" alt=""></a>
+                    <a href="#"><img src="{{ URL('images/lotr.jpeg')}}" alt=""></a>
                     <div class="button_border">
                         <p>Deadpool</p>
                         <div class="rating">
@@ -410,7 +322,7 @@
                     </div>
                 </div>
                 <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/wretched.jpeg')}}" alt=""></a>
+                    <a href="#"><img src="{{ URL('images/lotr.jpeg')}}" alt=""></a>
                     <div class="button_border">
                         <p>E.T.</p>
                         <div class="rating">
@@ -421,6 +333,79 @@
                     </div>
                 </div>
             </div>
+
+
+            <div class="movie_Showcase">
+                <div class="showcase_item">
+                    <a href="#"><img src="{{ URL('images/lotr.jpeg')}}" alt=""></a>
+                    <div class="button_border">
+                        <p>Return of the King</p>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <p>8.7</p>
+                        </div>
+                        <button>Add Watchlist</button>
+                    </div>
+                </div>
+                <div class="showcase_item">
+                    <a href="#"><img src="{{ URL('images/lotr.jpeg')}}" alt=""></a>
+                    <div class="button_border">
+                        <p>Tenet</p>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <p>7.4</p>
+                        </div>
+                        <button>Add Watchlist</button>
+                    </div>
+                </div>
+                <div class="showcase_item">
+                    <a href="#"><img src="{{ URL('images/lotr.jpeg')}}" alt=""></a>
+                    <div class="button_border">
+                        <p>Looper</p>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <p>7.3</p>
+                        </div>
+                        <button>Add Watchlist</button>
+                    </div>
+                </div>
+                <div class="showcase_item">
+                    <a href="#"><img src="{{ URL('images/lotr.jpeg')}}" alt=""></a>
+                    <div class="button_border">
+                        <p>Return of the King</p>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <p>8.9</p>
+                        </div>
+                        <button>Add Watchlist</button>
+                    </div>
+                </div>
+                <div class="showcase_item">
+                    <a href="#"><img src="{{ URL('images/lotr.jpeg')}}" alt=""></a>
+                    <div class="button_border">
+                        <p>Deadpool</p>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <p>8.0</p>
+                        </div>
+                        <button>Add Watchlist</button>
+                    </div>
+                </div>
+                <div class="showcase_item">
+                    <a href="#"><img src="{{ URL('images/lotr.jpeg')}}" alt=""></a>
+                    <div class="button_border">
+                        <p>E.T.</p>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <p>7.8</p>
+                        </div>
+                        <button>Add Watchlist</button>
+                    </div>
+                </div>
+            </div>
+
+
+
         </div>
 
         <!-- Footer with links -->

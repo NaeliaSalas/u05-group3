@@ -7,36 +7,51 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Edit user</title>
     <link rel="stylesheet" href="mix{{'css/app.css'}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('dashboard/dash.css') }}">
 </head>
 
 <body>
+    <div class="edit-user">
+        <div class="title">
+            <h1>Update user</h1>
+        </div>
 
-    <h1>Update user</h1>
+        @if(session('status'))
+        {{ session('status') }}
+        @endif
+        <div class="update-form">
 
-    @if(session('status'))
-    {{ session('status') }}
-    @endif
+            <form action="{{ url('user/' . $user->id) }}" method="POST">
 
 
-    <form action="{{ url('user/' . $user->id) }}" method="POST">
 
-        @csrf
-        @method('PUT')
+                @csrf
+                @method('PUT')
 
-        <div>
-            <label for="name">Name</label>
-            <input type="text" name="name" value="{{ $user->name}}"><br>
+                <div class="input-fields">
+                    <div class="form-input-material">
+                        <label for="name">Name</label>
+                        <input class="input" type="text" name="name" value="{{ $user->name}}"><br>
+                    </div>
 
-            <label for="username">Username</label>
-            <input type="text" name="username" value="{{ $user->username }}"><br>
+                    <div class="form-input-material">
+                        <label for="username">Username</label>
+                        <input class="input" type="text" name="username" value="{{ $user->username }}"><br>
+                    </div>
 
-            <label for="email">Email</label>
-            <input type="email" name="email" value="{{ $user->email }}"><br>
+                    <div class="form-input-material">
+                        <label for="email">Email</label>
+                        <input class="input" type="email" name="email" value="{{ $user->email }}"><br>
+                    </div>
+                </div>
 
-            <div>
-                <button type="submit" name="submit">Save changes</button>
-            </div>
-    </form>
+                <div class="save-changes">
+                    <button type="submit" name="submit" class="submit btn-primary btn-ghost">Save changes</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
 
 </body>
 

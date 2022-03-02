@@ -32,8 +32,13 @@ Route::get('/', function () {
 });
 
 
+
 //Itempage/moviepage
 Route::view('item', 'item');
+
+
+//Add Review
+Route::view('add-review', 'add-review');
 
 Route::resource('movie', MovieController::class);
 
@@ -75,5 +80,30 @@ route::get('/category', function () {
     return view('category');
 });
 
+
+/* Route to categorys */
+
+/* Route to adventure */
+route::get('/adventure', function () {
+    return view('adventure');
+});
+/* Route to Action */
+route::get('/action', function () {
+    return view('action');
+});
+/* Route to Romance */
+route::get('/romance', function () {
+    return view('romance');
+});
+/* Route to Horror */
+route::get('/horror', function () {
+    return view('horror');
+});
+/* Route to Sci-fi */
+route::get('/scifi', function () {
+    return view('scifi');
+});
+
 //search route
 Route::get('search', [SearchController::class, 'search'])->name('search');
+

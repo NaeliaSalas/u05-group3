@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+.main {
+    width: 90%;
+    margin: 0 auto;
+    justify-content: center;
+}
+
 .highlight {
     width: 92%;
     margin: auto;
@@ -16,8 +22,7 @@
 
 .featured {
     margin-bottom: 1rem;
-    margin-top: 1rem;
-    width: 300px;
+    justify-content: center;
 }
 
 .featured h2 {
@@ -27,7 +32,7 @@
 }
 
 .top_picks {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     margin-top: 1rem;
     width: 300px;
 }
@@ -46,7 +51,7 @@
     height: auto;
     width: auto;
     max-width: 600px;
-    margin: 0 1rem;
+    margin: 0 10px;
 }
 
 .highlight .highlight_item img {
@@ -68,19 +73,20 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin: 0 auto;
 }
 
 .movie_Showcase .showcase_item {
     height: auto;
     width: auto;
-    max-width: 600px;
+    max-width: 100%;
     margin: 0 8px;
 }
 
 .movie_Showcase .showcase_item img {
     border-top: solid 2px rgba(20, 16, 26, 0.6);
     height: 300px;
-    width: 200px;
+    max-width: 100%;
     object-fit: cover;
 }
 
@@ -93,7 +99,8 @@
 }
 
 .movie_Showcase .showcase_item .button_border {
-    background: rgba(20, 16, 26, 0.6);
+    background: #131019;
+
     height: 150px;
     margin-bottom: 2rem;
 }
@@ -134,7 +141,7 @@
 /* 3 picture showcase media querries */
 @media only screen and (max-width: 704px) {
     .highlight .highlight_item p {
-        font-size: 12px;
+        font-size: 14px;
         transform: translateY(0);
         background-color: #08060a;
     }
@@ -145,6 +152,10 @@
         font-size: 22px;
         transform: translateY(-8rem);
     }
+
+    .movie_Showcase .showcase_item img {
+        width: 250px;
+    }
 }
 @media only screen and (min-width: 705px) and (max-width: 1000px) {
     .highlight .highlight_item p {
@@ -154,24 +165,20 @@
 
 /* 6 pictures showcase media querries */
 
-@media only screen and (max-width: 1001px) {
+@media only screen and (max-width: 1091px) {
     .movie_Showcase .showcase_item p {
-        font-size: 14px;
+        font-size: 16px;
     }
     .movie_Showcase .showcase_item button {
-        font-size: 14px;
+        font-size: 16px;
     }
-}
-
-@media only screen and (max-width: 900px) {
     .movie_Showcase {
         flex-wrap: wrap;
     }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (min-width: 1800px) {
     .movie_Showcase .showcase_item img {
-        height: 250px;
-        width: 150px;
+        width: 300px;
     }
 }

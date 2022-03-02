@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{url('css/highlight.css')}}" />
     <link rel="stylesheet" href="{{url('css/watchlist.css')}}" />
     <link rel="stylesheet" href="{{url('css/movie.css')}}" />
+    <link rel="stylesheet" href="{{url('css/modal.css')}}" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://kit.fontawesome.com/405a204514.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -70,12 +71,25 @@
 
                 <!-- play-->
                 <div class="flex-item">
-                    <img src="{{ URL('images/PlayBtn.png')}}" alt="">
+                    <button id="myBtn"><img src="{{ URL('images/PlayBtn.png')}}" alt="">l</button>
                     <h3>Spela trailer</h3>
                     <p>2021, 2h 32min - Drama, Historia, Action. Land: USA.</p>
                 </div>
-            </div>
+                <!-- play-->
 
+                <!--MODAL -->
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <iframe src="https://www.youtube.com/embed/5zdBG-iGfes" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <!--MODAL -->
+
+            </div>
+          
         </div>
         <!-- Movie hero -->
 
@@ -113,28 +127,25 @@
         <div class="reviewFlex">
             <div class="review-item">
                 <p class="MovieTxt">
-                    <img src="{{ URL('images/star.png')}}" alt=""> 6,2
-                </p>
+                <img src="{{ URL('images/star.png')}}" alt=""> 6,2</p>
                 <p>
-                    Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
+                Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
+                </p>
+            </div>
+
+           <div class="review-item">
+                <p class="MovieTxt">
+                <img src="{{ URL('images/star.png')}}" alt=""> 6,2</p>
+                <p>
+                Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
                 </p>
             </div>
 
             <div class="review-item">
                 <p class="MovieTxt">
-                    <img src="{{ URL('images/star.png')}}" alt=""> 6,2
-                </p>
+                <img src="{{ URL('images/star.png')}}" alt=""> 6,2</p>
                 <p>
-                    Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
-                </p>
-            </div>
-
-            <div class="review-item">
-                <p class="MovieTxt">
-                    <img src="{{ URL('images/star.png')}}" alt=""> 6,2
-                </p>
-                <p>
-                    Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
+                Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
                 </p>
             </div>
         </div>
@@ -144,28 +155,25 @@
         <div class="reviewFlex">
             <div class="review-item">
                 <p class="MovieTxt">
-                    <img src="{{ URL('images/star.png')}}" alt=""> 6,2
-                </p>
+                <img src="{{ URL('images/star.png')}}" alt=""> 6,2</p>
                 <p>
-                    Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
+                Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
+                </p>
+            </div>
+
+           <div class="review-item">
+                <p class="MovieTxt">
+                <img src="{{ URL('images/star.png')}}" alt=""> 6,2</p>
+                <p>
+                Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
                 </p>
             </div>
 
             <div class="review-item">
                 <p class="MovieTxt">
-                    <img src="{{ URL('images/star.png')}}" alt=""> 6,2
-                </p>
+                <img src="{{ URL('images/star.png')}}" alt=""> 6,2</p>
                 <p>
-                    Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
-                </p>
-            </div>
-
-            <div class="review-item">
-                <p class="MovieTxt">
-                    <img src="{{ URL('images/star.png')}}" alt=""> 6,2
-                </p>
-                <p>
-                    Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
+                Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
                 </p>
             </div>
         </div>
@@ -173,7 +181,7 @@
 
         <!-- Add reviews -->
         <div class="center">
-            <button class="custom-btn btn-15">Add review</button>
+        <button class="custom-btn btn-15">Add review</button>
         </div>
         <!-- Add reviews -->
 
@@ -267,6 +275,7 @@
 
     <script src="{{url('js/hero.js')}}"></script>
     <script src="{{url('js/hamburger.js')}}"></script>
+    <script src="{{url('js/modal.js')}}"></script>
 
 </body>
 

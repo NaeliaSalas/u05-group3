@@ -23,14 +23,15 @@
     <div class="main-container">
 
         <div class="navbar">
-            <nav>
-                <div class="logo">
-                    <a href="/">
-                        <h1>CINEMAH</h1>
-                    </a>
-                </div>
-            </nav>
-            <form action="{{ url('/search')}}" method="GET">
+            <div class="navbar-1">
+                <nav>
+                    <div class="logo">
+                        <a href="/">
+                            <img src="{{ URL('images/logo.jpeg')}}" alt="">
+                        </a>
+                    </div>
+                </nav>
+            <form action="{{ URL('/search')}}" method="GET">
                 @csrf
 
                 <input type="text" placeholder="Search Movie" name="search">
@@ -43,7 +44,8 @@
                         <li class="nav-item"><a class="menuItem" href="#">Watchlist</a></li>
                         <li class="nav-item"><a class="menuItem" href="category">Categories</a></li>
                         @guest
-                        <li class=" nav-item"><a class="menuItem" href="/login">Login/Register</a></li>
+                        <li class=" nav-item"><a class="menuItem" href="login">Log in</a></li>
+                        <li class=" nav-item"><a class="menuItem" href="register">Register</a></li>
                         @endguest
                         @auth
                         <li class=" nav-item"><a class="menuItem" href="/logout">Logout</a></li>
@@ -55,6 +57,9 @@
                         <span class="bar"></span>
                     </div>
                 </nav>
+                <div class="searchbar">
+                    <input type="text" placeholder="Search">
+                </div>
             </div>
         </div>
 
@@ -63,9 +68,9 @@
         <!-- hero slider section -->
 
         <div class="carousel">
-            <h2 class="favorites">Fan favorites > </h2>
+            <!--<h2 class="favorites">Fan favorites > </h2>-->
             <div class="carousel__item carousel__item--visible hidden">
-                <img src="{{ URL('images/inception.jpeg')}}" />
+                <img src="{{ URL('images/inception1.jpeg')}}" />
             </div>
             <div class="carousel__item">
                 <img src="{{ URL('images/dark-knight.jpeg')}}" />
@@ -74,7 +79,7 @@
                 <img src="{{ URL('images/infinity-war.jpeg')}}" />
             </div>
             <div class="carousel__item">
-                <img src="{{ URL('images/transformers3.jpeg')}}" />
+                <img src="{{ URL('images/transformers.jpeg')}}" />
             </div>
             <div class="carousel__item">
                 <img src="{{ URL('images/interstellar.jpeg')}}" />
@@ -90,138 +95,141 @@
             </div>
         </div>
 
-        <!-- Featured section -->
-        <section class="featured">
-            <h2><a href="#">Featured today > </a></h2>
-        </section>
-        <div class="highlight">
-            <div class="highlight_item">
-                <a href="#"><img src="{{ URL('images/watchmen.jpeg')}}" alt=""></a>
-                <P>WATCHMEN</P>
+
+        <div class="main">
+
+            <!-- Featured section -->
+            <section class="featured">
+                <h2>Featured today ></h2>
+            </section>
+            <div class="highlight">
+                <div class="highlight_item">
+                    <a href="#"><img src="{{ URL('images/watchmen.jpeg')}}" alt=""></a>
+                    <P>WATCHMEN</P>
+                </div>
+                <div class="highlight_item">
+                    <a href="#"><img src="{{ URL('images/pirates.jpeg')}}" alt=""></a>
+                    <P>Pirates of the Caribbean</P>
+                </div>
+                <div class="highlight_item">
+                    <a href="#"><img src="{{ URL('images/007.jpeg')}}" alt=""></a>
+                    <p>007 SPECTRE</p>
+                </div>
             </div>
-            <div class="highlight_item">
-                <a href="#"><img src="{{ URL('images/pirates.jpeg')}}" alt=""></a>
-                <P>Pirates of the Caribbean</P>
+
+            <!-- Top picks section -->
+            <section class="top_picks">
+                <h2>Top Picks ></h2>
+            </section>
+            <div class="movie_Showcase">
+                <div class="showcase_item">
+                    <a href="#"><img src="{{ URL('images/matrix.jpeg')}}" alt=""></a>
+                    <div class="button_border">
+                        <p>Matrix</p>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <p>8.7</p>
+                        </div>
+                        <button>Add Watchlist</button>
+                    </div>
+                </div>
+                <div class="showcase_item">
+                    <a href="#"><img src="{{ URL('images/tenet.jpeg')}}" alt=""></a>
+                    <div class="button_border">
+                        <p>Tenet</p>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <p>7.4</p>
+                        </div>
+                        <button>Add Watchlist</button>
+                    </div>
+                </div>
+                <div class="showcase_item">
+                    <a href="#"><img src="{{ URL('images/looper.jpeg')}}" alt=""></a>
+                    <div class="button_border">
+                        <p>Looper</p>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <p>7.3</p>
+                        </div>
+                        <button>Add Watchlist</button>
+                    </div>
+                </div>
+                <div class="showcase_item">
+                    <a href="#"><img src="{{ URL('images/lotr.jpeg')}}" alt=""></a>
+                    <div class="button_border">
+                        <p>Return of the King</p>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <p>8.9</p>
+                        </div>
+                        <button>Add Watchlist</button>
+                    </div>
+                </div>
+                <div class="showcase_item">
+                    <a href="#"><img src="{{ URL('images/deadpool.jpeg')}}" alt=""></a>
+                    <div class="button_border">
+                        <p>Deadpool</p>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <p>8.0</p>
+                        </div>
+                        <button>Add Watchlist</button>
+                    </div>
+                </div>
+                <div class="showcase_item">
+                    <a href="#"><img src="{{ URL('images/et.jpeg')}}" alt=""></a>
+                    <div class="button_border">
+                        <p>E.T.</p>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <p>7.8</p>
+                        </div>
+                        <button>Add Watchlist</button>
+                    </div>
+                </div>
             </div>
-            <div class="highlight_item">
-                <a href="#"><img src="{{ URL('images/007.jpeg')}}" alt=""></a>
-                <p>007 SPECTRE</p>
+
+            <!-- Your watchlist section -->
+            <section class="featured">
+                <h2><a href="#">Your watchlist > </a></h2>
+            </section>
+            <div class="watchlist">
+                <div class="highlight_item">
+                    <a href="#"><img src="{{ URL('images/dracula.jpeg')}}" alt=""></a>
+                    <div class="button_border">
+                        <p>Dracula</p>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <p>7.1</p>
+                        </div>
+                        <button>Watchlist</button>
+                    </div>
+                </div>
+                <div class="highlight_item">
+                    <a href="#"><img src="{{ URL('images/1917.jpeg')}}" alt=""></a>
+                    <div class="button_border">
+                        <p>1917</p>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <p>8.3</p>
+                        </div>
+                        <button>Watchlist</button>
+                    </div>
+                </div>
+                <div class="highlight_item">
+                    <a href="#"><img src="{{ URL('images/venom.jpeg')}}" alt=""></a>
+                    <div class="button_border">
+                        <p>Venom 2</p>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <p>7.9</p>
+                        </div>
+                        <button>Watchlist</button>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <!-- Top picks section -->
-        <section class="top_picks">
-            <h2><a href="#">Top Picks > </a> </h2>
-        </section>
-        <div class="movie_Showcase">
-            <div class="showcase_item">
-                <a href="#"><img src="{{ URL('images/matrix.jpeg')}}" alt=""></a>
-                <div class="button_border">
-                    <p>Matrix</p>
-                    <div class="rating">
-                        <i class="fa-solid fa-star"></i>
-                        <p>8.7</p>
-                    </div>
-                    <button>Add Watchlist</button>
-                </div>
-            </div>
-            <div class="showcase_item">
-                <a href="#"><img src="{{ URL('images/tenet.jpeg')}}" alt=""></a>
-                <div class="button_border">
-                    <p>Tenet</p>
-                    <div class="rating">
-                        <i class="fa-solid fa-star"></i>
-                        <p>7.4</p>
-                    </div>
-                    <button>Add Watchlist</button>
-                </div>
-            </div>
-            <div class="showcase_item">
-                <a href="#"><img src="{{ URL('images/looper.jpeg')}}" alt=""></a>
-                <div class="button_border">
-                    <p>Looper</p>
-                    <div class="rating">
-                        <i class="fa-solid fa-star"></i>
-                        <p>7.3</p>
-                    </div>
-                    <button>Add Watchlist</button>
-                </div>
-            </div>
-            <div class="showcase_item">
-                <a href="#"><img src="{{ URL('images/lotr.jpeg')}}" alt=""></a>
-                <div class="button_border">
-                    <p>Return of the King</p>
-                    <div class="rating">
-                        <i class="fa-solid fa-star"></i>
-                        <p>8.9</p>
-                    </div>
-                    <button>Add Watchlist</button>
-                </div>
-            </div>
-            <div class="showcase_item">
-                <a href="#"><img src="{{ URL('images/deadpool.jpeg')}}" alt=""></a>
-                <div class="button_border">
-                    <p>Deadpool</p>
-                    <div class="rating">
-                        <i class="fa-solid fa-star"></i>
-                        <p>8.0</p>
-                    </div>
-                    <button>Add Watchlist</button>
-                </div>
-            </div>
-            <div class="showcase_item">
-                <a href="#"><img src="{{ URL('images/et.jpeg')}}" alt=""></a>
-                <div class="button_border">
-                    <p>E.T.</p>
-                    <div class="rating">
-                        <i class="fa-solid fa-star"></i>
-                        <p>7.8</p>
-                    </div>
-                    <button>Add Watchlist</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Your watchlist section -->
-        <section class="featured">
-            <h2><a href="#">Your watchlist > </a></h2>
-        </section>
-        <div class="watchlist">
-            <div class="highlight_item">
-                <a href="#"><img src="{{ URL('images/dracula.jpeg')}}" alt=""></a>
-                <div class="button_border">
-                    <p>Dracula</p>
-                    <div class="rating">
-                        <i class="fa-solid fa-star"></i>
-                        <p>7.1</p>
-                    </div>
-                    <button>Watchlist</button>
-                </div>
-            </div>
-            <div class="highlight_item">
-                <a href="#"><img src="{{ URL('images/1917.jpeg')}}" alt=""></a>
-                <div class="button_border">
-                    <p>1917</p>
-                    <div class="rating">
-                        <i class="fa-solid fa-star"></i>
-                        <p>8.3</p>
-                    </div>
-                    <button>Watchlist</button>
-                </div>
-            </div>
-            <div class="highlight_item">
-                <a href="#"><img src="{{ URL('images/venom.jpeg')}}" alt=""></a>
-                <div class="button_border">
-                    <p>Venom 2</p>
-                    <div class="rating">
-                        <i class="fa-solid fa-star"></i>
-                        <p>7.9</p>
-                    </div>
-                    <button>Watchlist</button>
-                </div>
-            </div>
-        </div>
-
 
         <!-- Footer with links -->
         <footer class="footer">

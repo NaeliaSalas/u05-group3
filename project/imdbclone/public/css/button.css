@@ -22,7 +22,7 @@ button {
 
 
 /* 15 */
-.btn-15 {
+.btn-15, input[type=button], input[type=submit], input[type=reset] {
   font-family: "Poppins", sans-serif;
   margin-top: 2em;
    background: yellow;
