@@ -2,7 +2,8 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    background-color: crimson;
+    background-color: #39b7dd;
+    border-radius: 4px;
 }
 
 /* EDIT USER */
@@ -88,4 +89,63 @@
     .input-fields {
         width: 100%;
     }
+}
+
+/* DASHBOARD */
+
+.dashboard {
+    width: 100%;
+    height: 100vh;
+    background-color: #6e848a;
+}
+
+.dashboard-witdh {
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboard-witdh2 {
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboard-cards {
+    height: auto;
+    background-color: #6e848a;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-single {
+    margin: 3rem 1rem;
+    background: white;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    border-radius: 4px;
+    padding: 2rem;
+}
+
+.card-single .card-text h2 {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.card-single .card-text span {
+    font-size: 20px;
+}
+
+.card-single .icon {
+    font-size: 45px;
+    color: #39b7dd;
+    display: block;
 }
