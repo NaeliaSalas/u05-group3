@@ -14,13 +14,13 @@ html {
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: #131019;
-    height: 5em;
+    background-color: rgb(27, 27, 27);
+    height: 80px;
     margin-bottom: 1rem;
-
-    width: 90%;
-    margin: auto;
-    position: sticky;
+    border-bottom: solid 2px black;
+    top: 0;
+    width: 100%;
+    position: fixed;
     z-index: 1;
 }
 
