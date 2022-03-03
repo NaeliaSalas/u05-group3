@@ -80,6 +80,15 @@ ul {
     background-color: #f6cf41;
 }
 
+.SearchMovie {
+    margin: 8rem auto 10rem auto;
+}
+
+.text-white {
+    display: flex;
+    flex-direction: column;
+}
+
 /*responsive*/
 @media (max-width: 767px) {
     .footer-col {

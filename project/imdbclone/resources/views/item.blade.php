@@ -30,31 +30,42 @@
     <div class="main-container">
 
         <div class="navbar">
-            <nav>
-                <div class="logo">
-                    <a href="/">
-                        <img src="{{ URL('images/Cinemah-Logo2.png')}}" alt="">
-                    </a>
-                </div>
-            </nav>
-            <form action="{{ url('/search')}}" method="GET">
-                @csrf
-                <input type="text" placeholder="Search Movie" name="search">
-            </form>
-            <div class="search-input">
-                <nav class="nav-wrapper">
-                    <ul class="nav-links">
-                        <li class="nav-item"><a class="menuItem" href="/">Home</a></li>
-                        <li class="nav-item"><a class="menuItem" href="#">Watchlist</a></li>
-                        <li class="nav-item"><a class="menuItem" href="category">Categories</a></li>
-                        <li class=" nav-item"><a class="menuItem" href="#">Login/register</a></li>
-                    </ul>
-                    <div class="hamburger">
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
+            <div class="navbar-1">
+                <nav>
+                    <div class="logo">
+                        <a href="/">
+                            <img src="{{ URL('images/logo.jpeg')}}" alt="">
+                        </a>
                     </div>
                 </nav>
+                <form action="{{ URL('/search')}}" method="GET">
+                    @csrf
+                    <div class="searchbar">
+                        <input type="text" placeholder="Search Movie" name="search">
+                    </div>
+                </form>
+
+                <div class="search-input">
+                    <nav class="nav-wrapper">
+                        <ul class="nav-links">
+                            <li class="nav-item"><a class="menuItem" href="/">Home</a></li>
+                            <li class="nav-item"><a class="menuItem" href="#">Watchlist</a></li>
+                            <li class="nav-item"><a class="menuItem" href="category">Categories</a></li>
+                            @guest
+                            <li class=" nav-item"><a class="menuItem" href="login">Log in</a></li>
+                            <li class=" nav-item"><a class="menuItem" href="register">Register</a></li>
+                            @endguest
+                            @auth
+                            <li class=" nav-item"><a class="menuItem" href="/logout">Logout</a></li>
+                            @endauth
+                        </ul>
+                        <div class="hamburger">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </div>
+                    </nav>
+                </div>
             </div>
         </div>
 
@@ -89,142 +100,135 @@
                 <!--MODAL -->
 
             </div>
-          
+
         </div>
         <!-- Movie hero -->
 
         <!-- txt section -->
-
-        <div class="txtSection">
-            <h1 class="MovieH1">{{$movie->title}}</h1>
-            <p class="MovieTxt"> {{$movie->body}}</p>
-            <br>
-            <p class="MovieTxt">Director: {{$movie->director}}</p>
-            <p class="MovieTxt">Year: {{$movie->yearproduced}}</p>
-            <p class="MovieTxt">Rating: {{$movie->rating}}</p>
-        </div>
-
-
-        <!-- images section -->
-        <div class="highlight">
-            <div class="highlight_item">
-                <a href="#"><img src="{{ URL('images/watchmen.jpeg')}}" alt=""></a>
-
-            </div>
-            <div class="highlight_item">
-                <a href="#"><img src="{{ URL('images/pirates.jpeg')}}" alt=""></a>
-
-            </div>
-            <div class="highlight_item">
-                <a href="#"><img src="{{ URL('images/007.jpeg')}}" alt=""></a>
-
-            </div>
-        </div>
-        <!-- images section -->
-
-        <h2><a href="#">User reviews</a></h2>
-        <!-- reviews section -->
-        <div class="reviewFlex">
-            <div class="review-item">
-                <p class="MovieTxt">
-                <img src="{{ URL('images/star.png')}}" alt=""> 6,2</p>
-                <p>
-                Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
-                </p>
+        <div class="main">
+            <div class="txtSection">
+                <h1 class="MovieH1">{{$movie->title}}</h1>
+                <p class="MovieTxt"> {{$movie->body}}</p>
+                <br>
+                <p class="MovieTxt">Director: {{$movie->director}}</p>
+                <p class="MovieTxt">Year: {{$movie->yearproduced}}</p>
+                <p class="MovieTxt">Rating: {{$movie->rating}}</p>
             </div>
 
-           <div class="review-item">
-                <p class="MovieTxt">
-                <img src="{{ URL('images/star.png')}}" alt=""> 6,2</p>
-                <p>
-                Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
-                </p>
-            </div>
 
-            <div class="review-item">
-                <p class="MovieTxt">
-                <img src="{{ URL('images/star.png')}}" alt=""> 6,2</p>
-                <p>
-                Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
-                </p>
-            </div>
-        </div>
-        <!-- reviews section -->
 
-        <!-- reviews section -->
-        <div class="reviewFlex">
-            <div class="review-item">
-                <p class="MovieTxt">
-                <img src="{{ URL('images/star.png')}}" alt=""> 6,2</p>
-                <p>
-                Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
-                </p>
-            </div>
+            <!-- images section -->
+            <section class="featured">
+                <h2 class="reviewstext"><a href="#">User reviews</a></h2>
+            </section>
+            <!-- reviews section -->
+            <div class="reviewFlex">
+                <div class="review-item">
+                    <p class="MovieTxt">
+                        <img src="{{ URL('images/star.png')}}" alt=""> 6,2
+                    </p>
+                    <p>
+                        Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
+                    </p>
+                </div>
 
-           <div class="review-item">
-                <p class="MovieTxt">
-                <img src="{{ URL('images/star.png')}}" alt=""> 6,2</p>
-                <p>
-                Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
-                </p>
-            </div>
+                <div class="review-item">
+                    <p class="MovieTxt">
+                        <img src="{{ URL('images/star.png')}}" alt=""> 6,2
+                    </p>
+                    <p>
+                        Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
+                    </p>
+                </div>
 
-            <div class="review-item">
-                <p class="MovieTxt">
-                <img src="{{ URL('images/star.png')}}" alt=""> 6,2</p>
-                <p>
-                Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
-                </p>
-            </div>
-        </div>
-        <!-- reviews section -->
-
-        <!-- Add reviews -->
-        <div class="center">
-        <button class="custom-btn btn-15">Add review</button>
-        </div>
-        <!-- Add reviews -->
-
-        <!-- Your watchlist section -->
-        <section class="featured">
-            <h2><a href="#">Your watchlist > </a></h2>
-        </section>
-        <div class="watchlist">
-            <div class="highlight_item">
-                <a href="#"><img src="{{ URL('images/dracula.jpeg')}}" alt=""></a>
-                <div class="button_border">
-                    <p>Dracula</p>
-                    <div class="rating">
-                        <i class="fa-solid fa-star"></i>
-                        <p>7.1</p>
-                    </div>
-                    <button>Watchlist</button>
+                <div class="review-item">
+                    <p class="MovieTxt">
+                        <img src="{{ URL('images/star.png')}}" alt=""> 6,2
+                    </p>
+                    <p>
+                        Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
+                    </p>
                 </div>
             </div>
-            <div class="highlight_item">
-                <a href="#"><img src="{{ URL('images/1917.jpeg')}}" alt=""></a>
-                <div class="button_border">
-                    <p>1917</p>
-                    <div class="rating">
-                        <i class="fa-solid fa-star"></i>
-                        <p>8.3</p>
-                    </div>
-                    <button>Watchlist</button>
+            <!-- reviews section -->
+
+            <!-- reviews section -->
+            <div class="reviewFlex">
+                <div class="review-item">
+                    <p class="MovieTxt">
+                        <img src="{{ URL('images/star.png')}}" alt=""> 6,2
+                    </p>
+                    <p>
+                        Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
+                    </p>
+                </div>
+
+                <div class="review-item">
+                    <p class="MovieTxt">
+                        <img src="{{ URL('images/star.png')}}" alt=""> 6,2
+                    </p>
+                    <p>
+                        Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
+                    </p>
+                </div>
+
+                <div class="review-item">
+                    <p class="MovieTxt">
+                        <img src="{{ URL('images/star.png')}}" alt=""> 6,2
+                    </p>
+                    <p>
+                        Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
+                    </p>
                 </div>
             </div>
-            <div class="highlight_item">
-                <a href="#"><img src="{{ URL('images/venom.jpeg')}}" alt=""></a>
-                <div class="button_border">
-                    <p>Venom 2</p>
-                    <div class="rating">
-                        <i class="fa-solid fa-star"></i>
-                        <p>7.9</p>
+            <!-- reviews section -->
+
+            <!-- Add reviews -->
+            <div class="center">
+                <button class="custom-btn btn-15">Add review</button>
+            </div>
+            <!-- Add reviews -->
+
+            <!-- Your watchlist section -->
+            <section class="featured">
+                <h2><a href="#">Your watchlist > </a></h2>
+            </section>
+            <div class="watchlist">
+                <div class="highlight_item">
+                    <a href="#"><img src="{{ URL('images/dracula.jpeg')}}" alt=""></a>
+                    <div class="button_border">
+                        <p>Dracula</p>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <p>7.1</p>
+                        </div>
+                        <button>Watchlist</button>
                     </div>
-                    <button>Watchlist</button>
+                </div>
+                <div class="highlight_item">
+                    <a href="#"><img src="{{ URL('images/1917.jpeg')}}" alt=""></a>
+                    <div class="button_border">
+                        <p>1917</p>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <p>8.3</p>
+                        </div>
+                        <button>Watchlist</button>
+                    </div>
+                </div>
+                <div class="highlight_item">
+                    <a href="#"><img src="{{ URL('images/venom.jpeg')}}" alt=""></a>
+                    <div class="button_border">
+                        <p>Venom 2</p>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <p>7.9</p>
+                        </div>
+                        <button>Watchlist</button>
+                    </div>
                 </div>
             </div>
         </div>
-
 
         <!-- Footer with links -->
         <footer class="footer">
@@ -243,8 +247,8 @@
                         <h4>get help</h4>
                         <ul>
                             <li><a href="#">Help</a></li>
-                            <li><a href="#">Get the IMDB APP</a></li>
-                            <li><a href="#">IMDBPro</a></li>
+                            <li><a href="#">Get the APP</a></li>
+                            <li><a href="#">CinemahPro</a></li>
                             <li><a href="#">MojoIMDB Developer</a></li>
                         </ul>
                     </div>

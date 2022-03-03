@@ -449,8 +449,8 @@
                         <h4>get help</h4>
                         <ul>
                             <li><a href="#">Help</a></li>
-                            <li><a href="#">Get the IMDB APP</a></li>
-                            <li><a href="#">IMDBPro</a></li>
+                            <li><a href="#">Get the APP</a></li>
+                            <li><a href="#">CinemahPro</a></li>
                             <li><a href="#">MojoIMDB Developer</a></li>
                         </ul>
                     </div>
@@ -474,6 +474,7 @@
                 </div>
             </div>
         </footer>
+
 
     </div>
 

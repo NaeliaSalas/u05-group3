@@ -20,6 +20,10 @@
     margin: 0 auto;
 }
 
+.reviewstext {
+    margin-top: 2rem;
+}
+
 .featured {
     margin-bottom: 1rem;
     justify-content: center;
