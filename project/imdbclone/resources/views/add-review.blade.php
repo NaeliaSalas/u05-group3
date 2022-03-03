@@ -27,28 +27,42 @@
     <div class="main-container">
 
         <div class="navbar">
-            <nav>
-                <div class="logo">
-                    <a href="/">
-                    <img src="{{ URL('images/Cinemah-Logo2.png')}}" alt="">
-                    </a>
-                </div>
-            </nav>
-            <input type="text" placeholder="Search">
-            <div class="search-input">
-                <nav class="nav-wrapper">
-                    <ul class="nav-links">
-                        <li class="nav-item"><a class="menuItem" href="/">Home</a></li>
-                        <li class="nav-item"><a class="menuItem" href="#">Watchlist</a></li>
-                        <li class="nav-item"><a class="menuItem" href="category">Categories</a></li>
-                        <li class=" nav-item"><a class="menuItem" href="#">Login/register</a></li>
-                    </ul>
-                    <div class="hamburger">
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
+            <div class="navbar-1">
+                <nav>
+                    <div class="logo">
+                        <a href="/">
+                            <img src="{{ URL('images/logo.jpeg')}}" alt="">
+                        </a>
                     </div>
                 </nav>
+                <form action="{{ URL('/search')}}" method="GET">
+                    @csrf
+                    <div class="searchbar">
+                        <input type="text" placeholder="Search Movie" name="search">
+                    </div>
+                </form>
+
+                <div class="search-input">
+                    <nav class="nav-wrapper">
+                        <ul class="nav-links">
+                            <li class="nav-item"><a class="menuItem" href="/">Home</a></li>
+                            <li class="nav-item"><a class="menuItem" href="#">Watchlist</a></li>
+                            <li class="nav-item"><a class="menuItem" href="category">Categories</a></li>
+                            @guest
+                            <li class=" nav-item"><a class="menuItem" href="login">Log in</a></li>
+                            <li class=" nav-item"><a class="menuItem" href="register">Register</a></li>
+                            @endguest
+                            @auth
+                            <li class=" nav-item"><a class="menuItem" href="/logout">Logout</a></li>
+                            @endauth
+                        </ul>
+                        <div class="hamburger">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </div>
+                    </nav>
+                </div>
             </div>
         </div>
 
@@ -65,38 +79,38 @@
                 <div class="flex-item-review"></div>
 
                 <div class="flex-item-review">
-                <h1 class="MovieH1">Add review</h1>
-                    
+                    <h1 class="MovieH1">Add review</h1>
+
                     <form action="{{url('review')}}" method="post">
                         @csrf
                         <input type="text" class="input" placeholder="Headline" name="title">
                         <label>Headline</label>
                         <br>
-                        
+
                         <input class="input" type="text" placeholder="Rating (7,2)" name="rate">
                         <br>
                         <input class="txtInput" type="text" placeholder="Your review" name="body" class="txtInput">
                         <br>
                         <input type="hidden" name="user_id_fk" value="1">
                         <input type="hidden" name="movie_id_fk" value="1">
-                        
+
                         <button type="submit" class="custom-btn btn-15">Add review</button>
 
                         <button class="custom-btn btn-15">Add review</button>
-         
+
                     </form>
                 </div>
 
-                
+
 
             </div>
-          
+
         </div>
         <!-- Movie hero -->
 
 
         <!-- Footer with links -->
-        <footer class="footerReview">
+        <footer class="footer">
             <div class="container">
                 <div class="row">
                     <div class="footer-col">
@@ -112,8 +126,8 @@
                         <h4>get help</h4>
                         <ul>
                             <li><a href="#">Help</a></li>
-                            <li><a href="#">Get the IMDB APP</a></li>
-                            <li><a href="#">IMDBPro</a></li>
+                            <li><a href="#">Get the APP</a></li>
+                            <li><a href="#">CinemahPro</a></li>
                             <li><a href="#">MojoIMDB Developer</a></li>
                         </ul>
                     </div>
