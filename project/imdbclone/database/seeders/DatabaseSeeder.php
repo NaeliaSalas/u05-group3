@@ -463,7 +463,7 @@ class DatabaseSeeder extends Seeder
             'cover' => 'https://www.themoviedb.org/t/p/original/e8OLh49AJKIATBSAso6EWr1YeWH.jpg',
             'hero' => 'https://www.themoviedb.org/t/p/original/3F2BYZy8H74lWUEKfP5lTPFxEq8.jpg',
             'rating' => 2,
-            'trailer' => 'https://www.youtube.com/embed/ZgMIlFDIPNc',
+            'trailer' => 'https://www.youtube.com/watch?v=O2NKzO-fxwQ',
             'yearproduced' => 2005,
             'director' => 'Takashi Shimizu',
         ]);
@@ -475,7 +475,7 @@ class DatabaseSeeder extends Seeder
             'cover' => 'https://www.themoviedb.org/t/p/original/40qxr2p2s297Q1mWFJOsRatQPK0.jpg',
             'hero' => 'https://www.themoviedb.org/t/p/original/qCSLKtNrL9xIyw2kjzi0GEUvqXx.jpg',
             'rating' => 2,
-            'trailer' => 'https://www.youtube.com/embed/ZgMIlFDIPNc',
+            'trailer' => 'https://www.youtube.com/embed/_nQs8SdGiEc',
             'yearproduced' => 2008,
             'director' => 'Kevin Smith',
         ]);
@@ -550,7 +550,7 @@ class DatabaseSeeder extends Seeder
             'cover' => 'https://www.themoviedb.org/t/p/original/662nBy9rJKrhdmbC6BhUSjwE6m.jpg',
             'hero' => 'https://www.themoviedb.org/t/p/original/ue7p1gBxBZeM9KNtwcUnBzdlRHk.jpg',
             'rating' => 5,
-            'trailer' => 'https://www.youtube.com/embed/_zxhK3Z-R0c',
+            'trailer' => 'https://www.youtube.com/embed/O2NKzO-fxwQ',
             'yearproduced' => 2021,
             'director' => 'Maggie Gyllenhaal',
         ]);
