@@ -26,7 +26,7 @@
                 <label for="cover">Add movie picture:</label>
                 <input type="url" name="cover"><br>
 
-                <label for="cover">Add hero picture:</label>
+                <label for="hero">Add hero picture:</label>
                 <input type="url" name="hero"><br>
 
                 <label for="rating">Add rating:</label>
