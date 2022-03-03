@@ -76,6 +76,8 @@
             @endforeach
         </div>
 
+
+
         <!-- Footer with links -->
         <footer class="footer">
             <div class="container">
