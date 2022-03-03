@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="mix{{'css/app.css'}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('dashboard/dash.css') }}">
 </head>
-
+@extends('admin/components/menu')
+@section('content')
+@endsection
 <body>
     <div class="edit-user">
         <div class="title">
@@ -22,9 +24,7 @@
         <div class="update-form">
 
             <form action="{{ url('user/' . $user->id) }}" method="POST">
-
-
-
+                
                 @csrf
                 @method('PUT')
 

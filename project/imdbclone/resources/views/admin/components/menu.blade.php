@@ -13,16 +13,18 @@
 </head>
 
 <body>
+    @yield('content')
     <div class="flex">
         <div class="flex flex-col w-64 h-screen px-4 py-8 overflow-y-auto border-r">
-            <h2 class="text-2xl font-extralight text-center text-white logo-bg">CINEMAH</h2>
-
-            <h1>Hello Admin</h1>
+            <div class="logo">
+                <a href="/">
+                    <img src="{{ URL('images/Cinemah-Logo2.png')}}" alt="">
+                </a>
+            </div>
             <div class="flex flex-col justify-between mt-6">
                 <aside>
 
                     <ul>
-                        <!-- Element-->
                         <li>
                             <a class="flex items-center px-4 py-2 text-gray-700 bg-gray-100 rounded-md " href="/dashboard.html">
                                 <i class="fa fa-home" aria-hidden="true"></i>
@@ -30,9 +32,6 @@
                                 <span class="mx-4 font-medium">Dashboard</span>
                             </a>
                         </li>
-                        <!-- Element-->
-
-                        <!-- Element-->
                         <li>
                             <a class="flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200" href='/user'>
                                 <i class="fas fa-user-alt" aria-hidden="true"></i>
@@ -40,9 +39,6 @@
                                 <span class="mx-4 font-medium">Users</span>
                             </a>
                         </li>
-                        <!-- Element-->
-
-                        <!-- Element-->
                         <li>
                             <a class="flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200" href='/movie'>
                                 <i class="fa fa-film" aria-hidden="true"></i>
@@ -50,9 +46,7 @@
                                 <span class="mx-4 font-medium">Movies</span>
                             </a>
                         </li>
-                        <!-- Element-->
-
-                        <!-- Element-->
+                     
                         <li>
                             <a class="flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200" href="#">
                                 <i class="fa fa-cog" aria-hidden="true"></i>
@@ -60,9 +54,9 @@
                                 <span class="mx-4 font-medium">Logout</span>
                             </a>
                         </li>
-
                     </ul>
-
                 </aside>
             </div>
         </div>
+
+        

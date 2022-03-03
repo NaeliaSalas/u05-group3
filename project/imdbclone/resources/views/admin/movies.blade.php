@@ -12,88 +12,20 @@
     <script src="https://kit.fontawesome.com/b81c5c3bb7.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
-    <div class="flex">
-        <div class="flex flex-col w-64 h-screen px-4 py-8 overflow-y-auto border-r">
-            <h2 class="text-2xl font-extralight text-center text-white logo-bg">CINEMAH</h2>
+@extends('admin/components/menu')
+@section('content')
+@endsection
+<section>
 
-
-            <div class="flex flex-col justify-between mt-6">
-                <aside>
-
-                    <ul>
-                        <!-- Element-->
-                        <li>
-                            <a class="flex items-center px-4 py-2 text-gray-700 bg-gray-100 rounded-md " href="dashboard.html">
-                                <i class="fa fa-home" aria-hidden="true"></i>
-
-                                <span class="mx-4 font-medium">Dashboard</span>
-                            </a>
-                        </li>
-                        <!-- Element-->
-
-                        <!-- Element-->
-                        <li>
-                            <a class="flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200" href="#">
-                                <i class="fa fa-cog" aria-hidden="true"></i>
-
-                                <span class="mx-4 font-medium">Settings</span>
-                            </a>
-                        </li>
-                        <!-- Element-->
-
-                        <!-- Element-->
-                        <li>
-                            <a class="flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200" href="/user">
-                                <i class="fas fa-user-alt" aria-hidden="true"></i>
-
-                                <span class="mx-4 font-medium">Users</span>
-                            </a>
-                        </li>
-                        <!-- Element-->
-
-                        <!-- Element-->
-                        <li>
-                            <a class="flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200" href="/movie">
-                                <i class="fa fa-film" aria-hidden="true"></i>
-
-                                <span class="mx-4 font-medium">Movies</span>
-                            </a>
-                        </li>
-                        <!-- Element-->
-
-                        <!-- Element-->
-                        <li>
-                            <a class="flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200" href="#">
-                                <i class="fa fa-cog" aria-hidden="true"></i>
-
-                                <span class="mx-4 font-medium">Something</span>
-                            </a>
-                        </li>
-                        <!-- Element-->
-
-                        <!-- Element-->
-                        <li>
-                            <a class="flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200" href="#">
-                                <i class="fa fa-cog" aria-hidden="true"></i>
-
-                                <span class="mx-4 font-medium">Something</span>
-                            </a>
-                        </li>
-                        <!-- Element-->
-                    </ul>
-
-                </aside>
-
-            </div>
-        </div>
 
         <div class="w-full h-full p-4 m-8 overflow-y-auto">
+      
             <a href="/movie/create">
                 <button type="button" class="justify-right px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Add movie +</button>
             </a>
+          
             <!-- Content-->
-            <div class="flex items-center justify-center w-full">
+            <div class="flex items-right justify-right w-medium">
                 <!-- Table-->
                 <div class="bg-white px-4 md:px-10 pb-5 w-full">
                     <div class="overflow-x-auto">
@@ -103,8 +35,8 @@
                                 @foreach ($movies as $movie)
                                 <tr tabindex="0" class="w-full focus:outline-none text-sm leading-none text-gray-600 h-20 hover:bg-slate-50">
                                     <td class="w-1/2">
-                                        <div class="flex items-center">
-                                            <div class="w-10 h-10 bg-gray-700 rounded-sm flex items-center justify-center">
+                                        <div class="flex items-right">
+                                            <div class="w-10 h-10 bg-gray-700 rounded-sm flex items-right justify-right">
                                                 <img src="{{$movie->cover}}" />
                                             </div>
                                             <div class="pl-2">
@@ -149,10 +81,11 @@
                     </div>
                 </div>
                 <!-- Table-->
-
             </div>
             <!-- Content-->
         </div>
+    </section>
+
 </body>
 
 </html>
