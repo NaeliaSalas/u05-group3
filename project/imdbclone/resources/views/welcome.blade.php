@@ -31,37 +31,37 @@
                         </a>
                     </div>
                 </nav>
-            <form action="{{ URL('/search')}}" method="GET">
-                @csrf
-                <div class="searchbar">
-                <input type="text" placeholder="Search Movie" name="search">
-                </div>
-            </form>
-
-            <div class="search-input">
-                <nav class="nav-wrapper">
-                    <ul class="nav-links">
-                        <li class="nav-item"><a class="menuItem" href="/">Home</a></li>
-                        <li class="nav-item"><a class="menuItem" href="#">Watchlist</a></li>
-                        <li class="nav-item"><a class="menuItem" href="category">Categories</a></li>
-                        @guest
-                        <li class=" nav-item"><a class="menuItem" href="login">Log in</a></li>
-                        <li class=" nav-item"><a class="menuItem" href="register">Register</a></li>
-                        @endguest
-                        @auth
-                        <li class=" nav-item"><a class="menuItem" href="/logout">Logout</a></li>
-                        @endauth
-                    </ul>
-                    <div class="hamburger">
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
+                <form action="{{ URL('/search')}}" method="GET">
+                    @csrf
+                    <div class="searchbar">
+                        <input type="text" placeholder="Search Movie" name="search">
                     </div>
-                </nav>
-             
+                </form>
+
+                <div class="search-input">
+                    <nav class="nav-wrapper">
+                        <ul class="nav-links">
+                            <li class="nav-item"><a class="menuItem" href="/">Home</a></li>
+                            <li class="nav-item"><a class="menuItem" href="#">Watchlist</a></li>
+                            <li class="nav-item"><a class="menuItem" href="category">Categories</a></li>
+                            @guest
+                            <li class=" nav-item"><a class="menuItem" href="login">Log in</a></li>
+                            <li class=" nav-item"><a class="menuItem" href="register">Register</a></li>
+                            @endguest
+                            @auth
+                            <li class=" nav-item"><a class="menuItem" href="/logout">Logout</a></li>
+                            @endauth
+                        </ul>
+                        <div class="hamburger">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </div>
+                    </nav>
+
+                </div>
             </div>
         </div>
-    </div>
 
 
         <!-- hero slider section -->
@@ -69,7 +69,7 @@
         <div class="carousel">
             <!--<h2 class="favorites">Fan favorites > </h2>-->
             <div class="carousel__item carousel__item--visible hidden">
-                <img src="{{ URL('images/inception1.jpeg')}}" />
+                <img src="{{ $movies[0]->hero }}" />
             </div>
             <div class="carousel__item">
                 <img src="{{ URL('images/dark-knight.jpeg')}}" />
