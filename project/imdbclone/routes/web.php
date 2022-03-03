@@ -51,7 +51,7 @@ Route::resource('review', ReviewController::class);
 route::resource('watchlist', WatchlistController::class);
 
 //Route to genres
-Route::get('/genre/{id}/', [MovieGenreController::class, 'show']);
+Route::get('genre', [MovieGenreController::class, 'index']);
 
 // Rout to register new user
 Route::get('register', [RegisterController::class, 'create']);
