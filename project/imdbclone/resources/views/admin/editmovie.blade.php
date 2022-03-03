@@ -12,7 +12,6 @@
     <script src="https://kit.fontawesome.com/b81c5c3bb7.js" crossorigin="anonymous"></script>
 </head>
 
-
 <body>
     <div class="flex">
         <div class="flex flex-col w-64 h-screen px-4 py-8 overflow-y-auto border-r">
