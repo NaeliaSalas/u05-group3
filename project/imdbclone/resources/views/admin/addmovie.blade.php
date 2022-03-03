@@ -26,6 +26,9 @@
                 <label for="cover">Add movie picture:</label>
                 <input type="url" name="cover"><br>
 
+                <label for="cover">Add hero picture:</label>
+                <input type="url" name="hero"><br>
+
                 <label for="rating">Add rating:</label>
                 <input list="rating" name="rating">
                 <datalist id="rating">
