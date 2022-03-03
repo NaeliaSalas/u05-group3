@@ -63,29 +63,18 @@
             </div>
         </div>
 
-
         <!-- hero slider section -->
 
         <div class="carousel">
             <!--<h2 class="favorites">Fan favorites > </h2>-->
-            <div class="carousel__item carousel__item--visible hidden">
-                <img src="{{ $movies[0]->hero }}" />
+
+            @php
+            $heromovies = $movies->random(5);
+            @endphp
+            @foreach ($heromovies as $heromovie) <div class="carousel__item carousel__item--visible hidden">
+                <img src="{{ $heromovie->hero }}" />
             </div>
-            <div class="carousel__item">
-                <img src="{{ URL('images/dark-knight.jpeg')}}" />
-            </div>
-            <div class="carousel__item">
-                <img src="{{ URL('images/infinity-war.jpeg')}}" />
-            </div>
-            <div class="carousel__item">
-                <img src="{{ URL('images/transformers.jpeg')}}" />
-            </div>
-            <div class="carousel__item">
-                <img src="{{ URL('images/interstellar.jpeg')}}" />
-            </div>
-            <div class="carousel__item">
-                <img src="{{ URL('images/django.jpeg')}}" />
-            </div>
+            @endforeach
 
             <div class="carousel__actions">
                 <button id="carousel__button--prev" aria-label="Previous slide">
@@ -94,26 +83,26 @@
             </div>
         </div>
 
-
         <div class="main">
 
+            <p class="text-white">{{ $movies->count()}}</p>
+
+
             <!-- Featured section -->
+
             <section class="featured">
                 <h2>Featured today ></h2>
             </section>
             <div class="highlight">
-                <div class="highlight_item">
-                    <a href="#"><img src="{{ URL('images/watchmen.jpeg')}}" alt=""></a>
-                    <P>WATCHMEN</P>
+
+                @php
+                $highlightmovies = $movies->random(3);
+                @endphp
+                @foreach ($highlightmovies as $highlightmovie) <div class="highlight_item">
+                    <a href="{{ url('/movie/' . $highlightmovie->id) }}"><img src="{{ URL($highlightmovie->cover) }}" alt="Movie Cover"></a>
+                    <P>{{$highlightmovie->title}}</P>
                 </div>
-                <div class="highlight_item">
-                    <a href="#"><img src="{{ URL('images/pirates.jpeg')}}" alt=""></a>
-                    <P>Pirates of the Caribbean</P>
-                </div>
-                <div class="highlight_item">
-                    <a href="#"><img src="{{ URL('images/007.jpeg')}}" alt=""></a>
-                    <p>007 SPECTRE</p>
-                </div>
+                @endforeach
             </div>
 
             <!-- Top picks section -->
@@ -121,174 +110,138 @@
                 <h2>Top Picks ></h2>
             </section>
             <div class="movie_Showcase">
+                @php
+                $topmovies = $movies->random(6);
+                @endphp
+                @foreach ($topmovies as $topmovie)
                 <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/matrix.jpeg')}}" alt=""></a>
+                    <a href="{{url('/movie/' . $topmovie->id)}}"><img src="{{ URL($topmovie->cover)}}" alt=""></a>
                     <div class="button_border">
-                        <p>Matrix</p>
+                        <p>{{$topmovie->title}}</p>
                         <div class="rating">
                             <i class="fa-solid fa-star"></i>
-                            <p>8.7</p>
+                            <p>{{$topmovie->rating}}</p>
                         </div>
 
                         <!-- Drop down menu/lists -->
                         <div class="dropdown" style="float:left;">
                             <button class="dropbtn">Add to watchlist</button>
                             <div class="dropdown-content" style="left:0;">
-                                <a href="#">Link 1</a>
-                                <a href="#">Link 2</a>
-                                <a href="#">Link 3</a>
+                                @foreach(Auth::user()->watchlists as $watchlist)
+                                <a href="#">{{$watchlist->title}}</a>
+                                @endforeach
                             </div>
                         </div>
                         <!-- Drop down menu/lists -->
 
                     </div>
                 </div>
-                <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/tenet.jpeg')}}" alt=""></a>
-                    <div class="button_border">
-                        <p>Tenet</p>
-                        <div class="rating">
-                            <i class="fa-solid fa-star"></i>
-                            <p>7.4</p>
-                        </div>
-                        <button>Add Watchlist</button>
-                    </div>
-                </div>
-                <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/looper.jpeg')}}" alt=""></a>
-                    <div class="button_border">
-                        <p>Looper</p>
-                        <div class="rating">
-                            <i class="fa-solid fa-star"></i>
-                            <p>7.3</p>
-                        </div>
-                        <button>Add Watchlist</button>
-                    </div>
-                </div>
-                <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/lotr.jpeg')}}" alt=""></a>
-                    <div class="button_border">
-                        <p>Return of the King</p>
-                        <div class="rating">
-                            <i class="fa-solid fa-star"></i>
-                            <p>8.9</p>
-                        </div>
-                        <button>Add Watchlist</button>
-                    </div>
-                </div>
-                <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/deadpool.jpeg')}}" alt=""></a>
-                    <div class="button_border">
-                        <p>Deadpool</p>
-                        <div class="rating">
-                            <i class="fa-solid fa-star"></i>
-                            <p>8.0</p>
-                        </div>
-                        <button>Add Watchlist</button>
-                    </div>
-                </div>
-                <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/et.jpeg')}}" alt=""></a>
-                    <div class="button_border">
-                        <p>E.T.</p>
-                        <div class="rating">
-                            <i class="fa-solid fa-star"></i>
-                            <p>7.8</p>
-                        </div>
-                        <button>Add Watchlist</button>
-                    </div>
-                </div>
             </div>
-
-            <!-- Your watchlist section -->
-            @auth
-
-
-            <section class="featured">
-                <h2><a href="#">Your watchlist > </a></h2>
-            </section>
-            <div class="watchlist">
-                <div class="highlight_item">
-                    <a href="#"><img src="{{ URL('images/dracula.jpeg')}}" alt=""></a>
-                    <div class="button_border">
-                        <p>Dracula</p>
-                        <div class="rating">
-                            <i class="fa-solid fa-star"></i>
-                            <p>7.1</p>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="highlight_item">
-                    <a href="#"><img src="{{ URL('images/1917.jpeg')}}" alt=""></a>
-                    <div class="button_border">
-                        <p>1917</p>
-                        <div class="rating">
-                            <i class="fa-solid fa-star"></i>
-                            <p>8.3</p>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="highlight_item">
-                    <a href="#"><img src="{{ URL('images/venom.jpeg')}}" alt=""></a>
-                    <div class="button_border">
-                        <p>Venom 2</p>
-                        <div class="rating">
-                            <i class="fa-solid fa-star"></i>
-                            <p>7.9</p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            @endauth
-
+            @endforeach
 
         </div>
 
-        <!-- Footer with links -->
-        <footer class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="footer-col">
-                        <h4>company</h4>
-                        <ul>
-                            <li><a href="#">about us</a></li>
-                            <li><a href="#">Condition of Use</a></li>
-                            <li><a href="#">privacy policy</a></li>
-                            <li><a href="#">Site Index</a></li>
-                        </ul>
+        <!-- Your watchlist section -->
+        @auth
+
+
+        <section class="featured">
+            <h2><a href="#">Your watchlist > </a></h2>
+        </section>
+        <div class="watchlist">
+            <div class="highlight_item">
+                <a href="#"><img src="{{ URL('images/dracula.jpeg')}}" alt=""></a>
+                <div class="button_border">
+                    <p>Dracula</p>
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <p>7.1</p>
                     </div>
-                    <div class="footer-col">
-                        <h4>get help</h4>
-                        <ul>
-                            <li><a href="#">Help</a></li>
-                            <li><a href="#">Get the APP</a></li>
-                            <li><a href="#">CinemahPro</a></li>
-                            <li><a href="#">MojoIMDB Developer</a></li>
-                        </ul>
+
+                </div>
+            </div>
+
+            <div class="highlight_item">
+                <a href="#"><img src="{{ URL('images/dracula.jpeg')}}" alt=""></a>
+                <div class="button_border">
+                    <p>Dracula</p>
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <p>7.1</p>
                     </div>
-                    <div class="footer-col">
-                        <h4>market related</h4>
-                        <ul>
-                            <li><a href="#">Press Room</a></li>
-                            <li><a href="#">Box Office</a></li>
-                            <li><a href="#">Interest-Based Ads</a></li>
-                            <li><a href="#">Advertising</a></li>
-                        </ul>
+
+                </div>
+            </div>
+            <div class="highlight_item">
+                <a href="#"><img src="{{ URL('images/1917.jpeg')}}" alt=""></a>
+                <div class="button_border">
+                    <p>1917</p>
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <p>8.3</p>
                     </div>
-                    <div class="footer-col">
-                        <h4>follow us</h4>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
+
+                </div>
+            </div>
+            <div class="highlight_item">
+                <a href="#"><img src="{{ URL('images/venom.jpeg')}}" alt=""></a>
+                <div class="button_border">
+                    <p>Venom 2</p>
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <p>7.9</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        @endauth
+
+
+    </div>
+
+    <!-- Footer with links -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">Condition of Use</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">Site Index</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Get the APP</a></li>
+                        <li><a href="#">CinemahPro</a></li>
+                        <li><a href="#">MojoIMDB Developer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>market related</h4>
+                    <ul>
+                        <li><a href="#">Press Room</a></li>
+                        <li><a href="#">Box Office</a></li>
+                        <li><a href="#">Interest-Based Ads</a></li>
+                        <li><a href="#">Advertising</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
-        </footer>
+        </div>
+    </footer>
 
     </div>
 
