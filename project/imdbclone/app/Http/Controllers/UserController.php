@@ -18,7 +18,7 @@ class UserController extends Controller
     public function __construct()
     {
 
-        $this->middleware('admin')->except('index', 'store');
+        $this->middleware('admin')->except('store');
     }
 
     /**
@@ -63,13 +63,12 @@ class UserController extends Controller
         $user->save();
 
         // OM admin skapat en user redirecta till 
-        if (Auth::user()->IsAdmin = 1) {
-            return redirect('user')->with('message', 'User created');
+        if (Auth::check() && Auth::user()->IsAdmin == 1) {
 
-            // OM en user skapat konto redirect till login
-        } else {
-            return redirect('login')->with('success', 'Your account has been created.');
+            return redirect('user')->with('message', 'User created');
         }
+
+        return redirect('login')->with('success', 'Your account has been created.');
     }
 
     /**
