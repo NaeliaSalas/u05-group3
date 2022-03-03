@@ -15,6 +15,7 @@
     {{ $movie->title }} <br>
     {{ $movie->body }}
     {{ $movie->cover }}
+    {{ $movie->hero }}
     {{ $movie->trailer }}
     {{ $movie->rating }}
     <br><br>

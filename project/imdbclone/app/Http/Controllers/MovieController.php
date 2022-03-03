@@ -99,6 +99,7 @@ class MovieController extends Controller
             'title' => 'string|required|max:255',
             'body' => 'string|required|max:255',
             'cover' => 'required|max:255',
+            'hero' => 'required|max:255',
             'rating' => 'integer|required|max:255',
             'trailer' => 'required|max:255',
             'yearproduced' => 'integer|required|min:1900|max:2023',
@@ -110,6 +111,8 @@ class MovieController extends Controller
         $movie->title = $request->title;
         $movie->body = $request->body;
         $movie->cover = $request->cover;
+        $movie->hero = $request->hero;
+
         $movie->rating = $request->rating;
         $movie->trailer = $request->trailer;
         $movie->yearproduced = $request->yearproduced;

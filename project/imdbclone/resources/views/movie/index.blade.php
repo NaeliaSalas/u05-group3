@@ -31,6 +31,9 @@
                 <label for="cover">Add movie picture:</label>
                 <input type="url" name="cover"><br>
 
+                <label for="director">Add hero image:</label>
+                <input type="url" name="hero"><br>
+
                 <label for="rating">Add rating:</label>
                 <input list="rating" name="rating">
                 <datalist id="rating">
@@ -61,6 +64,7 @@
         {{ $movie->id }} <br><br>
         {{ $movie->body }} <br><br>
         {{ $movie->cover }} <br><br>
+        {{ $movie->hero }} <br><br>
         {{ $movie->rating }} <br><br>
         {{ $movie->trailer }} <br><br>
         {{ $movie->yearproduced }} <br><br>
