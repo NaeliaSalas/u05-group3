@@ -31,37 +31,37 @@
                         </a>
                     </div>
                 </nav>
-            <form action="{{ URL('/search')}}" method="GET">
-                @csrf
-                <div class="searchbar">
-                <input type="text" placeholder="Search Movie" name="search">
-                </div>
-            </form>
-
-            <div class="search-input">
-                <nav class="nav-wrapper">
-                    <ul class="nav-links">
-                        <li class="nav-item"><a class="menuItem" href="/">Home</a></li>
-                        <li class="nav-item"><a class="menuItem" href="#">Watchlist</a></li>
-                        <li class="nav-item"><a class="menuItem" href="category">Categories</a></li>
-                        @guest
-                        <li class=" nav-item"><a class="menuItem" href="login">Log in</a></li>
-                        <li class=" nav-item"><a class="menuItem" href="register">Register</a></li>
-                        @endguest
-                        @auth
-                        <li class=" nav-item"><a class="menuItem" href="/logout">Logout</a></li>
-                        @endauth
-                    </ul>
-                    <div class="hamburger">
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
+                <form action="{{ URL('/search')}}" method="GET">
+                    @csrf
+                    <div class="searchbar">
+                        <input type="text" placeholder="Search Movie" name="search">
                     </div>
-                </nav>
-             
+                </form>
+
+                <div class="search-input">
+                    <nav class="nav-wrapper">
+                        <ul class="nav-links">
+                            <li class="nav-item"><a class="menuItem" href="/">Home</a></li>
+                            <li class="nav-item"><a class="menuItem" href="#">Watchlist</a></li>
+                            <li class="nav-item"><a class="menuItem" href="category">Categories</a></li>
+                            @guest
+                            <li class=" nav-item"><a class="menuItem" href="login">Log in</a></li>
+                            <li class=" nav-item"><a class="menuItem" href="register">Register</a></li>
+                            @endguest
+                            @auth
+                            <li class=" nav-item"><a class="menuItem" href="/logout">Logout</a></li>
+                            @endauth
+                        </ul>
+                        <div class="hamburger">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </div>
+                    </nav>
+
+                </div>
             </div>
         </div>
-    </div>
 
 
         <!-- hero slider section -->
@@ -69,7 +69,7 @@
         <div class="carousel">
             <!--<h2 class="favorites">Fan favorites > </h2>-->
             <div class="carousel__item carousel__item--visible hidden">
-                <img src="{{ URL('images/inception1.jpeg')}}" />
+                <img src="{{ $movies[0]->hero }}" />
             </div>
             <div class="carousel__item">
                 <img src="{{ URL('images/dark-knight.jpeg')}}" />
@@ -129,7 +129,18 @@
                             <i class="fa-solid fa-star"></i>
                             <p>8.7</p>
                         </div>
-                        <button>Add Watchlist</button>
+
+                         <!-- Drop down menu/lists -->
+                         <div class="dropdown" style="float:left;">
+                            <button class="dropbtn">Add to watchlist</button>
+                            <div class="dropdown-content" style="left:0;">
+                                <a href="#">Link 1</a>
+                                <a href="#">Link 2</a>
+                                <a href="#">Link 3</a>
+                            </div>
+                        </div>
+                        <!-- Drop down menu/lists -->
+                        
                     </div>
                 </div>
                 <div class="showcase_item">
@@ -247,8 +258,8 @@
                         <h4>get help</h4>
                         <ul>
                             <li><a href="#">Help</a></li>
-                            <li><a href="#">Get the IMDB APP</a></li>
-                            <li><a href="#">IMDBPro</a></li>
+                            <li><a href="#">Get the APP</a></li>
+                            <li><a href="#">CinemahPro</a></li>
                             <li><a href="#">MojoIMDB Developer</a></li>
                         </ul>
                     </div>

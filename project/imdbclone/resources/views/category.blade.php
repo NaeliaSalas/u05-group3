@@ -28,17 +28,26 @@
                         </a>
                     </div>
                 </nav>
-                <div class="searchbar">
-                    <input type="text" placeholder="Search">
-                </div>
+                <form action="{{ URL('/search')}}" method="GET">
+                    @csrf
+                    <div class="searchbar">
+                        <input type="text" placeholder="Search Movie" name="search">
+                    </div>
+                </form>
+
                 <div class="search-input">
                     <nav class="nav-wrapper">
                         <ul class="nav-links">
                             <li class="nav-item"><a class="menuItem" href="/">Home</a></li>
                             <li class="nav-item"><a class="menuItem" href="#">Watchlist</a></li>
                             <li class="nav-item"><a class="menuItem" href="category">Categories</a></li>
+                            @guest
                             <li class=" nav-item"><a class="menuItem" href="login">Log in</a></li>
                             <li class=" nav-item"><a class="menuItem" href="register">Register</a></li>
+                            @endguest
+                            @auth
+                            <li class=" nav-item"><a class="menuItem" href="/logout">Logout</a></li>
+                            @endauth
                         </ul>
                         <div class="hamburger">
                             <span class="bar"></span>
@@ -440,8 +449,8 @@
                         <h4>get help</h4>
                         <ul>
                             <li><a href="#">Help</a></li>
-                            <li><a href="#">Get the IMDB APP</a></li>
-                            <li><a href="#">IMDBPro</a></li>
+                            <li><a href="#">Get the APP</a></li>
+                            <li><a href="#">CinemahPro</a></li>
                             <li><a href="#">MojoIMDB Developer</a></li>
                         </ul>
                     </div>
@@ -465,6 +474,7 @@
                 </div>
             </div>
         </footer>
+
 
     </div>
 

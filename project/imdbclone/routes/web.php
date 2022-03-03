@@ -28,10 +28,11 @@ use Symfony\Component\Console\Input\Input;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
+Route::get('/', [MovieController::class, 'getMovies']);
 
 
 //Itempage/moviepage
@@ -110,4 +111,3 @@ route::get('/scifi', function () {
 
 //search route
 Route::get('search', [SearchController::class, 'search'])->name('search');
-

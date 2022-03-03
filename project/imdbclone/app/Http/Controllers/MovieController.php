@@ -9,6 +9,17 @@ use Illuminate\Http\Request;
 class MovieController extends Controller
 {
     /**
+     * Instantiate a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+
+        $this->middleware('admin')->except('getMovies', 'show');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -18,6 +29,18 @@ class MovieController extends Controller
         $movies = Movie::orderBy('title', 'asc')->get();
         return view('admin.movies', ['movies' => $movies]);
     }
+
+    /**
+     * Additional function to retrieve all movies for display on landing page
+     * 
+     * @return \Illuminate\Http\Response
+     */
+    public function getMovies()
+    {
+        $movies = Movie::get();
+        return view('welcome', ['movies' => $movies]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
