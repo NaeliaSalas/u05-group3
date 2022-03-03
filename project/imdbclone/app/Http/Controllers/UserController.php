@@ -18,7 +18,7 @@ class UserController extends Controller
     public function __construct()
     {
 
-        $this->middleware('admin')->except('index', 'store');
+        $this->middleware('admin')->except('store');
     }
 
     /**
