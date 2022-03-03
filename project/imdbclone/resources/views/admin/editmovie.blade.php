@@ -28,6 +28,9 @@
                 <label for="cover">Add movie picture:</label>
                 <input type="url" name="cover" value="{{ $movie->cover }}"><br>
 
+                <label for="hero">Add hero picture:</label>
+                <input type="url" name="hero"><br>
+
                 <label for="rating">Add rating:</label>
                 <input list="rating" name="rating" value="{{ $movie->rating }}">
                 <datalist id="rating">
