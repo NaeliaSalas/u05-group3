@@ -47,16 +47,14 @@
                         </li>
 
                         <li>
-                            <a class="flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200" href='/'>
+                            <a class="flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200" href='/logout'>
                                 <i class="fa fa-cog" aria-hidden="true"></i>
-                                <span class="mx-4 font-medium"><a class="" href="/logout">Logout</a></span>
+
+                                <span class="mx-4 font-medium">Logout</span>
                             </a>
                         </li>
-                   
                     </ul>
-
                 </aside>
-
             </div>
         </div>
 <body>
@@ -70,58 +68,59 @@
             @csrf
 
             <div class="input-fields">
+
                 <div class="form-input-material">
-                <label for="title">Title:</label>
-                <input class="input" type="text" name="title"><br>
-            </div>
+                    <label for="body">Title:</label>
+                    <input class="input" type="text" name="body"><br>
+                </div>
 
-            <div class="form-input-material">
-                <label for="body">Description:</label>
-                <input class="input" type="text" name="body"><br>
-            </div>
+                <div class="form-input-material">
+                    <label for="body">Description:</label>
+                    <input class="input" type="text" name="body"><br>
+                </div>
 
-            <div class="form-input-material">
-                <label for="cover">Add  picture:</label>
-                <input class="input" type="url" name="cover"><br>
-            </div>
+                <div class="form-input-material">
+                    <label for="cover">Add  picture:</label>
+                    <input class="input" type="url" name="cover"><br>
+                </div>
 
-            <div class="form-input-material">
-                <label for="hero">Add hero picture:</label>
-                <input class="input" type="url" name="hero"><br>
-            </div>
+                <div class="form-input-material">
+                    <label for="hero">Add hero picture:</label>
+                    <input class="input" type="url" name="hero"><br>
+                </div>
 
-            <div class="form-input-material">
-                <label for="rating">Add rating:</label>
-                <input class="input"  list="rating" name="rating">
-                <datalist id="rating">
-                    <option value="1">
-                    <option value="2">
-                    <option value="3">
-                    <option value="4">
-                    <option value="5">
-                </datalist><br>
-            </div>
+                <div class="form-input-material">
+                    <label for="rating">Add rating:</label>
+                    <input class="input"  list="rating" name="rating">
+                    <datalist id="rating">
+                        <option value="1">
+                        <option value="2">
+                        <option value="3">
+                        <option value="4">
+                        <option value="5">
+                    </datalist><br>
+                </div>
 
-            <div class="form-input-material">
-                <label for="trailer">Add trailer:</label>
-                <input class="input" type="url" name="trailer"><br>
-            </div>
+                        <div class="form-input-material">
+                            <label for="trailer">Add trailer:</label>
+                            <input class="input" type="url" name="trailer"><br>
+                        </div>
 
-            <div class="form-input-material">
-                <label for="yearproduced">Add year produced:</label>
-                <input class="input" type="number" min="1900" max="2023" name="yearproduced"><br>
-            </div>
+                        <div class="form-input-material">
+                            <label for="yearproduced">Add year produced:</label>
+                            <input class="input" type="number" min="1900" max="2023" name="yearproduced"><br>
+                        </div>
 
-            <div class="form-input-material">
-                <label for="director">Add director:</label>
-                <input class="input" type="text" name="director"><br>
-            </div>
-
-            </div>
+                        <div class="form-input-material">
+                            <label for="director">Add director:</label>
+                            <input class="input" type="text" name="director"><br>
+                        </div>
             <div class="save-changes">
-                <button type="submit" name="submit" class="submit btn-primary btn-ghost">Save changes</button>
+                <button type="submit" name="submit" class="submit btn-primary btn-ghost">Add movie</button>
             </div>
-        </form>
+        </div>
+        </form>          
+    </div>
        </div>
     </div>
         @if ($errors->any())
@@ -137,5 +136,4 @@
         </div>
     </section>
 </body>
-
 </html>
