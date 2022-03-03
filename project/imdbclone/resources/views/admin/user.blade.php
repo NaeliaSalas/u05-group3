@@ -1,28 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
+<title>Admin Dashboard</title>
 
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="dash.css" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('dashboard/dash.css') }}">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <title>CINEMAH-Dashboard</title>
     <script src="https://cdn.tailwindcss.com/"></script>
     <script src="https://kit.fontawesome.com/b81c5c3bb7.js" crossorigin="anonymous"></script>
 </head>
 
+
 <body>
     <div class="flex">
         <div class="flex flex-col w-64 h-screen px-4 py-8 overflow-y-auto border-r">
-            <h2 class="text-2xl font-extralight text-center text-white logo-bg">CINEMAH</h2>
-
-
+            <a href="/">
+                <img src="{{ URL('images/Cinemah-Logo2.png')}}" alt="">
+            </a>
             <div class="flex flex-col justify-between mt-6">
                 <aside>
 
                     <ul>
-                        <!-- Element-->
                         <li>
                             <a class="flex items-center px-4 py-2 text-gray-700 bg-gray-100 rounded-md " href="/admin/dashboard">
                                 <i class="fa fa-home" aria-hidden="true"></i>
@@ -30,53 +30,33 @@
                                 <span class="mx-4 font-medium">Dashboard</span>
                             </a>
                         </li>
-                        <!-- Element-->
-
-                        <!-- Element-->
+            
                         <li>
-                            <a class="flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200" href="/settings.html">
-                                <i class="fa fa-cog" aria-hidden="true"></i>
-
-                                <span class="mx-4 font-medium">Settings</span>
-                            </a>
-                        </li>
-                        <!-- Element-->
-
-                        <!-- Element-->
-                        <li>
-                            <a class="flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200" href="/user">
+                            <a class="flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200" href='/user'>
                                 <i class="fas fa-user-alt" aria-hidden="true"></i>
 
                                 <span class="mx-4 font-medium">Users</span>
                             </a>
                         </li>
-                        <!-- Element-->
-
-                        <!-- Element-->
                         <li>
-                            <a class="flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200" href="/movie">
+                            <a class="flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200" href='/movie'>
                                 <i class="fa fa-film" aria-hidden="true"></i>
 
                                 <span class="mx-4 font-medium">Movies</span>
                             </a>
                         </li>
-                        <!-- Element-->
 
-                        <!-- Element-->
                         <li>
-                            <a class="flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200" href="#">
+                            <a class="flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200" href='/welcome'>
                                 <i class="fa fa-cog" aria-hidden="true"></i>
 
-                                <span class="mx-4 font-medium">Something</span>
+                                <span class="mx-4 font-medium">Logout</span>
                             </a>
                         </li>
-                        <!-- Element-->
-
-                        <!-- Element-->
+                   
                     </ul>
 
                 </aside>
-
 
             </div>
         </div>
@@ -91,11 +71,7 @@
                                 <table class="min-w-full divide-y divide-gray-200">
                                     <thead class="bg-gray-50">
                                         <tr>
-                                            <!-- <th scope="col" class="px-10 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
-                                            <th scope="col" class="px-60 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Role</th> -->
-                                            <!-- <th scope="col" class="relative px-6 py-3"> -->
                                             <span class="sr-only">Edit</span>
-
                                             </th>
                                         </tr>
                                     </thead>
@@ -113,9 +89,7 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="px-6 py-4 whitespace-nowrap">
-                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"> User </span>
-                                            </td>
+                                          
                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"></td>
                                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
 
@@ -140,8 +114,7 @@
                 </div>
             </div>
 
-            <!-- Table-->
-            <!-- <div class="bg-white px-4 md:px-10 pb-5 w-full"> -->
+
             <div class="overflow-x-auto">
                 <table class="w-full whitespace-nowrap">
                     <tbody class="w-full">
@@ -149,16 +122,12 @@
                         <tr tabindex="0" class="w-full focus:outline-none text-sm leading-none text-gray-600 h-16 hover:bg-slate-50">
                             <td class="w-1/2">
                                 <div class="flex items-center">
-
-                                    <!-- row-->
                     </tbody>
                 </table>
             </div>
         </div>
-        <!-- Table-->
 
     </div>
-    <!-- Content-->
     </div>
 </body>
 

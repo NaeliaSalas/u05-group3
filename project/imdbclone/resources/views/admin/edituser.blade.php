@@ -20,6 +20,7 @@
 
         @if(session('status'))
         {{ session('status') }}
+        
         @endif
         <div class="update-form">
 
