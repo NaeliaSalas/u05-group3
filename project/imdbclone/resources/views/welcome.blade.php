@@ -130,8 +130,8 @@
                             <p>8.7</p>
                         </div>
 
-                         <!-- Drop down menu/lists -->
-                         <div class="dropdown" style="float:left;">
+                        <!-- Drop down menu/lists -->
+                        <div class="dropdown" style="float:left;">
                             <button class="dropbtn">Add to watchlist</button>
                             <div class="dropdown-content" style="left:0;">
                                 <a href="#">Link 1</a>
@@ -140,7 +140,7 @@
                             </div>
                         </div>
                         <!-- Drop down menu/lists -->
-                        
+
                     </div>
                 </div>
                 <div class="showcase_item">
@@ -201,6 +201,9 @@
             </div>
 
             <!-- Your watchlist section -->
+            @auth
+
+
             <section class="featured">
                 <h2><a href="#">Your watchlist > </a></h2>
             </section>
@@ -239,6 +242,9 @@
                     </div>
                 </div>
             </div>
+            @endauth
+
+
         </div>
 
         <!-- Footer with links -->
