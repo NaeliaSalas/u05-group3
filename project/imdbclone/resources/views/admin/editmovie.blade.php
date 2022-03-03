@@ -63,7 +63,7 @@
 <body>
 <div class="edit-user">
     <div class="title">
-        <h1>Update movie</h1>
+        <h1>Edit movie</h1>
     </div>
 
     <div class="update-form">
