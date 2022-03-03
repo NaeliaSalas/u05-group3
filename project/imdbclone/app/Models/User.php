@@ -47,4 +47,17 @@ class User extends Authenticatable
     {
         $this->attributes['password'] = bcrypt($password);
     }
+
+
+    public function watchlists()
+    {
+
+        return $this->hasMany(Watchlist::class, 'user_id_fk');
+    }
+
+    public function entries()
+    {
+
+        return $this->hasManyThrough(Entry::class, Watchlist::class, 'user_id_fk', 'watchlist_id_fk');
+    }
 }
