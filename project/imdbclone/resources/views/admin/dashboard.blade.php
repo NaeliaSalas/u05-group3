@@ -47,7 +47,7 @@
                         </li>
 
                         <li>
-                            <a class="flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200" href='/welcome'>
+                            <a class="flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200" href='/'>
                                 <i class="fa fa-cog" aria-hidden="true"></i>
 
                                 <span class="mx-4 font-medium">Logout</span>
@@ -66,7 +66,7 @@
             <div class="dashboard-witdh">
                 <div class="dashboard-cards">
 
-
+                    <a href='/movie/'>
                     <div class="card-single">
                         <div class="card-text">
                             <h2>104</h2>
@@ -76,16 +76,19 @@
                             <span class="icon las la-film"></span>
                         </div>
                     </div>
+                    </a>
 
+                    <a href='/user/'>
                     <div class="card-single">
                         <div class="card-text">
                             <h2>56</h2>
-                            <span>Reviews</span>
+                            <span>Users</span>
                         </div>
                         <div>
                             <span class="icon las la-comments"></span>
                         </div>
                     </div>
+                </a>
 
                     <div class="card-single">
                         <div class="card-text">

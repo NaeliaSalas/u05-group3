@@ -47,7 +47,7 @@
                         </li>
 
                         <li>
-                            <a class="flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200" href='/welcome'>
+                            <a class="flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200" href='/'>
                                 <i class="fa fa-cog" aria-hidden="true"></i>
 
                                 <span class="mx-4 font-medium">Logout</span>
@@ -119,6 +119,7 @@
             </div>
 
             </div>
+          
             <div class="save-changes">
                 <button type="submit" name="submit" class="submit btn-primary btn-ghost">Save changes</button>
             </div>
