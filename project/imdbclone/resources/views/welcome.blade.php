@@ -216,7 +216,7 @@
                             <i class="fa-solid fa-star"></i>
                             <p>7.1</p>
                         </div>
-                        <button>Watchlist</button>
+
                     </div>
                 </div>
                 <div class="highlight_item">
@@ -227,7 +227,7 @@
                             <i class="fa-solid fa-star"></i>
                             <p>8.3</p>
                         </div>
-                        <button>Watchlist</button>
+
                     </div>
                 </div>
                 <div class="highlight_item">
@@ -238,7 +238,7 @@
                             <i class="fa-solid fa-star"></i>
                             <p>7.9</p>
                         </div>
-                        <button>Watchlist</button>
+
                     </div>
                 </div>
             </div>
