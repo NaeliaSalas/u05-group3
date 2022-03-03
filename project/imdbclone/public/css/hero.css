@@ -82,9 +82,10 @@
 
 .searchpics img {
     border: solid 2px rgba(20, 16, 26, 0.6);
-    width: 350px;
-    height: 400px;
+    width: 400px;
+    height: 550px;
     object-fit: cover;
+    flex-wrap: wrap;
 }
 
 .searchpics p {
@@ -103,7 +104,11 @@
     }
 }
 
+<<<<<<< HEAD
+@media only screen and (max-width: 1000px) {
+=======
 @media only screen and (max-width: 700px) {
+>>>>>>> main
     .search_flex {
         justify-content: center;
         margin: 0;
@@ -112,7 +117,7 @@
     .searchpics {
         flex-direction: column;
         justify-content: center;
-        width: 250px;
+        width: 350px;
     }
 
     .searchpics a {
@@ -125,8 +130,8 @@
     }
 
     .searchpics img {
-        width: 250px;
-        height: 300px;
+        width: 350px;
+        height: 550px;
         justify-content: center;
     }
 }
