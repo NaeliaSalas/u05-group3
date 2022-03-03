@@ -77,3 +77,56 @@
         transform: opacity linear;
     }
 }
+
+.searchpics {
+    margin: 12rem auto 8rem auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.search_flex {
+    justify-content: space-between;
+    margin: 0 3rem;
+}
+
+.searchpics img {
+    border: solid 2px rgba(20, 16, 26, 0.6);
+    width: 350px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.searchpics p {
+    display: block;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+@media only screen and (max-width: 700px) {
+    .search_flex {
+        justify-content: center;
+        margin: 0;
+    }
+
+    .searchpics {
+        flex-direction: column;
+        justify-content: center;
+        width: 250px;
+    }
+
+    .searchpics a {
+        width: auto;
+    }
+
+    .searchpics p {
+        font-size: 16px;
+        margin: 2rem auto;
+    }
+
+    .searchpics img {
+        width: 250px;
+        height: 300px;
+        justify-content: center;
+    }
+}
