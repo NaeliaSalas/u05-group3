@@ -34,16 +34,6 @@
 
                         <!-- Element-->
                         <li>
-                            <a class="flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200" href="/settings.html">
-                                <i class="fa fa-cog" aria-hidden="true"></i>
-
-                                <span class="mx-4 font-medium">Settings</span>
-                            </a>
-                        </li>
-                        <!-- Element-->
-
-                        <!-- Element-->
-                        <li>
                             <a class="flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200" href='/user'>
                                 <i class="fas fa-user-alt" aria-hidden="true"></i>
 
