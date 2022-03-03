@@ -65,28 +65,18 @@
         </div>
         <!-- Navbar -->
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6" style=>
-                    <div class="grid grid-row-3 grid-flow-col gap-3">
-                        <h2 class="text-white pl-10">Search result: </h2>
-                        <div class="highlight_item">
-                            <div class="text-white">
-                                @foreach($movies as $movie)
-                                <div class="SearchMovie">
-                                    <div><a href=" {{ url('/movie/'.$movie->id) }} ">{{ $movie->title }}
-                                        </a></div>
-                                    <div>
-                                        <img src=" {{ $movie->cover }} " width="300" height="300">
-                                    </div>
-                                </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="searchpics">
+            @foreach($movies as $movie)
+            <div class="search_flex">
+                <a href="{{ url('/movie/'.$movie->id) }}">
+                    <img src="{{ $movie->cover }}" alt="">
+                </a>
+                <p class="text-white text-center">{{ $movie->title }}</p>
             </div>
+            @endforeach
         </div>
+
+
 
         <!-- Footer with links -->
         <footer class="footer">
