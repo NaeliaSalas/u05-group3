@@ -129,7 +129,18 @@
                             <i class="fa-solid fa-star"></i>
                             <p>8.7</p>
                         </div>
-                        <button>Add Watchlist</button>
+
+                         <!-- Drop down menu/lists -->
+                         <div class="dropdown" style="float:left;">
+                            <button class="dropbtn">Add to watchlist</button>
+                            <div class="dropdown-content" style="left:0;">
+                                <a href="#">Link 1</a>
+                                <a href="#">Link 2</a>
+                                <a href="#">Link 3</a>
+                            </div>
+                        </div>
+                        <!-- Drop down menu/lists -->
+                        
                     </div>
                 </div>
                 <div class="showcase_item">
