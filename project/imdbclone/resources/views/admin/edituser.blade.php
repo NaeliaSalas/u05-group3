@@ -11,6 +11,7 @@
 </head>
 
 <body>
+
     <div class="edit-user">
         <div class="title">
             <h1>Update user</h1>
@@ -33,7 +34,6 @@
                         <label for="name">Name</label>
                         <input class="input" type="text" name="name" value="{{ $user->name}}"><br>
                     </div>
-
                     <div class="form-input-material">
                         <label for="username">Username</label>
                         <input class="input" type="text" name="username" value="{{ $user->username }}"><br>
@@ -52,6 +52,7 @@
             </form>
         </div>
     </div>
+
 
 </body>
 
