@@ -52,7 +52,7 @@ class ReviewController extends Controller
         $review = new Review;
         $review->title = $request->title;
         $review->body = $request->body;
-        $review->rate = $request->rate;
+        $review->rating = $request->rating;
         $review->user_id_fk = $request->user_id_fk;
         $review->movie_id_fk = $request->movie_id_fk;
         $review->save();
@@ -97,7 +97,7 @@ class ReviewController extends Controller
         $request->validate([
             'title' => 'string|required|max:50',
             'body' => 'string|required||max:255',
-            'rate' => 'integer|required|min:1|max:5',
+            'rating' => 'integer|required|min:1|max:5',
         ]);
 
         $review = Review::find($id);
