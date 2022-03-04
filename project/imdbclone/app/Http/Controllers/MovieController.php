@@ -38,7 +38,7 @@ class MovieController extends Controller
     public function getMovies()
     {
         $movies = Movie::get();
-        return view('welcome', ['movies' => $movies]);
+        return view('index', ['movies' => $movies]);
     }
 
     /**
@@ -95,7 +95,7 @@ class MovieController extends Controller
     public function show($id)
     {
         $movie = Movie::find($id);
-        return view('item', ['movie' => $movie]);
+        return view('movie', ['movie' => $movie]);
     }
 
     /**
