@@ -10,4 +10,5 @@ class MovieGenres extends Model
     use HasFactory;
 
     protected $table = 'movie_genres';
+
 }
