@@ -123,11 +123,7 @@
             </div>
         </footer>
 
-
     </div>
-
-
-
 
     <script src="{{url('js/hero.js')}}"></script>
     <script src="{{url('js/hamburger.js')}}"></script>
