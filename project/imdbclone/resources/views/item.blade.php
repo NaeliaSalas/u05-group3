@@ -24,9 +24,6 @@
 <body>
 
     <!-- Header (NAVBAR)-->
-
-
-
     <div class="main-container">
 
         <div class="navbar">
