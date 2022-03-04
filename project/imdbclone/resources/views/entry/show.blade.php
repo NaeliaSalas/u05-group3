@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <p>Hej</p>
-</body>
+   
+        {{ $genres }}
+   
+
 </html>
