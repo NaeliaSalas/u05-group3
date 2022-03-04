@@ -1,6 +1,6 @@
 # u05-group3
 
-CINEMAH
+## CINEMAH
 Is a school project for Chas Academy where we as a group have used Laravel and PHP, CSS, Tailwind and some Java Script to build a movie database like IMDB with an admin panel.
 
 The first thing we, as in our group, think when we see and use IMDB is that the webpage has way too much information and it gives you kind of a headache to use. We wanted to make our design more clean and clear. It is important for our users to fast and simple be able to find the next movie to watch or to write a review very fast and easy. Less is more.
