@@ -7,10 +7,9 @@ use Illuminate\Http\Request;
 
 class GenreController extends Controller
 {
-    public function index()
+    public function index($genrename)
     {
-        $genres = Genre::get();
-
+        $genres = Genre::where('genre', $genrename)->get();
 
         return view('entry.show', ['genres' => $genres]);
     }
