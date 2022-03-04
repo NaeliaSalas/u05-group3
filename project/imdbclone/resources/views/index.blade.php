@@ -64,6 +64,7 @@
                             <li class=" nav-item"><a class="menuItem" href="register">Register</a></li>
                             @endguest
                             @auth
+                            <li class=" nav-item"><a class="menuItem" href="/admin/dashboard">Dashboard</a></li>
                             <li class=" nav-item"><a class="menuItem" href="/logout">Logout</a></li>
                             @endauth
                         </ul>
