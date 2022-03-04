@@ -29,12 +29,7 @@ use Symfony\Component\Console\Input\Input;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::get('/', [MovieController::class, 'getMovies']);
-
 
 //Itempage/moviepage
 Route::view('item', 'item');

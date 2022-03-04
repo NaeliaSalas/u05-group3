@@ -11,4 +11,9 @@ class Entry extends Model
 
     protected $table = 'entries';
     protected $fillable = ['title'];
+
+    public function watchlist()
+    {
+        return $this->belongsTo(Watchlist::class, 'watchlist_id_fk');
+    }
 }
