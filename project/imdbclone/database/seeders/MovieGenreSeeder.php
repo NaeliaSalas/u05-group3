@@ -228,43 +228,38 @@ class MovieGenreSeeder extends Seeder
         MovieGenres::create([
 
             'movie_id_fk' => '30',
-            'genre_id_fk' => '3',
-
-        ]);
-
-        MovieGenres::create([
-
-            'movie_id_fk' => '31',
             'genre_id_fk' => '4',
 
         ]);
 
         MovieGenres::create([
 
-            'movie_id_fk' => '32',
+            'movie_id_fk' => '31',
             'genre_id_fk' => '5',
 
         ]);
 
         MovieGenres::create([
 
-            'movie_id_fk' => '33',
+            'movie_id_fk' => '32',
             'genre_id_fk' => '7',
 
         ]);
 
         MovieGenres::create([
 
-            'movie_id_fk' => '34',
+            'movie_id_fk' => '33',
             'genre_id_fk' => '3',
 
         ]);
 
         MovieGenres::create([
 
-            'movie_id_fk' => '35',
+            'movie_id_fk' => '34',
             'genre_id_fk' => '6',
 
         ]);
+
+      
     }
 }
