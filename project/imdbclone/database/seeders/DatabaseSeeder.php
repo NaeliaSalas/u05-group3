@@ -3,8 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\Genre;
-//use App\Models\Movie;
+use App\Models\Movie;
 use App\Models\User;
+use App\Models\MovieGenres;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -16,20 +17,17 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
 
-    
+
     public function run()
 
-    // \App\Models\User::factory(10)->create();
-
-    { 
-
+    {
         $this->call([
 
             GenreSeeder::class,
             UserSeeder::class,
             MovieSeeder::class,
             MovieGenreSeeder::class,
-           
+
         ]);
     }
 }
