@@ -110,7 +110,7 @@
                         </ul>
                     </div>
                     <div class="footer-col">
-                        <h4>follow us</h4>
+                        <h4>Follow us</h4>
                         <div class="social-links">
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                             <a href="#"><i class="fab fa-twitter"></i></a>
