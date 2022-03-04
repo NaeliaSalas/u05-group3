@@ -123,11 +123,13 @@
                         <!-- Drop down menu/lists -->
                         <div class="dropdown" style="float:left;">
                             <button class="dropbtn">Add to watchlist</button>
+                            @auth
                             <div class="dropdown-content" style="left:0;">
                                 @foreach(Auth::user()->watchlists as $watchlist)
                                 <a href="#">{{$watchlist->title}}</a>
                                 @endforeach
                             </div>
+                            @endauth
                         </div>
                         <!-- Drop down menu/lists -->
 
