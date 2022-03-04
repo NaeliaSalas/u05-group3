@@ -6,11 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{{ mix('css/app.css') }}" />
-    <link rel="stylesheet" href="{{url('css/hero.css')}}" />
-    <link rel="stylesheet" href="{{url('css/welcome.css')}}" />
+    <link rel="stylesheet" href="{{url('css/button.css')}}" />
     <link rel="stylesheet" href="{{url('css/footer.css')}}" />
+    <link rel="stylesheet" href="{{url('css/hero.css')}}" />
     <link rel="stylesheet" href="{{url('css/highlight.css')}}" />
+    <link rel="stylesheet" href="{{url('css/modal.css')}}" />
+    <link rel="stylesheet" href="{{url('css/movie.css')}}" />
+    <link rel="stylesheet" href="{{url('css/review.css')}}" />
     <link rel="stylesheet" href="{{url('css/watchlist.css')}}" />
+    <link rel="stylesheet" href="{{url('css/welcome.css')}}" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://kit.fontawesome.com/405a204514.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -43,12 +47,24 @@
                         <ul class="nav-links">
                             <li class="nav-item"><a class="menuItem" href="/">Home</a></li>
                             <li class="nav-item"><a class="menuItem" href="#">Watchlist</a></li>
-                            <li class="nav-item"><a class="menuItem" href="category">Categories</a></li>
+                            <li class="genre-dropdown nav-item"><button class="dropDown_subMenu">Genres +</button>
+                                <ul class="dropdown-categories">
+                                    <li class="subMenu"><a href="#">Adventure</a></li>
+                                    <li class="subMenu"><a href="#">Action</a></li>
+                                    <li class="subMenu"><a href="#">Comedy</a></li>
+                                    <li class="subMenu"><a href="#">Horror</a></li>
+                                    <li class="subMenu"><a href="#">Thriller</a></li>
+                                    <li class="subMenu"><a href="#">Drama</a></li>
+                                    <li class="subMenu"><a href="#">Romance</a></li>
+                                    <li class="subMenu"><a href="#">Sci-Fi</a></li>
+                                </ul>
+                            </li>
                             @guest
                             <li class=" nav-item"><a class="menuItem" href="login">Log in</a></li>
                             <li class=" nav-item"><a class="menuItem" href="register">Register</a></li>
                             @endguest
                             @auth
+                            <li class=" nav-item"><a class="menuItem" href="/admin/dashboard">Dashboard</a></li>
                             <li class=" nav-item"><a class="menuItem" href="/logout">Logout</a></li>
                             @endauth
                         </ul>
@@ -63,15 +79,37 @@
             </div>
         </div>
 
-        <!-- hero slider section -->
 
+
+        <!-- TA INTE BORT -->
+
+        <!-- 
+        @php
+        $heromovies = $movies->random(5);
+        @endphp
+        @foreach ($heromovies as $heromovie) <div class="carousel__item carousel__item--visible hidden">
+            <img src="{{ $heromovie->hero }}" />
+        </div>
+        @endforeach
+
+        <div class="carousel__actions">
+            <button id="carousel__button--prev" aria-label="Previous slide">
+                < </button>
+                    <button id="carousel__button--next" aria-label="Next slide">></button>
+        </div>
+    </div>
+    -->
+
+        <!-- hero slider section -->
+        @php
+        $heromovies = $movies->random(4);
+        @endphp
         <div class="carousel">
             <!--<h2 class="favorites">Fan favorites > </h2>-->
-
-            @php
-            $heromovies = $movies->random(5);
-            @endphp
-            @foreach ($heromovies as $heromovie) <div class="carousel__item carousel__item--visible hidden">
+            <div class="carousel__item carousel__item--visible hidden">
+                <img src="{{ $heromovie->hero }}" />
+            </div>
+            @foreach ($heromovies as $heromovie) <div class="carousel__item">
                 <img src="{{ $heromovie->hero }}" />
             </div>
             @endforeach
@@ -97,7 +135,6 @@
                 @endphp
                 @foreach ($highlightmovies as $highlightmovie) <div class="highlight_item">
                     <a href="{{ url('/movie/' . $highlightmovie->id) }}"><img src="{{ URL($highlightmovie->cover) }}" alt="Movie Cover"></a>
-                    <P>{{$highlightmovie->title}}</P>
                 </div>
                 @endforeach
             </div>
@@ -114,14 +151,16 @@
                 <div class="showcase_item">
                     <a href="{{url('/movie/' . $topmovie->id)}}"><img src="{{ URL($topmovie->cover)}}" alt="Movie cover"></a>
                     <div class="button_border">
-                        <p>{{$topmovie->title}}</p>
+                        <div class="button_border_title">
+                            <p>{{$topmovie->title}}</p>
+                        </div>
                         <div class="rating">
                             <i class="fa-solid fa-star"></i>
                             <p>{{$topmovie->rating}}</p>
                         </div>
 
                         <!-- Drop down menu/lists -->
-                        <div class="dropdown" style="float:left;">
+                        <div class="dropdown">
                             <a href="/register"><button class="dropbtn">Add to watchlist</button></a>
                             @auth
                             <div class="dropdown-content" style="left:0;">
@@ -135,9 +174,8 @@
 
                     </div>
                 </div>
+                @endforeach
             </div>
-            @endforeach
-
         </div>
 
         <!-- Your watchlist section -->
@@ -218,6 +256,8 @@
 
     <script src="{{url('js/hero.js')}}"></script>
     <script src="{{url('js/hamburger.js')}}"></script>
+    <script src="{{url('js/subMenu.js')}}"></script>
+
 
 </body>
 
