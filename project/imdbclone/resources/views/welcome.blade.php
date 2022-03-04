@@ -122,7 +122,7 @@
 
                         <!-- Drop down menu/lists -->
                         <div class="dropdown" style="float:left;">
-                            <button class="dropbtn">Add to watchlist</button>
+                            <a href="/register"><button class="dropbtn">Add to watchlist</button></a>
                             @auth
                             <div class="dropdown-content" style="left:0;">
                                 @foreach(Auth::user()->watchlists as $watchlist)
