@@ -146,44 +146,31 @@
             <!-- Add reviews -->
 
             <!-- Your watchlist section -->
+            @auth
+
             <section class="featured">
-                <h2><a href="">Your watchlist > </a></h2>
+                <h2><a href="/watchlist">Your watchlist > </a></h2>
             </section>
+
             <div class="watchlist">
+                @foreach(Auth::user()->watchlists as $watchlist)
+                @foreach($watchlist->movies as $movie)
                 <div class="highlight_item">
-                    <a href="#"><img src="{{ URL('images/dracula.jpeg')}}" alt=""></a>
+                    <a href="url('/movie/' . $movie->id)"><img src="{{ URL($movie->cover)}}" alt="Movie cover"></a>
                     <div class="button_border">
-                        <p>Dracula</p>
+                        <p>{{ $movie->title }}</p>
                         <div class="rating">
                             <i class="fa-solid fa-star"></i>
-                            <p>7.1</p>
+                            <p>{{ $movie->rating }}</p>
                         </div>
-                        <button>Watchlist</button>
+
                     </div>
                 </div>
-                <div class="highlight_item">
-                    <a href="#"><img src="{{ URL('images/1917.jpeg')}}" alt=""></a>
-                    <div class="button_border">
-                        <p>1917</p>
-                        <div class="rating">
-                            <i class="fa-solid fa-star"></i>
-                            <p>8.3</p>
-                        </div>
-                        <button>Watchlist</button>
-                    </div>
-                </div>
-                <div class="highlight_item">
-                    <a href="#"><img src="{{ URL('images/venom.jpeg')}}" alt=""></a>
-                    <div class="button_border">
-                        <p>Venom 2</p>
-                        <div class="rating">
-                            <i class="fa-solid fa-star"></i>
-                            <p>7.9</p>
-                        </div>
-                        <button>Watchlist</button>
-                    </div>
-                </div>
+                @endforeach
+                @endforeach
             </div>
+            @endauth
+
         </div>
 
         <!-- Footer with links -->
