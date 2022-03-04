@@ -136,76 +136,18 @@
                 </div>
                 @endforeach
                 @endif
-
-                <!-- <div class="review-item">
-                    <p class="MovieTxt">
-                        <img src="{{ URL('images/star.png')}}" alt=""> 6,2
-                    </p>
-                    <p>
-                        Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
-                    </p>
-                </div>
-
-                <div class="review-item">
-                    <p class="MovieTxt">
-                        <img src="{{ URL('images/star.png')}}" alt=""> 6,2
-                    </p>
-                    <p>
-                        Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
-                    </p>
-                </div>
-
-                <div class="review-item">
-                    <p class="MovieTxt">
-                        <img src="{{ URL('images/star.png')}}" alt=""> 6,2
-                    </p>
-                    <p>
-                        Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
-                    </p>
-                </div> -->
             </div>
-            <!-- reviews section -->
-
-            <!-- reviews section -->
-            <!-- <div class="reviewFlex">
-                <div class="review-item">
-                    <p class="MovieTxt">
-                        <img src="{{ URL('images/star.png')}}" alt=""> 6,2
-                    </p>
-                    <p>
-                        Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
-                    </p>
-                </div>
-
-                <div class="review-item">
-                    <p class="MovieTxt">
-                        <img src="{{ URL('images/star.png')}}" alt=""> 6,2
-                    </p>
-                    <p>
-                        Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
-                    </p>
-                </div>
-
-                <div class="review-item">
-                    <p class="MovieTxt">
-                        <img src="{{ URL('images/star.png')}}" alt=""> 6,2
-                    </p>
-                    <p>
-                        Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
-                    </p>
-                </div>
-            </div> -->
             <!-- reviews section -->
 
             <!-- Add reviews -->
             <div class="center">
-                <a href="'/movie/' . $movie->id . '/reviews/create'"><button class="custom-btn btn-15">Add review</button></a>
+                <a href="{{'/movie/' . $movie->id . '/review/create'}}"><button class="custom-btn btn-15">Add review</button></a>
             </div>
             <!-- Add reviews -->
 
             <!-- Your watchlist section -->
             <section class="featured">
-                <h2><a href="#">Your watchlist > </a></h2>
+                <h2><a href="">Your watchlist > </a></h2>
             </section>
             <div class="watchlist">
                 <div class="highlight_item">

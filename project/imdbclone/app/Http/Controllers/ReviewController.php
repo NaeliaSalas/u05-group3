@@ -25,7 +25,7 @@ class ReviewController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($movieId)
+    public function create()
     {
 
         return view('review.add-review');
