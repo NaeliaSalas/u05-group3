@@ -42,8 +42,36 @@ Write the following command
 cd [project-name]
 ```
 
+## Not using Visual code? Do not worry, follow these steps instead.
+
+Use docker ps to get the name of the existing container
+
+Use the command down below to get a bash shell in the container
+```bash
+ docker exec -it <container name> /bin/bash 
+ ```
+
+Next, execute a command on the container.
+
+```bash
+docker exec -it <container name> <command> 
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Then please type this command in the shell terminal
-:
+
 
 ```bash
   php artisan serve --host 0.0.0.0 --port 8000
