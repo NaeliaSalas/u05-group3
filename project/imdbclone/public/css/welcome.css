@@ -107,6 +107,10 @@ html {
     display: none;
 }
 
+.dropDown_subMenu {
+    font-size: 18px;
+}
+
 .dropDown_subMenu:hover {
     color: #f6cf41;
 }
@@ -179,8 +183,13 @@ html {
     right: 0;
 }
 
-.navbar .search-input .nav-wrapper .nav-links li a {
-    border-bottom: solid 1px white;
+.navbar .search-input .nav-wrapper .nav-links li {
+    font-size: 18px;
+}
+
+.dropdown-categories .subMenu a {
+    font-size: 16px;
+    border-bottom: 1px solid #e91e63;
 }
 
 .logo img {
