@@ -66,7 +66,7 @@
         <!-- Navbar -->
 
         <div class="searchpics">
-           <p class="text-white">{{$message}}</p>
+            <p class="text-white">{{$message ?? ''}}</p>
 
             @foreach($movies as $movie)
     
@@ -74,7 +74,7 @@
                 <a href="{{ url('/movie/'.$movie->id) }}">
                     <img src="{{ $movie->cover }}" alt="">
                 </a>
-                <p class="text-white text-center">{{ $movie->title }}</p>
+                <p class="text-slate-50 text-center">{{ $movie->title }}</p>
             </div>
             @endforeach
         </div>
