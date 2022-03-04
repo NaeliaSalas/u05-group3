@@ -6,11 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{{ mix('css/app.css') }}" />
-    <link rel="stylesheet" href="{{url('css/hero.css')}}" />
-    <link rel="stylesheet" href="{{url('css/welcome.css')}}" />
+    <link rel="stylesheet" href="{{url('css/button.css')}}" />
     <link rel="stylesheet" href="{{url('css/footer.css')}}" />
+    <link rel="stylesheet" href="{{url('css/hero.css')}}" />
     <link rel="stylesheet" href="{{url('css/highlight.css')}}" />
+    <link rel="stylesheet" href="{{url('css/modal.css')}}" />
+    <link rel="stylesheet" href="{{url('css/movie.css')}}" />
+    <link rel="stylesheet" href="{{url('css/review.css')}}" />
     <link rel="stylesheet" href="{{url('css/watchlist.css')}}" />
+    <link rel="stylesheet" href="{{url('css/welcome.css')}}" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://kit.fontawesome.com/405a204514.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -43,7 +47,14 @@
                         <ul class="nav-links">
                             <li class="nav-item"><a class="menuItem" href="/">Home</a></li>
                             <li class="nav-item"><a class="menuItem" href="#">Watchlist</a></li>
-                            <li class="nav-item"><a class="menuItem" href="category">Categories</a></li>
+                            <li class="genre-dropdown nav-item"><button class="dropDown_subMenu">Genres +</button>
+                                <ul class="dropdown-categories">
+                                    <li class="subMenu"><a href="#">Horror</a></li>
+                                    <li class="subMenu"><a href="#">Horror</a></li>
+                                    <li class="subMenu"><a href="#">Horror</a></li>
+                                    <li class="subMenu"><a href="#">Horror</a></li>
+                                </ul>
+                            </li>
                             @guest
                             <li class=" nav-item"><a class="menuItem" href="login">Log in</a></li>
                             <li class=" nav-item"><a class="menuItem" href="register">Register</a></li>
@@ -63,12 +74,11 @@
             </div>
         </div>
 
-        <!-- hero slider section -->
-        <!-- 
-        <div class="carousel">
-            <!--<h2 class="favorites">Fan favorites > </h2>-->
 
-        <!--
+
+        <!-- TA INTE BORT -->
+
+        <!-- 
         @php
         $heromovies = $movies->random(5);
         @endphp
@@ -85,7 +95,7 @@
     </div>
     -->
 
-
+        <!-- hero slider section -->
         @php
         $heromovies = $movies->random(4);
         @endphp
@@ -241,6 +251,8 @@
 
     <script src="{{url('js/hero.js')}}"></script>
     <script src="{{url('js/hamburger.js')}}"></script>
+    <script src="{{url('js/subMenu.js')}}"></script>
+
 
 </body>
 
