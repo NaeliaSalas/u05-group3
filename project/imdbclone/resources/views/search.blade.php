@@ -92,7 +92,7 @@
                         </ul>
                     </div>
                     <div class="footer-col">
-                        <h4>get help</h4>
+                        <h4>Get help</h4>
                         <ul>
                             <li><a href="#">Help</a></li>
                             <li><a href="#">Get the APP</a></li>
