@@ -25,9 +25,10 @@ class ReviewController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($movieId)
     {
-        return view('review.review');
+
+        return view('add-review');
     }
 
     /**
@@ -80,7 +81,7 @@ class ReviewController extends Controller
     public function edit($id)
     {
         $review = Review::find($id);
-        return view('review.edit', ['review' => $review]);
+        return view('add-review', ['review' => $review]);
     }
 
     /**

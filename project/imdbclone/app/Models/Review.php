@@ -16,4 +16,9 @@ class Review extends Model
     {
         return $this->hasMany(Comment::class, 'review_id_fk');
     }
+
+    public function movie()
+    {
+        return $this->belongsTo(Movie::class);
+    }
 }
