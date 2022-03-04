@@ -11,6 +11,6 @@ class GenreController extends Controller
     public function show($genrename)
     {
         $genre = Genre::where('genre', $genrename)->first();
-        return view('genre', ['genre' => $genre]);
+        return view('genre.genre', ['genre' => $genre]);
     }
 }
