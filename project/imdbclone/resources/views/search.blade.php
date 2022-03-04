@@ -67,7 +67,7 @@
 
         <div class="searchpics">
             @foreach($movies as $movie)
-            @if($movie->movie->count() > 0)
+            @if($movies->movie->count() > 0)
             <td colspan="5" class="text-center">
                 {{'message'}}
             </td>
@@ -80,7 +80,7 @@
             </div>
             @endforeach
         </div>
-     
+
 
 
         <!-- Footer with links -->
@@ -128,6 +128,7 @@
 
 
     </div>
+
 
 
 
