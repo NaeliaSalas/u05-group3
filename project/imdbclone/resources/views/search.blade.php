@@ -92,7 +92,7 @@
                         </ul>
                     </div>
                     <div class="footer-col">
-                        <h4>get help</h4>
+                        <h4>Get help</h4>
                         <ul>
                             <li><a href="#">Help</a></li>
                             <li><a href="#">Get the APP</a></li>
@@ -110,7 +110,7 @@
                         </ul>
                     </div>
                     <div class="footer-col">
-                        <h4>follow us</h4>
+                        <h4>Follow us</h4>
                         <div class="social-links">
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                             <a href="#"><i class="fab fa-twitter"></i></a>
