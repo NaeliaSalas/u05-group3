@@ -72,7 +72,7 @@ class MovieSeeder extends Seeder
 
             'title' => 'The Matrix Revolutions',
             'body' => 'The human city of Zion defends itself against the massive invasion of the machines as Neo fights to end the war at another front while also opposing the rogue Agent Smith.',
-            'cover' => 'https://www.themoviedb.org/t/p/original/en6wDdya9e2kDV4zn8vLoSrOc6p.jpg',
+            'cover' => 'https://www.themoviedb.org/t/p/original/fgm8OZ7o4G1G1I9EeGcb85Noe6L.jpg',
             'hero' => 'https://www.themoviedb.org/t/p/original/kJYPag1YrA4PsXIftFdq3QEaanV.jpg',
             'rating' => 2,
             'trailer' => 'https://www.youtube.com/embed/hMbexEPAOQI',
@@ -226,7 +226,7 @@ class MovieSeeder extends Seeder
             'cover' => 'https://www.themoviedb.org/t/p/original/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg',
             'hero' => 'https://www.themoviedb.org/t/p/original/TU9NIjwzjoKPwQHoHshkFcQUCG.jpg',
             'rating' => 2,
-            'trailer' => 'https://www.youtube.com/embed/5Cb3ik6zP2I',
+            'trailer' => 'https://www.youtube.com/embed/5xH0HfJHsaY',
             'yearproduced' => 2019,
             'director' => 'Bong Joon Ho',
 
@@ -369,7 +369,7 @@ class MovieSeeder extends Seeder
             'cover' => 'https://www.themoviedb.org/t/p/original/e8OLh49AJKIATBSAso6EWr1YeWH.jpg',
             'hero' => 'https://www.themoviedb.org/t/p/original/3F2BYZy8H74lWUEKfP5lTPFxEq8.jpg',
             'rating' => 2,
-            'trailer' => 'https://www.youtube.com/embed/ZgMIlFDIPNc',
+            'trailer' => 'https://www.youtube.com/watch?v=O2NKzO-fxwQ',
             'yearproduced' => 2005,
             'director' => 'Takashi Shimizu',
         ]);
@@ -381,21 +381,71 @@ class MovieSeeder extends Seeder
             'cover' => 'https://www.themoviedb.org/t/p/original/40qxr2p2s297Q1mWFJOsRatQPK0.jpg',
             'hero' => 'https://www.themoviedb.org/t/p/original/qCSLKtNrL9xIyw2kjzi0GEUvqXx.jpg',
             'rating' => 2,
-            'trailer' => 'https://www.youtube.com/embed/ZgMIlFDIPNc',
+            'trailer' => 'https://www.youtube.com/embed/_nQs8SdGiEc',
             'yearproduced' => 2008,
             'director' => 'Kevin Smith',
         ]);
 
         Movie::create([
 
-            'title' => 'The Royal Treatment ',
-            'body' => ' Isabella runs her own salon and isn’t afraid to speak her mind, while Prince Thomas runs his own country and is about to marry for duty rather than love. When Izzy and her fellow stylists get the opportunity of a lifetime to do the hair for the royal wedding, she and Prince Thomas learn that taking control of their own destiny requires following their hearts.',
+            'title' => 'Scream',
+            'body' => ' Twenty-five years after a streak of brutal murders shocked the quiet town of Woodsboro, a new killer has donned the Ghostface mask and begins targeting a group of teenagers to resurrect secrets from the town’s deadly past..',
             'cover' => 'https://www.themoviedb.org/t/p/original/lyFrt4xWSPMbeFHvntjPHRjQAI1.jpg',
-            'hero' => 'https://www.themoviedb.org/t/p/original/7VwrJUAh7ed1ndbPmb0HDO0Bh6r.jpg',
-            'rating' => 2,
-            'trailer' => 'https://www.youtube.com/embed/KWxJXZ3S3-g',
+            'hero' => 'https://www.themoviedb.org/t/p/original/kZNHR1upJKF3eTzdgl5V8s8a4C3.jpg',
+            'rating' => 3,
+            'trailer' => 'https://www.youtube.com/embed/beToTslH17s',
             'yearproduced' => 2022,
-            'director' => 'Rick Jacobs',
+            'director' => 'Matt Bettinelli-Olpin',
+        ]);
+
+
+        Movie::create([
+
+            'title' => 'Nightmare Alley',
+            'body' => ' An ambitious carnival man with a talent for manipulating people with a few well-chosen words hooks up with a female psychiatrist who is even more dangerous than he is.',
+            'cover' => 'https://www.themoviedb.org/t/p/original/vfn1feL0V9HNSXuLLpaxAW8O6LO.jpg',
+            'hero' => 'https://www.themoviedb.org/t/p/original/8xj2PPpKwKUu4lV8jiNnig220od.jpg',
+            'rating' => 3,
+            'trailer' => 'https://www.youtube.com/embed/Q81Yf46Oj3s',
+            'yearproduced' => 2022,
+            'director' => 'Guillermo del Toro',
+        ]);
+
+        Movie::create([
+
+            'title' => 'Marry Me',
+            'body' => 'Music superstars Kat Valdez and Bastian are getting married before a global audience of fans. But when Kat learns, seconds before her vows, that Bastian has been unfaithful, she decides to marry Charlie, a stranger in the crowd, instead.',
+            'cover' => 'https://www.themoviedb.org/t/p/original/ko1JVbGj4bT8IhCWqjBQ6ZtF2t.jpg',
+            'hero' => 'https://www.themoviedb.org/t/p/original/koaxq5QbARIlfxCOR89atPHv367.jpg',
+            'rating' => 3,
+            'trailer' => 'https://www.youtube.com/embed/Ebv9_rNb5Ig',
+            'yearproduced' => 2022,
+            'director' => 'Kat Coiro',
+        ]);
+
+
+        Movie::create([
+
+            'title' => 'Through My Window',
+            'body' => 'Raquels longtime crush on her nextdoor neighbor turns into something more when he starts developing feelings for her despite his familys objections.',
+            'cover' => 'https://www.themoviedb.org/t/p/original/6gg7fvKc1ZxP9yCczweSxIGYp4S.jpg',
+            'hero' => 'https://www.themoviedb.org/t/p/original/5c3vzOs4jqDTHz7I9IWc4k0jxR5.jpg',
+            'rating' => 5,
+            'trailer' => 'https://www.youtube.com/embed/_zxhK3Z-R0c',
+            'yearproduced' => 2022,
+            'director' => 'Marçal Forés',
+        ]);
+
+        Movie::create([
+
+            'title' => 'The Lost Daughter ',
+            'body' => 'A womans seaside vacation takes a dark turn when her obsession with a young mother forces her to confront secrets from her past.',
+            'cover' => 'https://www.themoviedb.org/t/p/original/662nBy9rJKrhdmbC6BhUSjwE6m.jpg',
+            'hero' => 'https://www.themoviedb.org/t/p/original/ue7p1gBxBZeM9KNtwcUnBzdlRHk.jpg',
+            'rating' => 5,
+            'trailer' => 'https://www.youtube.com/embed/O2NKzO-fxwQ',
+            'yearproduced' => 2021,
+            'director' => 'Maggie Gyllenhaal',
         ]);
     }
 }

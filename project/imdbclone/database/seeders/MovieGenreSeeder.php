@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Http\Controllers\MovieGenreController;
+
 use App\Models\MovieGenres;
 use Illuminate\Database\Seeder;
 
@@ -85,7 +85,7 @@ class MovieGenreSeeder extends Seeder
 
         ]);
 
-          MovieGenres::create([
+        MovieGenres::create([
 
             'movie_id_fk' => '10',
             'genre_id_fk' => '3',
@@ -197,7 +197,7 @@ class MovieGenreSeeder extends Seeder
 
         ]);
 
-         MovieGenres::create([
+        MovieGenres::create([
 
             'movie_id_fk' => '26',
             'genre_id_fk' => '1',
@@ -232,6 +232,39 @@ class MovieGenreSeeder extends Seeder
 
         ]);
 
+        MovieGenres::create([
 
+            'movie_id_fk' => '31',
+            'genre_id_fk' => '4',
+
+        ]);
+
+        MovieGenres::create([
+
+            'movie_id_fk' => '32',
+            'genre_id_fk' => '5',
+
+        ]);
+
+        MovieGenres::create([
+
+            'movie_id_fk' => '33',
+            'genre_id_fk' => '7',
+
+        ]);
+
+        MovieGenres::create([
+
+            'movie_id_fk' => '34',
+            'genre_id_fk' => '3',
+
+        ]);
+
+        MovieGenres::create([
+
+            'movie_id_fk' => '35',
+            'genre_id_fk' => '6',
+
+        ]);
     }
 }
