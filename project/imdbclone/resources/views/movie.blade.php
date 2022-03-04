@@ -7,13 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{{ mix('css/app.css') }}" />
     <link rel="stylesheet" href="{{url('css/hero.css')}}" />
+    <link rel="stylesheet" href="{{url('css/button.css')}}" />
     <link rel="stylesheet" href="{{url('css/welcome.css')}}" />
     <link rel="stylesheet" href="{{url('css/footer.css')}}" />
     <link rel="stylesheet" href="{{url('css/highlight.css')}}" />
     <link rel="stylesheet" href="{{url('css/watchlist.css')}}" />
+    <link rel="stylesheet" href="{{url('css/movie.css')}}" />
+    <link rel="stylesheet" href="{{url('css/modal.css')}}" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://kit.fontawesome.com/405a204514.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>CINEMAH</title>
 </head>
 
@@ -58,147 +62,129 @@
                             <span class="bar"></span>
                         </div>
                     </nav>
-
                 </div>
             </div>
         </div>
 
 
-        <!-- hero slider section -->
+        <!-- Movie hero -->
+        <div class="moviebg">
+            <div class="movieflex">
+                <div class="flex-item">
+                    <img src="{{ $movie->hero}}" alt="" class="cover">
+                </div>
 
-        <div class="carousel">
-            <!--<h2 class="favorites">Fan favorites > </h2>-->
-            <div class="carousel__item carousel__item--visible hidden">
-                <img src="{{ $movies[0]->hero }}" />
-            </div>
-            <div class="carousel__item">
-                <img src="{{ URL('images/dark-knight.jpeg')}}" />
-            </div>
-            <div class="carousel__item">
-                <img src="{{ URL('images/infinity-war.jpeg')}}" />
-            </div>
-            <div class="carousel__item">
-                <img src="{{ URL('images/transformers.jpeg')}}" />
-            </div>
-            <div class="carousel__item">
-                <img src="{{ URL('images/interstellar.jpeg')}}" />
-            </div>
-            <div class="carousel__item">
-                <img src="{{ URL('images/django.jpeg')}}" />
+                <!-- center space-->
+                <div class="flex-item"></div>
+
+                <!-- play-->
+                <div class="flex-item">
+                    <button id="myBtn"><img src="{{ URL('images/PlayBtn.png')}}" alt="">l</button>
+                    <h3>Spela trailer</h3>
+                    <p>2021, 2h 32min - Drama, Historia, Action. Land: USA.</p>
+                </div>
+                <!-- play-->
+
+                <!--MODAL -->
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <iframe src="https://www.youtube.com/embed/5zdBG-iGfes" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <!--MODAL -->
+
             </div>
 
-            <div class="carousel__actions">
-                <button id="carousel__button--prev" aria-label="Previous slide">
-                    < </button>
-                        <button id="carousel__button--next" aria-label="Next slide">></button>
-            </div>
         </div>
+        <!-- Movie hero -->
 
-
+        <!-- txt section -->
         <div class="main">
+            <div class="txtSection">
+                <h1 class="MovieH1">{{$movie->title}}</h1>
+                <p class="MovieTxt"> {{$movie->body}}</p>
+                <br>
+                <p class="MovieTxt">Director: {{$movie->director}}</p>
+                <p class="MovieTxt">Year: {{$movie->yearproduced}}</p>
+                <p class="MovieTxt">Rating: {{$movie->rating}}</p>
+            </div>
 
-            <!-- Featured section -->
+
+
+            <!-- images section -->
             <section class="featured">
-                <h2>Featured today ></h2>
+                <h2 class="reviewstext"><a href="#">User reviews</a></h2>
             </section>
-            <div class="highlight">
-                <div class="highlight_item">
-                    <a href="#"><img src="{{ URL('images/watchmen.jpeg')}}" alt=""></a>
-                    <P>WATCHMEN</P>
+            <!-- reviews section -->
+            <div class="reviewFlex">
+                <div class="review-item">
+                    <p class="MovieTxt">
+                        <img src="{{ URL('images/star.png')}}" alt=""> 6,2
+                    </p>
+                    <p>
+                        Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
+                    </p>
                 </div>
-                <div class="highlight_item">
-                    <a href="#"><img src="{{ URL('images/pirates.jpeg')}}" alt=""></a>
-                    <P>Pirates of the Caribbean</P>
+
+                <div class="review-item">
+                    <p class="MovieTxt">
+                        <img src="{{ URL('images/star.png')}}" alt=""> 6,2
+                    </p>
+                    <p>
+                        Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
+                    </p>
                 </div>
-                <div class="highlight_item">
-                    <a href="#"><img src="{{ URL('images/007.jpeg')}}" alt=""></a>
-                    <p>007 SPECTRE</p>
+
+                <div class="review-item">
+                    <p class="MovieTxt">
+                        <img src="{{ URL('images/star.png')}}" alt=""> 6,2
+                    </p>
+                    <p>
+                        Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
+                    </p>
                 </div>
             </div>
+            <!-- reviews section -->
 
-            <!-- Top picks section -->
-            <section class="top_picks">
-                <h2>Top Picks ></h2>
-            </section>
-            <div class="movie_Showcase">
-                <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/matrix.jpeg')}}" alt=""></a>
-                    <div class="button_border">
-                        <p>Matrix</p>
-                        <div class="rating">
-                            <i class="fa-solid fa-star"></i>
-                            <p>8.7</p>
-                        </div>
+            <!-- reviews section -->
+            <div class="reviewFlex">
+                <div class="review-item">
+                    <p class="MovieTxt">
+                        <img src="{{ URL('images/star.png')}}" alt=""> 6,2
+                    </p>
+                    <p>
+                        Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
+                    </p>
+                </div>
 
-                         <!-- Drop down menu/lists -->
-                         <div class="dropdown" style="float:left;">
-                            <button class="dropbtn">Add to watchlist</button>
-                            <div class="dropdown-content" style="left:0;">
-                                <a href="#">Link 1</a>
-                                <a href="#">Link 2</a>
-                                <a href="#">Link 3</a>
-                            </div>
-                        </div>
-                        <!-- Drop down menu/lists -->
-                        
-                    </div>
+                <div class="review-item">
+                    <p class="MovieTxt">
+                        <img src="{{ URL('images/star.png')}}" alt=""> 6,2
+                    </p>
+                    <p>
+                        Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
+                    </p>
                 </div>
-                <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/tenet.jpeg')}}" alt=""></a>
-                    <div class="button_border">
-                        <p>Tenet</p>
-                        <div class="rating">
-                            <i class="fa-solid fa-star"></i>
-                            <p>7.4</p>
-                        </div>
-                        <button>Add Watchlist</button>
-                    </div>
-                </div>
-                <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/looper.jpeg')}}" alt=""></a>
-                    <div class="button_border">
-                        <p>Looper</p>
-                        <div class="rating">
-                            <i class="fa-solid fa-star"></i>
-                            <p>7.3</p>
-                        </div>
-                        <button>Add Watchlist</button>
-                    </div>
-                </div>
-                <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/lotr.jpeg')}}" alt=""></a>
-                    <div class="button_border">
-                        <p>Return of the King</p>
-                        <div class="rating">
-                            <i class="fa-solid fa-star"></i>
-                            <p>8.9</p>
-                        </div>
-                        <button>Add Watchlist</button>
-                    </div>
-                </div>
-                <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/deadpool.jpeg')}}" alt=""></a>
-                    <div class="button_border">
-                        <p>Deadpool</p>
-                        <div class="rating">
-                            <i class="fa-solid fa-star"></i>
-                            <p>8.0</p>
-                        </div>
-                        <button>Add Watchlist</button>
-                    </div>
-                </div>
-                <div class="showcase_item">
-                    <a href="#"><img src="{{ URL('images/et.jpeg')}}" alt=""></a>
-                    <div class="button_border">
-                        <p>E.T.</p>
-                        <div class="rating">
-                            <i class="fa-solid fa-star"></i>
-                            <p>7.8</p>
-                        </div>
-                        <button>Add Watchlist</button>
-                    </div>
+
+                <div class="review-item">
+                    <p class="MovieTxt">
+                        <img src="{{ URL('images/star.png')}}" alt=""> 6,2
+                    </p>
+                    <p>
+                        Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
+                    </p>
                 </div>
             </div>
+            <!-- reviews section -->
+
+            <!-- Add reviews -->
+            <div class="center">
+                <button class="custom-btn btn-15">Add review</button>
+            </div>
+            <!-- Add reviews -->
 
             <!-- Your watchlist section -->
             <section class="featured">
@@ -290,6 +276,7 @@
 
     <script src="{{url('js/hero.js')}}"></script>
     <script src="{{url('js/hamburger.js')}}"></script>
+    <script src="{{url('js/modal.js')}}"></script>
 
 </body>
 

@@ -25,6 +25,7 @@
 }
 
 .featured {
+    width: 300px;
     margin-bottom: 1rem;
     justify-content: center;
 }
@@ -54,22 +55,13 @@
 .highlight .highlight_item {
     height: auto;
     width: auto;
-    max-width: 600px;
-    margin: 0 10px;
+    max-width: 350px;
+    margin: 0 1rem;
 }
 
 .highlight .highlight_item img {
     border-top: solid 2px rgba(20, 16, 26, 0.6);
     border-bottom: solid 2px rgba(20, 16, 26, 0.6);
-}
-
-.highlight .highlight_item p {
-    color: #f6cf41;
-    font-weight: 600;
-    font-size: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    transform: translateY(-4rem);
-    text-align: center;
 }
 
 .movie_Showcase {
@@ -90,7 +82,7 @@
 .movie_Showcase .showcase_item img {
     border-top: solid 2px rgba(20, 16, 26, 0.6);
     height: 300px;
-    max-width: 100%;
+    max-width: 250px;
     object-fit: cover;
 }
 
@@ -99,14 +91,25 @@
     font-weight: 300;
     font-size: 16px;
     text-align: center;
+    transform: translateY(53px);
+}
+
+.movie_Showcase .showcase_item .button_border .button_border_title {
+    text-align: center;
+    width: 100%;
+}
+
+.movie_Showcase .showcase_item .button_border .button_border_title p {
+    width: 250px;
+    position: absolute;
     transform: translateY(15px);
 }
 
 .movie_Showcase .showcase_item .button_border {
     background: #131019;
-
-    height: 150px;
+    height: 200px;
     margin-bottom: 2rem;
+    width: 250px;
 }
 
 .movie_Showcase .showcase_item .button_border .rating {
@@ -123,19 +126,22 @@
 .movie_Showcase .showcase_item .button_border i {
     color: #f6cf41;
     position: relative;
-    transform: translateY(15px);
+    transform: translateY(55px) translateX(-2px);
     margin-right: 4px;
 }
 
 .movie_Showcase .showcase_item button {
-    display: flex;
+    display: inline-block;
     color: white;
     margin: 0 auto;
     font-size: 16px;
     background-color: #000000a9;
-    width: 80%;
+    width: 100%;
     justify-content: center;
-    transform: translateY(60px);
+    align-items: center;
+    vertical-align: baseline;
+    position: absolute;
+    transform: translateY(8.5rem) translateX(50px);
 }
 
 .movie_Showcase .showcase_item button:hover {
@@ -143,31 +149,42 @@
 }
 
 /* 3 picture showcase media querries */
-@media only screen and (max-width: 704px) {
-    .highlight .highlight_item p {
-        font-size: 14px;
-        transform: translateY(0);
-        background-color: #08060a;
-    }
-}
 
-@media only screen and (min-width: 1400px) {
-    .highlight .highlight_item p {
-        font-size: 22px;
-        transform: translateY(-8rem);
-    }
-
-    .movie_Showcase .showcase_item img {
+@media only screen and (max-width: 1500px) {
+    .highlight .highlight_item {
         width: 250px;
-    }
-}
-@media only screen and (min-width: 705px) and (max-width: 1000px) {
-    .highlight .highlight_item p {
-        font-size: 16px;
+        height: auto;
+        margin: 0 10px;
     }
 }
 
 /* 6 pictures showcase media querries */
+
+@media only screen and (max-width: 1799px) and (min-width: 1501px) {
+    .movie_Showcase .showcase_item img {
+        height: 250px;
+        width: 200px;
+    }
+    .movie_Showcase .showcase_item .button_border {
+        width: 200px;
+    }
+    .movie_Showcase .showcase_item .button_border .button_border_title p {
+        width: 200px;
+    }
+    .movie_Showcase .showcase_item button {
+        transform: translateY(8.5rem) translateX(25px);
+    }
+}
+
+@media only screen and (max-width: 1500px) {
+    .movie_Showcase .showcase_item img {
+        height: auto;
+        width: auto;
+    }
+    .movie_Showcase {
+        flex-wrap: wrap;
+    }
+}
 
 @media only screen and (max-width: 1091px) {
     .movie_Showcase .showcase_item p {

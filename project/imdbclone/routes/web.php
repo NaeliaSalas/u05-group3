@@ -7,6 +7,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\EntryController;
+use App\Http\Controllers\GenreController;
+use App\Http\Controllers\MovieGenreController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WatchlistController;
@@ -29,13 +31,27 @@ use Symfony\Component\Console\Input\Input;
 
 Route::get('/', [MovieController::class, 'getMovies']);
 
+//Itempage/moviepage
+Route::view('item', 'item');
+
+
+//Add Review
+Route::view('review.add-review', 'add-review');
+
 Route::resource('movie', MovieController::class);
 
-Route::resource('movie.reviews', ReviewController::class)->shallow();
+Route::resource('comment', CommentController::class);
 
-Route::resource('movie.reviews.comment', CommentController::class)->shallow();
+Route::resource('review', ReviewController::class);
 
 route::resource('watchlist', WatchlistController::class);
+
+//Route to genres
+Route::get('genre/{genrename}', [GenreController::class, 'show']);
+
+// Rout to register new user
+Route::get('register', [RegisterController::class, 'create']);
+Route::post('register', [RegisterController::class, 'store'])->name("register.user");
 
 // Route for user to login
 Route::get('login', [SessionsController::class, 'create']);
@@ -65,6 +81,29 @@ route::get('/category', function () {
     return view('category');
 });
 
+
+/* Route to categorys */
+
+/* Route to adventure */
+route::get('/adventure', function () {
+    return view('adventure');
+});
+/* Route to Action */
+route::get('/action', function () {
+    return view('action');
+});
+/* Route to Romance */
+route::get('/romance', function () {
+    return view('romance');
+});
+/* Route to Horror */
+route::get('/horror', function () {
+    return view('horror');
+});
+/* Route to Sci-fi */
+route::get('/scifi', function () {
+    return view('scifi');
+});
 
 //search route
 Route::get('search', [SearchController::class, 'search'])->name('search');
