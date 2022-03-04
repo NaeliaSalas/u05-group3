@@ -16,7 +16,7 @@ class SearchController extends Controller
         $movies = Movie::where('title', 'LIKE', '%' . request('search') . '%')->get();
 
         if ($movies->isEmpty()) {
-            return view('search', ['message' => "No movie available", 'movies' => $movies]);
+            return view('search', ['message' => "No movie available, please try again!", 'movies' => $movies]);
         }
         return view('search', ['movies' => $movies]);
     }
