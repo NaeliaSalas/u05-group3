@@ -71,7 +71,7 @@
         <div class="moviebg">
             <div class="movieflex">
                 <div class="flex-item">
-                    <img src="{{ $movie->hero}}" alt="" class="cover">
+                    <img src="{{url($movie->hero)}}" alt="" class="cover">
                 </div>
 
                 <!-- center space-->
@@ -120,7 +120,24 @@
             </section>
             <!-- reviews section -->
             <div class="reviewFlex">
+                @if ($movie->reviews->isEmpty())
+                <p class="MovieTxt">
+                    Be the first to review this!
+                </p>
+                @else
+                @foreach ($movie->reviews as $review)
                 <div class="review-item">
+                    <p class="MovieTxt">
+                        <img src="{{ URL('images/star.png')}}" alt="">{{$movie->rating}}
+                    </p>
+                    <p>
+                        {{ $review }}
+                    </p>
+                </div>
+                @endforeach
+                @endif
+
+                <!-- <div class="review-item">
                     <p class="MovieTxt">
                         <img src="{{ URL('images/star.png')}}" alt=""> 6,2
                     </p>
@@ -145,12 +162,12 @@
                     <p>
                         Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
                     </p>
-                </div>
+                </div> -->
             </div>
             <!-- reviews section -->
 
             <!-- reviews section -->
-            <div class="reviewFlex">
+            <!-- <div class="reviewFlex">
                 <div class="review-item">
                     <p class="MovieTxt">
                         <img src="{{ URL('images/star.png')}}" alt=""> 6,2
@@ -177,12 +194,12 @@
                         Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.
                     </p>
                 </div>
-            </div>
+            </div> -->
             <!-- reviews section -->
 
             <!-- Add reviews -->
             <div class="center">
-                <button class="custom-btn btn-15">Add review</button>
+                <a href="'/movie/' . $movie->id . '/reviews/create'"><button class="custom-btn btn-15">Add review</button></a>
             </div>
             <!-- Add reviews -->
 

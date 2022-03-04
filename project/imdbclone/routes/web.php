@@ -36,6 +36,9 @@ Route::get('search', [SearchController::class, 'search'])->name('search');
 Route::get('genre/{genrename}', [GenreController::class, 'show']);
 
 
+// Register page
+Route::view('/register', 'register.register');
+
 
 //Add Review
 Route::view('review.add-review', 'review.add-review');
@@ -46,15 +49,11 @@ Route::resource('movie', MovieController::class);
 
 Route::resource('comment', CommentController::class);
 
-Route::resource('review', ReviewController::class);
+Route::resource('movie.review', ReviewController::class)->shallow();
 
 route::resource('watchlist', WatchlistController::class);
 
 
-
-// Rout to register new user
-Route::get('register', [RegisterController::class, 'create']);
-Route::post('register', [RegisterController::class, 'store'])->name("register.user");
 
 // Route for user to login
 Route::get('login', [SessionsController::class, 'create']);
@@ -64,10 +63,6 @@ Route::post('logout', [SessionsController::class, 'destroy']);
 
 route::resource('entry', EntryController::class);
 Route::resource('user', UserController::class);
-
-
-// Register page
-Route::view('/register', 'register.register');
 
 // Route for user to login
 Route::get('login', [SessionsController::class, 'create']); //->middleware('guest');
