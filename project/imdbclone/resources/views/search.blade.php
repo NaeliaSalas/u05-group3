@@ -124,6 +124,14 @@
 
     </div>
 
+    @if ($errors->any())
+    @foreach ($errors->all() as $error)
+    <li>
+        {{ $error }}
+    </li>
+    @endforeach
+    @endif
+
 
     <script src="{{url('js/hero.js')}}"></script>
     <script src="{{url('js/hamburger.js')}}"></script>
