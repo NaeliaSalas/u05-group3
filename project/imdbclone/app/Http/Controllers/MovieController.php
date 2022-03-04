@@ -38,7 +38,7 @@ class MovieController extends Controller
     public function getMovies()
     {
         $movies = Movie::get();
-        return view('welcome', ['movies' => $movies]);
+        return view('index', ['movies' => $movies]);
     }
 
     /**
