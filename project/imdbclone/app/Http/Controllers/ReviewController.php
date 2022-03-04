@@ -28,7 +28,7 @@ class ReviewController extends Controller
     public function create($movieId)
     {
 
-        return view('add-review');
+        return view('review.add-review');
     }
 
     /**
@@ -81,7 +81,7 @@ class ReviewController extends Controller
     public function edit($id)
     {
         $review = Review::find($id);
-        return view('add-review', ['review' => $review]);
+        return view('review.add-review', ['review' => $review]);
     }
 
     /**

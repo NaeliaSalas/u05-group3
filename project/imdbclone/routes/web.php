@@ -27,25 +27,13 @@ use Symfony\Component\Console\Input\Input;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::get('/', [MovieController::class, 'getMovies']);
-
-
-//Itempage/moviepage
-Route::view('item', 'item');
-
-
-//Add Review
-Route::view('add-review', 'add-review');
 
 Route::resource('movie', MovieController::class);
 
-Route::resource('comment', CommentController::class);
+Route::resource('movie.reviews', ReviewController::class)->shallow();
 
-Route::resource('review', ReviewController::class);
+Route::resource('movie.reviews.comment', CommentController::class)->shallow();
 
 route::resource('watchlist', WatchlistController::class);
 
@@ -77,29 +65,6 @@ route::get('/category', function () {
     return view('category');
 });
 
-
-/* Route to categorys */
-
-/* Route to adventure */
-route::get('/adventure', function () {
-    return view('adventure');
-});
-/* Route to Action */
-route::get('/action', function () {
-    return view('action');
-});
-/* Route to Romance */
-route::get('/romance', function () {
-    return view('romance');
-});
-/* Route to Horror */
-route::get('/horror', function () {
-    return view('horror');
-});
-/* Route to Sci-fi */
-route::get('/scifi', function () {
-    return view('scifi');
-});
 
 //search route
 Route::get('search', [SearchController::class, 'search'])->name('search');
