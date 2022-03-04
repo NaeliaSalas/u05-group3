@@ -66,7 +66,10 @@
         <!-- Navbar -->
 
         <div class="searchpics">
+           <p class="text-white">{{$message}}</p>
+
             @foreach($movies as $movie)
+    
             <div class="search_flex">
                 <a href="{{ url('/movie/'.$movie->id) }}">
                     <img src="{{ $movie->cover }}" alt="">
@@ -75,7 +78,6 @@
             </div>
             @endforeach
         </div>
-
 
 
         <!-- Footer with links -->
@@ -123,6 +125,8 @@
 
 
     </div>
+
+
 
 
     <script src="{{url('js/hero.js')}}"></script>
