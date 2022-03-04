@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\EntryController;
+use App\Http\Controllers\GenreController;
 use App\Http\Controllers\MovieGenreController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\UserController;
@@ -51,7 +52,7 @@ Route::resource('review', ReviewController::class);
 route::resource('watchlist', WatchlistController::class);
 
 //Route to genres
-Route::get('genre', [GenreController::class, 'index']);
+Route::get('genre/{genrename}', [GenreController::class, 'index']);
 
 // Rout to register new user
 Route::get('register', [RegisterController::class, 'create']);
