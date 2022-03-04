@@ -64,14 +64,37 @@
         </div>
 
         <!-- hero slider section -->
-
+        <!-- 
         <div class="carousel">
             <!--<h2 class="favorites">Fan favorites > </h2>-->
 
-            @php
-            $heromovies = $movies->random(5);
-            @endphp
-            @foreach ($heromovies as $heromovie) <div class="carousel__item carousel__item--visible hidden">
+        <!--
+        @php
+        $heromovies = $movies->random(5);
+        @endphp
+        @foreach ($heromovies as $heromovie) <div class="carousel__item carousel__item--visible hidden">
+            <img src="{{ $heromovie->hero }}" />
+        </div>
+        @endforeach
+
+        <div class="carousel__actions">
+            <button id="carousel__button--prev" aria-label="Previous slide">
+                < </button>
+                    <button id="carousel__button--next" aria-label="Next slide">></button>
+        </div>
+    </div>
+    -->
+
+
+        @php
+        $heromovies = $movies->random(4);
+        @endphp
+        <div class="carousel">
+            <!--<h2 class="favorites">Fan favorites > </h2>-->
+            <div class="carousel__item carousel__item--visible hidden">
+                <img src="{{ $heromovie->hero }}" />
+            </div>
+            @foreach ($heromovies as $heromovie) <div class="carousel__item">
                 <img src="{{ $heromovie->hero }}" />
             </div>
             @endforeach
@@ -97,7 +120,6 @@
                 @endphp
                 @foreach ($highlightmovies as $highlightmovie) <div class="highlight_item">
                     <a href="{{ url('/movie/' . $highlightmovie->id) }}"><img src="{{ URL($highlightmovie->cover) }}" alt="Movie Cover"></a>
-                    <P>{{$highlightmovie->title}}</P>
                 </div>
                 @endforeach
             </div>
@@ -114,14 +136,16 @@
                 <div class="showcase_item">
                     <a href="{{url('/movie/' . $topmovie->id)}}"><img src="{{ URL($topmovie->cover)}}" alt="Movie cover"></a>
                     <div class="button_border">
-                        <p>{{$topmovie->title}}</p>
+                        <div class="button_border_title">
+                            <p>{{$topmovie->title}}</p>
+                        </div>
                         <div class="rating">
                             <i class="fa-solid fa-star"></i>
                             <p>{{$topmovie->rating}}</p>
                         </div>
 
                         <!-- Drop down menu/lists -->
-                        <div class="dropdown" style="float:left;">
+                        <div class="dropdown">
                             <a href="/register"><button class="dropbtn">Add to watchlist</button></a>
                             @auth
                             <div class="dropdown-content" style="left:0;">
@@ -135,9 +159,8 @@
 
                     </div>
                 </div>
+                @endforeach
             </div>
-            @endforeach
-
         </div>
 
         <!-- Your watchlist section -->
