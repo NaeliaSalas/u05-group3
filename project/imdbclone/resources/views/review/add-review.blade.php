@@ -71,8 +71,8 @@
         <div class="reviewbg">
             <div class="reviewflex">
                 <div class="flex-item-review">
-                    <img src="{{ URL('images/Kingsman-cover.jpg')}}" alt="" class="coverReview">
-                    <h3 class="h3txt">The King's Man</h3>
+                    <img src="{{ URL($movie->cover)}}" alt="" class="coverReview">
+                    <h3 class="h3txt">{{$movie->title}}}</h3>
                 </div>
 
                 <!-- center space-->
@@ -81,18 +81,18 @@
                 <div class="flex-item-review">
                     <h1 class="MovieH1">Add review</h1>
 
-                    <form action="{{url('review')}}" method="post">
+                    <form action="{{url('/review')}}" method="post">
                         @csrf
                         <input type="text" class="input" placeholder="Headline" name="title">
                         <label>Headline</label>
                         <br>
 
-                        <input class="input" type="text" placeholder="Rating (7,2)" name="rate">
+                        <input class="input" type="select" placeholder="Rate this" name="rating">
                         <br>
                         <input class="txtInput" type="text" placeholder="Your review" name="body" class="txtInput">
                         <br>
-                        <input type="hidden" name="user_id_fk" value="1">
-                        <input type="hidden" name="movie_id_fk" value="1">
+                        <input type="hidden" name="user_id_fk" value="{{Auth::id()}}">
+                        <input type="hidden" name="movie_id_fk" value="{{$movie->id}}">
 
                         <button type="submit" class="custom-btn btn-15">Add review</button>
 
