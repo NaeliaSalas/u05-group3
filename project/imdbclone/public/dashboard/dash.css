@@ -12,7 +12,7 @@
     position: absolute;
     top: 40%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -30%);
     width: 100%;
     max-width: 600px;
     background: rgba(0, 0, 0, 0.8);
@@ -95,12 +95,12 @@
 
 .dashboard {
     width: 100%;
-    height: 100vh;
+    height: auto;
     background-color: #6e848a;
 }
 
 .dashboard-witdh {
-    height: 100vh;
+    height: auto;
     width: 100%;
     justify-content: center;
     align-items: center;

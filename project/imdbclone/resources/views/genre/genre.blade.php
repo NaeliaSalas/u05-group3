@@ -5,23 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search movies CINEMAH</title>
-    <link rel="stylesheet" href="{{ asset('')}}">
+    <title>Document</title>
     <link rel="stylesheet" href="{{ mix('css/app.css') }}" />
-    <link rel="stylesheet" href="{{url('css/hero.css')}}" />
     <link rel="stylesheet" href="{{url('css/welcome.css')}}" />
     <link rel="stylesheet" href="{{url('css/footer.css')}}" />
     <link rel="stylesheet" href="{{url('css/highlight.css')}}" />
-    <link rel="stylesheet" href="{{url('css/watchlist.css')}}" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://kit.fontawesome.com/405a204514.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <title>CINEMAH</title>
 </head>
 
 <body>
-
-    <!-- Header (NAVBAR)-->
+    <!-- Navbar -->
     <div class="main-container">
 
         <div class="navbar">
@@ -63,20 +58,35 @@
                 </div>
             </div>
         </div>
-        <!-- Navbar -->
 
-        <div class="searchpics">
-            @foreach($movies as $movie)
-            <div class="search_flex">
-                <a href="{{ url('/movie/'.$movie->id) }}">
-                    <img src="{{ $movie->cover }}" alt="">
-                </a>
-                <p class="text-white text-center">{{ $movie->title }}</p>
+
+        <!-- Action section -->
+        <div class="main">
+            <section class="top_picks">
+                <h2><a href="category">Go Back > </a> </h2>
+            </section>
+
+            <div class="movie_Showcase">
+
+                <p class="text-white">{{$genre->genre}}</p>
+
+                @foreach ($genre->movies as $movie)
+                <div class="showcase_item">
+                    <a href="{{ URL('/movie/' . $movie->id)}}"><img src="{{ URL($movie->cover)}}" alt=""></a>
+                    <div class="button_border">
+                        <p>{{$movie->title}}</p>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <p>{{$movie->rating}}</p>
+                        </div>
+                        <button>Add Watchlist</button>
+                    </div>
+                </div>
+                {{$movie->title}}
+                @endforeach
+
             </div>
-            @endforeach
         </div>
-
-
 
         <!-- Footer with links -->
         <footer class="footer">
@@ -92,7 +102,7 @@
                         </ul>
                     </div>
                     <div class="footer-col">
-                        <h4>Get help</h4>
+                        <h4>get help</h4>
                         <ul>
                             <li><a href="#">Help</a></li>
                             <li><a href="#">Get the APP</a></li>
@@ -110,7 +120,7 @@
                         </ul>
                     </div>
                     <div class="footer-col">
-                        <h4>Follow us</h4>
+                        <h4>follow us</h4>
                         <div class="social-links">
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                             <a href="#"><i class="fab fa-twitter"></i></a>
@@ -124,8 +134,6 @@
 
     </div>
 
-
-    <script src="{{url('js/hero.js')}}"></script>
     <script src="{{url('js/hamburger.js')}}"></script>
 </body>
 

@@ -29,4 +29,9 @@ class Movie extends Model
     {
         return $this->belongsToMany(Watchlist::class, 'entries', 'movie_id_fk', 'watchlist_id_fk');
     }
+
+    public function genres()
+    {
+        return $this->belongsToMany(Genre::class, 'movie_genres', 'movie_id_fk', 'genre_id_fk');
+    }
 }
