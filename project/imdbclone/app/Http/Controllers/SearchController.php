@@ -10,20 +10,14 @@ use Illuminate\Support\Facades\DB;
 class SearchController extends Controller
 
 {
-    public function search()
+    public function search(Request $request)
     {
-        if (request('search')) {
 
-            $movies = Movie::where('title', 'LIKE', '%' . request('search') . '%')->get();
+        $movies = Movie::where('title', 'LIKE', '%' . request('search') . '%')->get();
 
-            if ($movies->count() == 0) {
-                return view('search')->with('message', 'nothing found');
-            }
-
-            // }
-            // else{
-            // return view('search', ['movies' => $movies]);
-
+        if ($movies->isEmpty()) {
+            return view('search', ['message' => "No movie available", 'movies' => $movies]);
         }
+        return view('search', ['movies' => $movies]);
     }
 }

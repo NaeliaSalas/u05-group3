@@ -66,12 +66,10 @@
         <!-- Navbar -->
 
         <div class="searchpics">
+           <p class="text-white">{{$message}}</p>
+
             @foreach($movies as $movie)
-            @if($movies->movie->count() > 0)
-            <td colspan="5" class="text-center">
-                {{'message'}}
-            </td>
-            @endif
+    
             <div class="search_flex">
                 <a href="{{ url('/movie/'.$movie->id) }}">
                     <img src="{{ $movie->cover }}" alt="">
@@ -80,7 +78,6 @@
             </div>
             @endforeach
         </div>
-
 
 
         <!-- Footer with links -->
