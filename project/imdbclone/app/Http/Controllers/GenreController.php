@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Genre;
+use App\Models\Movie;
 use Illuminate\Http\Request;
 
 class GenreController extends Controller
 {
-    public function index($genrename)
+    public function show($genrename)
     {
-        $genres = Genre::where('genre', $genrename)->get();
-
-        return view('entry.show', ['genres' => $genres]);
+        $genre = Genre::where('genre', $genrename)->first();
+        return view('genre', ['genre' => $genre]);
     }
 }
