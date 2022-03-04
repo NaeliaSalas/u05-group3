@@ -24,4 +24,9 @@ class Movie extends Model
     {
         return $this->hasMany(Review::class, 'movie_id_fk');
     }
+
+    public function watchlists()
+    {
+        return $this->belongsToMany(Watchlist::class, 'entries', 'movie_id_fk', 'watchlist_id_fk');
+    }
 }
