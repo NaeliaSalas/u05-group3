@@ -15,20 +15,15 @@ class SearchController extends Controller
         if (request('search')) {
 
             $movies = Movie::where('title', 'LIKE', '%' . request('search') . '%')->get();
-            var_dump($movies);
 
-            if ($movies->isEmpty()->with ('message', 'No result found'){
-              return view('search', ['movies' => $movies]);
-
+            if ($movies->count() == 0) {
+                return view('search')->with('message', 'nothing found');
             }
 
-                
+            // }
+            // else{
+            // return view('search', ['movies' => $movies]);
 
-            
-            }
-
-
-      
         }
     }
-
+}

@@ -67,6 +67,11 @@
 
         <div class="searchpics">
             @foreach($movies as $movie)
+            @if($movie->movie->count() > 0)
+            <td colspan="5" class="text-center">
+                {{'message'}}
+            </td>
+            @endif
             <div class="search_flex">
                 <a href="{{ url('/movie/'.$movie->id) }}">
                     <img src="{{ $movie->cover }}" alt="">
@@ -75,7 +80,7 @@
             </div>
             @endforeach
         </div>
-
+     
 
 
         <!-- Footer with links -->
@@ -124,13 +129,6 @@
 
     </div>
 
-    @if ($errors->any())
-    @foreach ($errors->all() as $error)
-    <li>
-        {{ $error }}
-    </li>
-    @endforeach
-    @endif
 
 
     <script src="{{url('js/hero.js')}}"></script>
