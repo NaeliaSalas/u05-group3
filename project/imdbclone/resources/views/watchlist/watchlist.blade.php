@@ -70,251 +70,62 @@
             <!-- Create watchlist -->
             <section class="top_picks">
                 <h2>Create watchlist</h2>
-                <input type="text" class="input-watchlist" placeholder="Watchlist name" name="watchlist-title">
-                <button class="createBtn">Add List</button>
+
+
+                <form action="{{'watchlist'}}" method="post">
+                    @csrf
+                    <input type="text" class="input-watchlist" name="title">
+                    <input type="hidden" class="input-watchlist" name="user_id_fk" value=" {{ Auth::id() }} ">
+                    <button class="createBtn" type="submit">Create watchlist</button>
+                </form>
             </section>
+
 
             <!-- watchlist -->
             <section class="top_picks">
                 <h2>My watchlists </h2>
             </section>
 
-            <!-- Row -->
+            <!-- BÖRJA HÄR NOVIS -->
+            @foreach ($watchlists as $watchlist)
             <section class="watchlist-head">
-                <p class="watchlist-txt">Min första spellista
-                    <button class="deleteBtn2">Edit List</button>
-                    <button class="deleteBtn2">Delete List</button>
-                </p>
+                <p class="watchlist-txt">{{$watchlist->title}}</p>
+
+                <form action="{{url('watchlist/' . $watchlist->id)}}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button class="deleteBtn2" type="submit">Delete List</button>
+                </form>
+
 
             </section>
 
             <!-- Showcase -->
             <div class="movie_Showcase2">
+                @foreach ($watchlist->movies as $movie)
+
 
                 <!-- item -->
                 <div class="watchlist-item">
-                    <img class="watchlist-img" src="images/matrix.jpeg" alt="">
+                    <img class="watchlist-img" src="{{url($movie->cover)}}" alt="">
                     <div class="button_border">
-                        <p class="watchlist-txt">Bigget than the Big Lebowski</p>
-                        <button class="deleteBtn">Delete</button>
+                        <p class="watchlist-txt">{{$movie->title}}</p>
+                        <form action="{{url('entry/' . $movie->pivot->id)}}" method="post">
+
+                            @csrf
+                            @method('DELETE')
+                            <button class="deleteBtn2" type="submit">Delete</button>
+                        </form>
                     </div>
                 </div>
-                <!-- item -->
 
-                <!-- item -->
-                <div class="watchlist-item">
-                    <img class="watchlist-img" src="images/matrix.jpeg" alt="">
-                    <div class="button_border">
-                        <p class="watchlist-txt">Matrix</p>
-                        <button class="deleteBtn">Delete</button>
-                    </div>
-                </div>
-                <!-- item -->
-
-                <!-- item -->
-                <div class="watchlist-item">
-                    <img class="watchlist-img" src="images/matrix.jpeg" alt="">
-                    <div class="button_border">
-                        <p class="watchlist-txt">Halvlång titel</p>
-                        <button class="deleteBtn">Delete</button>
-                    </div>
-                </div>
-                <!-- item -->
-
-                <!-- item -->
-                <div class="watchlist-item">
-                    <img class="watchlist-img" src="images/matrix.jpeg" alt="">
-                    <div class="button_border">
-                        <p class="watchlist-txt">Bigget than the Big Lebowski</p>
-                        <button class="deleteBtn">Delete</button>
-                    </div>
-                </div>
-                <!-- item -->
-
-                <!-- item -->
-                <div class="watchlist-item">
-                    <img class="watchlist-img" src="images/matrix.jpeg" alt="">
-                    <div class="button_border">
-                        <p class="watchlist-txt">Matrix</p>
-                        <button class="deleteBtn">Delete</button>
-                    </div>
-                </div>
-                <!-- item -->
-
-                <!-- item -->
-                <div class="watchlist-item">
-                    <img class="watchlist-img" src="images/matrix.jpeg" alt="">
-                    <div class="button_border">
-                        <p class="watchlist-txt">Halvlång titel</p>
-                        <button class="deleteBtn">Delete</button>
-                    </div>
-                </div>
-                <!-- item -->
-
-                <!-- item -->
-                <div class="watchlist-item">
-                    <img class="watchlist-img" src="images/matrix.jpeg" alt="">
-                    <div class="button_border">
-                        <p class="watchlist-txt">Bigget than the Big Lebowski</p>
-                        <button class="deleteBtn">Delete</button>
-                    </div>
-                </div>
-                <!-- item -->
-
-                <!-- item -->
-                <div class="watchlist-item">
-                    <img class="watchlist-img" src="images/matrix.jpeg" alt="">
-                    <div class="button_border">
-                        <p class="watchlist-txt">Matrix</p>
-                        <button class="deleteBtn">Delete</button>
-                    </div>
-                </div>
-                <!-- item -->
-
-                <!-- item -->
-                <div class="watchlist-item">
-                    <img class="watchlist-img" src="images/matrix.jpeg" alt="">
-                    <div class="button_border">
-                        <p class="watchlist-txt">Halvlång titel</p>
-                        <button class="deleteBtn">Delete</button>
-                    </div>
-                </div>
-                <!-- item -->
-
-                <!-- item -->
-                <div class="watchlist-item">
-                    <img class="watchlist-img" src="images/matrix.jpeg" alt="">
-                    <div class="button_border">
-                        <p class="watchlist-txt">Halvlång titel</p>
-                        <button class="deleteBtn">Delete</button>
-                    </div>
-                </div>
-                <!-- item -->
-
+                @endforeach
             </div>
-            <!-- Row -->
-
-
-            <!-- Row -->
-            <section class="watchlist-head">
-                <p class="watchlist-txt">Min första spellista <button class="deleteBtn2">Delete List</button></p>
-
-            </section>
-
-            <!-- Showcase -->
-            <div class="movie_Showcase2">
-
-                <!-- item -->
-                <div class="watchlist-item">
-                    <img class="watchlist-img" src="images/matrix.jpeg" alt="">
-                    <div class="button_border">
-                        <p class="watchlist-txt">Bigget than the Big Lebowski</p>
-                        <button class="deleteBtn">Delete</button>
-                    </div>
-                </div>
-                <!-- item -->
-
-                <!-- item -->
-                <div class="watchlist-item">
-                    <img class="watchlist-img" src="images/matrix.jpeg" alt="">
-                    <div class="button_border">
-                        <p class="watchlist-txt">Matrix</p>
-                        <button class="deleteBtn">Delete</button>
-                    </div>
-                </div>
-                <!-- item -->
-
-                <!-- item -->
-                <div class="watchlist-item">
-                    <img class="watchlist-img" src="images/matrix.jpeg" alt="">
-                    <div class="button_border">
-                        <p class="watchlist-txt">Halvlång titel</p>
-                        <button class="deleteBtn">Delete</button>
-                    </div>
-                </div>
-                <!-- item -->
-
-                <!-- item -->
-                <div class="watchlist-item">
-                    <img class="watchlist-img" src="images/matrix.jpeg" alt="">
-                    <div class="button_border">
-                        <p class="watchlist-txt">Bigget than the Big Lebowski</p>
-                        <button class="deleteBtn">Delete</button>
-                    </div>
-                </div>
-                <!-- item -->
-
-                <!-- item -->
-                <div class="watchlist-item">
-                    <img class="watchlist-img" src="images/matrix.jpeg" alt="">
-                    <div class="button_border">
-                        <p class="watchlist-txt">Matrix</p>
-                        <button class="deleteBtn">Delete</button>
-                    </div>
-                </div>
-                <!-- item -->
-
-                <!-- item -->
-                <div class="watchlist-item">
-                    <img class="watchlist-img" src="images/matrix.jpeg" alt="">
-                    <div class="button_border">
-                        <p class="watchlist-txt">Halvlång titel</p>
-                        <button class="deleteBtn">Delete</button>
-                    </div>
-                </div>
-                <!-- item -->
-
-                <!-- item -->
-                <div class="watchlist-item">
-                    <img class="watchlist-img" src="images/matrix.jpeg" alt="">
-                    <div class="button_border">
-                        <p class="watchlist-txt">Bigget than the Big Lebowski</p>
-                        <button class="deleteBtn">Delete</button>
-                    </div>
-                </div>
-                <!-- item -->
-
-                <!-- item -->
-                <div class="watchlist-item">
-                    <img class="watchlist-img" src="images/matrix.jpeg" alt="">
-                    <div class="button_border">
-                        <p class="watchlist-txt">Matrix</p>
-                        <button class="deleteBtn">Delete</button>
-                    </div>
-                </div>
-                <!-- item -->
-
-                <!-- item -->
-                <div class="watchlist-item">
-                    <img class="watchlist-img" src="images/matrix.jpeg" alt="">
-                    <div class="button_border">
-                        <p class="watchlist-txt">Halvlång titel</p>
-                        <button class="deleteBtn">Delete</button>
-                    </div>
-                </div>
-                <!-- item -->
-
-                <!-- item -->
-                <div class="watchlist-item">
-                    <img class="watchlist-img" src="images/matrix.jpeg" alt="">
-                    <div class="button_border">
-                        <p class="watchlist-txt">Halvlång titel</p>
-                        <button class="deleteBtn">Delete</button>
-                    </div>
-                </div>
-                <!-- item -->
-
-            </div>
-            <!-- Row -->
-
-
-
-
-
+            @endforeach
         </div>
         <!-- Flexbox -->
 
-
+        <p class="text-white">{{var_dump($movie->pivot->id)}}</p>
         <!-- Footer with links -->
         <footer class="footer">
             <div class="container">
