@@ -1,0 +1,54 @@
+/* Watchlist dropdown */
+.dropdown {
+    width: 100%;
+    height: 0;
+    position: relative;
+}
+
+.dropbtn {
+    margin: 0;
+    padding: 0;
+    background-color: #c23186;
+    color: rgb(214, 27, 27);
+}
+
+.dropdown-content {
+    width: 100%;
+    display: none;
+    position: relative;
+    margin: auto;
+    margin-top: 3.5em;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    background-color: #0a0a0a;
+    z-index: 90;
+}
+
+.dropdown-content a {
+    color: rgb(255, 255, 255);
+    padding: 0.5em 0.5em;
+    text-decoration: none;
+    display: block;
+    font-size: 0.8em;
+}
+
+.dropdown-content a:hover {
+    background-color: #4d2161;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+}
+
+/* Watchlist dropdown */
+
+.fa-sort-desc {
+    margin-top: -1em;
+    margin-left: 0.5em;
+}
