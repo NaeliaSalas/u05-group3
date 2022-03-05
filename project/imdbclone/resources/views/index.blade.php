@@ -155,19 +155,17 @@
                             <p>{{$topmovie->title}}</p>
                         </div>
                         <div class="rating">
-                            <i class="fa-solid fa-star"></i>
-                            <p>{{$topmovie->rating}}</p>
+                            @for ($i = 0; $i < $topmovie->rating; $i++)
+                                <i class="fa-solid fa-star"></i>
+                                @endfor
+                                <p>{{$topmovie->rating}}</p>
                         </div>
 
                         <!-- Drop down menu/lists -->
                         <div class="dropdown">
                             <a href="/register"><button class="dropbtn">Add to watchlist</button></a>
                             @auth
-<<<<<<< HEAD
-                            <div class="dropdown-content" style="left:0;">
-=======
                             <div>
->>>>>>> main
                                 @foreach(Auth::user()->watchlists as $watchlist)
 
                                 <form action="{{url('/entry')}}" method="post">
@@ -204,8 +202,10 @@
                 <div class="button_border">
                     <p>{{ $movie->title }}</p>
                     <div class="rating">
-                        <i class="fa-solid fa-star"></i>
-                        <p>{{ $movie->rating }}</p>
+                        @for ($i = 0; $i < $movie->rating; $i++)
+                            <i class="fa-solid fa-star"></i>
+                            @endfor
+                            <p>{{ $movie->rating }}</p>
                     </div>
 
                 </div>
