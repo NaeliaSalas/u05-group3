@@ -46,7 +46,7 @@
                     <nav class="nav-wrapper">
                         <ul class="nav-links">
                             <li class="nav-item"><a class="menuItem" href="/">Home</a></li>
-                            <li class="nav-item"><a class="menuItem" href="#">Watchlist</a></li>
+                            <li class="nav-item"><a class="menuItem" href="/watchlist">Watchlist</a></li>
                             <li class="genre-dropdown nav-item"><button class="dropDown_subMenu">Genres +</button>
                                 <ul class="dropdown-categories">
                                     <li class="subMenu"><a href="#">Adventure</a></li>
@@ -60,8 +60,8 @@
                                 </ul>
                             </li>
                             @guest
-                            <li class=" nav-item"><a class="menuItem" href="login">Log in</a></li>
-                            <li class=" nav-item"><a class="menuItem" href="register">Register</a></li>
+                            <li class=" nav-item"><a class="menuItem" href="/login">Log in</a></li>
+                            <li class=" nav-item"><a class="menuItem" href="/register">Register</a></li>
                             @endguest
                             @auth
                             <li class=" nav-item"><a class="menuItem" href="/admin/dashboard">Dashboard</a></li>
@@ -163,9 +163,20 @@
                         <div class="dropdown">
                             <a href="/register"><button class="dropbtn">Add to watchlist</button></a>
                             @auth
+<<<<<<< HEAD
                             <div class="dropdown-content" style="left:0;">
+=======
+                            <div>
+>>>>>>> main
                                 @foreach(Auth::user()->watchlists as $watchlist)
-                                <a href="#">{{$watchlist->title}}</a>
+
+                                <form action="{{url('/entry')}}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="title" value="{{$topmovie->title}}">
+                                    <input type="hidden" name="watchlist_id_fk" value="{{$watchlist->id}}">
+                                    <input type="hidden" name="movie_id_fk" value="{{$topmovie->id}}">
+                                    <button type="submit">{{$watchlist->title}}</button>
+                                </form>
                                 @endforeach
                             </div>
                             @endauth

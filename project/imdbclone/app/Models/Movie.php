@@ -34,4 +34,9 @@ class Movie extends Model
     {
         return $this->belongsToMany(Genre::class, 'movie_genres', 'movie_id_fk', 'genre_id_fk');
     }
+
+    public function entries()
+    {
+        return $this->belongsToMany(Entry::class, 'entries', 'movie_id_fk')->withPivot('id');
+    }
 }

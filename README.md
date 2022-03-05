@@ -42,8 +42,36 @@ Write the following command
 cd [project-name]
 ```
 
+## Not using Visual code? Do not worry, follow these steps instead.
+
+Use docker ps to get the name of the existing container
+
+Use the command down below to get a bash shell in the container
+```bash
+ docker exec -it <container name> /bin/bash 
+ ```
+
+Next, execute a command on the container.
+
+```bash
+docker exec -it <container name> <command> 
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Then please type this command in the shell terminal
-:
+
 
 ```bash
   php artisan serve --host 0.0.0.0 --port 8000
@@ -103,8 +131,16 @@ As a logged in user you are able to create Watchlists, edit or delete them.
 
 Review movies and also add comments to other users reviews.
 
-Documentation
-Documentation
+
+## Documentation
+
+[Documentation](https://linktodocumentation)
+
+figma link 
+https://www.figma.com/file/gmOhgXUYiiTtTftQeGW78g/WF-U05?node-id=0%3A1
+
+sitemap:
+https://www.gloomaps.com/kgFJVdydnR
 
 Product Backlog
 Find the backlog to our project via the link provided here:
