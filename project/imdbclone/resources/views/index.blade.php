@@ -163,11 +163,7 @@
                         <div class="dropdown">
                             <a href="/register"><button class="dropbtn">Add to watchlist</button></a>
                             @auth
-<<<<<<< HEAD
-                            <div class="dropdown-content" style="left:0;">
-=======
                             <div>
->>>>>>> main
                                 @foreach(Auth::user()->watchlists as $watchlist)
 
                                 <form action="{{url('/entry')}}" method="post">
