@@ -125,7 +125,6 @@
         </div>
         <!-- Flexbox -->
 
-        <p class="text-white">{{var_dump($movie->pivot->id)}}</p>
         <!-- Footer with links -->
         <footer class="footer">
             <div class="container">
