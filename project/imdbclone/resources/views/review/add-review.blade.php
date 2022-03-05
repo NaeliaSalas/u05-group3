@@ -71,8 +71,8 @@
         <div class="reviewbg">
             <div class="reviewflex">
                 <div class="flex-item-review">
-                    <img src="{{ URL($movie->cover)}}" alt="" class="coverReview">
-                    <h3 class="h3txt">{{$movie->title}}}</h3>
+                    <img src="{{URL($movie->cover)}}" alt="" class="coverReview">
+                    <h3 class="h3txt">{{$movie->title}}</h3>
                 </div>
 
                 <!-- center space-->
@@ -88,7 +88,8 @@
                         <br>
                         <input class="input" type="select" placeholder="Rate this" name="rating">
                         <br>
-                        <input class="txtInput" type="text" placeholder="Your review" name="body" class="txtInput">
+
+                        <input textarea class="txtInput" type="text" placeholder="Your review" name="body" class="txtInput">
                         <br>
                         <input type="hidden" name="user_id_fk" value="{{Auth::id()}}">
                         <input type="hidden" name="movie_id_fk" value="{{$movie->id}}">
