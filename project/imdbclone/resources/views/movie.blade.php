@@ -46,13 +46,14 @@
                     <nav class="nav-wrapper">
                         <ul class="nav-links">
                             <li class="nav-item"><a class="menuItem" href="/">Home</a></li>
-                            <li class="nav-item"><a class="menuItem" href="#">Watchlist</a></li>
-                            <li class="nav-item"><a class="menuItem" href="category">Categories</a></li>
+                            <li class="nav-item"><a class="menuItem" href="/watchlist">Watchlist</a></li>
+                            <li class="nav-item"><a class="menuItem" href="/category">Categories</a></li>
                             @guest
-                            <li class=" nav-item"><a class="menuItem" href="login">Log in</a></li>
-                            <li class=" nav-item"><a class="menuItem" href="register">Register</a></li>
+                            <li class=" nav-item"><a class="menuItem" href="/login">Log in</a></li>
+                            <li class=" nav-item"><a class="menuItem" href="/register">Register</a></li>
                             @endguest
                             @auth
+                            <li class=" nav-item"><a class="menuItem" href="/admin/dashboard">Dashboard</a></li>
                             <li class=" nav-item"><a class="menuItem" href="/logout">Logout</a></li>
                             @endauth
                         </ul>
@@ -70,7 +71,7 @@
         <!-- Movie hero -->
         <div class="moviebg">
             <div class="movie-hero">
-                <img src="{{ $movie->hero}}" alt="" class="">
+                <img src="{{url($movie->hero)}}" alt="" class="">
             </div>
             <div class="movieflex">
 
@@ -91,7 +92,7 @@
                     <!-- Modal content -->
                     <div class="modal-content">
                         <span class="close">&times;</span>
-                        <iframe src="{{ $movie->trailers}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe src="{{url($movie->trailer)}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
                 <!--MODAL -->
@@ -110,6 +111,19 @@
                 <p class="MovieTxt">Director: {{$movie->director}}</p>
                 <p class="MovieTxt">Year: {{$movie->yearproduced}}</p>
                 <p class="MovieTxt">Rating: {{$movie->rating}}</p>
+
+
+            </div>
+
+            <div class="dropdown">
+                <a href="/register"><button class="dropbtn btn-17">Add to watchlist</button></a>
+                @auth
+                <div class="dropdown-content" style="left:0;">
+                    @foreach(Auth::user()->watchlists as $watchlist)
+                    <a href="#">{{$watchlist->title}}</a>
+                    @endforeach
+                </div>
+                @endauth
             </div>
 
             <!-- Add reviews -->

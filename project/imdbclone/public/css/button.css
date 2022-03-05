@@ -25,7 +25,6 @@ input[type="reset"] {
     margin-top: 2em;
     background: yellow;
     color: #000;
-    z-index: 1;
 }
 
 .btn-15:after {
@@ -50,6 +49,13 @@ input[type="reset"] {
 }
 
 /* black */
+.btn-17 {
+    position: relative;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    background-color: yellow;
+}
+
 .btn-16 {
     margin-top: 2em;
     border: 1px solid #000;
@@ -65,7 +71,6 @@ input[type="reset"] {
     height: 100%;
     top: 0;
     right: 0;
-    z-index: -1;
     background: yellow;
     transition: all 0.3s ease;
 }
@@ -94,4 +99,33 @@ input[type="reset"] {
 /* [3] Finally, transforming the image when container gets hovered */
 .img-hover-zoom:hover img {
     transform: scale(1.5);
+}
+
+@media only screen and (min-width: 1700px) {
+    .btn-17 {
+        position: relative;
+        margin-left: 5rem;
+        margin-top: 1rem;
+    }
+}
+@media only screen and (min-width: 1400px) and (max-width: 1699px) {
+    .btn-17 {
+        position: relative;
+        margin-left: 4rem;
+        margin-top: 1rem;
+    }
+}
+@media only screen and (min-width: 1100px) and (max-width: 1399px) {
+    .btn-17 {
+        position: relative;
+        margin-left: 3rem;
+        margin-top: 1rem;
+    }
+}
+@media only screen and (min-width: 800px) and (max-width: 1099px) {
+    .btn-17 {
+        position: relative;
+        margin-left: 2.4rem;
+        margin-top: 1rem;
+    }
 }

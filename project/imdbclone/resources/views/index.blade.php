@@ -46,7 +46,7 @@
                     <nav class="nav-wrapper">
                         <ul class="nav-links">
                             <li class="nav-item"><a class="menuItem" href="/">Home</a></li>
-                            <li class="nav-item"><a class="menuItem" href="#">Watchlist</a></li>
+                            <li class="nav-item"><a class="menuItem" href="/watchlist">Watchlist</a></li>
                             <li class="genre-dropdown nav-item"><button class="dropDown_subMenu">Genres +</button>
                                 <ul class="dropdown-categories">
                                     <li class="subMenu"><a href="#">Adventure</a></li>
@@ -60,8 +60,8 @@
                                 </ul>
                             </li>
                             @guest
-                            <li class=" nav-item"><a class="menuItem" href="login">Log in</a></li>
-                            <li class=" nav-item"><a class="menuItem" href="register">Register</a></li>
+                            <li class=" nav-item"><a class="menuItem" href="/login">Log in</a></li>
+                            <li class=" nav-item"><a class="menuItem" href="/register">Register</a></li>
                             @endguest
                             @auth
                             <li class=" nav-item"><a class="menuItem" href="/admin/dashboard">Dashboard</a></li>
