@@ -128,10 +128,14 @@
                 @foreach ($movie->reviews as $review)
                 <div class="review-item">
                     <p class="MovieTxt">
-                        <img src="{{ URL('images/star.png')}}" alt="">{{$movie->rating}}
+                        <i class="fa-solid fa-star"></i>
+                    <p>{{$movie->rating}}</p>
+
+
+                    {{ $review->title }}
                     </p>
                     <p>
-                        {{ $review }}
+                        {{ $review->body }}
                     </p>
                 </div>
                 @endforeach
