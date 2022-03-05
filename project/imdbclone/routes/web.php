@@ -46,12 +46,15 @@ Route::resource('review', ReviewController::class);
 
 route::resource('watchlist', WatchlistController::class);
 
+// MovieGenres
+Route::resource('moviegenre', MovieGenreController::class);
+
 //Route to genres
 Route::get('genre/{genrename}', [GenreController::class, 'show']);
 
 // Rout to register new user
-Route::get('register', [RegisterController::class, 'create']);
-Route::post('register', [RegisterController::class, 'store'])->name("register.user");
+/* Route::get('register', [RegisterController::class, 'create']);
+Route::post('register', [RegisterController::class, 'store'])->name("register.user"); */
 
 // Route for user to login
 Route::get('login', [SessionsController::class, 'create']);

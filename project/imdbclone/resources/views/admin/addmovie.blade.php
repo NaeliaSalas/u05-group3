@@ -124,48 +124,46 @@
 
   
 
-        <form method="post" action="{{ '/moviegenre' }}" target="dummyframegenre">
-
-            
+        <form method="post" action="{{ 'moviegenre' }}" target="dummyframegenre">
             @csrf
 
             <input type="checkbox"  id="adventure" name="genre_id_fk" value="1">
             <label for="adventure">Adventure</label>
-            <input type="hidden" name ="movie_id_fk" value="$movie->id">
+            <input type="hidden" name ="movie_id_fk" value="">
 
             <input type="checkbox"  id="action" name="genre_id_fk" value="2">
             <label for="action">Action</label>
-            <input type="hidden" name ="movie_id_fk" value="$movie->id">
+            <input type="hidden" name ="movie_id_fk" value="">
 
             <input type="checkbox"  id="comedy" name="genre_id_fk" value="3">
             <label for="comedy">Comedy</label>
-            <input type="hidden" name ="movie_id_fk" value="$movie->id">
+            <input type="hidden" name ="movie_id_fk" value="">
 
             <input type="checkbox"  id="horror" name="genre_id_fk" value="4">
             <label for="horror">Horror</label>
-            <input type="hidden" name ="movie_id_fk" value="$movie->id">
+            <input type="hidden" name ="movie_id_fk" value="">
 
             <input type="checkbox"  id="thriller" name="genre_id_fk" value="5">
             <label for="thriller">Thriller</label>
-            <input type="hidden" name ="movie_id_fk" value="$movie->id">
+            <input type="hidden" name ="movie_id_fk" value="">
 
             <input type="checkbox"  id="drama" name="genre_id_fk" value="6">
             <label for="drama">Drama</label>
-            <input type="hidden" name ="movie_id_fk" value="$movie->id">
+            <input type="hidden" name ="movie_id_fk" value="">
 
             <input type="checkbox"  id="romance" name="genre_id_fk" value="7">
             <label for="romance">Romance</label>
-            <input type="hidden" name ="movie_id_fk" value="$movie->id">
+            <input type="hidden" name ="movie_id_fk" value="">
 
             <input type="checkbox"  id="sci-fi" name="genre_id_fk" value="8">
             <label for="sci-fi">Sci-Fi</label>
-            <input type="hidden" name ="movie_id_fk" value="$movie->id">
+            <input type="hidden" name ="movie_id_fk" value="">
 
             <button type="submit" name="submit2" class="submit btn-primary btn-ghost">Add Genre</button>
         </form>  
         
 
-        <!-- Robins grejer -->
+        <!-- Naelias grejer -->
         <iframe name="dummyframegenre" id="dummyframegenre" style="display:none;"></iframe>
         <iframe name="dummyframemovie" id="dummyframemovie" style="display:none;"></iframe>
 

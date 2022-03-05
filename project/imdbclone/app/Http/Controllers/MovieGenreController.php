@@ -15,8 +15,6 @@ class MovieGenreController extends Controller
 
 
         $genres = MovieGenres::get('genre_id_fk');
-
-
         return view('entry.show', ['genres' => $genres]);
     }
 
@@ -24,6 +22,19 @@ class MovieGenreController extends Controller
     {
         $genre = Genre::where('genre', $genrename)->first();
         return view('genre.genre', ['genre' => $genre]);
+    }
+
+    public function store(Request $request) 
+    {
+        $moviegenre = new MovieGenres;
+
+        $moviegenre->genre_id_fk = $request->genre_id_fk;
+        $moviegenre->movie_id_fk = $request->movie_id_fk;
+        $moviegenre->save();
+
+        return redirect('movie');
+
+
     }
 
     public function movieGenresId($id)
