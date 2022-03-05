@@ -57,7 +57,7 @@ class ReviewController extends Controller
         $review->user_id_fk = $request->user_id_fk;
         $review->movie_id_fk = $request->movie_id_fk;
         $review->save();
-        return route('movie/' . $request->movie_id_fk);
+        return redirect()->route('movie.show', ['movie' => $request->movie_id_fk]);
     }
 
     /**
