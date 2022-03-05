@@ -131,8 +131,10 @@ As a logged in user you are able to create Watchlists, edit or delete them.
 
 Review movies and also add comments to other users reviews.
 
-Documentation
-Documentation
+
+## Documentation
+
+[Documentation](https://linktodocumentation)
 
 Product Backlog
 Find the backlog to our project via the link provided here:
