@@ -31,7 +31,7 @@
                 <nav>
                     <div class="logo">
                         <a href="/">
-                            <img src="{{ URL('images/logo.jpeg')}}" alt="">
+                            <img src="{{ URL('images/logo.jpeg')}}" alt="logo">
                         </a>
                     </div>
                 </nav>
@@ -46,13 +46,25 @@
                     <nav class="nav-wrapper">
                         <ul class="nav-links">
                             <li class="nav-item"><a class="menuItem" href="/">Home</a></li>
-                            <li class="nav-item"><a class="menuItem" href="#">Watchlist</a></li>
-                            <li class="nav-item"><a class="menuItem" href="category">Categories</a></li>
+                            <li class="nav-item"><a class="menuItem" href="/watchlist">Watchlist</a></li>
+                            <li class="genre-dropdown nav-item"><button class="dropDown_subMenu">Genres +</button>
+                                <ul class="dropdown-categories">
+                                    <li class="subMenu"><a href="#">Adventure</a></li>
+                                    <li class="subMenu"><a href="#">Action</a></li>
+                                    <li class="subMenu"><a href="#">Comedy</a></li>
+                                    <li class="subMenu"><a href="#">Horror</a></li>
+                                    <li class="subMenu"><a href="#">Thriller</a></li>
+                                    <li class="subMenu"><a href="#">Drama</a></li>
+                                    <li class="subMenu"><a href="#">Romance</a></li>
+                                    <li class="subMenu"><a href="#">Sci-Fi</a></li>
+                                </ul>
+                            </li>
                             @guest
                             <li class=" nav-item"><a class="menuItem" href="/login">Log in</a></li>
-                            <li class=" nav-item"><a class="menuItem" href="register">Register</a></li>
+                            <li class=" nav-item"><a class="menuItem" href="/register">Register</a></li>
                             @endguest
                             @auth
+                            <li class=" nav-item"><a class="menuItem" href="/admin/dashboard">Dashboard</a></li>
                             <li class=" nav-item"><a class="menuItem" href="/logout">Logout</a></li>
                             @endauth
                         </ul>
@@ -62,6 +74,7 @@
                             <span class="bar"></span>
                         </div>
                     </nav>
+
                 </div>
             </div>
         </div>
@@ -157,6 +170,7 @@
 
     <script src="{{url('js/hero.js')}}"></script>
     <script src="{{url('js/hamburger.js')}}"></script>
+    <script src="{{url('js/subMenu.js')}}"></script>
 
 </body>
 
