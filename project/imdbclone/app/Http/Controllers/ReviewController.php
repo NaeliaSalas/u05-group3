@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Movie;
 use App\Models\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -15,9 +16,9 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        $reviews = Review::get();
+        // $reviews = Review::get();
 
-        return view('review.review', ['reviews' => $reviews]);
+        // return view('review.review', ['reviews' => $reviews]);
     }
 
     /**
@@ -25,9 +26,10 @@ class ReviewController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        return view('review.review');
+        $movie = Movie::where('id', $id)->first();
+        return view('review.add-review', ['movie' => $movie]);
     }
 
     /**
@@ -42,7 +44,7 @@ class ReviewController extends Controller
         $request->validate([
             'title' => 'string|required|max:50',
             'body' => 'string|required||max:255',
-            'rate' => 'integer|required|min:1|max:5',
+            'rating' => 'integer|required|min:1|max:5',
             'user_id_fk' => 'required',
             'movie_id_fk' => 'required'
         ]);
@@ -51,11 +53,11 @@ class ReviewController extends Controller
         $review = new Review;
         $review->title = $request->title;
         $review->body = $request->body;
-        $review->rate = $request->rate;
+        $review->rating = $request->rating;
         $review->user_id_fk = $request->user_id_fk;
         $review->movie_id_fk = $request->movie_id_fk;
         $review->save();
-        return redirect('review');
+        return redirect()->route('movie.show', ['movie' => $request->movie_id_fk]);
     }
 
     /**
@@ -80,7 +82,7 @@ class ReviewController extends Controller
     public function edit($id)
     {
         $review = Review::find($id);
-        return view('review.edit', ['review' => $review]);
+        return view('review.add-review', ['review' => $review]);
     }
 
     /**
@@ -96,13 +98,13 @@ class ReviewController extends Controller
         $request->validate([
             'title' => 'string|required|max:50',
             'body' => 'string|required||max:255',
-            'rate' => 'integer|required|min:1|max:5',
+            'rating' => 'integer|required|min:1|max:5',
         ]);
 
         $review = Review::find($id);
         $review->title = $request->title;
         $review->body = $request->body;
-        $review->rate = $request->rate;
+        $review->rating = $request->rating;
         $review->update();
         return redirect('review');
     }
