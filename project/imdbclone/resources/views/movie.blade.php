@@ -129,7 +129,7 @@
                 <div class="review-item">
                     <p class="MovieTxt">{{$review->user->username}}<br>
                         {{ $review->title }}
-                        @for ($i = 0; $i <= $movie->rating; $i++)
+                        @for ($i = 0; $i < $movie->rating; $i++)
                             <i class="fa-solid fa-star"></i>
                             @endfor
 
