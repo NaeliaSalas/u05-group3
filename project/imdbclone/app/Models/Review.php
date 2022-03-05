@@ -12,6 +12,11 @@ class Review extends Model
     protected $table = 'reviews';
     protected $fillable = ['title', 'body', 'rate'];
 
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
     public function comments()
     {
         return $this->hasMany(Comment::class, 'review_id_fk');

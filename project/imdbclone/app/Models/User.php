@@ -60,4 +60,10 @@ class User extends Authenticatable
 
         return $this->hasManyThrough(Entry::class, Watchlist::class, 'user_id_fk', 'watchlist_id_fk');
     }
+
+    public function reviews()
+    {
+
+        return $this->hasMany(Review::class, 'user_id_fk');
+    }
 }
