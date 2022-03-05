@@ -163,9 +163,20 @@
                         <div class="dropdown">
                             <a href="/register"><button class="dropbtn">Add to watchlist</button></a>
                             @auth
+<<<<<<< HEAD
                             <div class="dropdown-content" style="left:0;">
+=======
+                            <div>
+>>>>>>> main
                                 @foreach(Auth::user()->watchlists as $watchlist)
-                                <a href="#">{{$watchlist->title}}</a>
+
+                                <form action="{{url('/entry')}}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="title" value="{{$topmovie->title}}">
+                                    <input type="hidden" name="watchlist_id_fk" value="{{$watchlist->id}}">
+                                    <input type="hidden" name="movie_id_fk" value="{{$topmovie->id}}">
+                                    <button type="submit">{{$watchlist->title}}</button>
+                                </form>
                                 @endforeach
                             </div>
                             @endauth
