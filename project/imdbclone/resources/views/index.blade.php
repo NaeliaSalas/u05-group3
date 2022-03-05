@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="{{url('css/footer.css')}}" />
     <link rel="stylesheet" href="{{url('css/hero.css')}}" />
     <link rel="stylesheet" href="{{url('css/highlight.css')}}" />
-    <link rel="stylesheet" href="{{url('css/drop.css')}}" />
     <link rel="stylesheet" href="{{url('css/modal.css')}}" />
     <link rel="stylesheet" href="{{url('css/movie.css')}}" />
     <link rel="stylesheet" href="{{url('css/review.css')}}" />
@@ -47,7 +46,7 @@
                     <nav class="nav-wrapper">
                         <ul class="nav-links">
                             <li class="nav-item"><a class="menuItem" href="/">Home</a></li>
-                            <li class="nav-item"><a class="menuItem" href="watchlist">Watchlist</a></li>
+                            <li class="nav-item"><a class="menuItem" href="/watchlist">Watchlist</a></li>
                             <li class="genre-dropdown nav-item"><button class="dropDown_subMenu">Genres +</button>
                                 <ul class="dropdown-categories">
                                     <li class="subMenu"><a href="#">Adventure</a></li>
@@ -61,8 +60,8 @@
                                 </ul>
                             </li>
                             @guest
-                            <li class=" nav-item"><a class="menuItem" href="login">Log in</a></li>
-                            <li class=" nav-item"><a class="menuItem" href="register">Register</a></li>
+                            <li class=" nav-item"><a class="menuItem" href="/login">Log in</a></li>
+                            <li class=" nav-item"><a class="menuItem" href="/register">Register</a></li>
                             @endguest
                             @auth
                             <li class=" nav-item"><a class="menuItem" href="/admin/dashboard">Dashboard</a></li>
@@ -161,11 +160,14 @@
                         </div>
 
                         <!-- Drop down menu/lists -->
-
                         <div class="dropdown">
                             <a href="/register"><button class="dropbtn">Add to watchlist</button></a>
                             @auth
+<<<<<<< HEAD
+                            <div class="dropdown-content" style="left:0;">
+=======
                             <div>
+>>>>>>> main
                                 @foreach(Auth::user()->watchlists as $watchlist)
 
                                 <form action="{{url('/entry')}}" method="post">
@@ -180,6 +182,7 @@
                             @endauth
                         </div>
                         <!-- Drop down menu/lists -->
+
                     </div>
                 </div>
                 @endforeach

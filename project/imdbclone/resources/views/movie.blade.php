@@ -46,13 +46,14 @@
                     <nav class="nav-wrapper">
                         <ul class="nav-links">
                             <li class="nav-item"><a class="menuItem" href="/">Home</a></li>
-                            <li class="nav-item"><a class="menuItem" href="#">Watchlist</a></li>
-                            <li class="nav-item"><a class="menuItem" href="category">Categories</a></li>
+                            <li class="nav-item"><a class="menuItem" href="/watchlist">Watchlist</a></li>
+                            <li class="nav-item"><a class="menuItem" href="/category">Categories</a></li>
                             @guest
-                            <li class=" nav-item"><a class="menuItem" href="login">Log in</a></li>
-                            <li class=" nav-item"><a class="menuItem" href="register">Register</a></li>
+                            <li class=" nav-item"><a class="menuItem" href="/login">Log in</a></li>
+                            <li class=" nav-item"><a class="menuItem" href="/register">Register</a></li>
                             @endguest
                             @auth
+                            <li class=" nav-item"><a class="menuItem" href="/admin/dashboard">Dashboard</a></li>
                             <li class=" nav-item"><a class="menuItem" href="/logout">Logout</a></li>
                             @endauth
                         </ul>
@@ -69,10 +70,10 @@
 
         <!-- Movie hero -->
         <div class="moviebg">
+            <div class="movie-hero">
+                <img src="{{url($movie->hero)}}" alt="" class="">
+            </div>
             <div class="movieflex">
-                <div class="flex-item">
-                    <img src="{{ $movie->hero}}" alt="" class="cover">
-                </div>
 
                 <!-- center space-->
                 <div class="flex-item"></div>
@@ -91,7 +92,7 @@
                     <!-- Modal content -->
                     <div class="modal-content">
                         <span class="close">&times;</span>
-                        <iframe src="https://www.youtube.com/embed/5zdBG-iGfes" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe src="{{url($movie->trailer)}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
                 <!--MODAL -->
@@ -110,9 +111,26 @@
                 <p class="MovieTxt">Director: {{$movie->director}}</p>
                 <p class="MovieTxt">Year: {{$movie->yearproduced}}</p>
                 <p class="MovieTxt">Rating: {{$movie->rating}}</p>
+
+
             </div>
 
+            <div class="dropdown">
+                <a href="/register"><button class="dropbtn btn-17">Add to watchlist</button></a>
+                @auth
+                <div class="dropdown-content" style="left:0;">
+                    @foreach(Auth::user()->watchlists as $watchlist)
+                    <a href="#">{{$watchlist->title}}</a>
+                    @endforeach
+                </div>
+                @endauth
+            </div>
 
+            <!-- Add reviews -->
+            <div class="center">
+                <button class="custom-btn btn-15">Add review</button>
+            </div>
+            <!-- Add reviews -->
 
             <!-- images section -->
             <section class="featured">
@@ -180,51 +198,8 @@
             </div>
             <!-- reviews section -->
 
-            <!-- Add reviews -->
-            <div class="center">
-                <button class="custom-btn btn-15">Add review</button>
-            </div>
-            <!-- Add reviews -->
 
-            <!-- Your watchlist section -->
-            <section class="featured">
-                <h2><a href="#">Your watchlist > </a></h2>
-            </section>
-            <div class="watchlist">
-                <div class="highlight_item">
-                    <a href="#"><img src="{{ URL('images/dracula.jpeg')}}" alt=""></a>
-                    <div class="button_border">
-                        <p>Dracula</p>
-                        <div class="rating">
-                            <i class="fa-solid fa-star"></i>
-                            <p>7.1</p>
-                        </div>
-                        <button>Watchlist</button>
-                    </div>
-                </div>
-                <div class="highlight_item">
-                    <a href="#"><img src="{{ URL('images/1917.jpeg')}}" alt=""></a>
-                    <div class="button_border">
-                        <p>1917</p>
-                        <div class="rating">
-                            <i class="fa-solid fa-star"></i>
-                            <p>8.3</p>
-                        </div>
-                        <button>Watchlist</button>
-                    </div>
-                </div>
-                <div class="highlight_item">
-                    <a href="#"><img src="{{ URL('images/venom.jpeg')}}" alt=""></a>
-                    <div class="button_border">
-                        <p>Venom 2</p>
-                        <div class="rating">
-                            <i class="fa-solid fa-star"></i>
-                            <p>7.9</p>
-                        </div>
-                        <button>Watchlist</button>
-                    </div>
-                </div>
-            </div>
+
         </div>
 
         <!-- Footer with links -->
