@@ -33,10 +33,12 @@ class SessionsController extends Controller
 
         session()->regenerate();
 
-        return redirect('/')->with('success', 'Welcome Back!');
+        if (Auth::user()?->IsAdmin == true) {
+            return redirect('/admin/dashboard');
+        } else {
+            return redirect('/')->with('success', 'Welcome Back!');
+        }
     }
-
-    //protected function to see who is Admin or not
 
 
     public function destroy()
