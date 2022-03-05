@@ -49,7 +49,7 @@
                             <li class="nav-item"><a class="menuItem" href="#">Watchlist</a></li>
                             <li class="nav-item"><a class="menuItem" href="category">Categories</a></li>
                             @guest
-                            <li class=" nav-item"><a class="menuItem" href="login">Log in</a></li>
+                            <li class=" nav-item"><a class="menuItem" href="/login">Log in</a></li>
                             <li class=" nav-item"><a class="menuItem" href="register">Register</a></li>
                             @endguest
                             @auth
@@ -81,12 +81,11 @@
                 <div class="flex-item-review">
                     <h1 class="MovieH1">Add review</h1>
 
-                    <form action="{{url('/review')}}" method="post">
+                    <form action="{{url('/movie/' . $movie->id . '/review')}}" method="post">
                         @csrf
                         <input type="text" class="input" placeholder="Headline" name="title">
                         <label>Headline</label>
                         <br>
-
                         <input class="input" type="select" placeholder="Rate this" name="rating">
                         <br>
                         <input class="txtInput" type="text" placeholder="Your review" name="body" class="txtInput">
@@ -96,7 +95,6 @@
 
                         <button type="submit" class="custom-btn btn-15">Add review</button>
 
-                        <button class="custom-btn btn-15">Add review</button>
 
                     </form>
                 </div>

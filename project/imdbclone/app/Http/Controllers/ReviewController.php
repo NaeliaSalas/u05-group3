@@ -16,9 +16,9 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        $reviews = Review::get();
+        // $reviews = Review::get();
 
-        return view('review.review', ['reviews' => $reviews]);
+        // return view('review.review', ['reviews' => $reviews]);
     }
 
     /**
@@ -55,9 +55,9 @@ class ReviewController extends Controller
         $review->body = $request->body;
         $review->rating = $request->rating;
         $review->user_id_fk = $request->user_id_fk;
-        $review->movie_id_fk = $request->id;
+        $review->movie_id_fk = $request->movie_id_fk;
         $review->save();
-        return back();
+        return route('movie/' . $request->movie_id_fk);
     }
 
     /**

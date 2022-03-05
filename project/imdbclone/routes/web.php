@@ -40,8 +40,8 @@ Route::get('genre/{genrename}', [GenreController::class, 'show']);
 Route::view('/register', 'register.register');
 
 
-//Add Review
-Route::view('review.add-review', 'review.add-review');
+// //Add Review
+// Route::view('review.add-review', 'review.add-review');
 
 
 // Resource controllers
