@@ -127,16 +127,15 @@
                 @else
                 @foreach ($movie->reviews as $review)
                 <div class="review-item">
-                    <p class="MovieTxt">
-                        <i class="fa-solid fa-star"></i>
-                    <p>{{$movie->rating}}</p>
+                    <p class="MovieTxt">{{$review->user->username}}<br>
+                        {{ $review->title }}
+                        @for ($i = 0; $i <= $movie->rating; $i++)
+                            <i class="fa-solid fa-star"></i>
+                            @endfor
 
-
-                    {{ $review->title }}
                     </p>
-                    <p>
-                        {{ $review->body }}
-                    </p>
+                    <br>
+                    <p>{{ $review->body }}</p>
                 </div>
                 @endforeach
                 @endif
