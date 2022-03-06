@@ -25,7 +25,7 @@ NaeliaSalas/u05-group3.gitgit@github.com
 
 Above the list of files, click  Code.
 
-Open Terminal.
+Open the Terminal in yout code editor.
 
 Change the current working directory to the location where you want the cloned directory.
 
@@ -44,9 +44,10 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 > remote: Compressing objects: 100% (8/8), done.
 > remove: Total 10 (delta 1), reused 10 (delta 1)
 > Unpacking objects: 100% (10/10), done.
-
 ```
-docker-compose up
+
+Now we can start up Docker, be sure to have it open on your desktop.
+
 Navigate to the root folder of the project in your terminal and run the following command:
 
 ```bash
