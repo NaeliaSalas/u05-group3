@@ -81,7 +81,9 @@
         <!-- Navbar -->
 
         <div class="searchpics">
-            <p class="text-white">{{$message ?? ''}}</p>
+            <div class="wrong-search">
+                <p class="text-white">{{$message ?? ''}}</p>
+            </div>
 
             @foreach($movies as $movie)
 
