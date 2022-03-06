@@ -13,7 +13,6 @@
     @if(session('status'))
         {{ session('status') }}
     @endif
-    
     <section>
         <div>
             <a href="{{ url('comment') }}">Comments</a>
