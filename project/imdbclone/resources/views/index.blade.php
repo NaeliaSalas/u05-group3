@@ -168,9 +168,9 @@
 
                         <!-- Drop down menu/lists -->
                         <div class="dropdown">
-                            <a href="/register"><button class="dropbtn">Add to watchlist</button></a>
+                            <button class="dropbtn"><a href="/register">Add to Watchlist</a></button>
                             @auth
-                            <div>
+                            <div class="watchlist_hover">
                                 @foreach(Auth::user()->watchlists as $watchlist)
 
                                 <form action="{{url('/entry')}}" method="post">
@@ -178,7 +178,7 @@
                                     <input type="hidden" name="title" value="{{$topmovie->title}}">
                                     <input type="hidden" name="watchlist_id_fk" value="{{$watchlist->id}}">
                                     <input type="hidden" name="movie_id_fk" value="{{$topmovie->id}}">
-                                    <button type="submit">{{$watchlist->title}}</button>
+                                    <button class="dropdownBtn" type="submit">{{$watchlist->title}}</button>
                                 </form>
                                 @endforeach
                             </div>
@@ -190,38 +190,38 @@
                 </div>
                 @endforeach
             </div>
-
-
-            <!-- Your watchlist section -->
-            @auth
-
-            <section class="featured">
-                <h2><a href="/watchlist">Your watchlist > </a></h2>
-            </section>
-
-            <div class="movie_Showcase">
-                @foreach(Auth::user()->watchlists as $watchlist)
-                @foreach($watchlist->movies as $movie)
-                <div class="showcase_item">
-                    <a href=" url('/movie/' . $movie->id)"><img src="{{ URL($movie->cover)}}" alt="Movie cover"></a>
-                    <div class="button_border">
-                        <div class="button_border_title">
-                            <p>{{ $movie->title }}</p>
-                        </div>
-                        <div class="rating">
-                            @for ($i = 0; $i < $movie->rating; $i++)
-                                <i class="fa-solid fa-star"></i>
-                                @endfor
-                                <p>{{ $movie->rating }}</p>
-                        </div>
-
-                    </div>
-                </div>
-                @endforeach
-                @endforeach
-            </div>
-            @endauth
         </div>
+
+        <!-- Your watchlist section -->
+        @auth
+
+        <section class="featured">
+            <h2><a href="/watchlist">Your watchlist > </a></h2>
+        </section>
+
+        <div class="movie_Showcase">
+            @foreach(Auth::user()->watchlists as $watchlist)
+            @foreach($watchlist->movies as $movie)
+            <div class="showcase_item">
+                <a href=" url('/movie/' . $movie->id)"><img src="{{ URL($movie->cover)}}" alt="Movie cover"></a>
+                <div class="button_border">
+                    <div class="button_border_title">
+                        <p>{{ $movie->title }}</p>
+                    </div>
+                    <div class="rating">
+                        @for ($i = 0; $i < $movie->rating; $i++)
+                            <i class="fa-solid fa-star"></i>
+                            @endfor
+                            <p>{{ $movie->rating }}</p>
+                    </div>
+
+                </div>
+            </div>
+            @endforeach
+            @endforeach
+        </div>
+        @endauth
+    </div>
 
     </div>
 
