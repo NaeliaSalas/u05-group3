@@ -115,6 +115,35 @@ You should now be able to see all tables with data in the database.
 	users	
 	watchlists
 	
+# Routes:
+	
+
+```bash
+#GUEST
+
+/                             Landing page
+/login                        Login
+/register                     Register
+/logout                       Logout
+/search                       Display searches
+/movie/{id}                   Display specifik movie
+/genre/{movie genre}          Show all movies in genre
+
+
+#USER
+
+/watchlist                    Users watchlist
+/movie/{id}/review/create     Add review for movie
+
+
+#ADMIN
+
+/admin/dashboard              Admin dashboard main page
+/movie                        List with all movies in alphabetical order - Edit - Delete movies
+/movie/create                 Add new movie
+/movie/{id}/edit              Edit form for movie
+/user                         List all users - Edit - Delete users
+```
 
 To do that navigate to the users table in the database. Click Select data above the table. Now choose the user you want to be Admin and click edit in the left column. Choose number 1 in the "IsAdmin" option and click "save".
 
