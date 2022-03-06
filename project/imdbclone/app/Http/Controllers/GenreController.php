@@ -8,6 +8,13 @@ use Illuminate\Http\Request;
 
 class GenreController extends Controller
 {
+
+    public function index()
+    {
+        $genres = Genre::get();
+        return view('index', ['genres' => $genres]);
+    }
+
     public function show($genrename)
     {
         $genre = Genre::where('genre', $genrename)->first();
