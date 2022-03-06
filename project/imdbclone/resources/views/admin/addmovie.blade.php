@@ -134,7 +134,7 @@
                     @if ($posted)
 
 
-                    <form method="post" action="/moviegenre">
+                    <form method="post" action="/moviegenre/{{$entry}}">
                         @csrf
                         <input type="hidden" name="movieId" value="{{ $movie->id ?? $movieId }}">
                         <input type="hidden" name="genre_id_fk" value="1">

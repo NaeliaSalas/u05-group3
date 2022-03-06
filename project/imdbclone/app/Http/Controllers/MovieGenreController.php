@@ -15,26 +15,37 @@ class MovieGenreController extends Controller
     {
         $posted = $request->posted;
         $movieId = $request->movieId;
+        $entry = 0;
 
         $isChecked = 'unchecked';
-        return view('admin.addmovie', ['posted' => $posted, 'movieId' => $movieId, 'isChecked' => $isChecked]);
+        return view('admin.addmovie', ['entry' => $entry, 'posted' => $posted, 'movieId' => $movieId, 'isChecked' => $isChecked]);
     }
 
     public function toggleCheck(Request $request)
     {
         $posted = true;
-
+        $movieId = $request->movieId;
         //Lägg till
 
-        $moviegenre = new MovieGenres;
-        $moviegenre->genre_id_fk = $request->genre_id_fk;
-        $moviegenre->movie_id_fk = $request->movie_id_fk;
-        $moviegenre->save();
 
-        $entry = $moviegenre->id;
-        $movieId = $request->movieId;
-        $isChecked = 'checked';
-        return view('admin.addmovie', ['entry' => $entry, 'movieId' => $movieId, 'posted' => $posted, 'isChecked' => $isChecked, 'message' => 'genre added']);
+        if (MovieGenres::where('id', $request->entry)->exists()) {
+
+            //Ta bort
+            $entry = MovieGenres::where('id', $request->entry)->first();
+            $entry->delete();
+            $isChecked = 'unchecked';
+            $entry = 0;
+            return view('admin.addmovie', ['entry' => $entry, 'movieId' => $movieId, 'posted' => $posted, 'isChecked' => $isChecked, 'message' => 'genre deleted']);
+        } else {
+            $moviegenre = new MovieGenres;
+            $moviegenre->genre_id_fk = $request->genre_id_fk;
+            $moviegenre->movie_id_fk = $request->movie_id_fk;
+            $moviegenre->save();
+            $entry = $moviegenre->id;
+
+            $isChecked = 'checked';
+            return view('admin.addmovie', ['entry' => $entry, 'movieId' => $movieId, 'posted' => $posted, 'isChecked' => $isChecked, 'message' => 'genre added']);
+        }
 
 
         // //Ta bort
