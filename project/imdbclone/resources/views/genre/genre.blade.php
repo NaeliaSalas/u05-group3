@@ -7,9 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{{ mix('css/app.css') }}" />
-    <link rel="stylesheet" href="{{url('css/welcome.css')}}" />
+    <link rel="stylesheet" href="{{url('css/button.css')}}" />
     <link rel="stylesheet" href="{{url('css/footer.css')}}" />
+    <link rel="stylesheet" href="{{url('css/hero.css')}}" />
     <link rel="stylesheet" href="{{url('css/highlight.css')}}" />
+    <link rel="stylesheet" href="{{url('css/modal.css')}}" />
+    <link rel="stylesheet" href="{{url('css/movie.css')}}" />
+    <link rel="stylesheet" href="{{url('css/review.css')}}" />
+    <link rel="stylesheet" href="{{url('css/watchlist.css')}}" />
+    <link rel="stylesheet" href="{{url('css/welcome.css')}}" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://kit.fontawesome.com/405a204514.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -59,7 +65,7 @@
 
                             @if (Auth::user()?->IsAdmin == true)
                             <li class=" nav-item"><a class="menuItem" href="/admin/dashboard">Dashboard</a></li>
-                            @endif 
+                            @endif
                             @auth
                             <li class=" nav-item"><a class="menuItem" href="/logout">Logout</a></li>
                             @endauth
@@ -79,36 +85,55 @@
         <!-- Action section -->
         <div class="main">
             <section class="top_picks">
-                <h2><a href="category">Go Back > </a> </h2>
+                <h2>
+                    <p class="text-white">{{$genre->genre}}</p>
+                </h2>
+                <h2><a href="/">Go Back > </a> </h2>
             </section>
 
-            <div class="movie_Showcase">
-
-                <p class="text-white">{{$genre->genre}}</p>
+            <div class="movie_Showcase genre_Showcase">
 
                 @foreach ($genre->movies as $movie)
                 <div class="showcase_item">
                     <a href="{{ URL('/movie/' . $movie->id)}}"><img src="{{ URL($movie->cover)}}" alt=""></a>
                     <div class="button_border">
-                        <p>{{$movie->title}}</p>
-                        <div class="rating">
-                                @for ($i = 0; $i < $movie->rating; $i++)
-                                    <i class="fa-solid fa-star"></i>
-                                    @endfor
-                                   
-                            </div>
-
-                          
-                            <p>{{$movie->rating}}</p>
+                        <div class="button_border_title">
+                            <p>{{$movie->title}}</p>
                         </div>
-                        <button>Add Watchlist</button>
+                        <div class="rating">
+                            @for ($i = 0; $i < $movie->rating; $i++)
+                                <i class="fa-solid fa-star"></i>
+                                @endfor
+                                <p>{{$movie->rating}}</p>
+                        </div>
+                        <div class="dropdown">
+                            @guest
+                            <button class="dropbtn"><a href="/login">Add to watchlist</a></button>
+                            @endguest
+                            @auth
+                            <button class="dropbtn"><a href="/watchlist">Add to watchlist</a></button>
+                            <div class="watchlist_hover">
+                                @foreach(Auth::user()->watchlists as $watchlist)
+
+                                <form action="{{url('/entry')}}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="title" value="{{$movie->title}}">
+                                    <input type="hidden" name="watchlist_id_fk" value="{{$watchlist->id}}">
+                                    <input type="hidden" name="movie_id_fk" value="{{$movie->id}}">
+                                    <button class="dropdownBtn" type="submit">{{$watchlist->title}}</button>
+                                </form>
+                                @endforeach
+                            </div>
+                            @endauth
+                        </div>
                     </div>
                 </div>
-                {{$movie->title}}
                 @endforeach
 
             </div>
         </div>
+
+
 
         <!-- Footer with links -->
         <footer class="footer">
