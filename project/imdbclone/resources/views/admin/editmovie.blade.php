@@ -128,7 +128,7 @@
 
                 <h2 class="text-white">{{$message ?? ''}}</h2>
 
-                <form action="{{url('moviegenre/' . $movie->id)}}" method="post">
+                <form action="{{url('moviegenre/' . $movie->id)}}" method="post" class="text-white">
                     @csrf
                     <input type="checkbox" name="genres[]" value="1">Adventure<br>
                     <input type="checkbox" name="genres[]" value="2">Action<br>
@@ -139,7 +139,7 @@
                     <input type="checkbox" name="genres[]" value="7">Romance<br>
                     <input type="checkbox" name="genres[]" value="8">Sci-fi<br>
                     <input type="hidden" name="movie_id_fk" value="{{$movie->id ?? $movieId}}">
-                    <input type="submit" value="Submit">
+                    <button type="submit" value="Submit" class="submit btn-primary btn-ghost">Add genres</button>
                 </form>
             </div>
 
