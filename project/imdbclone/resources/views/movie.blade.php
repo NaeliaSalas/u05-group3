@@ -209,7 +209,7 @@
                                     <!-- form-->
                                     <section>
                                         <form action="{{url('comment')}}" method="post">
-                                            <input class="txtInputBig" type="text" placeholder="Your comment" name="body">
+                                            <textarea class="txtInputBig" type="text" placeholder="Your comment" name="body"></textarea>
 
                                             <input type="hidden" name="user_id_fk" value="1">
                                             <input type="hidden" name="movie_id_fk" value="1">

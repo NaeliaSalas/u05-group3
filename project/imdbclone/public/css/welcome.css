@@ -304,9 +304,21 @@ html {
     color: aliceblue;
 }
 
+.txtInput::placeholder {
+    text-align: bottom;
+    align-items: center;
+}
+
 .txtInputBig {
     width: 100%;
     height: 15em;
     color: black;
-    text-align: start;
+    text-align: left;
+    word-wrap: break-word;
+    word-break: break-all;
+    height: 80px;
+    vertical-align: top;
+}
+
+.txtInputBig::placeholder {
 }
