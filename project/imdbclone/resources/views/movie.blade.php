@@ -49,22 +49,26 @@
                             <li class="nav-item"><a class="menuItem" href="/watchlist">Watchlist</a></li>
                             <li class="genre-dropdown nav-item"><button class="dropDown_subMenu">Genres +</button>
                                 <ul class="dropdown-categories">
-                                    <li class="subMenu"><a href="#">Adventure</a></li>
-                                    <li class="subMenu"><a href="#">Action</a></li>
-                                    <li class="subMenu"><a href="#">Comedy</a></li>
-                                    <li class="subMenu"><a href="#">Horror</a></li>
-                                    <li class="subMenu"><a href="#">Thriller</a></li>
-                                    <li class="subMenu"><a href="#">Drama</a></li>
-                                    <li class="subMenu"><a href="#">Romance</a></li>
-                                    <li class="subMenu"><a href="#">Sci-Fi</a></li>
+                                    <li class="subMenu"><a href="/genre/adventure">Adventure</a></li>
+                                    <li class="subMenu"><a href="/genre/action">Action</a></li>
+                                    <li class="subMenu"><a href="/genre/comedy">Comedy</a></li>
+                                    <li class="subMenu"><a href="/genre/horror">Horror</a></li>
+                                    <li class="subMenu"><a href="/genre/thriller">Thriller</a></li>
+                                    <li class="subMenu"><a href="/genre/drama">Drama</a></li>
+                                    <li class="subMenu"><a href="/genre/romance">Romance</a></li>
+                                    <li class="subMenu"><a href="/genre/sci-fi">Sci-Fi</a></li>
                                 </ul>
                             </li>
                             @guest
                             <li class=" nav-item"><a class="menuItem" href="/login">Log in</a></li>
                             <li class=" nav-item"><a class="menuItem" href="/register">Register</a></li>
                             @endguest
-                            @auth
+
+                            @if (Auth::user()?->IsAdmin == true)
                             <li class=" nav-item"><a class="menuItem" href="/admin/dashboard">Dashboard</a></li>
+                            @endif
+
+                            @auth
                             <li class=" nav-item"><a class="menuItem" href="/logout">Logout</a></li>
                             @endauth
                         </ul>
@@ -85,104 +89,147 @@
             <div class="movie-hero">
                 <img src="{{url($movie->hero)}}" alt="" class="">
             </div>
+
             <div class="movieflex">
-                <<<<<<< HEAD <div class="flex-item">
-                    <img src="{{url($movie->hero)}}" alt="" class="cover">
+
+                <!-- center space-->
+                <div class="flex-item"></div>
+
+                <!-- play-->
+                <div class="flex-item">
+                    <button id="myBtn"><img src="{{ URL('images/PlayBtn.png')}}" alt="">l</button>
+                    <h3>Spela trailer</h3>
+                    <p>2021, 2h 32min - Drama, Historia, Action. Land: USA.</p>
+                </div>
+                <!-- play-->
+
+                <!--MODAL -->
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <iframe src="{{url($movie->trailer)}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <!--MODAL -->
+
             </div>
-            =======
-            >>>>>>> main
 
-            <!-- center space-->
-            <div class="flex-item"></div>
+        </div>
+        <!-- Movie hero -->
 
-            <!-- play-->
-            <div class="flex-item">
-                <button id="myBtn"><img src="{{ URL('images/PlayBtn.png')}}" alt="">l</button>
-                <h3>Spela trailer</h3>
-                <p>2021, 2h 32min - Drama, Historia, Action. Land: USA.</p>
+        <!-- txt section -->
+        <div class="main">
+            <div class="txtSection">
+                <h1 class="MovieH1">{{$movie->title}}</h1>
+                <p class="MovieTxt"> {{$movie->body}}</p>
+                <br>
+                <p class="MovieTxt">Director: {{$movie->director}}</p>
+                <p class="MovieTxt">Year: {{$movie->yearproduced}}</p>
+                <p class="MovieTxt">Rating: {{$movie->rating}}</p>
+
+
             </div>
-            <!-- play-->
 
-            <!--MODAL -->
-            <div id="myModal" class="modal">
+            <div class="dropdown">
+                <a href="/register"><button class="dropbtn btn-17">Add to watchlist</button></a>
+                @auth
+                <div class="dropdown-content" style="left:0;">
+                    @foreach(Auth::user()->watchlists as $watchlist)
+                    <a href="#">{{$watchlist->title}}</a>
+                    @endforeach
+                </div>
+                @endauth
+            </div>
 
-                <!-- Modal content -->
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <iframe src="{{url($movie->trailer)}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- Add reviews -->
+            <div class="center">
+                <a href="{{'/movie/' . $movie->id . '/review/create'}}"><button class="custom-btn btn-15">Add review</button></a>
+            </div>
+            <!-- Add reviews -->
+
+            <!-- images section -->
+            <section class="featured">
+                <h2 class="reviewstext"><a href="#">User reviews</a></h2>
+            </section>
+            <!-- reviews section -->
+            <div class="reviewFlex">
+                @if ($movie->reviews->isEmpty())
+                <p class="MovieTxt">
+                    Be the first to review this!
+                </p>
+                @else
+                @foreach ($movie->reviews as $review)
+                <div class="review-item">
+                    <p class="MovieTxt">{{$review->user->username}}<br>
+                        {{ $review->title }}
+                        @for ($i = 0; $i < $movie->rating; $i++)
+                            <i class="fa-solid fa-star"></i>
+                            @endfor
+
+                    </p>
+                    <br>
+                    <p>{{ $review->body }}</p>
+                </div>
+                @endforeach
+                @endif
+            </div>
+            <!-- reviews section -->
+
+            <div class="reviewFlex">
+
+                <!-- Review withcomments -->
+                <div class="review-item">
+
+                    <!-- main-->
+                    <div class="tab-container full-height">
+                        <!-- Gör en flexbox div här-->
+                        <p><img src="images/star.png" alt=""> 6,2</p>
+                        <p>The review goeas here. Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.</p>
+                        <!-- Gör en flexbox div här-->
+
+                        <section>
+                            <button onclick="myFunction()"> <span class="comments-txt">See comments | Add comment</span></button>
+
+                            <!-- js reveal -->
+                            <div id="myDIV">
+                                <!-- content -->
+                                <div class="comments-content">
+                                    <!-- comments loop-->
+                                    <section class="comments">
+                                        <span class="comment-name-txt">Erika A</span>
+                                        <p class="comments-txt">This is a comment on a reviw. Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde fugiat sint amet repellat, architecto, odit dolorum quibusdam incidunt necessitatibus cum odio nostrum consectetur, natus corrupti perspiciatis iusto sit qui aliquam.</p>
+                                    </section>
+                                    <!-- comments-->
+
+                                    <!-- form-->
+                                    <section>
+                                        <form action="{{url('comment')}}" method="post">
+                                            <input class="txtInputBig" type="text" placeholder="Your comment" name="body">
+
+                                            <input type="hidden" name="user_id_fk" value="1">
+                                            <input type="hidden" name="movie_id_fk" value="1">
+                                            <br />
+                                            <button type="submit" class="custom-btn btn-15">Add</button>
+                                        </form>
+                                    </section>
+                                    <!-- form-->
+                                </div>
+                                <!-- content -->
+                            </div>
+                            <!-- js reveal -->
+
+                        </section>
+
+                    </div>
+                    <!-- main-->
+
                 </div>
             </div>
-            <!--MODAL -->
+            <!-- Review withcomments -->
 
         </div>
-
-    </div>
-    <!-- Movie hero -->
-
-    <!-- txt section -->
-    <div class="main">
-        <div class="txtSection">
-            <h1 class="MovieH1">{{$movie->title}}</h1>
-            <p class="MovieTxt"> {{$movie->body}}</p>
-            <br>
-            <p class="MovieTxt">Director: {{$movie->director}}</p>
-            <p class="MovieTxt">Year: {{$movie->yearproduced}}</p>
-            <p class="MovieTxt">Rating: {{$movie->rating}}</p>
-
-
-        </div>
-
-        <div class="dropdown">
-            <a href="/register"><button class="dropbtn btn-17">Add to watchlist</button></a>
-            @auth
-            <div class="dropdown-content" style="left:0;">
-                @foreach(Auth::user()->watchlists as $watchlist)
-                <a href="#">{{$watchlist->title}}</a>
-                @endforeach
-            </div>
-            @endauth
-        </div>
-
-        <!-- Add reviews -->
-        <div class="center">
-            <button class="custom-btn btn-15">Add review</button>
-        </div>
-        <!-- Add reviews -->
-
-        <!-- images section -->
-        <section class="featured">
-            <h2 class="reviewstext"><a href="#">User reviews</a></h2>
-        </section>
-        <!-- reviews section -->
-        <div class="reviewFlex">
-            @if ($movie->reviews->isEmpty())
-            <p class="MovieTxt">
-                Be the first to review this!
-            </p>
-            @else
-            @foreach ($movie->reviews as $review)
-            <div class="review-item">
-                <p class="MovieTxt">{{$review->user->username}}<br>
-                    {{ $review->title }}
-                    @for ($i = 0; $i < $movie->rating; $i++)
-                        <i class="fa-solid fa-star"></i>
-                        @endfor
-
-                </p>
-                <br>
-                <p>{{ $review->body }}</p>
-            </div>
-            @endforeach
-            @endif
-        </div>
-        <!-- reviews section -->
-
-        <!-- Add reviews -->
-        <div class="center">
-            <a href="{{'/movie/' . $movie->id . '/review/create'}}"><button class="custom-btn btn-15">Add review</button></a>
-        </div>
-        <!-- Add reviews -->
-
         <!-- Your watchlist section -->
         @auth
 
@@ -190,16 +237,20 @@
             <h2><a href="/watchlist">Your watchlist > </a></h2>
         </section>
 
-        <div class="watchlist">
+        <div class="movie_Showcase">
             @foreach(Auth::user()->watchlists as $watchlist)
             @foreach($watchlist->movies as $movie)
-            <div class="highlight_item">
-                <a href="url('/movie/' . $movie->id)"><img src="{{ URL($movie->cover)}}" alt="Movie cover"></a>
+            <div class="showcase_item">
+                <a href=" url('/movie/' . $movie->id)"><img src="{{ URL($movie->cover)}}" alt="Movie cover"></a>
                 <div class="button_border">
-                    <p>{{ $movie->title }}</p>
+                    <div class="button_border_title">
+                        <p>{{ $movie->title }}</p>
+                    </div>
                     <div class="rating">
-                        <i class="fa-solid fa-star"></i>
-                        <p>{{ $movie->rating }}</p>
+                        @for ($i = 0; $i < $movie->rating; $i++)
+                            <i class="fa-solid fa-star"></i>
+                            @endfor
+                            <p>{{ $movie->rating }}</p>
                     </div>
 
                 </div>
@@ -263,6 +314,7 @@
     <script src="{{url('js/hamburger.js')}}"></script>
     <script src="{{url('js/modal.js')}}"></script>
     <script src="{{url('js/subMenu.js')}}"></script>
+    <script src="{{url('js/comment.js')}}"></script>
 
 </body>
 

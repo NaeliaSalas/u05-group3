@@ -89,19 +89,20 @@
 
                             <div class="form-input-material">
                                 <label for="hero">Add hero picture:</label>
-                                <input class="input" type="url" name="hero"><br>
+                                <input class="input" type="url" name="hero" value="{{ $movie->hero }}"><br>
                             </div>
 
                             <div class="form-input-material">
-                                <label for="rating">Add rating:</label>
-                                <input class="input" list="rating" name="rating" value="{{ $movie->rating }}">
-                                <datalist id="rating">
-                                    <option value="1">
-                                    <option value="2">
-                                    <option value="3">
-                                    <option value="4">
-                                    <option value="5">
-                                </datalist><br>
+                                <label for="rating">Current rating:</label>
+                                <input class="input" type="text" name="rating" value="{{ $movie->rating }}"><br>
+                                <select class="input" name="rating" id="rating">
+                                    <option placeholder="">Select new rating</option>
+                                    <option class="text-black" value="1">1</option>
+                                    <option class="text-black" value="2">2</option>
+                                    <option class="text-black" value="3">3</option>
+                                    <option class="text-black" value="4">4</option>
+                                    <option class="text-black" value="5">5</option>
+                                </select>
                             </div>
                             <div class="form-input-material">
                                 <label for="trailer">Add trailer:</label>

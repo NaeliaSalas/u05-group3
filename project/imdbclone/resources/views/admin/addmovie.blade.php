@@ -64,44 +64,42 @@
             </div>
             <div class="update-form">
 
-
-                {{-- MOVIE FORM --}}
-
-                <form action="/movie" method="POST" target="dummyframemovie">
+                <form action="/movie" method="POST">
                     @csrf
 
                     <div class="input-fields">
 
                         <div class="form-input-material">
                             <label for="title">Title:</label>
-                            <input class="input" type="text" name="title" value="hej"><br>
+                            <input class="input" type="text" name="title"><br>
                         </div>
 
                         <div class="form-input-material">
                             <label for="body">Description:</label>
-                            <input class="input" type="text" name="body" value="hej"><br>
+                            <input class="input" type="text" name="body"><br>
                         </div>
 
                         <div class="form-input-material">
                             <label for="cover">Add picture:</label>
-                            <input class="input" type="url" name="cover" value="https://google.com"><br>
+                            <input class="input" type="url" name="cover"><br>
                         </div>
 
                         <div class="form-input-material">
                             <label for="hero">Add hero picture:</label>
-                            <input class="input" type="url" name="hero" value="https://google.com"><br>
+                            <input class="input" type="url" name="hero"><br>
                         </div>
 
                         <div class="form-input-material">
                             <label for="rating">Add rating:</label>
-                            <input class="input" list="rating" name="rating" value="1">
-                            <datalist id="rating">
-                                <option value="1">
-                                <option value="2">
-                                <option value="3">
-                                <option value="4">
-                                <option value="5">
-                            </datalist><br>
+                            <select class="input" name="rating" id="rating">
+                                <option placeholder=""></option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>'
+                                <option value="5">5</option>
+                            </select>
+                            <br>
                         </div>
 
                         <div class="form-input-material">

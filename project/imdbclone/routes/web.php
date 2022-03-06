@@ -74,11 +74,6 @@ Route::post('logout', [SessionsController::class, 'destroy']);
 route::resource('entry', EntryController::class);
 Route::resource('user', UserController::class);
 
-// Route for user to login
-Route::get('login', [SessionsController::class, 'create']); //->middleware('guest');
-Route::post('login', [SessionsController::class, 'store'])->name('login.user'); //->name("login.user");
-Route::get('logout', [SessionsController::class, 'destroy']); //->middleware('auth');
-
 // Admin
 Route::middleware('admin')->group(function () {
     Route::get('/admin/dashboard', [SessionsController::class, 'adminlogin']);

@@ -49,22 +49,24 @@
                             <li class="nav-item"><a class="menuItem" href="/watchlist">Watchlist</a></li>
                             <li class="genre-dropdown nav-item"><button class="dropDown_subMenu">Genres +</button>
                                 <ul class="dropdown-categories">
-                                    <li class="subMenu"><a href="#">Adventure</a></li>
-                                    <li class="subMenu"><a href="#">Action</a></li>
-                                    <li class="subMenu"><a href="#">Comedy</a></li>
-                                    <li class="subMenu"><a href="#">Horror</a></li>
-                                    <li class="subMenu"><a href="#">Thriller</a></li>
-                                    <li class="subMenu"><a href="#">Drama</a></li>
-                                    <li class="subMenu"><a href="#">Romance</a></li>
-                                    <li class="subMenu"><a href="#">Sci-Fi</a></li>
+                                    <li class="subMenu"><a href="/genre/adventure">Adventure</a></li>
+                                    <li class="subMenu"><a href="/genre/action">Action</a></li>
+                                    <li class="subMenu"><a href="/genre/comedy">Comedy</a></li>
+                                    <li class="subMenu"><a href="/genre/horror">Horror</a></li>
+                                    <li class="subMenu"><a href="/genre/thriller">Thriller</a></li>
+                                    <li class="subMenu"><a href="/genre/drama">Drama</a></li>
+                                    <li class="subMenu"><a href="/genre/romance">Romance</a></li>
+                                    <li class="subMenu"><a href="/genre/sci-fi">Sci-Fi</a></li>
                                 </ul>
                             </li>
                             @guest
                             <li class=" nav-item"><a class="menuItem" href="/login">Log in</a></li>
                             <li class=" nav-item"><a class="menuItem" href="/register">Register</a></li>
                             @endguest
-                            @auth
+                            @if (Auth::user()?->IsAdmin == true)
                             <li class=" nav-item"><a class="menuItem" href="/admin/dashboard">Dashboard</a></li>
+                            @endif
+                            @auth
                             <li class=" nav-item"><a class="menuItem" href="/logout">Logout</a></li>
                             @endauth
                         </ul>
@@ -97,17 +99,25 @@
                     <form action="{{url('/movie/' . $movie->id . '/review')}}" method="post">
                         @csrf
                         <input type="text" class="input" placeholder="Headline" name="title">
-                        <label>Headline</label>
+                        <label></label>
                         <br>
-                        <input class="input" type="select" placeholder="Rate this" name="rating">
-                        <br>
+
+                        <select class="input" name="rating" id="rating">
+                            <option placeholder="">Rate this</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                          </select>
+                          <br>
 
                         <input textarea class="txtInput" type="text" placeholder="Your review" name="body" class="txtInput">
                         <br>
                         <input type="hidden" name="user_id_fk" value="{{Auth::id()}}">
                         <input type="hidden" name="movie_id_fk" value="{{$movie->id}}">
 
-                        <button type="submit" class="custom-btn btn-15">Add review</button>
+                        <button type="submit" class="custom-btn btn-15 review-btn">Add review</button>
 
 
                     </form>
