@@ -24,7 +24,7 @@ input[type="reset"] {
     font-family: "Poppins", sans-serif;
     margin-top: 2em;
     background: yellow !important;
-    color: #000;
+    color: #000 !important;
 }
 
 .btn-15:after {
