@@ -14,8 +14,8 @@ class AddMovieIdFk extends Migration
     public function up()
     {
         Schema::table('movie_genres', function (Blueprint $table) {
-            $table->foreignId('movie_id_fk')->constrained('movies');
-            $table->foreignId('genre_id_fk')->constrained('genres');
+            $table->foreignId('movie_id_fk')->constrained('movies')->cascadeOnDelete();
+            $table->foreignId('genre_id_fk')->constrained('genres')->cascadeOnDelete();
         });
     }
 

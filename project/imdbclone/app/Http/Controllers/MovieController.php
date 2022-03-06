@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Movie;
+use App\Models\MovieGenres;
 use App\Models\Review;
 use Illuminate\Http\Request;
+use App\Http\Controllers\MovieGenreController;
 
 class MovieController extends Controller
 {
@@ -48,7 +50,8 @@ class MovieController extends Controller
      */
     public function create()
     {
-        return view('admin.addmovie');
+        $posted = false;
+        return view('admin.addmovie', ['posted' => $posted]);
     }
 
     /**
@@ -71,7 +74,6 @@ class MovieController extends Controller
             'director' => 'string|required|max:255',
 
         ]);
-
         $movie = new Movie;
         $movie->title = $request->title;
         $movie->body = $request->body;
@@ -83,7 +85,8 @@ class MovieController extends Controller
         $movie->director = $request->director;
         $movie->save();
 
-        return redirect()->back()->with('status', 'Movie has been added');
+        $posted = true;
+        return view('admin.addmovie', ['posted' => $posted, 'movie' => $movie, 'message' => 'Add genres']);
     }
 
     /**
@@ -106,7 +109,6 @@ class MovieController extends Controller
      */
     public function edit($id)
     {
-
         $movie = Movie::find($id);
         return view('admin.editmovie', ['movie' => $movie]);
     }

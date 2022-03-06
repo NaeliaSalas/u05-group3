@@ -53,7 +53,17 @@ Route::resource('movie.review', ReviewController::class)->shallow();
 
 route::resource('watchlist', WatchlistController::class);
 
+// MovieGenres
 
+Route::post('moviegenre/', [MovieGenreController::class, 'store']);
+Route::post('moviegenre/{id}', [MovieGenreController::class, 'update']);
+
+//Route to genres
+Route::get('genre/{genrename}', [GenreController::class, 'show']);
+
+// Rout to register new user
+/* Route::get('register', [RegisterController::class, 'create']);
+Route::post('register', [RegisterController::class, 'store'])->name("register.user"); */
 
 // Route for user to login
 Route::get('login', [SessionsController::class, 'create']);

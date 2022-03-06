@@ -29,7 +29,7 @@
                                 <span class="mx-4 font-medium">Dashboard</span>
                             </a>
                         </li>
-            
+
                         <li>
                             <a class="flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200" href='/user'>
                                 <i class="fas fa-user-alt" aria-hidden="true"></i>
@@ -52,25 +52,26 @@
                                 <span class="mx-4 font-medium">Logout</span>
                             </a>
                         </li>
-                   
+
                     </ul>
 
                 </aside>
 
             </div>
         </div>
-<body>
-<div class="edit-user">
-    <div class="title">
-        <h1>Edit movie</h1>
-    </div>
 
-    <div class="update-form">
-        <form action="{{ url('movie/' . $movie->id) }}" method="POST">
+        <body>
+            <div class="edit-user">
+                <div class="title">
+                    <h1>Edit movie</h1>
+                </div>
+
+                <div class="update-form">
+                    <form action="{{ url('movie/' . $movie->id) }}" method="POST">
                         @csrf
                         @method('PUT')
-                         <div class="input-fields">
-                     
+                        <div class="input-fields">
+
                             <div class="form-input-material">
                                 <label for="title">Title</label>
                                 <input class="input" type="text" name="title" value="{{ $movie->title }}"><br>
@@ -91,18 +92,18 @@
                                 <input class="input" type="url" name="hero" value="{{ $movie->hero }}"><br>
                             </div>
 
-                                <div class="form-input-material">
-                                    <label for="rating">Current rating:</label>
-                                    <input class="input" type="text" name="rating" value="{{ $movie->rating }}"><br>
-                                    <select class="input" name="rating" id="rating">
-                                        <option placeholder="">Select new rating</option>
-                                        <option class="text-black" value="1">1</option>
-                                        <option class="text-black" value="2">2</option>
-                                        <option class="text-black" value="3">3</option>
-                                        <option class="text-black" value="4">4</option>
-                                        <option class="text-black" value="5">5</option>
-                                      </select>
-                                </div>
+                            <div class="form-input-material">
+                                <label for="rating">Current rating:</label>
+                                <input class="input" type="text" name="rating" value="{{ $movie->rating }}"><br>
+                                <select class="input" name="rating" id="rating">
+                                    <option placeholder="">Select new rating</option>
+                                    <option class="text-black" value="1">1</option>
+                                    <option class="text-black" value="2">2</option>
+                                    <option class="text-black" value="3">3</option>
+                                    <option class="text-black" value="4">4</option>
+                                    <option class="text-black" value="5">5</option>
+                                </select>
+                            </div>
                             <div class="form-input-material">
                                 <label for="trailer">Add trailer:</label>
                                 <input class="input" type="url" name="trailer" value="{{ $movie->trailer }}"><br>
@@ -116,21 +117,32 @@
                                 <input class="input" type="text" name="director" value="{{ $movie->director }}"><br>
                             </div>
                         </div>
-                            <div class="save-changes">
-                                <button type="submit" name="submit" class="submit btn-primary btn-ghost">Save changes</button>
-                            </div>
-                   
-        </form>
-    </div>
-                @if ($errors->any())
-                @foreach ($errors->all() as $error)
-                <li>
-                    {{ $error }}
-                </li>
-                @endforeach
-                @endif
-                <br>
-</div>
+                        <div class="save-changes">
+                            <button type="submit" name="submit" class="submit btn-primary btn-ghost">Save changes</button>
+                        </div>
 
-</body>
-</html>
+                    </form>
+                </div>
+
+                {{-- GENRE FORM--}}
+
+                <h2 class="text-white">{{$message ?? ''}}</h2>
+
+                <form action="{{url('moviegenre/' . $movie->id)}}" method="post">
+                    @csrf
+                    <input type="checkbox" name="genres[]" value="1">Adventure<br>
+                    <input type="checkbox" name="genres[]" value="2">Action<br>
+                    <input type="checkbox" name="genres[]" value="3">Comedy<br>
+                    <input type="checkbox" name="genres[]" value="4">Horror<br>
+                    <input type="checkbox" name="genres[]" value="5">Thriller<br>
+                    <input type="checkbox" name="genres[]" value="6">Drama<br>
+                    <input type="checkbox" name="genres[]" value="7">Romance<br>
+                    <input type="checkbox" name="genres[]" value="8">Sci-fi<br>
+                    <input type="hidden" name="movie_id_fk" value="{{$movie->id ?? $movieId}}">
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+
+        </body>
+
+        </html>
