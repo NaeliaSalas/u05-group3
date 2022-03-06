@@ -61,6 +61,15 @@
                     <button type="submit" class="bg-blue-400 text-whote rounded py-2 px-4 hover:bg-blue-500">
                         Submit
                     </button>
+
+                <div class="text-grey-dark mt-6">
+                    Already have an account? 
+                    <a class="no-underline border-b border-blue text-blue " href="../login/">
+                       <p  class="submit btn-primary btn-ghost underline"> Log in here</p>
+                    </a>
+                </div>
+
+
                 </div>
 
             </form>
