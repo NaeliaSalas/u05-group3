@@ -203,3 +203,7 @@
         width: 300px;
     }
 }
+
+.genre_Showcase {
+    flex-wrap: wrap;
+}
