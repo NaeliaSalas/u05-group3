@@ -107,8 +107,11 @@
                                 <p>{{$movie->rating}}</p>
                         </div>
                         <div class="dropdown">
-                            <button class="dropbtn"><a href="/register">Add to Watchlist</a></button>
+                            @guest
+                            <button class="dropbtn"><a href="/login">Add to watchlist</a></button>
+                            @endguest
                             @auth
+                            <button class="dropbtn"><a href="/watchlist">Add to watchlist</a></button>
                             <div class="watchlist_hover">
                                 @foreach(Auth::user()->watchlists as $watchlist)
 
