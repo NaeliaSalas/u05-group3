@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Movie;
+use App\Models\MovieGenres;
 use App\Models\Review;
 use Illuminate\Http\Request;
+use App\Http\Controllers\MovieGenreController;
 
 class MovieController extends Controller
 {
@@ -84,8 +86,8 @@ class MovieController extends Controller
         $movie->save();
 
         $posted = true;
-        $toggle = 'unchecked';
-        return view('admin.addmovie', ['movie' => $movie, 'posted' => $posted, 'toggle' => $toggle, 'message' => 'Movie posted']);
+        $movieId = $movie->id;
+        return redirect()->action([MovieGenreController::class, 'moviePosted'], ['posted' => $posted, 'movieId' => $movieId]);
     }
 
     /**

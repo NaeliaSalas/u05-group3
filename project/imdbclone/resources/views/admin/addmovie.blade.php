@@ -136,11 +136,14 @@
 
                     <form method="post" action="/moviegenre">
                         @csrf
-                        <input type="hidden" name="movie" value="{{ $movie->id ?? $movie }}">
+                        <input type="hidden" name="movieId" value="{{ $movie->id ?? $movieId }}">
                         <input type="hidden" name="genre_id_fk" value="1">
-                        <input type="hidden" name="movie_id_fk" value="{{$movie->id ?? $movie }}">
-                        <button type="submit" class="{{$toggle}}">Adventure</button>
-                        {{var_dump($toggle)}}
+                        <input type="hidden" name="movie_id_fk" value="{{$movie->id ?? $movieId }}">
+                        <button type="submit" class="{{$isChecked}}">Adventure</button>
+                        <br>
+                        {{var_dump($isChecked)}}
+                        {{var_dump($entry ?? null)}}
+                        {{var_dump($movieId ?? null)}}
                     </form>
                     @endif
 

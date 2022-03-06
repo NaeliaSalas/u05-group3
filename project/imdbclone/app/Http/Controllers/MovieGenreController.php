@@ -6,37 +6,42 @@ use App\Models\Genre;
 use App\Models\Movie;
 use App\Models\MovieGenres;
 use Illuminate\Http\Request;
+use App\Http\Controllers\MovieController;
 
 class MovieGenreController extends Controller
 {
-    public function index()
-    {
 
-        $genres = MovieGenres::get('genre_id_fk');
-        return view('entry.show', ['genres' => $genres]);
+    public function moviePosted(Request $request)
+    {
+        $posted = $request->posted;
+        $movieId = $request->movieId;
+
+        $isChecked = 'unchecked';
+        return view('admin.addmovie', ['posted' => $posted, 'movieId' => $movieId, 'isChecked' => $isChecked]);
     }
 
-    public function show($genrename)
+    public function toggleCheck(Request $request)
     {
-        $genre = Genre::where('genre', $genrename)->first();
-        return view('genre.genre', ['genre' => $genre]);
-    }
+        $posted = true;
 
-    public function store(Request $request)
-    {
+        //Lägg till
+
         $moviegenre = new MovieGenres;
-
         $moviegenre->genre_id_fk = $request->genre_id_fk;
         $moviegenre->movie_id_fk = $request->movie_id_fk;
         $moviegenre->save();
 
-        return redirect('movie');
-    }
+        $entry = $moviegenre->id;
+        $movieId = $request->movieId;
+        $isChecked = 'checked';
+        return view('admin.addmovie', ['entry' => $entry, 'movieId' => $movieId, 'posted' => $posted, 'isChecked' => $isChecked, 'message' => 'genre added']);
 
-    public function movieGenresId($id)
-    {
 
-        $moviegenreid = MovieGenres::get($id);
-        return view('movie.create', ['moviegenreid' => $moviegenreid]);
+        // //Ta bort
+
+        // $entry = MovieGenres::where('genre_id_fk', $request->genre_id_fk)->where('movie_id_fk', $request->movie_id_fk)->first();
+        // $entry->delete();
+        // $toggle = 'unchecked';
+        // return view('admin.addmovie', ['movie' => $movie, 'posted' => $posted]);
     }
 }
