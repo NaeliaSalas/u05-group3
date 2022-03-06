@@ -92,12 +92,12 @@
                         <div class="form-input-material">
                             <label for="rating">Add rating:</label>
                             <select class="input" name="rating" id="rating">
-                                <option placeholder=""></option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>'
-                                <option value="5">5</option>
+                                <option placeholder="">Select new rating</option>
+                                <option class="text-black" value="1">1</option>
+                                <option class="text-black" value="2">2</option>
+                                <option class="text-black" value="3">3</option>
+                                <option class="text-black" value="4">4</option>
+                                <option class="text-black" value="5">5</option>
                             </select>
                             <br>
                         </div>
