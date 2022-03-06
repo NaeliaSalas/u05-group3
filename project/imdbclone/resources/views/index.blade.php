@@ -44,27 +44,32 @@
 
                 <div class="search-input">
                     <nav class="nav-wrapper">
+
                         <ul class="nav-links">
                             <li class="nav-item"><a class="menuItem" href="/">Home</a></li>
                             <li class="nav-item"><a class="menuItem" href="/watchlist">Watchlist</a></li>
                             <li class="genre-dropdown nav-item"><button class="dropDown_subMenu">Genres +</button>
+
                                 <ul class="dropdown-categories">
-                                    <li class="subMenu"><a href="#">Adventure</a></li>
-                                    <li class="subMenu"><a href="#">Action</a></li>
-                                    <li class="subMenu"><a href="#">Comedy</a></li>
-                                    <li class="subMenu"><a href="#">Horror</a></li>
-                                    <li class="subMenu"><a href="#">Thriller</a></li>
-                                    <li class="subMenu"><a href="#">Drama</a></li>
-                                    <li class="subMenu"><a href="#">Romance</a></li>
-                                    <li class="subMenu"><a href="#">Sci-Fi</a></li>
+                                    <li class="subMenu"><a href="/genre/adventure">Adventure</a></li>
+                                    <li class="subMenu"><a href="/genre/action">Action</a></li>
+                                    <li class="subMenu"><a href="/genre/comedy">Comedy</a></li>
+                                    <li class="subMenu"><a href="/genre/horror">Horror</a></li>
+                                    <li class="subMenu"><a href="/genre/thriller">Thriller</a></li>
+                                    <li class="subMenu"><a href="/genre/drama">Drama</a></li>
+                                    <li class="subMenu"><a href="/genre/romance">Romance</a></li>
+                                    <li class="subMenu"><a href="/genre/sci-fi">Sci-Fi</a></li>
                                 </ul>
                             </li>
                             @guest
                             <li class=" nav-item"><a class="menuItem" href="/login">Log in</a></li>
                             <li class=" nav-item"><a class="menuItem" href="/register">Register</a></li>
                             @endguest
-                            @auth
+
+                            @if (Auth::user()?->IsAdmin == true)
                             <li class=" nav-item"><a class="menuItem" href="/admin/dashboard">Dashboard</a></li>
+                            @endif
+                            @auth
                             <li class=" nav-item"><a class="menuItem" href="/logout">Logout</a></li>
                             @endauth
                         </ul>
@@ -185,36 +190,38 @@
                 </div>
                 @endforeach
             </div>
-        </div>
 
-        <!-- Your watchlist section -->
-        @auth
 
-        <section class="featured">
-            <h2><a href="/watchlist">Your watchlist > </a></h2>
-        </section>
+            <!-- Your watchlist section -->
+            @auth
 
-        <div class="watchlist">
-            @foreach(Auth::user()->watchlists as $watchlist)
-            @foreach($watchlist->movies as $movie)
-            <div class="highlight_item">
-                <a href="url('/movie/' . $movie->id)"><img src="{{ URL($movie->cover)}}" alt="Movie cover"></a>
-                <div class="button_border">
-                    <p>{{ $movie->title }}</p>
-                    <div class="rating">
-                        @for ($i = 0; $i < $movie->rating; $i++)
-                            <i class="fa-solid fa-star"></i>
-                            @endfor
-                            <p>{{ $movie->rating }}</p>
+            <section class="featured">
+                <h2><a href="/watchlist">Your watchlist > </a></h2>
+            </section>
+
+            <div class="movie_Showcase">
+                @foreach(Auth::user()->watchlists as $watchlist)
+                @foreach($watchlist->movies as $movie)
+                <div class="showcase_item">
+                    <a href=" url('/movie/' . $movie->id)"><img src="{{ URL($movie->cover)}}" alt="Movie cover"></a>
+                    <div class="button_border">
+                        <div class="button_border_title">
+                            <p>{{ $movie->title }}</p>
+                        </div>
+                        <div class="rating">
+                            @for ($i = 0; $i < $movie->rating; $i++)
+                                <i class="fa-solid fa-star"></i>
+                                @endfor
+                                <p>{{ $movie->rating }}</p>
+                        </div>
+
                     </div>
-
                 </div>
+                @endforeach
+                @endforeach
             </div>
-            @endforeach
-            @endforeach
+            @endauth
         </div>
-        @endauth
-
 
     </div>
 
