@@ -1,11 +1,7 @@
 .reviewbg {
-   
     padding-top: 1em;
     height: 40em;
-    
-    border-top: 4px solid #3D2174;
-   
-
+    margin: 10rem auto;
 }
 
 /* Flexbox */
@@ -16,66 +12,60 @@
     display: flex;
     flex-direction: row;
     flex: 1;
-    }
+}
 
 .flex-item-review:nth-child(1) {
     width: 20%;
-   
-    }
+}
 
 .flex-item-review:nth-child(2) {
     width: 10%;
-    
-    
-    }
+}
 
-    .flex-item-review:nth-child(3) {
-        width: 70%;
-        
-        
-        }
+.flex-item-review:nth-child(3) {
+    width: 70%;
+}
 
 /* Flexbox */
 
 .coverReview {
-
     width: 18em;
-    
+
     margin-left: 3em;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 form {
-    display: inline-block
-
+    display: inline-block;
 }
 
 .input {
     padding-top: 1em;
     margin-top: 1em;
-    width:45%;
     border: 1px solid #991122;
     padding: 0.5em;
     box-sizing: border-box;
 }
 
 .txtInput {
-
     margin-top: 1em;
-    width:200%;
+    width: 200%;
     height: 20em;
     border: 1px solid #991122;
     padding: 0.5em;
     box-sizing: border-box;
 }
 
-
 .h3txt {
     margin: 0;
     padding: 0;
     color: rgb(248, 215, 25);
-    font-size: 3rem;
+    font-size: 2rem;
+    text-align: center;
+    margin: 1rem auto auto auto;
+    transform: translateX(1rem);
 }
 
 .footerReview {
@@ -85,42 +75,48 @@ form {
     padding: 70px 0;
 }
 
+.review-btn {
+    background-color: yellow;
+    color: white;
+    border: 1px solid yellow;
+}
 
+.review-btn:hover {
+    background-color: #3d2174;
+    color: #fff;
+}
+
+@media only screen and (max-width: 1700px) {
+    .h3txt {
+        transform: translateX(2.5rem);
+    }
+}
+@media only screen and (max-width: 1500px) {
+    .h3txt {
+        font-size: 1.5rem;
+        transform: translateX(2.5rem);
+    }
+}
 
 @media only screen and (max-width: 980px) {
-
-    .reviewflex {
-        width: 100%;
-        display:flex;
-        flex-direction:column;
-        flex:1;
-        margin-top: 3em;
-        }
-
-        .flex-item-review:nth-child(1) {
-            width: 100%;
-            
-            }
-        
-        .flex-item-review:nth-child(2) {
-            width: 100%;
-            
-           
-            }
-
-            .flex-item-review:nth-child(3) {
-                width: 100%;
-                
-                
-                }
-
-                .footerReview {
-                    width: 100%;
-                    display: block;
-                    margin-top: 40em;
-                    border-top: solid 2px black;
-                    background-color: rgb(27, 27, 27);
-                    padding: 70px 0;
-                }
-    
+    .txtInput {
+        height: 15em;
+        width: 150%;
+    }
+    .h3txt {
+        font-size: 1rem;
+        transform: translateX(3rem);
+    }
+    .MovieH1 {
+        font-size: 2rem;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .txtInput {
+        height: 15em;
+        width: 125%;
+    }
+    .flex-item-review {
+        margin-left: 1rem;
+    }
 }
