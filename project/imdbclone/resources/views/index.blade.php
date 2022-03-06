@@ -185,36 +185,38 @@
                 </div>
                 @endforeach
             </div>
-        </div>
 
-        <!-- Your watchlist section -->
-        @auth
 
-        <section class="featured">
-            <h2><a href="/watchlist">Your watchlist > </a></h2>
-        </section>
+            <!-- Your watchlist section -->
+            @auth
 
-        <div class="watchlist">
-            @foreach(Auth::user()->watchlists as $watchlist)
-            @foreach($watchlist->movies as $movie)
-            <div class="highlight_item">
-                <a href="url('/movie/' . $movie->id)"><img src="{{ URL($movie->cover)}}" alt="Movie cover"></a>
-                <div class="button_border">
-                    <p>{{ $movie->title }}</p>
-                    <div class="rating">
-                        @for ($i = 0; $i < $movie->rating; $i++)
-                            <i class="fa-solid fa-star"></i>
-                            @endfor
-                            <p>{{ $movie->rating }}</p>
+            <section class="featured">
+                <h2><a href="/watchlist">Your watchlist > </a></h2>
+            </section>
+
+            <div class="movie_Showcase">
+                @foreach(Auth::user()->watchlists as $watchlist)
+                @foreach($watchlist->movies as $movie)
+                <div class="showcase_item">
+                    <a href=" url('/movie/' . $movie->id)"><img src="{{ URL($movie->cover)}}" alt="Movie cover"></a>
+                    <div class="button_border">
+                        <div class="button_border_title">
+                            <p>{{ $movie->title }}</p>
+                        </div>
+                        <div class="rating">
+                            @for ($i = 0; $i < $movie->rating; $i++)
+                                <i class="fa-solid fa-star"></i>
+                                @endfor
+                                <p>{{ $movie->rating }}</p>
+                        </div>
+
                     </div>
-
                 </div>
+                @endforeach
+                @endforeach
             </div>
-            @endforeach
-            @endforeach
+            @endauth
         </div>
-        @endauth
-
 
     </div>
 

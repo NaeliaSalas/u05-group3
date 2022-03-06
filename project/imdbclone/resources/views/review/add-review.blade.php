@@ -97,7 +97,7 @@
                     <form action="{{url('/movie/' . $movie->id . '/review')}}" method="post">
                         @csrf
                         <input type="text" class="input" placeholder="Headline" name="title">
-                        <label>Headline</label>
+                        <label></label>
                         <br>
                         <input class="input" type="select" placeholder="Rate this" name="rating">
                         <br>
@@ -107,7 +107,7 @@
                         <input type="hidden" name="user_id_fk" value="{{Auth::id()}}">
                         <input type="hidden" name="movie_id_fk" value="{{$movie->id}}">
 
-                        <button type="submit" class="custom-btn btn-15">Add review</button>
+                        <button type="submit" class="custom-btn btn-15 review-btn">Add review</button>
 
 
                     </form>

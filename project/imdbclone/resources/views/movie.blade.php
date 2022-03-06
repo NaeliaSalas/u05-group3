@@ -87,9 +87,6 @@
             </div>
 
             <div class="movieflex">
-                <div class="flex-item">
-                    <img src="{{url($movie->hero)}}" alt="" class="cover">
-                </div>
 
                 <!-- center space-->
                 <div class="flex-item"></div>
@@ -144,7 +141,7 @@
 
             <!-- Add reviews -->
             <div class="center">
-                <button class="custom-btn btn-15">Add review</button>
+                <a href="{{'/movie/' . $movie->id . '/review/create'}}"><button class="custom-btn btn-15">Add review</button></a>
             </div>
             <!-- Add reviews -->
 
@@ -176,12 +173,6 @@
             </div>
             <!-- reviews section -->
 
-            <!-- Add reviews -->
-            <div class="center">
-                <a href="{{'/movie/' . $movie->id . '/review/create'}}"><button class="custom-btn btn-15">Add review</button></a>
-            </div>
-            <!-- Add reviews -->
-
             <!-- Your watchlist section -->
             @auth
 
@@ -189,16 +180,20 @@
                 <h2><a href="/watchlist">Your watchlist > </a></h2>
             </section>
 
-            <div class="watchlist">
+            <div class="movie_Showcase">
                 @foreach(Auth::user()->watchlists as $watchlist)
                 @foreach($watchlist->movies as $movie)
-                <div class="highlight_item">
-                    <a href="url('/movie/' . $movie->id)"><img src="{{ URL($movie->cover)}}" alt="Movie cover"></a>
+                <div class="showcase_item">
+                    <a href=" url('/movie/' . $movie->id)"><img src="{{ URL($movie->cover)}}" alt="Movie cover"></a>
                     <div class="button_border">
-                        <p>{{ $movie->title }}</p>
+                        <div class="button_border_title">
+                            <p>{{ $movie->title }}</p>
+                        </div>
                         <div class="rating">
-                            <i class="fa-solid fa-star"></i>
-                            <p>{{ $movie->rating }}</p>
+                            @for ($i = 0; $i < $movie->rating; $i++)
+                                <i class="fa-solid fa-star"></i>
+                                @endfor
+                                <p>{{ $movie->rating }}</p>
                         </div>
 
                     </div>

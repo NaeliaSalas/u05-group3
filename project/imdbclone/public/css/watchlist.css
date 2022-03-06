@@ -6,6 +6,11 @@
     margin: 0 auto;
 }
 
+.watchlist-item img {
+    width: auto;
+    max-height: 350px;
+}
+
 .watchlist .highlight_item {
     height: auto;
     width: auto;
