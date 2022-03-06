@@ -99,8 +99,16 @@
                         <input type="text" class="input" placeholder="Headline" name="title">
                         <label></label>
                         <br>
-                        <input class="input" type="select" placeholder="Rate this" name="rating">
-                        <br>
+
+                        <select class="input" name="rating" id="rating">
+                            <option placeholder="">Rate this</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                          </select>
+                          <br>
 
                         <input textarea class="txtInput" type="text" placeholder="Your review" name="body" class="txtInput">
                         <br>
