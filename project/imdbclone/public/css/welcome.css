@@ -34,24 +34,14 @@ html {
 }
 
 .logo {
-    color: #fff;
+    
     align-self: center;
     /* border: solid 1px red;*/
     /* background: #fa1e4e; */
     border-radius: 15px;
-    text-shadow: 0 0 50px #0f0, 0 0 100px #0f0, 0 0 150px #0f0, 0 0 200px #0f0,
-        0 0 250px #0f0;
-    animation: animate 10s linear infinite;
+    
 }
 
-@keyframes animate {
-    0% {
-        filter: hue-rotate(0deg);
-    }
-    100% {
-        filter: hue-rotate(360deg);
-    }
-}
 
 .navbar .search-input .nav-wrapper .nav-links {
     display: flex;
