@@ -63,8 +63,10 @@
                             <li class=" nav-item"><a class="menuItem" href="/login">Log in</a></li>
                             <li class=" nav-item"><a class="menuItem" href="/register">Register</a></li>
                             @endguest
-                            @auth
+                            @if (Auth::user()?->IsAdmin == true)
                             <li class=" nav-item"><a class="menuItem" href="/admin/dashboard">Dashboard</a></li>
+                            @endif
+                            @auth
                             <li class=" nav-item"><a class="menuItem" href="/logout">Logout</a></li>
                             @endauth
                         </ul>
@@ -99,8 +101,16 @@
                         <input type="text" class="input" placeholder="Headline" name="title">
                         <label></label>
                         <br>
-                        <input class="input" type="select" placeholder="Rate this" name="rating">
-                        <br>
+
+                        <select class="input" name="rating" id="rating">
+                            <option placeholder="">Rate this</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                          </select>
+                          <br>
 
                         <input textarea class="txtInput" type="text" placeholder="Your review" name="body" class="txtInput">
                         <br>
