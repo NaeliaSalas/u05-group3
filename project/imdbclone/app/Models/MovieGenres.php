@@ -11,5 +11,8 @@ class MovieGenres extends Model
 
     protected $table = 'movie_genres';
 
-
+    protected $fillable = [
+        'movie_id_fk',
+        'genre_id_fk'
+    ];
 }
