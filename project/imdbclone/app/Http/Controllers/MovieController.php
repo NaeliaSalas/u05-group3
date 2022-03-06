@@ -48,7 +48,8 @@ class MovieController extends Controller
      */
     public function create()
     {
-        return view('admin.addmovie');
+        $posted = false;
+        return view('admin.addmovie', ['posted' => $posted]);
     }
 
     /**
@@ -71,7 +72,6 @@ class MovieController extends Controller
             'director' => 'string|required|max:255',
 
         ]);
-
         $movie = new Movie;
         $movie->title = $request->title;
         $movie->body = $request->body;
@@ -83,7 +83,9 @@ class MovieController extends Controller
         $movie->director = $request->director;
         $movie->save();
 
-        return redirect()->back()->with('status', 'Movie has been added');
+        $posted = true;
+        $toggle = 'unchecked';
+        return view('admin.addmovie', ['movie' => $movie, 'posted' => $posted, 'toggle' => $toggle, 'message' => 'Movie posted']);
     }
 
     /**
