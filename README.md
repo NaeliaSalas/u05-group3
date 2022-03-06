@@ -134,7 +134,6 @@ Sitemap for our CIMENHA:
 https://www.gloomaps.com/kgFJVdydnR
 
 Product Backlog
-
 Find the backlog to our project via the link provided here:
 
 https://github.com/NaeliaSalas/u05-group3/projects/1
