@@ -45,14 +45,14 @@
                             <li class="nav-item"><a class="menuItem" href="/watchlist">Watchlist</a></li>
                             <li class="genre-dropdown nav-item"><button class="dropDown_subMenu">Genres +</button>
                                 <ul class="dropdown-categories">
-                                    <li class="subMenu"><a href="#">Adventure</a></li>
-                                    <li class="subMenu"><a href="#">Action</a></li>
-                                    <li class="subMenu"><a href="#">Comedy</a></li>
-                                    <li class="subMenu"><a href="#">Horror</a></li>
-                                    <li class="subMenu"><a href="#">Thriller</a></li>
-                                    <li class="subMenu"><a href="#">Drama</a></li>
-                                    <li class="subMenu"><a href="#">Romance</a></li>
-                                    <li class="subMenu"><a href="#">Sci-Fi</a></li>
+                                    <li class="subMenu"><a href="/genre/adventure">Adventure</a></li>
+                                    <li class="subMenu"><a href="/genre/action">Action</a></li>
+                                    <li class="subMenu"><a href="/genre/comedy">Comedy</a></li>
+                                    <li class="subMenu"><a href="/genre/horror">Horror</a></li>
+                                    <li class="subMenu"><a href="/genre/thriller">Thriller</a></li>
+                                    <li class="subMenu"><a href="/genre/drama">Drama</a></li>
+                                    <li class="subMenu"><a href="/genre/romance">Romance</a></li>
+                                    <li class="subMenu"><a href="/genre/sci-fi">Sci-Fi</a></li>
                                 </ul>
                             </li>
                             @guest
