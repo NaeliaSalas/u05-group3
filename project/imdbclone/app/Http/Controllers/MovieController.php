@@ -86,8 +86,7 @@ class MovieController extends Controller
         $movie->save();
 
         $posted = true;
-        $movieId = $movie->id;
-        return redirect()->action([MovieGenreController::class, 'moviePosted'], ['posted' => $posted, 'movieId' => $movieId]);
+        return view('admin.addmovie', ['posted' => $posted, 'movie' => $movie, 'message' => 'Add genres']);
     }
 
     /**
