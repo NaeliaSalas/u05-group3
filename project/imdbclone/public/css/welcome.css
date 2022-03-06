@@ -1,5 +1,5 @@
 body {
-    background-color: #08060a;
+    background-color: #131019;
     position: relative;
     z-index: 0;
     box-sizing: border-box;
@@ -14,10 +14,10 @@ html {
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: rgb(27, 27, 27);
+    background-color: #131019;
     height: 80px;
     margin-bottom: 1rem;
-    border-bottom: solid 2px black;
+    border-bottom: solid 2px #3D2174;
     top: 0;
     width: 100%;
     position: fixed;

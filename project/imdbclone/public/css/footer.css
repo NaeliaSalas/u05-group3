@@ -25,8 +25,8 @@ ul {
     list-style: none;
 }
 .footer {
-    border-top: solid 2px black;
-    background-color: rgb(27, 27, 27);
+    border-top: solid 2px #3D2174;
+    background-color: #000;
     padding: 70px 0;
     text-align: center;
 }
