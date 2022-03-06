@@ -104,17 +104,17 @@
 
                         <div class="form-input-material">
                             <label for="trailer">Add trailer:</label>
-                            <input class="input" type="url" name="trailer" value="https://google.com"><br>
+                            <input class="input" type="url" name="trailer"><br>
                         </div>
 
                         <div class="form-input-material">
                             <label for="yearproduced">Add year produced:</label>
-                            <input class="input" type="number" min="1900" max="2023" name="yearproduced" value="1990"><br>
+                            <input class="input" type="number" min="1900" max="2023" name="yearproduced"><br>
                         </div>
 
                         <div class="form-input-material">
                             <label for="director">Add director:</label>
-                            <input class="input" type="text" name="director" value="jeus"><br>
+                            <input class="input" type="text" name="director"><br>
                         </div>
                         @if (!$posted)
                         <div class="save-changes">
