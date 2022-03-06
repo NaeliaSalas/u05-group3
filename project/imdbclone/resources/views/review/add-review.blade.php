@@ -109,10 +109,10 @@
                             <option value="3">3</option>
                             <option value="4">4</option>
                             <option value="5">5</option>
-                          </select>
-                          <br>
+                        </select>
+                        <br>
 
-                        <input textarea class="txtInput" type="text" placeholder="Your review" name="body" class="txtInput">
+                        <textarea class="txtInput" type="text" placeholder="Your review" name="body" class="txtInput"></textarea>
                         <br>
                         <input type="hidden" name="user_id_fk" value="{{Auth::id()}}">
                         <input type="hidden" name="movie_id_fk" value="{{$movie->id}}">
