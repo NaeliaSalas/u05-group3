@@ -30,7 +30,7 @@
                                 <span class="mx-4 font-medium">Dashboard</span>
                             </a>
                         </li>
-            
+
                         <li>
                             <a class="flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200" href='/user'>
                                 <i class="fas fa-user-alt" aria-hidden="true"></i>
@@ -57,84 +57,99 @@
                 </aside>
             </div>
         </div>
-<body>
-    <div class="edit-user">
-        <div class="title">
-            <h1>Add movie</h1>
-        </div>
-        <div class="update-form">
 
-        <form action="/movie" method="POST">
-            @csrf
+        <div class="edit-user">
+            <div class="title">
+                <h1>Add movie</h1>
+            </div>
+            <div class="update-form">
 
-            <div class="input-fields">
+                <form action="/movie" method="POST">
+                    @csrf
 
-                <div class="form-input-material">
-                    <label for="title">Title:</label>
-                    <input class="input" type="text" name="title"><br>
-                </div>
+                    <div class="input-fields">
 
-                <div class="form-input-material">
-                    <label for="body">Description:</label>
-                    <input class="input" type="text" name="body"><br>
-                </div>
+                        <div class="form-input-material">
+                            <label for="title">Title:</label>
+                            <input class="input" type="text" name="title"><br>
+                        </div>
 
-                <div class="form-input-material">
-                    <label for="cover">Add  picture:</label>
-                    <input class="input" type="url" name="cover"><br>
-                </div>
+                        <div class="form-input-material">
+                            <label for="body">Description:</label>
+                            <input class="input" type="text" name="body"><br>
+                        </div>
 
-                <div class="form-input-material">
-                    <label for="hero">Add hero picture:</label>
-                    <input class="input" type="url" name="hero"><br>
-                </div>
+                        <div class="form-input-material">
+                            <label for="cover">Add picture:</label>
+                            <input class="input" type="url" name="cover"><br>
+                        </div>
 
-                <div class="form-input-material">
-                    <label for="rating">Add rating:</label>
-                    <select class="input" name="rating" id="rating">
-                        <option placeholder=""></option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>'
-                        <option value="5">5</option>
-                      </select>
-                    <br>
-                </div>
+                        <div class="form-input-material">
+                            <label for="hero">Add hero picture:</label>
+                            <input class="input" type="url" name="hero"><br>
+                        </div>
+
+                        <div class="form-input-material">
+                            <label for="rating">Add rating:</label>
+                            <select class="input" name="rating" id="rating">
+                                <option placeholder=""></option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>'
+                                <option value="5">5</option>
+                            </select>
+                            <br>
+                        </div>
 
                         <div class="form-input-material">
                             <label for="trailer">Add trailer:</label>
-                            <input class="input" type="url" name="trailer"><br>
+                            <input class="input" type="url" name="trailer" value="https://google.com"><br>
                         </div>
 
                         <div class="form-input-material">
                             <label for="yearproduced">Add year produced:</label>
-                            <input class="input" type="number" min="1900" max="2023" name="yearproduced"><br>
+                            <input class="input" type="number" min="1900" max="2023" name="yearproduced" value="1990"><br>
                         </div>
 
                         <div class="form-input-material">
                             <label for="director">Add director:</label>
-                            <input class="input" type="text" name="director"><br>
+                            <input class="input" type="text" name="director" value="jeus"><br>
                         </div>
-            <div class="save-changes">
-                <button type="submit" name="submit" class="submit btn-primary btn-ghost">Add movie</button>
+                        @if (!$posted)
+                        <div class="save-changes">
+                            <button type="hidden" name="submit2" class="submit btn-primary btn-ghost">Add movie</button>
+                        </div>
+                        @endif
+                    </div>
+                </form>
+
+
+                {{-- GENRE FORM--}}
+                <h2 class="text-white">{{$message ?? ''}}</h2>
+
+                @if ($posted)
+                <form action="/moviegenre" method="post">
+                    @csrf
+                    <input type="checkbox" name="genres[]" value="1">Adventure<br>
+                    <input type="checkbox" name="genres[]" value="2">Action<br>
+                    <input type="checkbox" name="genres[]" value="3">Comedy<br>
+                    <input type="checkbox" name="genres[]" value="4">Horror<br>
+                    <input type="checkbox" name="genres[]" value="5">Thriller<br>
+                    <input type="checkbox" name="genres[]" value="6">Drama<br>
+                    <input type="checkbox" name="genres[]" value="7">Romance<br>
+                    <input type="checkbox" name="genres[]" value="8">Sci-fi<br>
+                    <input type="hidden" name="movie_id_fk" value="{{$movie->id ?? $movieId}}">
+                    <input type="submit" value="Submit">
+                </form>
+                @endif
+
             </div>
         </div>
-        </form>          
-    </div>
-       </div>
-    </div>
-        @if ($errors->any())
-        @foreach ($errors->all() as $error)
-        <li>
-            {{ $error }}
-        </li>
-        @endforeach
-        @endif
-        <br>
-        <div>
 
-        </div>
-    </section>
+    </div>
+
+
 </body>
+
 </html>

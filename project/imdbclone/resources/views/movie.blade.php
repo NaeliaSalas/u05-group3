@@ -178,8 +178,6 @@
                 @endforeach
                 @endif
             </div>
-            <!-- reviews section -->
-            <!-- Review withcomments -->
 
         </div>
         <!-- Your watchlist section -->
@@ -266,7 +264,6 @@
     <script src="{{url('js/hamburger.js')}}"></script>
     <script src="{{url('js/modal.js')}}"></script>
     <script src="{{url('js/subMenu.js')}}"></script>
-    <script src="{{url('js/comment.js')}}"></script>
 
 </body>
 

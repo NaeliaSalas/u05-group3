@@ -150,3 +150,11 @@
     color: #39b7dd;
     display: block;
 }
+
+.unchecked {
+    background-color: #a9c2c9;
+}
+
+.checked {
+    background-color: #2bcc7b;
+}
