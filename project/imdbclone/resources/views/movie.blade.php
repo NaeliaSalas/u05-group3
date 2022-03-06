@@ -66,7 +66,7 @@
 
                             @if (Auth::user()?->IsAdmin == true)
                             <li class=" nav-item"><a class="menuItem" href="/admin/dashboard">Dashboard</a></li>
-                            @endif 
+                            @endif
 
                             @auth
                             <li class=" nav-item"><a class="menuItem" href="/logout">Logout</a></li>
@@ -177,81 +177,134 @@
             </div>
             <!-- reviews section -->
 
-            <!-- Your watchlist section -->
-            @auth
+            <div class="reviewFlex">
 
-            <section class="featured">
-                <h2><a href="/watchlist">Your watchlist > </a></h2>
-            </section>
+                <!-- Review withcomments -->
+                <div class="review-item">
 
-            <div class="movie_Showcase">
-                @foreach(Auth::user()->watchlists as $watchlist)
-                @foreach($watchlist->movies as $movie)
-                <div class="showcase_item">
-                    <a href=" url('/movie/' . $movie->id)"><img src="{{ URL($movie->cover)}}" alt="Movie cover"></a>
-                    <div class="button_border">
-                        <div class="button_border_title">
-                            <p>{{ $movie->title }}</p>
-                        </div>
-                        <div class="rating">
-                            @for ($i = 0; $i < $movie->rating; $i++)
-                                <i class="fa-solid fa-star"></i>
-                                @endfor
-                                <p>{{ $movie->rating }}</p>
-                        </div>
+                    <!-- main-->
+                    <div class="tab-container full-height">
+                        <!-- Gör en flexbox div här-->
+                        <p><img src="images/star.png" alt=""> 6,2</p>
+                        <p>The review goeas here. Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.</p>
+                        <!-- Gör en flexbox div här-->
+
+                        <section>
+                            <button onclick="myFunction()"> <span class="comments-txt">See comments | Add comment</span></button>
+
+                            <!-- js reveal -->
+                            <div id="myDIV">
+                                <!-- content -->
+                                <div class="comments-content">
+                                    <!-- comments loop-->
+                                    <section class="comments">
+                                        <span class="comment-name-txt">Erika A</span>
+                                        <p class="comments-txt">This is a comment on a reviw. Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde fugiat sint amet repellat, architecto, odit dolorum quibusdam incidunt necessitatibus cum odio nostrum consectetur, natus corrupti perspiciatis iusto sit qui aliquam.</p>
+                                    </section>
+                                    <!-- comments-->
+
+                                    <!-- form-->
+                                    <section>
+                                        <form action="{{url('comment')}}" method="post">
+                                            <input class="txtInputBig" type="text" placeholder="Your comment" name="body">
+
+                                            <input type="hidden" name="user_id_fk" value="1">
+                                            <input type="hidden" name="movie_id_fk" value="1">
+                                            <br />
+                                            <button type="submit" class="custom-btn btn-15">Add</button>
+                                        </form>
+                                    </section>
+                                    <!-- form-->
+                                </div>
+                                <!-- content -->
+                            </div>
+                            <!-- js reveal -->
+
+                        </section>
 
                     </div>
-                </div>
-                @endforeach
-                @endforeach
-            </div>
-            @endauth
+                    <!-- main-->
 
+                </div>
+            </div>
+            <!-- Review withcomments -->
 
         </div>
+        <!-- Your watchlist section -->
+        @auth
 
-        <!-- Footer with links -->
-        <footer class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="footer-col">
-                        <h4>company</h4>
-                        <ul>
-                            <li><a href="#">about us</a></li>
-                            <li><a href="#">Condition of Use</a></li>
-                            <li><a href="#">privacy policy</a></li>
-                            <li><a href="#">Site Index</a></li>
-                        </ul>
+        <section class="featured">
+            <h2><a href="/watchlist">Your watchlist > </a></h2>
+        </section>
+
+        <div class="movie_Showcase">
+            @foreach(Auth::user()->watchlists as $watchlist)
+            @foreach($watchlist->movies as $movie)
+            <div class="showcase_item">
+                <a href=" url('/movie/' . $movie->id)"><img src="{{ URL($movie->cover)}}" alt="Movie cover"></a>
+                <div class="button_border">
+                    <div class="button_border_title">
+                        <p>{{ $movie->title }}</p>
                     </div>
-                    <div class="footer-col">
-                        <h4>get help</h4>
-                        <ul>
-                            <li><a href="#">Help</a></li>
-                            <li><a href="#">Get the APP</a></li>
-                            <li><a href="#">CinemahPro</a></li>
-                            <li><a href="#">MojoIMDB Developer</a></li>
-                        </ul>
+                    <div class="rating">
+                        @for ($i = 0; $i < $movie->rating; $i++)
+                            <i class="fa-solid fa-star"></i>
+                            @endfor
+                            <p>{{ $movie->rating }}</p>
                     </div>
-                    <div class="footer-col">
-                        <h4>market related</h4>
-                        <ul>
-                            <li><a href="#">Press Room</a></li>
-                            <li><a href="#">Box Office</a></li>
-                            <li><a href="#">Interest-Based Ads</a></li>
-                            <li><a href="#">Advertising</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>follow us</h4>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
+
+                </div>
+            </div>
+            @endforeach
+            @endforeach
+        </div>
+        @endauth
+
+
+    </div>
+
+    <!-- Footer with links -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">Condition of Use</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">Site Index</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Get the APP</a></li>
+                        <li><a href="#">CinemahPro</a></li>
+                        <li><a href="#">MojoIMDB Developer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>market related</h4>
+                    <ul>
+                        <li><a href="#">Press Room</a></li>
+                        <li><a href="#">Box Office</a></li>
+                        <li><a href="#">Interest-Based Ads</a></li>
+                        <li><a href="#">Advertising</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
-        </footer>
+        </div>
+    </footer>
 
     </div>
 
@@ -261,6 +314,7 @@
     <script src="{{url('js/hamburger.js')}}"></script>
     <script src="{{url('js/modal.js')}}"></script>
     <script src="{{url('js/subMenu.js')}}"></script>
+    <script src="{{url('js/comment.js')}}"></script>
 
 </body>
 

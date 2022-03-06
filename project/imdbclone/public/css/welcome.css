@@ -260,4 +260,53 @@ html {
     display: block;
 }
 
+.dropdown form {
+    display: block;
+    transform: translateY(40px);
+}
+
+.dropdown .watchlist_hover {
+    display: none;
+}
+
+.dropdown form .dropdownBtn {
+    border-top: 1px solid #e91e6233;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+}
+
+.dropbtn:hover ~ .watchlist_hover {
+    display: block;
+}
+
+.watchlist_hover:hover {
+    display: block;
+}
 /* Watchlist dropdown */
+
+/* Review Comments */
+.comments {
+    margin-top: 1em;
+}
+
+.comments-txt {
+    margin-top: 1em;
+    color: #f6cf41;
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
+.comment-name-txt {
+    font-size: 1em;
+
+    color: aliceblue;
+}
+
+.txtInputBig {
+    width: 100%;
+    height: 15em;
+    color: black;
+    text-align: start;
+}
