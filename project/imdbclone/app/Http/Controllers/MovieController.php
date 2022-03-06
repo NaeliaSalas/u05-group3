@@ -109,7 +109,6 @@ class MovieController extends Controller
      */
     public function edit($id)
     {
-
         $movie = Movie::find($id);
         return view('admin.editmovie', ['movie' => $movie]);
     }

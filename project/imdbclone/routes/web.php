@@ -56,6 +56,7 @@ route::resource('watchlist', WatchlistController::class);
 // MovieGenres
 
 Route::post('moviegenre/', [MovieGenreController::class, 'store']);
+Route::post('moviegenre/{id}', [MovieGenreController::class, 'update']);
 
 //Route to genres
 Route::get('genre/{genrename}', [GenreController::class, 'show']);

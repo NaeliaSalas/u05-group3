@@ -124,10 +124,10 @@
                 </div>
 
                 {{-- GENRE FORM--}}
+
                 <h2 class="text-white">{{$message ?? ''}}</h2>
 
-                @if ($posted)
-                <form action="/moviegenre" method="post">
+                <form action="{{url('moviegenre/' . $movie->id)}}" method="post">
                     @csrf
                     <input type="checkbox" name="genres[]" value="1">Adventure<br>
                     <input type="checkbox" name="genres[]" value="2">Action<br>
@@ -140,17 +140,6 @@
                     <input type="hidden" name="movie_id_fk" value="{{$movie->id ?? $movieId}}">
                     <input type="submit" value="Submit">
                 </form>
-                @endif
-
-
-                @if ($errors->any())
-                @foreach ($errors->all() as $error)
-                <li>
-                    {{ $error }}
-                </li>
-                @endforeach
-                @endif
-                <br>
             </div>
 
         </body>
