@@ -57,8 +57,6 @@ Next, execute a command on the container.
 docker exec -it <container name> <command> 
 ```
 
-
-
 Then please type this command in the shell terminal
 
 
@@ -72,7 +70,7 @@ You are now connected.
 
 Open a new tab and go to 127.0.0.1:8080 to log into the database.
 
-Login credentials can be found in the docker-compose.yml file on line XX-XX.
+Login credentials can be found in the docker-compose.yml file on line 12,12,15 adn 16.
 
 When logged into the database please find the "Import" link highlighted in blue located to the left panel of the site.
 
@@ -84,7 +82,7 @@ As we are seeding our data please be sure to start Database seeding by writing t
 ```bash
   php artisan migrate:fresh --seed
 ```
-You should now be able to see all table with data in the database.
+You should now be able to see all tables with data in the database.
 
 We have the following tables:
 
@@ -101,26 +99,25 @@ We have the following tables:
 	watchlists
 	
 	
-To access the Adminer panel be sure to edit one of the users in the database to a Admin.
+To access the Adminer panel be sure to log in with the Admin user credentials that you can find in the user table.
 
 To do that navigate to the users table in the database. Click Select data above the table. Now choose the user you want to be Admin and click edit in the left column. Choose number 1 in the "IsAdmin" option and click "save".
 
-Return to the website CIMENHA and log in with the Admin credentials. Your landing page is the Admin dashboard and here you are able to go to Users or Movies in the left side panel.
+Return to the website CIMENHA and log in with the Admin credentials. Your landing page is the Admin dashboard and here you are able to go to Users or Movies in the left side panel or by clicking the User or Movie card.
 
 In the Users page you will be able the edit the Users name, username and email. You are also able to delete a user from this panel.
 
-In the Movie section of the Admin panel you can add, update or delete a movie.
+In the Movie section of the Admin panel you can add, edit or delete a movie.
 
 Guest
-As a guest you are welcome to browse the website and search for movies.
+As a guest you are welcome to browse the website and search for movies. If you try to add a movie to a watchlist you will be redirected to the login page. Then you are able to easily switch to the register page.
 
-If you wish to use the website as a registerd user you can simply register by clicking the "Register" icon on the top right corner. Please fill in all requested fields and then continue to log in.
+Please fill in all requested fields and then continue to log in.
 
 User
 As a logged in user you are able to create Watchlists, edit or delete them.
 
-Review movies and also add comments to other users reviews.
-
+Add reviews to your favourite movies.
 
 ## Documentation
 
@@ -129,7 +126,7 @@ Figma link for wireframe and design:
 
 https://www.figma.com/file/gmOhgXUYiiTtTftQeGW78g/WF-U05?node-id=0%3A1
 
-Sitemap for our CIMENHA:
+Sitemap for CIMENHA:
 
 https://www.gloomaps.com/kgFJVdydnR
 
@@ -137,5 +134,9 @@ Product Backlog
 Find the backlog to our project via the link provided here:
 
 https://github.com/NaeliaSalas/u05-group3/projects/1
+
+Heroku link:
+
+http://cinemah-site.herokuapp.com
 
 
