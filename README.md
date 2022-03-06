@@ -145,7 +145,7 @@ You should now be able to see all tables with data in the database.
 /user                         List all users - Edit - Delete users
 ```
 
-To do that navigate to the users table in the database. Click Select data above the table. Now choose the user you want to be Admin and click edit in the left column. Choose number 1 in the "IsAdmin" option and click "save".
+Create a database with the name "imdbclone"  when logged in to Adminer.
 
 Return to the website CINEMAH and log in with the Admin credentials. Your landing page is the Admin dashboard and here you are able to go to Users or Movies in the left side panel or by clicking the User or Movie card.
 
