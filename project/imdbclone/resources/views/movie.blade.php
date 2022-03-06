@@ -133,8 +133,11 @@
             </div>
 
             <div class="dropdown">
-                <a href="/register"><button class="dropbtn btn-17">Add to watchlist</button></a>
+                @guest
+                <button class="dropbtn btn-17"><a href="/login">Add to watchlist</a></button>
+                @endguest
                 @auth
+                <button class="dropbtn btn-17"><a href="/watchlist">Add to watchlist</a></button>
                 <div class="dropdown-content" style="left:0;">
                     @foreach(Auth::user()->watchlists as $watchlist)
                     <a href="#">{{$watchlist->title}}</a>
