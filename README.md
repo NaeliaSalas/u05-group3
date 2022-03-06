@@ -59,17 +59,6 @@ docker exec -it <container name> <command>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 Then please type this command in the shell terminal
 
 
@@ -100,7 +89,6 @@ You should now be able to see all table with data in the database.
 We have the following tables:
 
 	entries	
-    comments
 	failed_jobs	
 	genres	
 	migrations	
@@ -111,6 +99,8 @@ We have the following tables:
 	reviews		
 	users	
 	watchlists
+	
+	
 To access the Adminer panel be sure to edit one of the users in the database to a Admin.
 
 To do that navigate to the users table in the database. Click Select data above the table. Now choose the user you want to be Admin and click edit in the left column. Choose number 1 in the "IsAdmin" option and click "save".
@@ -135,6 +125,8 @@ Review movies and also add comments to other users reviews.
 ## Documentation
 
 [Documentation](https://linktodocumentation)
+
+[Documentation] (https://www.gloomaps.com/kgFJVdydnR)
 
 figma link 
 https://www.figma.com/file/gmOhgXUYiiTtTftQeGW78g/WF-U05?node-id=0%3A1
