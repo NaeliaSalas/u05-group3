@@ -179,57 +179,6 @@
                 @endif
             </div>
             <!-- reviews section -->
-
-            <div class="reviewFlex">
-
-                <!-- Review withcomments -->
-                <div class="review-item">
-
-                    <!-- main-->
-                    <div class="tab-container full-height">
-                        <!-- Gör en flexbox div här-->
-                        <p><img src="images/star.png" alt=""> 6,2</p>
-                        <p>The review goeas here. Had heard nothing but great things about 'The Walking Dead' from friends and IMDb reviewers. It took a while to get round to walking, both from being busy and also not being sure whether it would be my cup of tea.</p>
-                        <!-- Gör en flexbox div här-->
-
-                        <section>
-                            <button onclick="myFunction()"> <span class="comments-txt">See comments | Add comment</span></button>
-
-                            <!-- js reveal -->
-                            <div id="myDIV">
-                                <!-- content -->
-                                <div class="comments-content">
-                                    <!-- comments loop-->
-                                    <section class="comments">
-                                        <span class="comment-name-txt">Erika A</span>
-                                        <p class="comments-txt">This is a comment on a reviw. Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde fugiat sint amet repellat, architecto, odit dolorum quibusdam incidunt necessitatibus cum odio nostrum consectetur, natus corrupti perspiciatis iusto sit qui aliquam.</p>
-                                    </section>
-                                    <!-- comments-->
-
-                                    <!-- form-->
-                                    <section>
-                                        <form action="{{url('comment')}}" method="post">
-                                            <textarea class="txtInputBig" type="text" placeholder="Your comment" name="body"></textarea>
-
-                                            <input type="hidden" name="user_id_fk" value="1">
-                                            <input type="hidden" name="movie_id_fk" value="1">
-                                            <br />
-                                            <button type="submit" class="custom-btn btn-15">Add</button>
-                                        </form>
-                                    </section>
-                                    <!-- form-->
-                                </div>
-                                <!-- content -->
-                            </div>
-                            <!-- js reveal -->
-
-                        </section>
-
-                    </div>
-                    <!-- main-->
-
-                </div>
-            </div>
             <!-- Review withcomments -->
 
         </div>
