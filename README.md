@@ -135,7 +135,7 @@ Sitemap:
 [Documentation] (https://www.gloomaps.com/kgFJVdydnR)
 
 Product Backlog
-[Documentation] Find the backlog to our project via the link provided here:
+Find the backlog to our project via the link provided here:
 
 (https://github.com/NaeliaSalas/u05-group3/projects/1)
 
