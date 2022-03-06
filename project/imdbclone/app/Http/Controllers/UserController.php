@@ -62,7 +62,7 @@ class UserController extends Controller
         $user = User::create($request->all());
         $user->save();
 
-        // OM admin skapat en user redirecta till 
+        // If admin created user, redirect to dashboard user
         if (Auth::check() && Auth::user()->IsAdmin == 1) {
 
             return redirect('user')->with('message', 'User created');
