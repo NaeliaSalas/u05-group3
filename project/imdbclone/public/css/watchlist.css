@@ -6,6 +6,11 @@
     margin: 0 auto;
 }
 
+.watchlist-item img {
+    width: auto;
+    max-height: 350px;
+}
+
 .watchlist .highlight_item {
     height: auto;
     width: auto;
@@ -171,6 +176,10 @@
 
 .top_picks form {
     margin-left: 10px;
+}
+
+.watchlist-flex {
+    margin: 8rem auto 18rem auto;
 }
 
 /*  Added by Jonny*/

@@ -70,8 +70,8 @@
             <div class="input-fields">
 
                 <div class="form-input-material">
-                    <label for="body">Title:</label>
-                    <input class="input" type="text" name="body"><br>
+                    <label for="title">Title:</label>
+                    <input class="input" type="text" name="title"><br>
                 </div>
 
                 <div class="form-input-material">
@@ -91,14 +91,15 @@
 
                 <div class="form-input-material">
                     <label for="rating">Add rating:</label>
-                    <input class="input"  list="rating" name="rating">
-                    <datalist id="rating">
-                        <option value="1">
-                        <option value="2">
-                        <option value="3">
-                        <option value="4">
-                        <option value="5">
-                    </datalist><br>
+                    <select class="input" name="rating" id="rating">
+                        <option placeholder=""></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>'
+                        <option value="5">5</option>
+                      </select>
+                    <br>
                 </div>
 
                         <div class="form-input-material">
