@@ -93,12 +93,6 @@ You are now connected.
 
 Open a new tab and go to 127.0.0.1:8080 to log into the database.
 
-Login credentials can be found in the docker-compose.yml file on line 12,12,15 adn 16.
-
-When logged into the database please find the "Import" link highlighted in blue located to the left panel of the site.
-
-Click the import, and choose "upload file" and choose the "db.sql"-file found in the root folder of the project. Click execute.
-
 Then navigate back to VS code and your shell terminal.
 
 As we are seeding our data please be sure to start Database seeding by writing this command in your terminal. It will both rebuild all models and also seed all the data in to the database.
@@ -107,7 +101,7 @@ As we are seeding our data please be sure to start Database seeding by writing t
 ```
 You should now be able to see all tables with data in the database.
 
-We have the following tables:
+# We have the following tables:
 
 	entries	
 	failed_jobs	
@@ -121,12 +115,10 @@ We have the following tables:
 	users	
 	watchlists
 	
-	
-To access the Adminer panel be sure to log in with the Admin user credentials that you can find in the user table.
 
 To do that navigate to the users table in the database. Click Select data above the table. Now choose the user you want to be Admin and click edit in the left column. Choose number 1 in the "IsAdmin" option and click "save".
 
-Return to the website CIMENHA and log in with the Admin credentials. Your landing page is the Admin dashboard and here you are able to go to Users or Movies in the left side panel or by clicking the User or Movie card.
+Return to the website CINEMAH and log in with the Admin credentials. Your landing page is the Admin dashboard and here you are able to go to Users or Movies in the left side panel or by clicking the User or Movie card.
 
 In the Users page you will be able the edit the Users name, username and email. You are also able to delete a user from this panel.
 
