@@ -168,18 +168,9 @@
 
                         <!-- Drop down menu/lists -->
                         <div class="dropdown">
-<<<<<<< HEAD
-                            @guest
-                            <a href="/login"><button class="dropbtn">Add to watchlist</button></a>
-                            @endguest
-                            @auth
-                            <a href="/watchlist"><button class="dropbtn">Add to watchlist</button></a>
-                            <div>
-=======
                             <button class="dropbtn"><a href="/register">Add to Watchlist</a></button>
                             @auth
                             <div class="watchlist_hover">
->>>>>>> main
                                 @foreach(Auth::user()->watchlists as $watchlist)
 
                                 <form action="{{url('/entry')}}" method="post">
