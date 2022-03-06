@@ -23,7 +23,7 @@ input[type="submit"],
 input[type="reset"] {
     font-family: "Poppins", sans-serif;
     margin-top: 2em;
-    background: yellow;
+    background: yellow !important;
     color: #000;
 }
 
@@ -37,8 +37,8 @@ input[type="reset"] {
     transition: all 0.3s ease;
 }
 .btn-15:hover {
-    background-color: #3d2174;
-    color: #fff;
+    background-color: #3d2174 !important;
+    color: #fff !important;
 }
 .btn-15:hover:after {
     left: 0;
