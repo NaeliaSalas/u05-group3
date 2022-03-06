@@ -63,8 +63,12 @@
                             <li class=" nav-item"><a class="menuItem" href="/login">Log in</a></li>
                             <li class=" nav-item"><a class="menuItem" href="/register">Register</a></li>
                             @endguest
-                            @auth
+
+                            @if (Auth::user()?->IsAdmin == true)
                             <li class=" nav-item"><a class="menuItem" href="/admin/dashboard">Dashboard</a></li>
+                            @endif 
+
+                            @auth
                             <li class=" nav-item"><a class="menuItem" href="/logout">Logout</a></li>
                             @endauth
                         </ul>
