@@ -11,6 +11,7 @@ use App\Http\Controllers\MovieController;
 class MovieGenreController extends Controller
 {
 
+
     public function store(Request $request)
     {
 

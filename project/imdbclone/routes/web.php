@@ -41,9 +41,14 @@ Route::view('/register', 'register.register');
 // Resource controllers
 Route::resource('movie', MovieController::class);
 
-Route::resource('movie.review', ReviewController::class)->shallow();
+Route::resource('movie.review', ReviewController::class)->only(['create', 'store', 'destroy'])->shallow();
 
-route::resource('watchlist', WatchlistController::class);
+Route::resource('watchlist', WatchlistController::class);
+
+Route::resource('entry', EntryController::class)->only(['store', 'destroy']);
+
+
+Route::resource('user', UserController::class);
 
 // MovieGenres
 Route::post('moviegenre/', [MovieGenreController::class, 'store']);
@@ -55,8 +60,7 @@ Route::post('login', [SessionsController::class, 'store'])->name('login.user');
 
 Route::get('logout', [SessionsController::class, 'destroy']);
 
-route::resource('entry', EntryController::class);
-Route::resource('user', UserController::class);
+
 
 // Admin
 Route::middleware('admin')->group(function () {

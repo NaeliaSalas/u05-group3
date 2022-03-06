@@ -9,17 +9,6 @@ use Illuminate\Support\Facades\Redirect;
 
 class ReviewController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        // $reviews = Review::get();
-
-        // return view('review.review', ['reviews' => $reviews]);
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -58,55 +47,6 @@ class ReviewController extends Controller
         $review->movie_id_fk = $request->movie_id_fk;
         $review->save();
         return redirect()->route('movie.show', ['movie' => $request->movie_id_fk]);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $review = Review::find($id);
-        $comments = Review::find($id)->comments;
-        return view('review.show', ['review' => $review, 'comments' => $comments]);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        $review = Review::find($id);
-        return view('review.add-review', ['review' => $review]);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-
-        $request->validate([
-            'title' => 'string|required|max:50',
-            'body' => 'string|required||max:255',
-            'rating' => 'integer|required|min:1|max:5',
-        ]);
-
-        $review = Review::find($id);
-        $review->title = $request->title;
-        $review->body = $request->body;
-        $review->rating = $request->rating;
-        $review->update();
-        return redirect('review');
     }
 
     /**
