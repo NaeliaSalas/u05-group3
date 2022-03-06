@@ -16,44 +16,20 @@ class UserSeeder extends Seeder
     {
         User::create([
 
-            'name' => 'Nova',
-            'username' => 'Nova',
-            'email' => 'nova@gmail.com',
+            'name' => 'User',
+            'username' => 'User',
+            'email' => 'user@gmail.com',
             'password' => ('password'),
         ]);
 
         User::create([
 
-            'name' => 'Jonny',
-            'username' => 'Jonny',
-            'email' => 'jonny@gmail.com',
-            'password' => ('password'),
-        ]);
+            'name' => 'Admin',
+            'username' => 'Admin',
+            'email' => 'admin@gmail.com',
+            'password' => ('12345'),
+            'IsAdmin' => '1',
 
-        User::create([
-
-            'name' => 'Paulina',
-            'username' => 'Paulina',
-            'email' => 'Paulina@gmail.com',
-            'password' => ('password'),
-        ]);
-
-        User::create([
-
-            'name' => 'David',
-            'username' => 'David',
-            'email' => 'david@gmail.com',
-            'password' => ('password'),
-        ]);
-
-
-
-        User::create([
-
-            'name' => 'Naelia',
-            'username' => 'Naelia',
-            'email' => 'naelia@gmail.com',
-            'password' => ('password'),
         ]);
     }
 }

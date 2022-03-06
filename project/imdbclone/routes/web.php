@@ -54,7 +54,8 @@ Route::resource('movie.review', ReviewController::class)->shallow();
 route::resource('watchlist', WatchlistController::class);
 
 // MovieGenres
-Route::resource('moviegenre', MovieGenreController::class);
+
+Route::post('moviegenre', [MovieGenreController::class, 'toggle']);
 
 //Route to genres
 Route::get('genre/{genrename}', [GenreController::class, 'show']);
