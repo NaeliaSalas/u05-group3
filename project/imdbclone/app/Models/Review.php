@@ -17,10 +17,7 @@ class Review extends Model
     {
         return $this->belongsTo(User::class, 'user_id_fk');
     }
-    public function comments()
-    {
-        return $this->hasMany(Comment::class, 'review_id_fk');
-    }
+   
 
     public function movie()
     {

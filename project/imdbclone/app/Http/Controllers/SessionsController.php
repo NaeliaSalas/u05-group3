@@ -54,7 +54,6 @@ class SessionsController extends Controller
 
     public function adminlogin()
     {
-
         return view('admin.dashboard');
     }
 }

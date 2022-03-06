@@ -35,41 +35,25 @@ Route::get('search', [SearchController::class, 'search'])->name('search');
 //Route to genres
 Route::get('genre/{genrename}', [GenreController::class, 'show']);
 
-
 // Register page
 Route::view('/register', 'register.register');
 
-
-// //Add Review
-// Route::view('review.add-review', 'review.add-review');
-
-
 // Resource controllers
 Route::resource('movie', MovieController::class);
-
-Route::resource('comment', CommentController::class);
 
 Route::resource('movie.review', ReviewController::class)->shallow();
 
 route::resource('watchlist', WatchlistController::class);
 
 // MovieGenres
-
 Route::post('moviegenre/', [MovieGenreController::class, 'store']);
 Route::post('moviegenre/{id}', [MovieGenreController::class, 'update']);
-
-//Route to genres
-Route::get('genre/{genrename}', [GenreController::class, 'show']);
-
-// Rout to register new user
-/* Route::get('register', [RegisterController::class, 'create']);
-Route::post('register', [RegisterController::class, 'store'])->name("register.user"); */
 
 // Route for user to login
 Route::get('login', [SessionsController::class, 'create']);
 Route::post('login', [SessionsController::class, 'store'])->name('login.user');
 
-Route::post('logout', [SessionsController::class, 'destroy']);
+Route::get('logout', [SessionsController::class, 'destroy']);
 
 route::resource('entry', EntryController::class);
 Route::resource('user', UserController::class);
