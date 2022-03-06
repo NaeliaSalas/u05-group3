@@ -92,7 +92,13 @@
                     <div class="button_border">
                         <p>{{$movie->title}}</p>
                         <div class="rating">
-                            <i class="fa-solid fa-star"></i>
+                                @for ($i = 0; $i < $movie->rating; $i++)
+                                    <i class="fa-solid fa-star"></i>
+                                    @endfor
+                                   
+                            </div>
+
+                          
                             <p>{{$movie->rating}}</p>
                         </div>
                         <button>Add Watchlist</button>

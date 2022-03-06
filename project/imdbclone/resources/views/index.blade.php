@@ -168,8 +168,11 @@
 
                         <!-- Drop down menu/lists -->
                         <div class="dropdown">
-                            <a href="/register"><button class="dropbtn">Add to watchlist</button></a>
+                            @guest
+                            <a href="/login"><button class="dropbtn">Add to watchlist</button></a>
+                            @endguest
                             @auth
+                            <a href="/watchlist"><button class="dropbtn">Add to watchlist</button></a>
                             <div>
                                 @foreach(Auth::user()->watchlists as $watchlist)
 
