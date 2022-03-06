@@ -18,12 +18,34 @@ Get started
 
 To use this application you will need to have DOCKER, Git installd and we recomend VS code but any text editor will work.
 
-Clone this repo to your local machine.
+On GitHub.com, navigate to the main page of the repository:
+
+NaeliaSalas/u05-group3.gitgit@github.com
+
+
+Above the list of files, click  Code.
+
+Open Terminal.
+
+Change the current working directory to the location where you want the cloned directory.
+
+Type git clone, and then paste the URL you copied earlier.
+
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+
+
+Press Enter to create your local clone.
 
 ```bash
-  SQL file inserted
-```
 
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+> Cloning into `Spoon-Knife`...
+> remote: Counting objects: 10, done.
+> remote: Compressing objects: 100% (8/8), done.
+> remove: Total 10 (delta 1), reused 10 (delta 1)
+> Unpacking objects: 100% (10/10), done.
+
+```
 docker-compose up
 Navigate to the root folder of the project in your terminal and run the following command:
 
